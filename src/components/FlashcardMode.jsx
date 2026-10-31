@@ -45,7 +45,10 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     }, 150);
   }, [wordList.length]);
 
-  // Touch Gesture Handlers cho Mobile (Swipe Left: Tiếp, Swipe Right: Trước)
+  // Touch Gesture Handlers cho Mobile:
+  // - Vuốt Trái/Phải: Chuyển sang từ tiếp theo / Lùi lại từ trước
+  // - Vuốt Lên/Xuống: Lật thẻ xem nghĩa
+  // - Chạm (Tap): Lật thẻ
   const handleTouchStart = (e) => {
     if (!e.touches || e.touches.length === 0) return;
     touchStartXRef.current = e.touches[0].clientX;
@@ -60,8 +63,8 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     const deltaX = currentX - touchStartXRef.current;
     const deltaY = currentY - touchStartYRef.current;
 
-    // Nếu khoảng cách vuốt ngang vượt 40px và vượt trội hơn di chuyển dọc
-    if (Math.abs(deltaX) > 40 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Đánh dấu đã vuốt nếu di chuyển ngang > 35px hoặc dọc > 30px
+    if (Math.abs(deltaX) > 35 || Math.abs(deltaY) > 30) {
       hasSwipedRef.current = true;
     }
   };
@@ -79,8 +82,8 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     touchStartXRef.current = null;
     touchStartYRef.current = null;
 
-    // Ngưỡng phát hiện vuốt: khoảng cách trục X > 50px và góc ngang vượt trội hơn góc dọc
-    if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    // 1. Phân loại vuốt ngang Trái / Phải (deltaX > deltaY và deltaX > 50px)
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
       hasSwipedRef.current = true;
       if (deltaX < 0) {
         // Vuốt sang TRÁI (Swipe Left): Chuyển sang từ tiếp theo
@@ -89,6 +92,11 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         // Vuốt sang PHẢI (Swipe Right): Quay về từ trước đó
         handlePrev();
       }
+    }
+    // 2. Phân loại vuốt dọc Lên / Xuống (deltaY > deltaX và deltaY > 40px): Lật thẻ
+    else if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 40) {
+      hasSwipedRef.current = true;
+      handleFlip();
     }
   };
 
@@ -201,7 +209,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </div>
       </div>
 
-      {/* 3D Flashcard Container (Hỗ trợ cảm ứng vuốt trái/phải trên Mobile) */}
+      {/* 3D Flashcard Container (Hỗ trợ cảm ứng vuốt Trái/Phải để đổi từ, vuốt Lên/Xuống để lật thẻ) */}
       <div 
         key={currentWord.id}
         className="flashcard-scene card-animate-swap"
@@ -209,7 +217,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        title="Nhấp vào thẻ để lật (Space / W / S / ↑ / ↓) • Vuốt trái / phải để đổi từ"
+        title="Nhấp vào thẻ hoặc vuốt Lên/Xuống để lật • Vuốt Trái/Phải để đổi từ"
       >
         <div className={`flashcard ${isFlipped ? 'flipped' : ''}`}>
           {/* Front Face: English */}
