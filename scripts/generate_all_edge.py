@@ -1,11 +1,12 @@
 """
-Script tạo file MP3 phát âm toàn bộ từ vựng Oxford 3000 sử dụng edge-tts
-=======================================================================
+Script tạo file MP3 phát âm toàn bộ từ vựng Oxford 3000 sử dụng edge-tts (Tối ưu Concurrency)
+=============================================================================================
 - Giọng đọc: en-GB-SoniaNeural (Giọng nữ chuẩn Anh-Anh cao cấp)
-- Cơ chế chia lô: BATCH_SIZE = 500 (chỉ tải tối đa 500 từ mới chưa có trong mỗi lần chạy)
-- Cơ chế bỏ qua: Tự động bỏ qua các từ đã có file MP3 (> 0 bytes)
-- Cơ chế chống spam/rate-limit: Nghỉ 1 giây sau mỗi từ (await asyncio.sleep(1))
-- Tự động cập nhật src/data/audioManifest.js sau khi hoàn thành lô
+- Kỹ thuật: Asyncio Semaphore (CONCURRENCY_LIMIT = 5, tải song song 5 từ cùng lúc)
+- Thời gian nghỉ: SLEEP_SECONDS = 0.2s sau mỗi từ
+- Cơ chế chia lô: BATCH_SIZE = 500 (chỉ xử lý tối đa 500 từ chưa có trong mỗi lần chạy)
+- Cơ chế bỏ qua: Tự động bỏ qua các file đã tồn tại (> 0 bytes)
+- Đồng bộ audioManifest.js tự động sau mỗi 50 từ và khi kết thúc batch
 """
 
 import asyncio
@@ -16,9 +17,10 @@ import re
 import sys
 import edge_tts
 
-# Cấu hình
+# Cấu hình tối ưu
+CONCURRENCY_LIMIT = 5
+SLEEP_SECONDS = 0.2
 BATCH_SIZE = 500
-SLEEP_SECONDS = 1.0
 VOICE = "en-GB-SoniaNeural"
 OUTPUT_DIR = os.path.join("public", "audio", "en-gb")
 MANIFEST_PATH = os.path.join("src", "data", "audioManifest.js")
@@ -134,16 +136,56 @@ export const getAudioUrlFromManifest = (word, id, type) => {
 
     return len(manifest_entries)
 
+async def download_single_word(item, index, total, semaphore, progress_lock, stats, all_words):
+    """Tải một từ duy nhất có kiểm soát Concurrency qua Semaphore"""
+    word_text = item["word"].strip()
+    word_id = item.get("id", f"item_{index}")
+    filename = f"{sanitize_filename(word_text)}.mp3"
+    dest_path = os.path.join(OUTPUT_DIR, filename)
+
+    async with semaphore:
+        try:
+            communicate = edge_tts.Communicate(word_text, voice=VOICE, rate="+0%")
+            await communicate.save(dest_path)
+
+            file_size = os.path.getsize(dest_path)
+
+            async with progress_lock:
+                stats["downloaded"] += 1
+                curr_count = stats["downloaded"]
+                print(f"  [{curr_count:3d}/{total}] ✓ '{word_text}' ({word_id}) -> {filename} ({file_size:,} bytes)")
+
+                # Định kỳ lưu manifest mỗi 50 từ
+                if curr_count % 50 == 0:
+                    update_manifest_file(all_words)
+                    print(f"        💾 [Auto-Save] Đã cập nhật audioManifest.js ({curr_count}/{total} từ)")
+
+            await asyncio.sleep(SLEEP_SECONDS)
+
+        except Exception as e:
+            async with progress_lock:
+                stats["errors"] += 1
+                print(f"  [LỖI] ✗ '{word_text}' ({word_id}): {e}")
+
+            if os.path.exists(dest_path) and os.path.getsize(dest_path) == 0:
+                try:
+                    os.remove(dest_path)
+                except OSError:
+                    pass
+
+            await asyncio.sleep(1.0)
+
 async def main():
-    print("=" * 65)
-    print("OXFORD 3000 - CHƯƠNG TRÌNH TẠO FILE MP3 HÀNG LOẠT (EDGE-TTS)")
-    print(f"Giọng đọc: {VOICE} | Kích thước lô: {BATCH_SIZE} từ | Giãn cách: {SLEEP_SECONDS}s")
-    print("=" * 65)
+    print("=" * 70)
+    print("OXFORD 3000 - CHƯƠNG TRÌNH TẠO FILE MP3 TỐC ĐỘ CAO (EDGE-TTS CONCURRENCY)")
+    print(f"Giọng đọc: {VOICE}")
+    print(f"Song song: {CONCURRENCY_LIMIT} luồng đồng thời | Giãn cách: {SLEEP_SECONDS}s | Batch: {BATCH_SIZE} từ")
+    print("=" * 70)
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     all_words = load_all_words()
     total_words = len(all_words)
-    print(f"[1/3] Đã quét tổng cộng: {total_words} từ vựng từ các file JSON.")
+    print(f"\n[1/3] Đã quét tổng cộng: {total_words} từ vựng từ các file JSON.")
 
     # Phân loại từ đã có và chưa có file MP3
     existing_count = 0
@@ -173,59 +215,46 @@ async def main():
     batch_total = len(current_batch)
     print(f"\n[3/3] Bắt đầu tải Lô hiện tại: {batch_total} từ (từ thứ {existing_count + 1} đến {existing_count + batch_total})...\n")
 
-    downloaded_in_batch = 0
+    semaphore = asyncio.Semaphore(CONCURRENCY_LIMIT)
+    progress_lock = asyncio.Lock()
+    stats = {"downloaded": 0, "errors": 0}
 
-    for idx, item in enumerate(current_batch, start=1):
-        word_text = item["word"].strip()
-        word_id = item.get("id", f"item_{idx}")
-        filename = f"{sanitize_filename(word_text)}.mp3"
-        dest_path = os.path.join(OUTPUT_DIR, filename)
+    tasks = [
+        download_single_word(
+            item=item,
+            index=idx,
+            total=batch_total,
+            semaphore=semaphore,
+            progress_lock=progress_lock,
+            stats=stats,
+            all_words=all_words
+        )
+        for idx, item in enumerate(current_batch, start=1)
+    ]
 
-        print(f"  [{idx:3d}/{batch_total}] Đang tải: '{word_text}' ({word_id}) -> {filename}...")
+    await asyncio.gather(*tasks)
 
-        try:
-            # Gọi edge-tts
-            communicate = edge_tts.Communicate(word_text, voice=VOICE, rate="+0%")
-            await communicate.save(dest_path)
-
-            file_size = os.path.getsize(dest_path)
-            downloaded_in_batch += 1
-            print(f"        ✓ Thành công ({file_size:,} bytes)")
-
-            # Cập nhật manifest định kỳ mỗi 50 từ để tránh mất tiến độ nếu bị ngắt giữa chừng
-            if downloaded_in_batch % 50 == 0:
-                update_manifest_file(all_words)
-
-            # Cơ chế giãn cách chống rate-limit (nghỉ 1 giây sau mỗi từ)
-            await asyncio.sleep(SLEEP_SECONDS)
-
-        except Exception as e:
-            print(f"        ✗ Lỗi tải từ '{word_text}': {e}")
-            if os.path.exists(dest_path) and os.path.getsize(dest_path) == 0:
-                os.remove(dest_path)
-            # Nghỉ thêm 2 giây nếu gặp lỗi
-            await asyncio.sleep(2.0)
-
-    # Cập nhật manifest ngay sau khi kết thúc lô
+    # Cập nhật manifest sau khi hoàn thành lô
     print("\nĐang cập nhật audioManifest.js...")
     manifest_count = update_manifest_file(all_words)
 
-    total_done = existing_count + downloaded_in_batch
+    total_done = existing_count + stats["downloaded"]
     remaining = total_words - total_done
 
-    print("\n" + "=" * 65)
-    print(f"KẾT QUẢ ĐỢT NÀY:")
-    print(f"- Đã tải thành công: {downloaded_in_batch} từ trong lô này.")
+    print("\n" + "=" * 70)
+    print("KẾT QUẢ ĐỢT NÀY:")
+    print(f"- Đã tải thành công: {stats['downloaded']}/{batch_total} từ trong lô này.")
+    if stats["errors"] > 0:
+        print(f"- Số từ gặp lỗi: {stats['errors']}")
     print(f"- Tổng số từ đã có MP3 trên máy: {total_done}/{total_words} từ ({total_done/total_words*100:.1f}%).")
     print(f"- Số từ còn lại cần tải: {remaining} từ.")
     print(f"- Audio Manifest đã đồng bộ: {manifest_count} entries.")
-    print("=" * 65)
+    print("=" * 70)
 
     if remaining > 0:
-        print(f"\n👉 Đã hoàn thành đợt này ({downloaded_in_batch} từ). Vui lòng chạy lại script để tiếp tục đợt sau (còn {remaining} từ)!\n")
+        print(f"\n👉 Hoàn thành lô 500 từ! Vui lòng chạy lại script để tiếp tục {remaining} từ còn lại.\n")
     else:
         print("\n🎉 Hoàn thành 100% toàn bộ kho từ vựng Oxford 3000!\n")
 
 if __name__ == "__main__":
     asyncio.run(main())
-
