@@ -198,7 +198,7 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
               className="sound-btn" 
               onClick={(e) => {
                 if (e && e.stopPropagation) e.stopPropagation();
-                if (currentWord) speakWord(currentWord.word);
+                if (currentWord) speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
               }}
               onTouchStart={(e) => e.stopPropagation()}
               onTouchEnd={(e) => e.stopPropagation()}

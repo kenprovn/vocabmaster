@@ -147,8 +147,8 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
   const currentWord = words[currentIndex] || words[0];
 
   const handleSpeak = useCallback(() => {
-    if (currentWord) {
-      speakWord(currentWord.word);
+    if (currentWord && currentWord.word) {
+      speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
     }
   }, [currentWord]);
 
@@ -271,7 +271,7 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
               className="sound-btn" 
               onClick={(e) => {
                 if (e && e.stopPropagation) e.stopPropagation();
-                if (currentWord) speakWord(currentWord.word);
+                handleSpeak();
               }}
               onTouchStart={(e) => e.stopPropagation()}
               onTouchEnd={(e) => e.stopPropagation()}

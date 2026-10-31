@@ -127,7 +127,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   const handleSpeak = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
     if (currentWord && currentWord.word) {
-      speakWord(currentWord.word);
+      speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
     }
   }, [currentWord]);
 

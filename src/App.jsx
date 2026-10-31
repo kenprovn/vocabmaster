@@ -8,6 +8,7 @@ import FlashcardMode from './components/FlashcardMode';
 import QuizMode from './components/QuizMode';
 import TypingMode from './components/TypingMode';
 import WordListMode from './components/WordListMode';
+import AudioToast from './components/AudioToast';
 import { Layers, HelpCircle, Keyboard, BookOpen, GraduationCap, Clock, Award, Minimize2, RotateCcw } from 'lucide-react';
 import './App.css';
 
@@ -202,6 +203,9 @@ export default function App() {
 
   return (
     <div className={`app-container ${isFocusMode ? 'focus-mode-active' : ''}`}>
+      {/* Toast thông báo âm thanh / lỗi */}
+      <AudioToast />
+
       {/* Nút nổi để thoát Focus Mode */}
       {isFocusMode && (
         <button 

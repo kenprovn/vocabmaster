@@ -355,7 +355,7 @@ export default function WordListMode({
                       className="icon-btn"
                       onClick={(e) => {
                         e.stopPropagation();
-                        speakWord(item.word);
+                        speakWord(item.word, { id: item.id, type: item.type });
                       }}
                       onTouchStart={(e) => e.stopPropagation()}
                       onTouchEnd={(e) => e.stopPropagation()}
