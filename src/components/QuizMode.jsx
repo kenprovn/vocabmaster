@@ -269,7 +269,12 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
             {currentWord.word}
             <button 
               className="sound-btn" 
-              onClick={handleSpeak}
+              onClick={(e) => {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (currentWord) speakWord(currentWord.word);
+              }}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
               title="Nghe phát âm (Phím R)"
             >
               <Volume2 size={20} />

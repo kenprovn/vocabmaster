@@ -123,9 +123,10 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
 
   const currentWord = wordList[currentIndex] || wordList[0];
 
+  // Phát âm từ vựng (gọi trực tiếp speakWord trong user gesture)
   const handleSpeak = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
-    if (currentWord) {
+    if (currentWord && currentWord.word) {
       speakWord(currentWord.word);
     }
   }, [currentWord]);
@@ -229,6 +230,8 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
               <button 
                 className="sound-btn" 
                 onClick={handleSpeak}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
                 title="Nghe phát âm (Phím R)"
               >
                 <Volume2 size={18} />
@@ -257,6 +260,8 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
               <button 
                 className="sound-btn" 
                 onClick={handleSpeak}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
                 title="Nghe phát âm (Phím R)"
               >
                 <Volume2 size={18} />

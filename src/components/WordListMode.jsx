@@ -357,6 +357,8 @@ export default function WordListMode({
                         e.stopPropagation();
                         speakWord(item.word);
                       }}
+                      onTouchStart={(e) => e.stopPropagation()}
+                      onTouchEnd={(e) => e.stopPropagation()}
                       title="Phát âm"
                     >
                       <Volume2 size={15} />

@@ -2,12 +2,13 @@
 
 let voices = [];
 let currentUtterance = null;
+let isAudioUnlocked = false;
 
 // Hàm tải danh sách voices từ trình duyệt
 const loadVoices = () => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
   try {
-    voices = window.speechSynthesis.getVoices();
+    voices = window.speechSynthesis.getVoices() || [];
   } catch (err) {
     console.warn('Không thể nạp danh sách giọng đọc:', err);
   }
@@ -43,23 +44,44 @@ const getEnglishVoice = () => {
   return null;
 };
 
+// 1. CƠ CHẾ ĐÁNH THỨC ÂM THANH (AUDIO UNLOCKER):
+// Phát một chuỗi rỗng trong một sự kiện tương tác người dùng đầu tiên để mở khóa Web Speech API trên Mobile
+export const unlockAudio = () => {
+  if (isAudioUnlocked) return;
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+
+  try {
+    const silent = new SpeechSynthesisUtterance('');
+    window.speechSynthesis.speak(silent);
+    isAudioUnlocked = true;
+  } catch (err) {
+    console.warn('Không thể mở khóa audio trên thiết bị:', err);
+  }
+};
+
 export const speakWord = (text) => {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
   if (!text || typeof text !== 'string' || !text.trim()) return;
 
   try {
-    // 1. FIX HÀNG ĐỢI (QUEUE): Hủy sạch các âm thanh đang bị kẹt trong hàng đợi
+    // 1. FIX HÀNG ĐỢI (QUEUE): Luôn luôn hủy sạch các âm thanh đang bị kẹt trong hàng đợi
     window.speechSynthesis.cancel();
+
+    // Đánh thức nếu trình duyệt di động đang ở trạng thái ngủ đông / paused
+    if (window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+    }
 
     // 2. Tạo đối tượng SpeechSynthesisUtterance
     const utterance = new SpeechSynthesisUtterance(text.trim());
 
-    // 3. XỬ LÝ VOICE TIẾNG ANH
+    // 3. XỬ LÝ VOICE TIẾNG ANH & FALLBACK:
     utterance.lang = 'en-US';
     const englishVoice = getEnglishVoice();
+    // Nếu danh sách voices bị rỗng (do Mobile load chậm), TUYỆT ĐỐI ĐỪNG set utterance.voice
+    // Trình duyệt sẽ tự động lấy giọng tiếng Anh mặc định của hệ thống
     if (englishVoice) {
       utterance.voice = englishVoice;
-      utterance.lang = englishVoice.lang || 'en-US';
     }
 
     // 4. DỰ PHÒNG TỐC ĐỘ VÀ CAO ĐỘ (Tự nhiên, rõ ràng trên loa ngoài điện thoại)
@@ -67,7 +89,7 @@ export const speakWord = (text) => {
     utterance.pitch = 1;
 
     // 5. FIX GARBAGE COLLECTION TRÊN MOBILE:
-    // Giữ tham chiếu ở biến ngoài hàm và window._currentUtterance để tránh bị mobile browser xóa trước khi đọc xong
+    // Gán đối tượng utterance vào biến toàn cục và window._currentUtterance để tránh bị Mobile GC xóa mất trước khi đọc xong
     currentUtterance = utterance;
     window._currentUtterance = utterance;
 
@@ -85,12 +107,7 @@ export const speakWord = (text) => {
       window._currentUtterance = null;
     };
 
-    // Đánh thức nếu trình duyệt di động đang ở trạng thái paused
-    if (window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-    }
-
-    // Thực hiện phát âm
+    // Thực hiện phát âm trực tiếp
     window.speechSynthesis.speak(utterance);
   } catch (err) {
     console.error('Lỗi khi phát âm từ vựng:', err);

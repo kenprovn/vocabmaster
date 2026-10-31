@@ -196,7 +196,12 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
             {currentWord.word}
             <button 
               className="sound-btn" 
-              onClick={() => speakWord(currentWord.word)}
+              onClick={(e) => {
+                if (e && e.stopPropagation) e.stopPropagation();
+                if (currentWord) speakWord(currentWord.word);
+              }}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
               title="Nghe phát âm"
             >
               <Volume2 size={20} />

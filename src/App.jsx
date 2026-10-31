@@ -9,6 +9,7 @@ import QuizMode from './components/QuizMode';
 import TypingMode from './components/TypingMode';
 import WordListMode from './components/WordListMode';
 import { Layers, HelpCircle, Keyboard, BookOpen, GraduationCap, Clock, Award, Minimize2, RotateCcw } from 'lucide-react';
+import { unlockAudio } from './utils/speech';
 import './App.css';
 
 const STORAGE_KEY = 'myVocabData';
@@ -113,6 +114,24 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isFocusMode]);
 
+  // CƠ CHẾ ĐÁNH THỨC ÂM THANH (AUDIO UNLOCKER):
+  // Lắng nghe tương tác đầu tiên của người dùng để mở khóa Web Speech API trên Mobile Safari/Chrome
+  useEffect(() => {
+    const handleFirstUserInteraction = () => {
+      unlockAudio();
+      window.removeEventListener('click', handleFirstUserInteraction);
+      window.removeEventListener('touchstart', handleFirstUserInteraction);
+    };
+
+    window.addEventListener('click', handleFirstUserInteraction, { once: true, passive: true });
+    window.addEventListener('touchstart', handleFirstUserInteraction, { once: true, passive: true });
+
+    return () => {
+      window.removeEventListener('click', handleFirstUserInteraction);
+      window.removeEventListener('touchstart', handleFirstUserInteraction);
+    };
+  }, []);
+
   const toggleFocusMode = () => {
     setIsFocusMode(prev => !prev);
   };
@@ -201,7 +220,10 @@ export default function App() {
   }, [activeWords]);
 
   return (
-    <div className={`app-container ${isFocusMode ? 'focus-mode-active' : ''}`}>
+    <div 
+      className={`app-container ${isFocusMode ? 'focus-mode-active' : ''}`}
+      onClick={unlockAudio}
+    >
       {/* Nút nổi để thoát Focus Mode */}
       {isFocusMode && (
         <button 
