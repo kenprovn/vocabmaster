@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "word": "abandon",
+    "type": "verb",
+    "meaning": "từ bỏ, bỏ rơi",
+    "status": "new"
+  },
+  {
+    "id": 2,
+    "word": "ability",
+    "type": "noun",
+    "meaning": "khả năng, năng lực",
+    "status": "learning"
+  },
+  {
+    "id": 3,
+    "word": "achieve",
+    "type": "verb",
+    "meaning": "đạt được, thành công",
+    "status": "new"
+  },
+  {
+    "id": 4,
+    "word": "benefit",
+    "type": "noun",
+    "meaning": "lợi ích, phúc lợi",
+    "status": "learning"
+  },
+  {
+    "id": 5,
+    "word": "challenge",
+    "type": "noun",
+    "meaning": "thử thách, thách thức",
+    "status": "new"
+  },
+  {
+    "id": 6,
+    "word": "creative",
+    "type": "adjective",
+    "meaning": "sáng tạo",
+    "status": "mastered"
+  },
+  {
+    "id": 7,
+    "word": "determine",
+    "type": "verb",
+    "meaning": "quyết định, xác định",
+    "status": "new"
+  },
+  {
+    "id": 8,
+    "word": "effort",
+    "type": "noun",
+    "meaning": "nỗ lực, sự cố gắng",
+    "status": "learning"
+  },
+  {
+    "id": 9,
+    "word": "frequent",
+    "type": "adjective",
+    "meaning": "thường xuyên",
+    "status": "new"
+  },
+  {
+    "id": 10,
+    "word": "generate",
+    "type": "verb",
+    "meaning": "tạo ra, sinh ra",
+    "status": "new"
+  },
+  {
+    "id": 11,
+    "word": "hesitate",
+    "type": "verb",
+    "meaning": "do dự, ngập ngừng",
+    "status": "learning"
+  },
+  {
+    "id": 12,
+    "word": "improve",
+    "type": "verb",
+    "meaning": "cải thiện, nâng cao",
+    "status": "mastered"
+  },
+  {
+    "id": 13,
+    "word": "journey",
+    "type": "noun",
+    "meaning": "hành trình, chuyến đi",
+    "status": "new"
+  },
+  {
+    "id": 14,
+    "word": "knowledge",
+    "type": "noun",
+    "meaning": "kiến thức, hiểu biết",
+    "status": "learning"
+  },
+  {
+    "id": 15,
+    "word": "maintain",
+    "type": "verb",
+    "meaning": "duy trì, gìn giữ",
+    "status": "new"
+  }
+]

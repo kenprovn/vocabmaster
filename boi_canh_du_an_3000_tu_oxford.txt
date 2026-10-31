@@ -1,0 +1,957 @@
+================================================================================
+HỒ SƠ BÀN GIAO NGỮ CẢNH CHO AI KHÁC
+DỰ ÁN: WEBSITE / ỨNG DỤNG CÁ NHÂN ÔN TỪ VỰNG TIẾNG ANH TỪ DANH SÁCH KHOẢNG 3.000 TỪ OXFORD
+================================================================================
+
+MỤC ĐÍCH CỦA TÀI LIỆU
+
+Tài liệu này được tạo để người dùng có thể sao chép toàn bộ nội dung và dán vào
+một AI khác (ChatGPT, Gemini, Claude, Codex, Antigravity hoặc công cụ tương tự).
+AI tiếp nhận tài liệu cần đọc kỹ để hiểu ý tưởng, mục tiêu, những quyết định đã
+được bàn, các điểm còn mở và cách hỗ trợ người dùng tiếp tục triển khai.
+
+Đây là bản tổng hợp ngữ cảnh chi tiết dựa trên nội dung cuộc trò chuyện hiện có,
+không phải bản ghi âm hoặc bản chép nguyên văn từng câu nói. Những điểm người
+dùng đã nêu rõ được phân biệt với các đề xuất kỹ thuật và các vấn đề chưa chốt.
+Không tự ý biến đề xuất thành yêu cầu bắt buộc.
+
+Ngày lập bản tổng hợp: 31/10/2026
+Ngôn ngữ làm việc ưu tiên: Tiếng Việt rõ ràng, dễ hiểu.
+Phong cách trao đổi: Thân thiện, tự nhiên, thực tế; có thể giải thích thuật ngữ
+chuyên ngành bằng tiếng Việt. Khi hướng dẫn học tập hoặc kỹ thuật, hạn chế chêm
+quá nhiều tiếng Anh không cần thiết.
+
+================================================================================
+1. TÓM TẮT Ý TƯỞNG TRONG MỘT ĐOẠN
+================================================================================
+
+Người dùng muốn tự xây dựng một website/ứng dụng học từ vựng tiếng Anh cá nhân,
+dựa trên một danh sách khoảng 3.000 từ thường được gọi là Oxford 3000. Mục tiêu
+không phải học lại toàn bộ những từ đã biết, mà là biến danh sách gốc thành một
+bộ từ vựng phù hợp với năng lực thực tế của bản thân: lọc bỏ những từ đã biết,
+giữ lại những từ chưa chắc hoặc chưa biết, thêm từ mới khi cần, chỉnh sửa thông
+tin từ, và có thể xóa từ khỏi hệ thống — kể cả xóa hoàn toàn nếu người dùng chủ
+động chọn thao tác đó.
+
+Người dùng muốn AI hỗ trợ gần như toàn bộ phần lập trình. Người dùng chủ yếu mô
+tả yêu cầu, đưa prompt, kiểm tra sản phẩm, xác nhận danh sách từ và điều chỉnh
+kết quả. Kỳ vọng ban đầu là làm một phiên bản dùng được trong thời gian ngắn,
+ưu tiên dưới một tuần nếu phạm vi được kiểm soát. Ứng dụng cần có giao diện đẹp,
+trẻ trung, vui mắt, có tính khích lệ và không giống một cuốn từ điển khô khan.
+Nó cần nhiều cách ôn tập như flashcard, trắc nghiệm và gõ đáp án; có gợi ý mở
+dần đáp án; đồng thời tự ưu tiên ôn lại các từ người dùng thường quên.
+
+Đây trước hết là công cụ học tập riêng cho người dùng, không phải hệ thống thương
+mại, không phải nền tảng nhiều người dùng và không cần thiết phải có backend,
+đăng nhập hay Machine Learning ngay từ phiên bản đầu tiên. Nếu sau này nhu cầu
+thay đổi, có thể mở rộng.
+
+================================================================================
+2. BỐI CẢNH VÀ ĐỘNG LỰC CỦA NGƯỜI DÙNG
+================================================================================
+
+- Người dùng là sinh viên năm 4 ngành Công nghệ thông tin/Khoa học máy tính.
+- Người dùng đã từng làm một số dự án phần mềm có React, Vite, JavaScript,
+  Node.js, Express và MySQL; từng sử dụng AI coding assistant để hỗ trợ viết mã.
+- Người dùng không nhất thiết muốn tự tay viết từng dòng code. Người dùng muốn
+  mô tả chức năng bằng ngôn ngữ tự nhiên để AI lập trình, sau đó kiểm tra và yêu
+  cầu sửa.
+- Người dùng đã có trải nghiệm hoàn thành một dự án quản lý quán cà phê trong
+  thời gian tương đối ngắn với sự hỗ trợ của Codex. Trải nghiệm đó khiến người
+  dùng tin rằng một ứng dụng học từ vựng có phạm vi hợp lý cũng có thể được AI
+  hỗ trợ triển khai nhanh.
+- Người dùng muốn học từ vựng có hệ thống, không muốn mất thời gian ôn các từ
+  cơ bản đã biết từ lâu.
+- Người dùng muốn chủ động đối chiếu danh sách từ và tự quyết định từ nào thực
+  sự cần học. AI chỉ nên giúp phân loại và đề xuất, không được tự cho rằng AI
+  hiểu hoàn toàn trình độ của người dùng.
+- Người dùng quan tâm đến trải nghiệm sử dụng lâu dài: giao diện cần tạo hứng
+  thú, nhưng vẫn phải hỗ trợ tập trung, không làm người học bị phân tâm.
+- Người dùng có xu hướng thích phương án phù hợp, gọn, an toàn và tiết kiệm hơn
+  là cố xây dựng một hệ thống quá phức tạp chỉ để có nhiều công nghệ.
+
+Lưu ý quan trọng: người dùng có một ý tưởng riêng trong tương lai là có thể làm
+một website từ vựng phù hợp cho chị gái. Chị gái đã tốt nghiệp ngành Ngôn ngữ
+Anh tại Học viện Ngoại giao và có thể học cao học/định hướng giảng dạy tiếng Anh.
+Tuy nhiên, đây là ý tưởng dài hạn, có thể sau 4–8 tháng hoặc khoảng một năm; không
+được gộp yêu cầu của sản phẩm tương lai này vào phiên bản cá nhân hiện tại nếu
+người dùng chưa yêu cầu. Nhu cầu của chị gái cần được tìm hiểu riêng khi thời
+điểm đó đến.
+
+================================================================================
+3. MỤC TIÊU CHÍNH VÀ PHẠM VI SẢN PHẨM
+================================================================================
+
+3.1. Mục tiêu cốt lõi
+
+1. Nhập hoặc xây dựng dữ liệu từ khoảng 3.000 từ trong danh sách Oxford mà người
+   dùng đang muốn sử dụng.
+2. Cho phép rà soát danh sách và nhận diện những từ người dùng đã biết.
+3. Loại các từ quá dễ hoặc đã biết chắc khỏi danh sách ôn tập chính.
+4. Giữ lại những từ chưa biết, chưa chắc, dễ nhầm hoặc muốn học sâu hơn.
+5. Cho phép thêm từ mới ngoài danh sách gốc.
+6. Cho phép sửa thông tin từ: nghĩa, loại từ, phiên âm, ví dụ, ghi chú, v.v.
+7. Cho phép loại một từ khỏi bộ học, lưu trữ hoặc xóa hoàn toàn tùy lựa chọn.
+8. Cung cấp những chế độ luyện tập khác nhau.
+9. Theo dõi kết quả để ưu tiên những từ thường sai hoặc thường quên.
+10. Lưu tiến độ trên thiết bị để người dùng không mất dữ liệu khi đóng trình
+    duyệt hoặc khởi động lại ứng dụng.
+
+3.2. Điều không cần làm ngay
+
+- Không cần tài khoản, đăng nhập, phân quyền hoặc quản trị nhiều người dùng.
+- Không cần triển khai website lên Internet ngay từ đầu.
+- Không cần backend nếu ứng dụng chỉ chạy trên máy của người dùng.
+- Không cần MySQL trong phiên bản MVP.
+- Không cần Python hoặc Flask chỉ để làm giao diện và thao tác dữ liệu cơ bản.
+- Không cần Machine Learning thật sự trong giai đoạn đầu để chọn từ cần ôn.
+- Không cần tạo một nền tảng từ điển khổng lồ.
+- Không cần tích hợp mọi tính năng nâng cao trước khi hoàn thiện quy trình học
+  từ cơ bản.
+
+3.3. Nguyên tắc thiết kế phạm vi
+
+Hãy bắt đầu từ một ứng dụng cục bộ có thể sử dụng thực tế. Sau đó mới xem xét
+những chức năng nâng cao. Không nên vì nghe tên công nghệ hấp dẫn mà đưa thêm
+backend, cơ sở dữ liệu máy chủ, mô hình ML hoặc hệ thống tài khoản khi chúng
+không giải quyết vấn đề hiện tại.
+
+================================================================================
+4. QUY TRÌNH XỬ LÝ DANH SÁCH KHOẢNG 3.000 TỪ
+================================================================================
+
+Đây là phần quan trọng nhất của ý tưởng. Người dùng không muốn nạp nguyên danh
+sách 3.000 từ vào ứng dụng rồi học tất cả một cách máy móc. Người dùng muốn lọc
+và cá nhân hóa danh sách trước.
+
+4.1. Bắt đầu từ dữ liệu gốc
+
+- Cần có một file dữ liệu gốc chứa danh sách từ ban đầu.
+- Người dùng dự định sử dụng một danh sách khoảng 3.000 từ Oxford.
+- Tên “Oxford 3000” là tên danh sách người dùng nhắc đến; nguồn file cụ thể,
+  định dạng, phiên bản và điều kiện sử dụng cần được xác nhận khi người dùng
+  cung cấp dữ liệu.
+- Không được tự bịa rằng đã có sẵn dữ liệu chính thức hoặc tự nhận một danh sách
+  không rõ nguồn là bản chính thức.
+- Nếu người dùng đã có Excel, CSV, TXT hoặc PDF chứa danh sách, hãy ưu tiên xử
+  lý chính file đó thay vì tìm hoặc tạo một danh sách khác không được xác nhận.
+- Giữ một bản sao dữ liệu ban đầu để có thể khôi phục. Không chỉnh sửa trực tiếp
+  file gốc duy nhất.
+
+4.2. AI hỗ trợ lọc từ theo nhiều vòng
+
+Người dùng từng mô tả một quy trình lặp như sau:
+
+Bước A: Có danh sách khoảng 3.000 từ.
+Bước B: Yêu cầu AI lọc ra những từ rất dễ hoặc có khả năng cao người học đã biết,
+        ví dụ các từ cơ bản như “hello”, “hi”, “table”, “tree”.
+Bước C: Người dùng tự xem lại danh sách AI đề xuất loại bỏ.
+Bước D: Người dùng tự quyết định từ nào được loại, từ nào cần giữ.
+Bước E: Đưa danh sách còn lại cho AI rà soát tiếp theo một tiêu chí khác.
+Bước F: Lặp lại cho đến khi người dùng cảm thấy danh sách phù hợp.
+
+Điểm cốt yếu: AI không được tự ý xóa từ chỉ vì AI cho rằng từ đó dễ. Một từ có
+thể dễ với người này nhưng chưa chắc với người dùng. Việc loại bỏ phải có bước
+người dùng duyệt hoặc phải có cách hoàn tác rõ ràng.
+
+4.3. Có thể chia từ thành các trạng thái
+
+Đề xuất một hệ thống trạng thái rõ ràng, ví dụ:
+
+- CHƯA ĐÁNH GIÁ: từ mới nhập vào, chưa biết người dùng đã biết hay chưa.
+- ĐÃ BIẾT: người dùng xác nhận đã biết và không cần ôn thường xuyên.
+- CẦN HỌC: người dùng chưa biết hoặc muốn học.
+- CHƯA CHẮC: người dùng nhận ra từ nhưng chưa nhớ chắc nghĩa/cách dùng.
+- ĐANG ÔN: từ đang nằm trong lịch ôn tập.
+- ĐÃ THUỘC: từ đã được luyện đủ tốt theo tiêu chí người dùng hoặc thuật toán.
+- TẠM ẨN / LƯU TRỮ: không muốn thấy trong danh sách học hiện tại nhưng chưa
+  muốn xóa dữ liệu.
+- ĐÃ XÓA: từ đã bị xóa khỏi bộ dữ liệu đang sử dụng.
+
+Các trạng thái trên là đề xuất thiết kế, chưa phải danh sách đã được người dùng
+chốt. AI nên đề xuất một bộ trạng thái đơn giản, tránh tạo ra quá nhiều nhãn gây
+rối.
+
+4.4. Phân biệt các kiểu xóa
+
+Người dùng đã nêu rõ mong muốn có thể xóa từ, kể cả “xóa hoàn toàn”. Vì vậy,
+không nên chỉ cung cấp một nút “ẩn từ” rồi coi như đáp ứng đầy đủ.
+
+Có thể thiết kế các thao tác riêng:
+
+- Bỏ khỏi danh sách ôn tập: từ vẫn còn trong dữ liệu, chỉ không được đưa vào bài
+  học hiện tại.
+- Đánh dấu đã biết: từ vẫn còn nhưng được giảm hoặc ngừng lịch ôn.
+- Lưu trữ: giữ lại để tìm kiếm hoặc khôi phục sau này.
+- Xóa khỏi bộ từ đang dùng: loại từ khỏi danh sách học cá nhân.
+- Xóa vĩnh viễn: xóa bản ghi khỏi dữ liệu ứng dụng, sau xác nhận rõ ràng.
+
+Nếu xóa vĩnh viễn, nên có hộp xác nhận và có thể có tính năng xuất bản sao dữ
+liệu trước khi xóa. Đây là biện pháp bảo vệ dữ liệu, không phải cản trở người
+dùng. Nếu người dùng thực sự muốn xóa hoàn toàn, ứng dụng phải thực hiện đúng
+chứ không âm thầm giữ từ trong một danh sách khác.
+
+4.5. Thêm từ mới
+
+Người dùng muốn có thể bổ sung từ ngoài danh sách ban đầu. Từ mới nên có form
+nhập đơn giản, tối thiểu có:
+
+- Từ tiếng Anh.
+- Nghĩa tiếng Việt.
+- Loại từ nếu biết.
+- Phiên âm nếu có.
+- Ví dụ hoặc ghi chú nếu muốn.
+
+Các trường bổ sung có thể được điền sau. Không nên bắt người dùng điền tất cả
+thông tin mới được lưu một từ.
+
+4.6. Sửa thông tin và chống trùng lặp
+
+- Cho phép sửa từ và nghĩa.
+- Cho phép thêm một nghĩa bổ sung cho từ có nhiều nghĩa.
+- Có thể lưu nhiều loại từ nếu từ đó vừa là danh từ vừa là động từ.
+- Có cảnh báo khi thêm một từ đã có trong danh sách.
+- Cần xác định cách phân biệt các dạng từ và từ đồng âm nếu dữ liệu có trường hợp
+  phức tạp. Không nên tự gộp mọi từ có cách viết giống nhau nếu chúng có nghĩa
+  hoặc loại từ khác nhau.
+
+================================================================================
+5. THÔNG TIN NÊN CÓ TRONG MỖI MỤC TỪ
+================================================================================
+
+Một mục từ cơ bản có thể gồm những trường sau. Đây là thiết kế gợi ý; không phải
+mọi trường đều bắt buộc phải có ngay trong phiên bản đầu tiên.
+
+A. Thông tin cốt lõi
+- ID nội bộ ổn định.
+- Từ tiếng Anh (headword).
+- Loại từ (noun, verb, adjective, adverb, v.v.).
+- Nghĩa tiếng Việt dễ hiểu.
+- Trạng thái học của từ.
+
+B. Hỗ trợ phát âm
+- Phiên âm IPA.
+- Phát âm Anh-Anh (UK) nếu có nguồn phù hợp.
+- Phát âm Anh-Mỹ (US) nếu có nguồn phù hợp.
+- Nút nghe âm thanh.
+
+C. Hỗ trợ ghi nhớ và sử dụng
+- Một hoặc một vài từ đồng nghĩa phù hợp.
+- Câu ví dụ tiếng Anh ngắn, tự nhiên, dễ hiểu.
+- Nghĩa tiếng Việt của câu ví dụ nếu cần.
+- Ghi chú về cách dùng, collocation hoặc lỗi thường gặp nếu cần.
+- Hình minh họa hoặc biểu tượng trực quan khi phù hợp.
+
+D. Dữ liệu học tập
+- Số lần đã gặp từ.
+- Số lần trả lời đúng.
+- Số lần trả lời sai.
+- Lần học gần nhất.
+- Ngày dự kiến ôn lại.
+- Mức độ dễ/khó hoặc điểm ghi nhớ.
+- Lịch sử trả lời hoặc lịch sử ôn tập nếu cần.
+
+E. Dữ liệu quản lý
+- Nguồn từ: danh sách gốc, do người dùng thêm, hoặc nguồn khác.
+- Ngày tạo và ngày cập nhật.
+- Trạng thái lưu trữ/xóa.
+
+Không nên làm giao diện quá nhiều thông tin cùng lúc. Màn hình học chỉ cần
+những thông tin hữu ích tại thời điểm học; các thông tin chi tiết có thể đặt ở
+màn hình xem/sửa từ.
+
+================================================================================
+6. PHÁT ÂM, ÂM THANH VÀ NGUỒN OXFORD
+================================================================================
+
+Người dùng có quan tâm đến âm thanh phát âm từ Oxford và muốn có thể nghe cả
+giọng Anh-Anh lẫn Anh-Mỹ nếu dữ liệu hỗ trợ.
+
+Cần phân biệt hai việc:
+
+1. Về trải nghiệm: mỗi từ có thể có nút nghe phát âm UK và US, nếu tìm được file
+   âm thanh hoặc nguồn audio hợp lệ, ổn định.
+2. Về nguồn và quyền sử dụng: việc một âm thanh có thể truy cập trên Internet
+   không tự động có nghĩa là được phép tải, sao chép hoặc đóng gói lại vào ứng
+   dụng. Không nên mặc định rằng có thể tự động trích xuất audio từ Oxford hoặc
+   rằng Oxford cung cấp một API miễn phí cho mục đích này.
+
+Cách làm an toàn về mặt kỹ thuật và nguồn dữ liệu:
+- Ưu tiên nguồn có giấy phép hoặc điều khoản cho phép sử dụng.
+- Nếu nguồn chỉ cho phép liên kết đến trang phát âm, có thể dùng liên kết thay
+  vì tải và nhúng file.
+- Nếu người dùng có file audio hợp pháp, có thể lưu đường dẫn tương ứng.
+- Xử lý trường hợp một từ không có audio UK hoặc US: ẩn nút không có dữ liệu,
+  không để giao diện báo lỗi.
+- Không làm hỏng trải nghiệm khi mất Internet nếu audio nằm trên máy; nếu audio
+  dùng nguồn trực tuyến thì cần thông báo hoặc xử lý lỗi phù hợp.
+
+Không cần giải quyết toàn bộ phần audio trước khi hoàn thiện chức năng thêm, sửa,
+lọc và ôn từ. Audio có thể là một giai đoạn riêng.
+
+================================================================================
+7. CÁC CHẾ ĐỘ HỌC VÀ LUYỆN TẬP
+================================================================================
+
+Người dùng muốn có nhiều cách học để tránh nhàm chán. Những chế độ đã được bàn:
+
+7.1. Flashcard
+
+- Hiển thị từ tiếng Anh ở mặt trước.
+- Người dùng tự nhớ nghĩa.
+- Chạm hoặc bấm để lật thẻ và xem nghĩa tiếng Việt.
+- Có thể hiển thị IPA, ví dụ và nút nghe phát âm ở mặt sau.
+- Sau khi xem, người dùng tự đánh giá mức độ nhớ: ví dụ “Chưa nhớ”, “Khó”,
+  “Nhớ được”, “Dễ”.
+- Kết quả phải được lưu để điều chỉnh lịch ôn.
+
+7.2. Trắc nghiệm nhiều lựa chọn
+
+- Hiển thị từ tiếng Anh và một số lựa chọn nghĩa tiếng Việt.
+- Người dùng chọn đáp án.
+- Có phản hồi đúng/sai rõ ràng.
+- Đáp án nhiễu cần hợp lý, không quá vô lý khiến bài quá dễ.
+- Không lặp một vị trí đáp án đúng cố định.
+- Cần tránh để các lựa chọn gây nhập nhằng khi từ có nhiều nghĩa.
+
+7.3. Gõ đáp án
+
+- Hiển thị từ tiếng Anh, yêu cầu người dùng nhập nghĩa tiếng Việt.
+- Đây là hình thức chủ động nhớ lại, khó hơn chỉ nhìn flashcard.
+- Có thể dùng cho những từ người dùng thường quên hoặc chưa nắm chắc.
+- Cần xử lý dấu tiếng Việt, chữ hoa/chữ thường, khoảng trắng đầu/cuối và các
+  biến thể đáp án hợp lệ.
+- Không nên chấm sai một cách cứng nhắc nếu người dùng nhập nghĩa đúng nhưng
+  diễn đạt khác đáp án mẫu. Có thể hỗ trợ nhiều đáp án được chấp nhận hoặc cho
+  phép người dùng tự sửa/cấu hình các nghĩa tương đương.
+
+7.4. Chọn chế độ phù hợp với độ khó
+
+Ý tưởng là không phải từ nào cũng cần một cách luyện như nhau:
+- Từ đã tương đối quen: có thể dùng flashcard hoặc trắc nghiệm nhanh.
+- Từ chưa chắc: luyện bằng trắc nghiệm và nhắc lại.
+- Từ khó hoặc thường quên: ưu tiên gõ đáp án để buộc nhớ chủ động.
+
+Đây là hướng thiết kế mong muốn, không nhất thiết phải tự động hoàn toàn ngay
+trong phiên bản đầu. Có thể cho người dùng tự chọn mode trước, sau đó bổ sung
+đề xuất tự động dựa trên kết quả học.
+
+================================================================================
+8. HỆ THỐNG GỢI Ý MỞ DẦN ĐÁP ÁN
+================================================================================
+
+Một ý tưởng người dùng đặc biệt quan tâm là hệ thống hint (gợi ý) theo từng bước.
+
+Ví dụ, khi người dùng cần nhập nghĩa tiếng Việt nhưng chưa nhớ:
+- Bấm “Gợi ý” lần 1: hiện một phần nhỏ của đáp án.
+- Bấm lần tiếp theo: hiện thêm một ký tự hoặc một phần ký tự.
+- Tiếp tục bấm: đáp án lộ ra dần cho đến khi đầy đủ.
+
+Có thể tùy chỉnh cơ chế gợi ý:
+- Hiện chữ cái đầu tiên.
+- Hiện thêm một chữ cái mỗi lần.
+- Hiện một phần trăm đáp án.
+- Hiện số ký tự hoặc số từ trong đáp án.
+- Có thể thêm gợi ý theo nghĩa hoặc câu ví dụ ở giai đoạn sau.
+
+Lưu ý kỹ thuật quan trọng:
+- Tiếng Việt có dấu và Unicode tổ hợp. Không nên cắt chuỗi tùy tiện theo byte
+  hoặc code unit vì có thể làm dấu bị tách khỏi chữ.
+- Nên xử lý theo grapheme cluster (đơn vị ký tự mà người dùng nhìn thấy) nếu
+  thực hiện thao tác hé lộ ký tự.
+- Với đáp án nhiều từ, cần thống nhất cách tính phần đã hé lộ.
+- Nếu người dùng bấm xem toàn bộ đáp án, cần ghi nhận đây là một lần dùng gợi ý
+  mạnh, không nên tính giống một lần tự nhớ đúng hoàn toàn.
+
+Mục tiêu của hint là giúp người học tiếp tục cố gắng thay vì bị kẹt, chứ không
+phải biến bài tập thành việc đoán mò.
+
+================================================================================
+9. ÔN TẬP THÔNG MINH / LẶP LẠI CÁCH QUÃNG
+================================================================================
+
+Người dùng muốn những từ thường quên được đưa ra nhiều hơn, còn những từ đã nhớ
+chắc thì xuất hiện ít hơn.
+
+Hướng triển khai phù hợp cho phiên bản đầu là thuật toán lặp lại cách quãng
+(spaced repetition), không phải Machine Learning.
+
+9.1. Logic cơ bản đề xuất
+
+- Trả lời sai: tăng mức ưu tiên ôn lại sớm.
+- Trả lời đúng nhưng còn do dự: ôn lại sau khoảng thời gian ngắn hơn từ đã nhớ
+  chắc.
+- Trả lời đúng nhiều lần: tăng khoảng cách giữa các lần ôn.
+- Dùng gợi ý: có thể xem là mức nhớ chưa hoàn toàn.
+- Bấm “không nhớ”: lịch ôn ngắn hơn.
+- Từ mới: được đưa vào lịch học ban đầu với số lượng giới hạn mỗi ngày.
+
+9.2. Thuật toán
+
+Có thể dùng một phiên bản đơn giản của SM-2 hoặc một quy tắc lập lịch riêng.
+Không nhất thiết phải triển khai toàn bộ SM-2 nếu nó làm hệ thống phức tạp.
+Điều quan trọng là dữ liệu học phải được lưu ổn định và logic dễ giải thích.
+
+9.3. Vì sao chưa cần Machine Learning?
+
+- Ở giai đoạn đầu, người dùng chưa có lịch sử học đủ lớn.
+- Các quy tắc “sai thì ôn sớm, đúng nhiều thì giãn thời gian” đã giải quyết phần
+  lớn nhu cầu thực tế.
+- ML cần dữ liệu, đánh giá, huấn luyện và kiểm thử; không tự động làm ứng dụng
+  học từ vựng tốt hơn nếu chưa có đủ dữ liệu.
+- Khi ứng dụng đã được dùng lâu dài, có thể xem xét phân tích lịch sử để dự đoán
+  từ nào có nguy cơ quên hoặc thời điểm ôn phù hợp hơn.
+
+9.4. Mục tiêu thống kê
+
+Có thể xây dựng màn hình thống kê đơn giản:
+- Tổng số từ trong bộ cá nhân.
+- Số từ cần học.
+- Số từ đã biết/đã thuộc.
+- Số từ cần ôn hôm nay.
+- Số câu đúng/sai trong phiên học.
+- Nhóm từ khó hoặc thường sai.
+
+Không cần đưa mọi chỉ số vào phiên bản đầu. Ưu tiên số liệu dễ hiểu và giúp
+người dùng biết cần học gì tiếp theo.
+
+================================================================================
+10. GIAO DIỆN VÀ TRẢI NGHIỆM NGƯỜI DÙNG
+================================================================================
+
+Người dùng không muốn một website từ điển đơn điệu, khô khan. Giao diện cần
+thân thiện, có màu sắc và tạo cảm giác muốn mở ra học mỗi ngày.
+
+10.1. Phong cách tổng thể
+
+- Trẻ trung, hiện đại, vui mắt.
+- Có cảm giác sinh động và có cá tính.
+- Không quá nghiêm túc như phần mềm quản trị doanh nghiệp.
+- Không lạm dụng màu sắc, hiệu ứng hoặc animation tới mức gây mỏi mắt.
+- Thiết kế sạch, nội dung từ vựng vẫn là trọng tâm.
+- Responsive để có thể sử dụng trên màn hình laptop và điện thoại.
+
+10.2. Thay đổi chủ đề
+
+Người dùng thích ý tưởng thay đổi theme theo ngày hoặc theo phiên học để trải
+nghiệm không bị nhàm chán. Ví dụ có thể có nhiều bảng màu hoặc background khác
+nhau. Đây là điểm tạo cảm hứng, nhưng không cần thay đổi theme quá phức tạp.
+
+10.3. Animation
+
+- Chuyển cảnh nhẹ.
+- Hiệu ứng lật flashcard.
+- Phản hồi đúng/sai sinh động.
+- Tiến trình học có animation nhẹ.
+- Tránh hiệu ứng nhấp nháy hoặc chuyển động liên tục.
+- Nên có khả năng giảm chuyển động hoặc một chế độ tập trung tối giản.
+
+10.4. Chế độ tập trung
+
+Người dùng từng đề cập mong muốn có focus mode để giảm yếu tố gây xao nhãng.
+Chế độ này có thể:
+- Ẩn các phần trang trí không cần thiết.
+- Chỉ giữ câu hỏi, đáp án và tiến độ.
+- Giảm animation.
+- Tạm ẩn thống kê hoặc sidebar khi đang học.
+
+10.5. Màn hình có thể có
+
+Một cấu trúc điều hướng gợi ý:
+- Dashboard / Trang chủ: tổng quan tiến độ và nút bắt đầu học.
+- Học từ mới: học các từ chưa học.
+- Ôn tập hôm nay: từ đến hạn ôn theo lịch.
+- Flashcard.
+- Trắc nghiệm.
+- Gõ đáp án.
+- Kho từ vựng: tìm, lọc, xem và sửa từ.
+- Quản lý danh sách: đánh dấu đã biết, lưu trữ, xóa, thêm từ.
+- Thống kê.
+- Cài đặt: theme, số lượng từ mỗi phiên, âm thanh, focus mode, xuất/nhập dữ
+  liệu.
+
+Đây là gợi ý bố cục, không cần tạo tất cả màn hình ngay từ ngày đầu. Có thể bắt
+đầu với Dashboard, Kho từ vựng, màn hình học và quản lý từ.
+
+================================================================================
+11. CÔNG NGHỆ VÀ KIẾN TRÚC ĐÃ ĐƯỢC THẢO LUẬN
+================================================================================
+
+11.1. Frontend
+
+Đề xuất hiện tại:
+- ReactJS.
+- Vite.
+- JavaScript (không bắt buộc TypeScript).
+- CSS thuần hoặc CSS Modules; có thể dùng thư viện giao diện nếu thật sự giúp
+  tăng tốc nhưng phải tránh làm dự án quá khó sửa.
+
+Lý do:
+- Người dùng đã có trải nghiệm React + Vite.
+- Công cụ AI có thể hỗ trợ tạo component, giao diện và logic.
+- Phù hợp với website tương tác nhiều trạng thái như flashcard, trắc nghiệm,
+  gõ đáp án, quản lý từ.
+
+11.2. Backend có bắt buộc là Node.js không?
+
+Không. React và Vite chủ yếu phục vụ phần giao diện và quá trình phát triển/
+build frontend. Vite thường chạy bằng Node.js trong môi trường phát triển, nhưng
+điều đó không có nghĩa ứng dụng bắt buộc phải có một backend Node.js.
+
+Nếu chỉ chạy cá nhân trên một máy:
+- Có thể không cần backend.
+- Dữ liệu từ có thể nằm trong JSON.
+- Tiến độ và các thay đổi của người dùng có thể được lưu trong IndexedDB hoặc
+  local storage.
+- Có thể thêm chức năng xuất/nhập JSON để sao lưu và chuyển dữ liệu thủ công.
+
+Lưu ý: Local storage phù hợp với cài đặt nhỏ; IndexedDB phù hợp hơn khi có nhiều
+bản ghi từ vựng và lịch sử học. AI cần chọn giải pháp đơn giản nhưng đáng tin cậy.
+
+11.3. Khi nào mới cần backend?
+
+Chỉ cần cân nhắc backend khi người dùng muốn:
+- Đồng bộ dữ liệu giữa nhiều thiết bị.
+- Đăng nhập và sử dụng nhiều tài khoản.
+- Sao lưu dữ liệu tự động lên máy chủ.
+- Quản lý nội dung từ một nơi dùng cho nhiều người.
+- Có API dùng chung cho website và ứng dụng khác.
+
+Khi đó có thể cân nhắc Node.js + Express và cơ sở dữ liệu phù hợp như MySQL,
+SQLite hoặc PostgreSQL. Không cần chọn trước khi có yêu cầu thực tế.
+
+11.4. Có cần Python Flask không?
+
+Chưa cần cho phiên bản hiện tại nếu chỉ làm website cá nhân bằng React/Vite.
+Python Flask là một framework backend/API, khác với mô hình AI có tên “Flash”.
+Trong đoạn trò chuyện gần nhất, người dùng viết “Antigra gemini 3.8 flask”; ngữ
+cảnh trước đó cho thấy nhiều khả năng người dùng đang nói đến Antigravity cùng
+Gemini 3.8 Flash (tên model mà người dùng nhắc), chứ không nhất thiết là Python
+Flask. Tuy nhiên, nếu người dùng thật sự muốn dùng Flask làm backend thì cần hỏi
+lại và đánh giá xem có lý do gì cần backend hay không.
+
+Không tự ý thêm Flask chỉ vì thấy chữ “flask” trong câu nói.
+
+11.5. Machine Learning
+
+ML có thể là hướng mở rộng tương lai nếu có dữ liệu học đủ lớn. Trong phiên bản
+đầu, thuật toán lặp lại cách quãng dựa trên quy tắc là đủ. Không nên dùng ML chỉ
+để gắn nhãn cho dự án nghe có vẻ hiện đại.
+
+================================================================================
+12. CÔNG CỤ AI MÀ NGƯỜI DÙNG MUỐN SỬ DỤNG
+================================================================================
+
+Người dùng đang cân nhắc dùng các công cụ AI coding assistant để AI làm phần lớn
+công việc lập trình.
+
+12.1. Antigravity + Gemini
+
+Người dùng hỏi liệu Antigravity kết hợp với Gemini (người dùng gọi là “Gemini
+3.8 Flash”) có thể làm website này ổn không. Câu trả lời định hướng là: đây có
+thể là công cụ chính để tạo và chỉnh sửa project nếu phiên bản công cụ/model mà
+người dùng có quyền truy cập hỗ trợ coding agent và thao tác file phù hợp.
+
+AI nên kiểm tra tên model và tính năng thực tế đang hiển thị trong tài khoản của
+người dùng, không được tự khẳng định phiên bản model khi chưa xác minh. Tên
+“Gemini 3.8 Flash” ở đây được ghi lại theo cách người dùng đã nói, không phải
+xác nhận độc lập về danh mục model.
+
+12.2. ChatGPT
+
+Có thể dùng ChatGPT để:
+- Phân tích và làm rõ yêu cầu.
+- Lập roadmap.
+- Viết prompt giao nhiệm vụ cho coding agent.
+- Kiểm tra cấu trúc dữ liệu.
+- Review code và logic học.
+- Tìm lỗi thiết kế hoặc các trường hợp biên.
+- Soạn tiêu chí nghiệm thu.
+
+12.3. Codex
+
+Có thể dùng Codex như một coding agent khác để thực hiện nhiệm vụ cụ thể hoặc
+review. Không nên để hai coding agent đồng thời chỉnh sửa cùng các file trong
+một project mà không kiểm soát, vì dễ xung đột thay đổi.
+
+12.4. Cách phối hợp
+
+Nên có một công cụ làm agent chính, chẳng hạn Antigravity, để giữ mạch công việc.
+ChatGPT có thể đóng vai trò người phân tích yêu cầu/reviewer. Codex có thể dùng
+cho một task độc lập hoặc kiểm tra code ở thời điểm phù hợp.
+
+Nguyên tắc:
+- Không giao cùng một thay đổi cho nhiều agent cùng lúc.
+- Chia task nhỏ và có tiêu chí hoàn thành.
+- Sau mỗi mốc quan trọng, chạy ứng dụng và kiểm thử.
+- Dùng Git để lưu checkpoint và có thể quay lại khi AI sửa hỏng.
+- Giữ file TASK.md hoặc PROJECT_CONTEXT.md mô tả trạng thái dự án.
+- Không để AI tự ý thay toàn bộ kiến trúc khi chỉ cần sửa một chức năng nhỏ.
+
+================================================================================
+13. KẾ HOẠCH THỰC HIỆN VÀ KỲ VỌNG THỜI GIAN
+================================================================================
+
+Người dùng muốn hoàn thành phiên bản đầu trong thời gian dưới một tuần nếu có
+thể, với cách làm AI hỗ trợ gần như toàn bộ code và người dùng chủ yếu đưa yêu
+cầu, xem kết quả, kiểm tra và ra quyết định.
+
+Ước lượng từng được trao đổi:
+- Bản cơ bản có thể sử dụng: khoảng 3–5 ngày nếu làm tập trung và phạm vi gọn.
+- Bản được chăm chút hơn về giao diện, trải nghiệm và kiểm thử: khoảng 5–7 ngày.
+- Chất lượng dữ liệu cho đủ khoảng 3.000 từ, đặc biệt phiên âm, nghĩa, ví dụ,
+  synonyms, hình minh họa và audio, có thể mất thời gian lâu hơn việc dựng giao
+  diện và không nên xem là việc tự động hoàn hảo chỉ trong vài giờ.
+
+Đây chỉ là ước lượng sơ bộ, phụ thuộc thời gian người dùng dành ra, chất lượng
+AI coding agent, mức độ sẵn có của file dữ liệu và phạm vi tính năng. Không hứa
+chắc chắn hoàn thành mọi thứ trong bảy ngày.
+
+13.1. Roadmap gợi ý
+
+GIAI ĐOẠN 0 — Chuẩn bị (vài giờ)
+- Xác nhận người dùng có file danh sách từ nào.
+- Kiểm tra cấu trúc file và số lượng bản ghi.
+- Chọn stack React + Vite + JavaScript.
+- Tạo Git repository.
+- Tạo README và TASK.md/PROJECT_CONTEXT.md.
+- Xác định tiêu chí MVP.
+
+GIAI ĐOẠN 1 — Dựng nền tảng (ngày 1)
+- Tạo project.
+- Thiết kế layout và điều hướng cơ bản.
+- Tạo cấu trúc dữ liệu từ vựng.
+- Nạp thử một nhóm từ nhỏ, chưa cần đủ 3.000 từ.
+- Xây màn hình danh sách từ.
+- Thêm tìm kiếm, lọc và xem chi tiết từ.
+
+GIAI ĐOẠN 2 — Quản lý bộ từ cá nhân (ngày 2)
+- Nhập dữ liệu.
+- Đánh dấu đã biết/chưa biết/chưa chắc.
+- Thêm từ mới.
+- Sửa thông tin.
+- Bỏ khỏi danh sách ôn tập, lưu trữ và xóa.
+- Lưu dữ liệu cục bộ.
+- Thêm xuất/nhập dữ liệu để backup.
+
+GIAI ĐOẠN 3 — Học và ôn (ngày 3)
+- Làm flashcard.
+- Làm trắc nghiệm.
+- Làm chế độ gõ nghĩa.
+- Làm kiểm tra đáp án và phản hồi.
+- Làm hint mở dần đáp án.
+
+GIAI ĐOẠN 4 — Lịch ôn thông minh (ngày 4)
+- Lưu kết quả đúng/sai.
+- Tạo logic lặp lại cách quãng đơn giản.
+- Ưu tiên từ thường sai.
+- Tạo danh sách “Ôn tập hôm nay”.
+
+GIAI ĐOẠN 5 — Hoàn thiện trải nghiệm (ngày 5–7)
+- Chỉnh màu sắc, typography và responsive.
+- Thêm animation nhẹ.
+- Thêm theme hoặc focus mode nếu còn thời gian.
+- Bổ sung audio ở mức khả thi.
+- Kiểm thử dữ liệu, backup, xóa và lịch ôn.
+- Sửa lỗi và viết hướng dẫn sử dụng ngắn.
+
+Không bắt buộc phải làm tuần tự đúng từng ngày. Nếu thời gian hạn chế, ưu tiên
+hoàn thành quy trình cốt lõi: quản lý từ → học → lưu kết quả → ôn lại.
+
+================================================================================
+14. CÁCH NGƯỜI DÙNG MUỐN LÀM VIỆC VỚI AI
+================================================================================
+
+Người dùng muốn chủ yếu đưa lệnh cho AI để AI tự triển khai, không muốn phải tự
+viết code quá nhiều. AI cần chủ động chia nhỏ công việc và đưa prompt có thể giao
+thẳng cho coding agent.
+
+Cách hỗ trợ nên như sau:
+
+1. Đọc và hiểu yêu cầu hiện tại.
+2. Nói ngắn gọn AI sẽ làm phần nào và kết quả cần đạt là gì.
+3. Chỉ yêu cầu người dùng cung cấp thông tin thực sự cần thiết.
+4. Viết prompt rõ ràng cho coding agent, gồm:
+   - Bối cảnh project.
+   - Mục tiêu task.
+   - Những file/chức năng có thể liên quan.
+   - Yêu cầu giao diện hoặc hành vi.
+   - Trường hợp lỗi cần xử lý.
+   - Tiêu chí nghiệm thu.
+   - Những việc không được tự ý thay đổi.
+5. Sau khi agent làm xong, hướng dẫn cách chạy và kiểm tra.
+6. Nếu lỗi, yêu cầu agent sửa tập trung, không viết lại cả project nếu không cần.
+7. Cập nhật TASK.md/PROJECT_CONTEXT.md để AI ở phiên sau biết đã làm đến đâu.
+
+Người dùng không muốn AI chỉ trả lời chung chung kiểu “bạn hãy tự code chức
+năng này”. Hãy ưu tiên đưa prompt hoặc hướng dẫn thực hiện được ngay.
+
+Tuy vậy, người dùng vẫn phải trực tiếp kiểm tra kết quả. AI có thể viết code,
+nhưng không thể tự đảm bảo dữ liệu đúng, tất cả luồng hoạt động chính xác hoặc
+ứng dụng không có lỗi nếu chưa chạy và kiểm thử.
+
+================================================================================
+15. CÁC TRƯỜNG HỢP BIÊN CẦN TÍNH ĐẾN
+================================================================================
+
+Khi thiết kế hoặc review, hãy chú ý những tình huống sau:
+
+- Một từ có nhiều nghĩa tiếng Việt.
+- Một từ thuộc nhiều loại từ.
+- Từ có dạng số ít/số nhiều hoặc các dạng chia động từ.
+- Có từ trùng cách viết nhưng khác nghĩa.
+- Người dùng nhập nghĩa đúng nhưng không giống câu trả lời mẫu từng chữ.
+- Người dùng nhập có dấu/không dấu.
+- Người dùng nhập dư khoảng trắng hoặc khác chữ hoa/chữ thường.
+- Từ không có audio.
+- Từ không có hình ảnh minh họa.
+- Mạng bị ngắt nếu audio hoặc hình ảnh lấy từ Internet.
+- Người dùng xóa từ đang nằm trong một phiên học.
+- Người dùng đổi trạng thái từ đã biết trở lại cần học.
+- Người dùng nhập một file từ mới có từ trùng với dữ liệu hiện tại.
+- Người dùng vô tình xóa dữ liệu hoặc xóa toàn bộ danh sách.
+- Trình duyệt bị đóng đột ngột.
+- Người dùng mở ứng dụng trên thiết bị khác nhưng dữ liệu chỉ lưu ở thiết bị
+  hiện tại.
+- Có nhiều tab cùng mở ứng dụng và cùng sửa dữ liệu.
+
+Thiết kế nên ưu tiên tránh mất dữ liệu và có thể xuất bản sao dự phòng.
+
+================================================================================
+16. BẢO VỆ DỮ LIỆU VÀ TÍNH RIÊNG TƯ
+================================================================================
+
+Ứng dụng ban đầu dự kiến dùng cá nhân và chạy cục bộ. Vì vậy:
+- Không cần yêu cầu người dùng tạo tài khoản nếu không có nhu cầu.
+- Không gửi dữ liệu học tập lên máy chủ nếu không cần.
+- Nếu có tích hợp API hoặc dịch vụ ngoài, phải nói rõ dữ liệu nào được gửi đi.
+- Có chức năng export để người dùng nắm quyền kiểm soát bộ từ của mình.
+- Có chức năng import để khôi phục dữ liệu.
+- Có thể tạo file backup JSON có ngày giờ.
+- Cần hỏi xác nhận trước thao tác xóa tất cả dữ liệu.
+- Cần phân biệt xóa từ vựng với xóa lịch sử học của từ đó.
+
+Người dùng có nhu cầu xóa hoàn toàn một từ, nên quyền xóa phải minh bạch. Không
+nên tự ý giữ bản sao ẩn của những dữ liệu người dùng đã yêu cầu xóa, trừ khi có
+một bản backup rõ ràng do người dùng chủ động tạo.
+
+================================================================================
+17. NHỮNG ĐIỂM ĐÃ ĐƯỢC THẢO LUẬN VÀ KẾT LUẬN TẠM THỜI
+================================================================================
+
+1. Có thể dùng AI coding agent để xây dựng phần lớn ứng dụng: CÓ, đây là cách
+   người dùng muốn làm.
+2. Antigravity có thể đóng vai trò công cụ chính: CÓ THỂ, tùy khả năng thực tế
+   của phiên bản và model người dùng đang có.
+3. Gemini Flash mà người dùng nhắc tới có thể hỗ trợ code: cần kiểm tra model
+   cụ thể có sẵn và khả năng thực tế trong tài khoản; không tự khẳng định tên
+   phiên bản nếu chưa xác minh.
+4. ChatGPT có ích trong lập kế hoạch, viết prompt và review: CÓ.
+5. Codex có thể là công cụ hỗ trợ thứ hai: CÓ, nên dùng theo task riêng hoặc
+   lần lượt, không chỉnh cùng file đồng thời với agent chính.
+6. React + Vite + JavaScript phù hợp cho frontend: CÓ.
+7. React + Vite có tự động đồng nghĩa cần backend Node.js không: KHÔNG.
+8. Ứng dụng cá nhân trên một máy có thể không cần backend: CÓ.
+9. Có cần Python Flask ngay không: CHƯA CẦN nếu chỉ làm ứng dụng local.
+10. Có cần Machine Learning ngay không: KHÔNG; logic spaced repetition là đủ
+    cho giai đoạn đầu.
+11. Có nên làm đủ 3.000 mục từ hoàn chỉnh ngay trước khi xây app không: không
+    nhất thiết. Có thể phát triển với vài chục từ mẫu, sau đó nhập dữ liệu lớn.
+12. Có thể hoàn thành MVP dưới một tuần không: có khả năng nếu giới hạn phạm vi,
+    AI hoạt động tốt và người dùng kiểm tra thường xuyên; không nên bảo đảm.
+13. Có nên lọc từ theo nhiều vòng và để người dùng duyệt không: CÓ, đây là quy
+    trình cốt lõi người dùng đã mô tả.
+14. Có thể thêm, sửa, bỏ, lưu trữ và xóa hẳn từ không: CÓ, nên thiết kế rõ từng
+    thao tác.
+15. Có nên làm cho chị gái ngay trong project hiện tại không: CHƯA. Đây là ý
+    tưởng dài hạn, cần tìm hiểu yêu cầu riêng khi người dùng quyết định.
+
+================================================================================
+18. NHỮNG ĐIỂM CHƯA CHỐT — AI TIẾP THEO CẦN XÁC NHẬN ĐÚNG LÚC
+================================================================================
+
+Không nên hỏi người dùng một danh sách dài câu hỏi ngay lập tức. Chỉ hỏi một
+câu quan trọng nhất để tiến hành bước kế tiếp. Những điểm cần xác nhận dần:
+
+A. Nguồn dữ liệu
+- Người dùng đã có file Oxford 3000 chưa?
+- File là Excel, CSV, TXT, PDF hay định dạng khác?
+- Có kèm nghĩa, loại từ, IPA hay chỉ có danh sách từ?
+- Danh sách thuộc phiên bản nào và nguồn nào?
+
+B. Môi trường sử dụng
+- Chỉ dùng trên laptop Windows hay muốn dùng cả điện thoại?
+- Có cần chạy offline không?
+- Người dùng có chấp nhận dữ liệu chỉ nằm trên trình duyệt/máy hiện tại không?
+
+C. Cách đánh dấu từ đã biết
+- Muốn đánh dấu từng từ thủ công hay làm một màn hình rà soát nhanh?
+- Muốn AI đề xuất từ dễ theo nhóm để người dùng duyệt hay muốn kiểm tra từng
+  từ một?
+- Có muốn lưu riêng các từ “đã biết” để xem lại sau này không?
+
+D. Cách luyện tập
+- Muốn học Anh → Việt, Việt → Anh hay cả hai?
+- Gõ đáp án có yêu cầu đúng dấu tiếng Việt hay cho phép không dấu?
+- Mỗi ngày muốn tự đặt số từ mới hay hệ thống đề xuất?
+
+E. Audio/hình ảnh
+- Có muốn bắt buộc mỗi từ phải có audio/hình ảnh, hay chấp nhận thiếu dữ liệu?
+- Muốn chỉ nghe UK/US hay cần cả hai khi có nguồn?
+
+F. Xử lý xóa
+- Khi chọn “xóa hoàn toàn”, có muốn hộp xác nhận và tùy chọn backup trước
+  không?
+- Có muốn mục “Thùng rác” để khôi phục trước khi xóa vĩnh viễn không?
+  Đây là đề xuất, không phải yêu cầu đã chốt.
+
+G. Công cụ AI
+- Xác nhận người dùng đang nói đến Antigravity + Gemini Flash hay thật sự
+  muốn dùng framework Python Flask.
+- Kiểm tra tên model đang có trong Antigravity thay vì đoán phiên bản.
+
+================================================================================
+19. TIÊU CHÍ NGHIỆM THU MVP
+================================================================================
+
+Một phiên bản đầu tiên được xem là đủ dùng khi đáp ứng được các tiêu chí tối
+thiểu sau:
+
+[ ] Project chạy được trên máy người dùng bằng hướng dẫn rõ ràng.
+[ ] Có màn hình chính và điều hướng dễ hiểu.
+[ ] Có thể nhập hoặc nạp một tập dữ liệu từ vựng.
+[ ] Có thể xem, tìm kiếm và lọc từ.
+[ ] Có thể đánh dấu từ đã biết/chưa biết/chưa chắc.
+[ ] Có thể thêm từ mới.
+[ ] Có thể sửa từ đã có.
+[ ] Có thể loại từ khỏi lịch ôn.
+[ ] Có thể xóa từ, gồm cả lựa chọn xóa vĩnh viễn có xác nhận.
+[ ] Có ít nhất một chế độ học hoạt động ổn định.
+[ ] Tốt hơn là có đủ flashcard, trắc nghiệm và gõ đáp án trong MVP nếu tiến độ
+    cho phép.
+[ ] Có hệ thống hint mở dần đáp án ở chế độ gõ.
+[ ] Có lưu tiến độ sau khi tải lại trang hoặc đóng/mở ứng dụng.
+[ ] Câu trả lời đúng/sai được ghi nhận.
+[ ] Những từ thường sai được ưu tiên ôn lại.
+[ ] Có chức năng xuất/nhập dữ liệu hoặc backup cơ bản.
+[ ] Không mất toàn bộ dữ liệu khi một component gặp lỗi thông thường.
+[ ] Giao diện hoạt động trên kích thước màn hình laptop phổ biến và có bố cục
+    dùng được trên điện thoại.
+
+Không cần có đủ 3.000 từ với mọi trường thông tin đã hoàn thiện ngay tại thời
+điểm nghiệm thu MVP. Có thể sử dụng một tập dữ liệu mẫu để kiểm tra logic rồi
+mới hoàn thiện dữ liệu lớn.
+
+================================================================================
+20. ĐỊNH HƯỚNG DÀI HẠN CHO PHIÊN BẢN DÀNH CHO CHỊ GÁI
+================================================================================
+
+Người dùng nói chị gái đã tốt nghiệp ngành Ngôn ngữ Anh tại Học viện Ngoại giao
+và có thể học cao học hoặc định hướng giảng dạy tiếng Anh. Người dùng có suy nghĩ
+rằng trong tương lai có thể xây dựng một trang học từ vựng riêng cho chị gái,
+có thể sau 4–8 tháng hoặc khoảng một năm.
+
+Đây chỉ là dự định. Không mặc định chị gái sẽ dùng cùng bộ từ 3.000 từ, không
+mặc định nhu cầu dạy học, học thuật hay luyện thi giống người dùng. Khi bắt đầu
+phiên bản đó cần hỏi chị gái về:
+- Mục tiêu học/giảng dạy.
+- Trình độ và nhóm người học.
+- Loại từ vựng cần ưu tiên.
+- Cách tổ chức bài học.
+- Cách theo dõi tiến bộ.
+- Nhu cầu tạo lớp, chia sẻ bộ từ hoặc quản lý học viên.
+
+Nếu nhu cầu thực sự là hỗ trợ nhiều học viên, lúc đó mới cân nhắc backend, tài
+khoản, cơ sở dữ liệu trung tâm, phân quyền và các chức năng quản lý lớp. Không
+nên đưa những thứ này vào ứng dụng cá nhân hiện tại chỉ vì có thể dùng lại sau.
+
+================================================================================
+21. CÁCH AI TIẾP NHẬN TÀI LIỆU NÀY NÊN LÀM VIỆC
+================================================================================
+
+AI tiếp nhận tài liệu hãy tuân theo các nguyên tắc sau:
+
+1. Xem đây là một dự án xây dựng công cụ học từ vựng cá nhân, với trọng tâm là
+   cá nhân hóa danh sách 3.000 từ và luyện tập hiệu quả.
+2. Không hiểu nhầm đây là đồ án ML bắt buộc hoặc dự án website thương mại.
+3. Không tự thêm backend, Flask, MySQL, login hay ML nếu chưa có lý do.
+4. Không tự ý xóa hoặc sửa dữ liệu gốc.
+5. Phải giữ người dùng ở quyền quyết định từ nào được loại bỏ.
+6. Phân biệt “đánh dấu đã biết”, “ẩn khỏi học”, “lưu trữ” và “xóa vĩnh viễn”.
+7. Ưu tiên MVP có thể chạy được trước, rồi mới nâng cấp giao diện và tính năng.
+8. Viết prompt coding agent rõ ràng, theo từng task nhỏ, có tiêu chí nghiệm thu.
+9. Sau mỗi task, hướng dẫn người dùng kiểm tra kết quả thực tế.
+10. Luôn cập nhật bối cảnh project để có thể tiếp tục ở phiên AI khác.
+11. Nếu có thông tin chưa rõ, hỏi từng câu ngắn gọn, không yêu cầu người dùng
+    điền một bảng câu hỏi dài khi chưa cần thiết.
+12. Khi đề xuất công nghệ hoặc dịch vụ có thay đổi theo thời gian, hãy kiểm tra
+    thông tin hiện hành thay vì dựa vào tên phiên bản cũ.
+13. Nói thật về giới hạn: AI có thể viết code nhanh nhưng dữ liệu, quyền sử dụng
+    audio/hình ảnh, lỗi và trải nghiệm phải được kiểm tra.
+14. Ưu tiên tiết kiệm thời gian và tránh làm quá phức tạp.
+15. Giao tiếp bằng tiếng Việt dễ hiểu, thân thiện, có hướng dẫn cụ thể.
+
+================================================================================
+22. PROMPT KHỞI ĐỘNG CÓ THỂ DÁN NGAY CHO AI KHÁC
+================================================================================
+
+Bạn hãy đọc toàn bộ tài liệu ngữ cảnh phía trên trước khi trả lời. Tôi muốn bạn
+đóng vai trò người phân tích yêu cầu, kiến trúc sư phần mềm ở mức vừa đủ và người
+hướng dẫn tôi sử dụng AI coding agent để xây dựng ứng dụng.
+
+Dự án của tôi là một website học từ vựng tiếng Anh cá nhân từ danh sách khoảng
+3.000 từ Oxford. Tôi muốn lọc những từ đã biết, giữ từ chưa biết/chưa chắc, có
+thể thêm từ mới, chỉnh sửa nghĩa/thông tin, bỏ từ khỏi lịch ôn, lưu trữ hoặc xóa
+hoàn toàn. Tôi muốn học bằng flashcard, trắc nghiệm và gõ nghĩa; có hint hé lộ
+đáp án từng bước; đồng thời hệ thống ưu tiên ôn các từ tôi thường quên.
+
+Tôi muốn AI coding agent làm phần lớn công việc lập trình. Tôi có thể dùng
+Antigravity với Gemini Flash (cần xác minh model thực tế mà tài khoản của tôi có),
+và có thể dùng ChatGPT/Codex để lập kế hoạch hoặc review. Hướng công nghệ ban
+đầu là React + Vite + JavaScript + CSS, ưu tiên chạy local và chưa cần backend.
+Đừng tự thêm Python Flask, Node/Express backend, MySQL hoặc Machine Learning
+nếu chưa có yêu cầu thực tế.
+
+Giao diện nên trẻ trung, sáng tạo, sinh động nhưng không rối; có animation nhẹ,
+có thể có nhiều theme và focus mode. Ứng dụng cần lưu tiến độ bền vững, có khả
+năng export/import hoặc backup dữ liệu.
+
+Hãy bắt đầu bằng cách:
+1. Tóm tắt lại cách bạn hiểu dự án trong khoảng 10–15 ý ngắn để tôi xác nhận.
+2. Nêu MVP nhỏ nhất nhưng có giá trị thực tế.
+3. Đề xuất kiến trúc và cấu trúc thư mục đơn giản.
+4. Chia roadmap thành các task nhỏ có thứ tự.
+5. Cho tôi biết file dữ liệu nào cần cung cấp đầu tiên.
+6. Sau khi xác định được bước đầu tiên, hãy viết prompt hoàn chỉnh để tôi đưa
+   cho Antigravity/Gemini coding agent thực hiện.
+
+Không viết code toàn bộ ngay khi chưa xác nhận dữ liệu và phạm vi. Không đặt quá
+nhiều câu hỏi cùng một lúc. Hãy giúp tôi triển khai theo từng bước và kiểm tra
+được kết quả sau mỗi bước.
+
+================================================================================
+23. GHI CHÚ CUỐI CÙNG
+================================================================================
+
+Ý tưởng cốt lõi của người dùng không chỉ là “làm một website để học từ”. Giá trị
+chính là xây dựng được một bộ từ vựng cá nhân đã qua rà soát: loại bỏ những từ
+đã biết, giữ lại những từ cần học, bổ sung từ mới theo nhu cầu và có thể thay
+đổi danh sách bất cứ lúc nào. Sau đó ứng dụng giúp người dùng học những từ đó
+bằng nhiều hình thức và nhắc ôn đúng lúc.
+
+Thứ tự ưu tiên hợp lý:
+
+ƯU TIÊN 1: Dữ liệu từ vựng và công cụ quản lý danh sách.
+ƯU TIÊN 2: Quy trình học cơ bản và lưu tiến độ.
+ƯU TIÊN 3: Lịch ôn lặp lại cách quãng và ưu tiên từ khó.
+ƯU TIÊN 4: Giao diện đẹp, theme, animation và focus mode.
+ƯU TIÊN 5: Audio, hình minh họa và bổ sung dữ liệu phong phú.
+ƯU TIÊN 6: Đồng bộ, backend hoặc ML nếu sau này thực sự cần.
+
+Hãy giữ sản phẩm vừa sức, dễ dùng và dễ sửa. Mục tiêu không phải tạo ra một
+project có nhiều công nghệ nhất, mà là tạo ra một công cụ khiến người dùng thực
+sự muốn học và có thể duy trì việc ôn tập lâu dài.
+
+================================================================================
+HẾT TÀI LIỆU
+================================================================================

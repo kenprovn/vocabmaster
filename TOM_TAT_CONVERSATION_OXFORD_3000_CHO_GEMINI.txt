@@ -1,0 +1,122 @@
+TÀI LIỆU BÀN GIAO CHO GEMINI
+DỰ ÁN WEBSITE ÔN TỪ VỰNG OXFORD 3000
+Cập nhật: 31/10/2026
+
+============================================================
+1. BỐI CẢNH VÀ MỤC TIÊU
+============================================================
+Người dùng muốn xây dựng website cá nhân để ôn lại từ vựng tiếng Anh Oxford 3000.
+
+Điểm quan trọng nhất: Người dùng ĐÃ TỪNG HỌC THUỘC cả danh sách Oxford 3000, nhưng lần cuối học cách đây khoảng 1–2 năm; sau thời gian không ôn, nhiều từ đã quên hoặc chỉ nhớ mang máng. Đây là dự án KHÔI PHỤC TRÍ NHỚ TỪ CŨ, KHÔNG PHẢI học 3.000 từ từ con số 0.
+
+Mục tiêu: giảm thời gian dành cho từ quá dễ/đã biết chắc, tập trung vào từ còn mơ hồ hoặc đã quên; việc tự lọc theo vòng chỉ mang tính ban đầu, tuyệt đối không coi các vòng như xếp loại chắc chắn theo năng lực thực tế.
+
+Nguồn ban đầu: file người dùng cung cấp tên "Oxford 3000.txt", có 2.978 mục từ (mỗi dòng một mục); đây là bản văn bản được sử dụng trong cuộc trò chuyện, không mặc định đồng nhất tuyệt đối với tất cả các phiên bản Oxford 3000 chính thức.
+
+============================================================
+2. DIỄN TIẾN CUỘC TRAO ĐỔI
+============================================================
+- Người dùng tìm file Oxford 3000 để tải, ưu tiên dạng TXT để phát triển website.
+- Người dùng cung cấp "Oxford 3000.txt" và yêu cầu lọc các từ siêu dễ không cần ưu tiên học: ví dụ hello, hi, name, what, table.
+- Đã tạo lần lượt 4 file "đề xuất loại/ít ưu tiên" và file vòng 5 gồm toàn bộ từ còn lại.
+- Sau khi bàn về việc đã từng thuộc toàn bộ danh sách nhưng bỏ ôn 1–2 năm, hai bên thống nhất định hướng: ban đầu đưa vòng 3–5 vào website; vòng 1–2 tự kiểm tra, từ nào quên thì bổ sung vào website.
+- Người dùng muốn một tài liệu TXT mô tả lại đầy đủ bối cảnh/quyết định để Gemini nắm được khi tiếp tục phát triển website.
+
+============================================================
+3. NĂM FILE VÀ SỐ LƯỢNG ĐÃ KIỂM TRA
+============================================================
+Danh sách gốc: Oxford 3000.txt — 2.978 từ.
+
+Vòng 1: Oxford_3000_de_xuat_loai_tu_sieu_co_ban.txt — 516 từ.
+  Nhóm rất cơ bản, ví dụ: hello, hi, name, what, table, apple, dog, cat.
+  Định hướng: không nhập vào web ở giai đoạn đầu; tự kiểm tra nhanh.
+
+Vòng 2: Oxford_3000_de_xuat_loai_tu_de_vong_2.txt — 754 từ.
+  Nhóm từ dễ, quen thuộc, ví dụ: airport, biscuit, borrow, carpet, delicious, dentist, favourite, ghost, habit, lazy, meeting, noisy, passport, repair, thirsty, umbrella.
+  Định hướng: tự kiểm tra; từ nào quên thì chuyển vào web.
+
+Vòng 3: Oxford_3000_de_xuat_loai_tu_de_vong_3.txt — 748 từ.
+  Nhóm dễ đến trung bình, ví dụ: ability, accept, advice, benefit, brilliant, compare, decision, education, experience, improve, knowledge, necessary, probably, remember, successful.
+  Định hướng: nhập web để kiểm tra/ôn, nhưng từ nhớ chắc có thể ẩn khỏi lịch ôn thường xuyên.
+
+Vòng 4: Oxford_3000_de_xuat_loai_tu_de_vong_4.txt — 282 từ.
+  Nhóm trung bình và từ cần rà soát kỹ hơn, ví dụ: against, anniversary, architecture, bacteria, celebrity, confidence, domestic, infection, laboratory, muscle, pregnant, satellite, wildlife.
+  Định hướng: nhập web, ôn theo mức độ nhớ.
+
+Vòng 5: Oxford_3000_vong_5_678_tu_con_lai.txt — 678 từ.
+  Toàn bộ mục từ còn lại chưa thuộc vòng 1–4, ví dụ: abandon, academic, accommodation, acknowledge, acquire, ambition, analyse, approach.
+  Định hướng: nhập web; được ưu tiên kiểm tra trước, không khẳng định mọi từ vòng 5 đều khó.
+
+Tổng: 516 + 754 + 748 + 282 + 678 = 2.978.
+
+ĐÃ KIỂM CHỨNG TRỰC TIẾP TRÊN CÁC FILE TRONG CUỘC TRÒ CHUYỆN:
+- Cả 5 file đều có đúng số dòng không trống như liệt kê trên.
+- Không trùng mục từ giữa 5 file; tổng hợp thành đúng 2.978 mục từ duy nhất.
+- Hợp của 5 file trùng khít tập hợp mục từ của file Oxford 3000.txt: không thiếu, không thừa.
+
+LƯU Ý: Các file là danh sách từ vựng dạng TXT, KHÔNG phải dữ liệu đã bổ sung nghĩa tiếng Việt, IPA, loại từ hoặc ví dụ. Chưa có bằng chứng rằng website đã được xây dựng/hoàn chỉnh từ các file này.
+
+============================================================
+4. CHIẾN LƯỢC WEBSITE ĐƯỢC ĐỀ XUẤT
+============================================================
+Giai đoạn đầu:
+- Đưa vòng 3 + 4 + 5 vào website: 748 + 282 + 678 = 1.708 từ (khoảng 57,4%).
+- Vòng 1 + 2 (516 + 754 = 1.270 từ, khoảng 42,6%): giữ ngoài lịch ôn web ban đầu, tự kiểm tra nhanh; có thể nhập các từ bị quên vào website sau.
+- Không xóa vĩnh viễn các từ khỏi dữ liệu gốc. Lưu nguồn và vòng của từng từ để có thể phục hồi/đưa vào lịch ôn bất kỳ lúc nào.
+- 5 vòng chỉ là nhãn lọc ban đầu DO AI ƯỚC LƯỢNG, không phải các cấp độ CEFR chính thức, cũng không phản ánh chính xác từng từ người dùng biết hay không.
+- Người dùng từng thuộc toàn bộ; một từ vòng 5 có thể nhớ ngay, một từ vòng 2 có thể đã quên.
+
+Khi kiểm tra từ, ưu tiên thao tác hồi tưởng CHỦ ĐỘNG:
+1) Hiện từ tiếng Anh (chưa hiện đáp án).
+2) Người dùng tự nhớ nghĩa rồi mới lật xem đáp án.
+3) Người dùng đánh giá một trong ba trạng thái:
+   a. "Nhớ ngay" / Đã biết chắc: ẩn khỏi lịch ôn thường xuyên, có thể kiểm tra lại sau khoảng 30 ngày.
+   b. "Nhớ mang máng": đưa vào lịch ôn cách quãng (gợi ý: ngày sau, sau 3 ngày, sau 7 ngày nếu nhớ đúng).
+   c. "Quên hoàn toàn": ưu tiên học lại hôm nay, kiểm tra vào ngày sau, tăng dần khoảng cách khi nhớ chắc.
+
+Không nên gán trạng thái "đã biết" chỉ vì thấy quen mắt; phải tự nhớ nghĩa trước khi lật đáp án.
+
+Ví dụ từ đa nghĩa/cách dùng cần thận trọng: benefit, approach, conduct, against, despite, although, present, issue, matter, get, make, take, right. Biết nghĩa phổ biến nhất không đồng nghĩa đã thành thạo toàn bộ.
+
+============================================================
+5. KẾ HOẠCH KHÔI PHỤC TỪ VỰNG 30 NGÀY ĐÃ THẢO LUẬN
+============================================================
+Ngày 1–5: kiểm tra vòng 5, khoảng 135–140 từ/ngày; từ quên hoặc không chắc đưa vào lịch ôn.
+Ngày 6–8: kiểm tra vòng 4, khoảng 90–100 từ/ngày; đồng thời ôn lại từ quên vòng 5.
+Ngày 9–18: kiểm tra vòng 3, khoảng 75 từ/ngày; tiếp tục ôn các từ khó của vòng 4 và 5.
+Ngày 19–25: tự rà soát vòng 1 + 2, khoảng 180–185 từ/ngày; chỉ chuyển những từ không nhớ sang web.
+Ngày 26–30: củng cố, không thêm từ mới, tập trung ôn những từ hay quên hoặc trả lời sai.
+
+Lịch này là GỢI Ý, không phải mục tiêu bắt buộc. Ước tính 45–60 phút/ngày nếu đa số từ còn nhớ lại nhanh. Nếu phát hiện tỷ lệ quên cao, giảm số từ kiểm tra mới để ưu tiên ôn đúng nhịp.
+
+============================================================
+6. QUY TẮC THIẾT KẾ DỮ LIỆU CHO GEMINI
+============================================================
+Nếu Gemini tiếp tục xây website, nên:
+- Dùng chính xác 5 file TXT làm các nhóm nhập liệu (nếu người dùng gửi chúng cho Gemini).
+- Giữ một định danh ổn định cho mỗi từ, chữ gốc, vòng nguồn và trạng thái ôn riêng biệt.
+- Không nhập trùng từ khi di chuyển một từ từ vòng 1/2 vào nhóm ôn web.
+- Phân biệt rõ: "vòng" = độ ưu tiên ban đầu; "mức nhớ" = đánh giá thực tế của người học; "ngày ôn kế tiếp" = kết quả thuật toán ôn.
+- Cho phép đổi mức nhớ, hoàn tác hành động, tìm kiếm từ, chuyển từ vào/ra lịch ôn mà không xóa khỏi dữ liệu gốc.
+- Nên lưu tiến độ để mở lại trình duyệt không mất kết quả; cân nhắc chức năng sao lưu/xuất/nhập tiến độ.
+- Nếu phát triển JSON, có thể dùng các trường như id, word, sourceRound, status, repetition, nextReviewDate, lastReviewedAt, v.v.; đây là gợi ý thiết kế, chưa phải schema cuối cùng được người dùng duyệt.
+- Chỉ bổ sung nghĩa Việt, IPA Anh–Anh, từ loại và ví dụ khi có nguồn đáng tin, tránh tự suy đoán dữ liệu từ danh sách TXT chỉ có từ tiếng Anh.
+- Nếu người dùng dùng từ vựng cho IELTS Reading, nên cân nhắc về sau thêm nghĩa khác, collocations và ngữ cảnh; không bắt buộc trong bản MVP.
+
+============================================================
+7. ĐIỀU KHÔNG NÊN HIỂU SAI
+============================================================
+- KHÔNG coi vòng 1–4 là danh sách cần xóa vĩnh viễn. Các file được tạo để người dùng kiểm tra và quyết định mức ưu tiên.
+- KHÔNG chỉ học 678 từ vòng 5; chiến lược được điều chỉnh là đưa 1.708 từ vòng 3–5 vào web để kiểm tra rồi mới loại khỏi lịch ôn những từ đã nhớ chắc.
+- KHÔNG đánh đồng số từ ban đầu được nhập web (1.708) với số từ thực sự cần ôn lâu dài; con số thật chỉ xác định sau khi kiểm tra mức nhớ.
+- KHÔNG bắt người dùng ôn tuần tự toàn bộ mỗi vòng nếu đã nhớ.
+- KHÔNG coi 5 vòng là thứ hạng Oxford chính thức. Đây chỉ là bộ lọc mang tính chủ quan phục vụ dự án cá nhân.
+
+============================================================
+8. CHỈ DẪN CHO GEMINI KHI TIẾP NHẬN
+============================================================
+Bạn (Gemini) hãy coi tài liệu này là bản bàn giao bối cảnh và quyết định sản phẩm. Hãy nắm rõ mục tiêu: một website khôi phục vốn từ Oxford 3000 đã học nhưng quên sau 1–2 năm, ưu tiên tiết kiệm thời gian và ôn cách quãng dựa vào mức nhớ thực tế.
+
+Trước khi viết hoặc chỉnh code, nếu người dùng chưa cung cấp 5 file TXT thì yêu cầu gửi các file đó (bản bàn giao này mô tả tên và số lượng nhưng không chứa đủ danh sách từ). Nếu nhận đủ 5 file, kiểm tra số lượng, không trùng và khớp với danh sách gốc khi có. Không tự giả định các tính năng, framework hay cấu trúc web hiện tại đã tồn tại. Nếu được giao tạo web thì bắt đầu từ chức năng kiểm tra từ, lật nghĩa, đánh dấu mức nhớ, lập lịch ôn, lưu tiến độ và nhập 5 nhóm.
+
+HẾT TÀI LIỆU.
