@@ -213,72 +213,76 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
       {/* 3D Flashcard Container (Hỗ trợ cảm ứng vuốt Trái/Phải để đổi từ, vuốt Lên/Xuống để lật thẻ) */}
       <div 
         key={currentWord.id}
-        className="flashcard-scene card-animate-swap"
-        onClick={handleCardClick}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        title="Nhấp vào thẻ hoặc vuốt Lên/Xuống để lật • Vuốt Trái/Phải để đổi từ"
+        className="flashcard-wrapper card-animate-swap"
       >
-        <div className={`flashcard ${isFlipped ? 'flipped' : ''}`}>
-          {/* Front Face: English */}
-          <div className="flashcard-face flashcard-front">
-            <div className="card-top">
-              <span className={`badge badge-${currentWord.type || 'verb'}`}>
-                {currentWord.type}
-              </span>
-              <button 
-                className="sound-btn" 
-                onClick={handleSpeak}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                title="Nghe phát âm (Phím R)"
-              >
-                <Volume2 size={18} />
-              </button>
+        <div 
+          className="flashcard-scene"
+          onClick={handleCardClick}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          title="Nhấp vào thẻ hoặc vuốt Lên/Xuống để lật • Vuốt Trái/Phải để đổi từ"
+        >
+          <div className={`flashcard ${isFlipped ? 'flipped' : ''}`}>
+            {/* Front Face: English */}
+            <div className="flashcard-face flashcard-front">
+              <div className="card-top">
+                <span className={`badge badge-${currentWord.type || 'verb'}`}>
+                  {currentWord.type}
+                </span>
+                <button 
+                  className="sound-btn" 
+                  onClick={handleSpeak}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()}
+                  title="Nghe phát âm (Phím R)"
+                >
+                  <Volume2 size={18} />
+                </button>
+              </div>
+
+              <div className="card-center">
+                <div className="card-word">{currentWord.word}</div>
+                <span className="badge badge-status">
+                  Trạng thái: {currentWord.status}
+                </span>
+              </div>
+
+              <div className="card-bottom">
+                <RotateCw size={14} />
+                <span>Chạm hoặc nhấp để lật xem nghĩa (Space / W / S / ↑ / ↓)</span>
+              </div>
             </div>
 
-            <div className="card-center">
-              <div className="card-word">{currentWord.word}</div>
-              <span className="badge badge-status">
-                Trạng thái: {currentWord.status}
-              </span>
-            </div>
+            {/* Back Face: Vietnamese Meaning */}
+            <div className="flashcard-face flashcard-back">
+              <div className="card-top">
+                <span className={`badge badge-${currentWord.type || 'verb'}`}>
+                  {currentWord.type}
+                </span>
+                <button 
+                  className="sound-btn" 
+                  onClick={handleSpeak}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()}
+                  title="Nghe phát âm (Phím R)"
+                >
+                  <Volume2 size={18} />
+                </button>
+              </div>
 
-            <div className="card-bottom">
-              <RotateCw size={14} />
-              <span>Chạm hoặc nhấp để lật xem nghĩa (Space / W / S / ↑ / ↓)</span>
-            </div>
-          </div>
+              <div className="card-center">
+                <div className="card-original-word">{currentWord.word}</div>
+                <div className="card-meaning">{currentWord.meaning}</div>
+                <span className={`badge badge-${currentWord.type || 'verb'}`}>
+                  Từ loại: {currentWord.type}
+                </span>
+              </div>
 
-          {/* Back Face: Vietnamese Meaning */}
-          <div className="flashcard-face flashcard-back">
-            <div className="card-top">
-              <span className={`badge badge-${currentWord.type || 'verb'}`}>
-                {currentWord.type}
-              </span>
-              <button 
-                className="sound-btn" 
-                onClick={handleSpeak}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                title="Nghe phát âm (Phím R)"
-              >
-                <Volume2 size={18} />
-              </button>
-            </div>
-
-            <div className="card-center">
-              <div className="card-original-word">{currentWord.word}</div>
-              <div className="card-meaning">{currentWord.meaning}</div>
-              <span className={`badge badge-${currentWord.type || 'verb'}`}>
-                Từ loại: {currentWord.type}
-              </span>
-            </div>
-
-            <div className="card-bottom">
-              <RotateCw size={14} />
-              <span>Nhấp để quay lại từ tiếng Anh</span>
+              <div className="card-bottom">
+                <RotateCw size={14} />
+                <span>Nhấp để quay lại từ tiếng Anh</span>
+              </div>
             </div>
           </div>
         </div>

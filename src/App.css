@@ -236,24 +236,39 @@
 /* ===================================================
    MODE 1: FLASHCARD
    =================================================== */
-.flashcard-scene {
-  perspective: 1200px;
+.flashcard-wrapper {
   width: 100%;
   max-width: 580px;
-  min-height: 360px;
   margin: 0 auto 28px;
+}
+
+.flashcard-scene {
+  perspective: 1200px;
+  -webkit-perspective: 1200px;
+  width: 100%;
+  min-height: 360px;
+  position: relative;
   cursor: pointer;
   touch-action: none; /* Ngăn cuộn trang để vuốt mượt mà cả trục X và Y */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  border-radius: var(--radius-xl);
+  background: transparent;
 }
 
 .flashcard {
   width: 100%;
+  height: 100%;
   min-height: 360px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   border-radius: var(--radius-xl);
   touch-action: none; /* Ngăn cuộn trang khi vuốt trên thẻ */
+  -webkit-tap-highlight-color: transparent;
+  background: transparent;
 }
 
 .flashcard.flipped {
@@ -262,11 +277,16 @@
 
 .flashcard-face {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: var(--radius-xl);
+  overflow: hidden; /* Cực kỳ quan trọng: Giữ bo góc nguyên vẹn, ngăn các mảng nền vuông/chữ nhật lộ ra khi 3D xoay */
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Khắc phục triệt để lỗi border-radius trên Chrome Android WebKit khi 3D transform */
+  isolation: isolate;
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
@@ -276,6 +296,9 @@
   border: 1px solid var(--border-color);
   box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(99, 102, 241, 0.1);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .flashcard-face:hover {
@@ -285,11 +308,14 @@
 
 .flashcard-front {
   background: linear-gradient(145deg, rgba(30, 41, 69, 0.9) 0%, rgba(17, 24, 39, 0.95) 100%);
+  transform: rotateY(0deg) translateZ(1px);
+  -webkit-transform: rotateY(0deg) translateZ(1px);
 }
 
 .flashcard-back {
   background: linear-gradient(145deg, rgba(35, 30, 69, 0.9) 0%, rgba(19, 17, 39, 0.95) 100%);
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(1px);
+  -webkit-transform: rotateY(180deg) translateZ(1px);
   border-color: rgba(168, 85, 247, 0.3);
 }
 
@@ -310,6 +336,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sound-btn:hover {
@@ -1255,7 +1282,7 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: none;
   }
 }
 
@@ -1473,9 +1500,14 @@
   }
 
   /* 4. FLASHCARD MODE */
+  .flashcard-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
   .flashcard-scene {
     min-height: 280px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     width: 100%;
     touch-action: none;
   }
