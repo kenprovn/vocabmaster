@@ -20,14 +20,18 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
   const generateOptions = useCallback((currentWord, allWords) => {
     if (!currentWord || !allWords || allWords.length === 0) return [];
 
-    const correctAnswer = currentWord.meaning;
+    const isImageMode = !currentWord.meaning && (currentWord.image || currentWord.imageUrl);
+    const correctAnswer = isImageMode ? currentWord.word : currentWord.meaning;
     
-    // Filter distractors that have different meaning
-    const otherWords = allWords.filter(w => w.id !== currentWord.id && w.meaning !== correctAnswer);
+    // Filter distractors that have different text
+    const otherWords = allWords.filter(w => {
+      const val = isImageMode ? w.word : w.meaning;
+      return w.id !== currentWord.id && val !== correctAnswer;
+    });
     
     // Shuffle distractors and pick 3
     const shuffledOthers = [...otherWords].sort(() => Math.random() - 0.5);
-    const chosenDistractors = shuffledOthers.slice(0, 3).map(w => w.meaning);
+    const chosenDistractors = shuffledOthers.slice(0, 3).map(w => isImageMode ? w.word : w.meaning);
 
     // Combine and shuffle
     const combined = [
@@ -140,11 +144,8 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
     }
   };
 
-  if (!words || words.length === 0) {
-    return <div>Không có từ vựng nào!</div>;
-  }
-
-  const currentWord = words[currentIndex] || words[0];
+  const currentWord = (words && words.length > 0) ? (words[currentIndex] || words[0]) : null;
+  const isImageMode = Boolean(currentWord && !currentWord.meaning && (currentWord.image || currentWord.imageUrl));
 
   const handleSpeak = useCallback(() => {
     if (currentWord && currentWord.word) {
@@ -199,6 +200,10 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isAnswered, handleSelectOption, handleNextWord, handlePrevWord, handleSpeak]);
+
+  if (!words || words.length === 0 || !currentWord) {
+    return <div>Không có từ vựng nào!</div>;
+  }
 
   const progressPercent = Math.round(((currentIndex + 1) / words.length) * 100);
 
@@ -259,29 +264,63 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
       >
         {/* Word Prompt */}
         <div className="quiz-prompt">
-          <div className="quiz-badge-row">
+          <div className={`quiz-badge-row ${isImageMode ? 'has-sound' : ''}`}>
             <span className={`badge badge-${currentWord.type || 'verb'}`}>
-              {currentWord.type}
+              {currentWord.type || (isImageMode ? 'TOEIC' : 'verb')}
             </span>
+
+            {/* Nút loa phát âm cho TOEIC (đọc từ tiếng Anh của ảnh mà không lộ text đáp án) */}
+            {isImageMode && (
+              <button 
+                type="button"
+                className="sound-btn" 
+                onClick={(e) => {
+                  if (e && e.stopPropagation) e.stopPropagation();
+                  handleSpeak();
+                }}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
+                title="Nghe phát âm (Phím R)"
+                aria-label="Nghe phát âm tiếng Anh"
+              >
+                <Volume2 size={18} />
+              </button>
+            )}
           </div>
 
-          <div className="quiz-word">
-            {currentWord.word}
-            <button 
-              className="sound-btn" 
-              onClick={(e) => {
-                if (e && e.stopPropagation) e.stopPropagation();
-                handleSpeak();
-              }}
-              onTouchStart={(e) => e.stopPropagation()}
-              onTouchEnd={(e) => e.stopPropagation()}
-              title="Nghe phát âm (Phím R)"
-            >
-              <Volume2 size={20} />
-            </button>
-          </div>
+          {isImageMode ? (
+            <div className="quiz-image-prompt">
+              <img 
+                src={currentWord.image || currentWord.imageUrl} 
+                alt="TOEIC prompt" 
+                className="quiz-prompt-img"
+              />
+            </div>
+          ) : (
+            <div className="quiz-word">
+              {currentWord.word}
+              <button 
+                type="button"
+                className="sound-btn" 
+                onClick={(e) => {
+                  if (e && e.stopPropagation) e.stopPropagation();
+                  handleSpeak();
+                }}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
+                title="Nghe phát âm (Phím R)"
+                aria-label="Nghe phát âm tiếng Anh"
+              >
+                <Volume2 size={20} />
+              </button>
+            </div>
+          )}
 
-          <p className="quiz-hint-text">Nghĩa tiếng Việt của từ này là gì?</p>
+          <p className="quiz-hint-text">
+            {isImageMode 
+              ? 'Từ tiếng Anh nào tương ứng với hình ảnh minh họa trên?' 
+              : 'Nghĩa tiếng Việt của từ này là gì?'}
+          </p>
         </div>
 
         {/* 4 Choices Grid */}

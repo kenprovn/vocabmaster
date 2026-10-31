@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Volume2, RotateCw, ArrowRight, ArrowLeft, Shuffle, Maximize2 } from 'lucide-react';
+import { Volume2, RotateCw, ArrowRight, ArrowLeft, Shuffle, Maximize2, ImageOff } from 'lucide-react';
 import { speakWord } from '../utils/speech';
+import { isImageLoaded, isImageError, updatePreloadQueue } from '../utils/imagePreloader';
 import JumpToWord from './JumpToWord';
 
 export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   const [wordList, setWordList] = useState(words);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   // Ref theo dõi tọa độ cảm ứng để nhận diện thao tác vuốt (Swipe)
   const touchStartXRef = useRef(null);
@@ -19,6 +22,52 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     setCurrentIndex(0);
     setIsFlipped(false);
   }, [words]);
+
+  // Reset image loading khi chuyển từ (tận dụng cache nếu đã nạp trước thành công)
+  const currentWord = wordList[currentIndex] || wordList[0];
+  const cardImage = currentWord ? (currentWord.image || currentWord.imageUrl) : null;
+
+  useEffect(() => {
+    if (cardImage) {
+      if (isImageLoaded(cardImage)) {
+        setImageLoading(false);
+        setImageError(false);
+      } else if (isImageError(cardImage)) {
+        setImageLoading(false);
+        setImageError(true);
+      } else {
+        setImageLoading(true);
+        setImageError(false);
+      }
+    }
+  }, [currentWord?.id, cardImage]);
+
+  // Preload thông minh: cố định 20 ảnh tiếp theo và 5 ảnh trước đó qua hàng đợi tối đa 4 concurrent
+  useEffect(() => {
+    if (!wordList || wordList.length === 0) return;
+
+    // Lấy 20 ảnh tiếp theo theo thứ tự hiển thị thực tế
+    const upcomingUrls = [];
+    const count = Math.min(20, wordList.length - 1);
+    for (let i = 1; i <= count; i++) {
+      const idx = (currentIndex + i) % wordList.length;
+      const w = wordList[idx];
+      const url = w?.image || w?.imageUrl;
+      if (url) upcomingUrls.push(url);
+    }
+
+    // Lấy 5 ảnh trước đó để lướt quay lại không phải tải lại
+    const previousUrls = [];
+    const prevCount = Math.min(5, wordList.length - 1);
+    for (let i = 1; i <= prevCount; i++) {
+      const idx = (currentIndex - i + wordList.length) % wordList.length;
+      const w = wordList[idx];
+      const url = w?.image || w?.imageUrl;
+      if (url) previousUrls.push(url);
+    }
+
+    updatePreloadQueue(cardImage, upcomingUrls, previousUrls);
+  }, [currentIndex, wordList, cardImage]);
 
   const handleFlip = useCallback(() => {
     setIsFlipped(prev => !prev);
@@ -117,12 +166,6 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     setCurrentIndex(0);
   }, [wordList]);
 
-  if (!wordList || wordList.length === 0) {
-    return <div className="text-center py-8">Không có từ vựng nào!</div>;
-  }
-
-  const currentWord = wordList[currentIndex] || wordList[0];
-
   // Phát âm từ vựng (gọi trực tiếp speakWord trong user gesture)
   const handleSpeak = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
@@ -170,6 +213,10 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [handleNext, handlePrev, handleFlip, handleShuffle, handleSpeak]);
 
+  if (!wordList || wordList.length === 0) {
+    return <div className="text-center py-8">Không có từ vựng nào!</div>;
+  }
+
   const progressPercent = Math.round(((currentIndex + 1) / wordList.length) * 100);
 
   return (
@@ -213,10 +260,10 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
       {/* 3D Flashcard Container (Hỗ trợ cảm ứng vuốt Trái/Phải để đổi từ, vuốt Lên/Xuống để lật thẻ) */}
       <div 
         key={currentWord.id}
-        className="flashcard-wrapper card-animate-swap"
+        className={`flashcard-wrapper card-animate-swap ${cardImage ? 'has-card-image' : ''}`}
       >
         <div 
-          className="flashcard-scene"
+          className={`flashcard-scene ${cardImage ? 'has-card-image' : ''}`}
           onClick={handleCardClick}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -254,12 +301,20 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
               </div>
             </div>
 
-            {/* Back Face: Vietnamese Meaning */}
-            <div className="flashcard-face flashcard-back">
-              <div className="card-top">
-                <span className={`badge badge-${currentWord.type || 'verb'}`}>
-                  {currentWord.type}
+            {/* Back Face: Vietnamese Meaning / Image */}
+            <div className={`flashcard-face flashcard-back ${cardImage ? 'has-image-content' : ''}`}>
+              <div className={`card-top ${cardImage ? 'card-top-toeic' : ''}`}>
+                <span className={`badge badge-${currentWord.type || 'verb'} ${cardImage ? 'badge-toeic-tag' : ''}`}>
+                  {currentWord.type || (cardImage ? 'TOEIC' : 'vocab')}
                 </span>
+
+                {/* Từ tiếng Anh được di chuyển lên hàng trên cùng (chính giữa) khi là thẻ TOEIC */}
+                {cardImage && (
+                  <div className="card-top-word" title={currentWord.word}>
+                    {currentWord.word}
+                  </div>
+                )}
+
                 <button 
                   className="sound-btn" 
                   onClick={handleSpeak}
@@ -271,15 +326,58 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
                 </button>
               </div>
 
-              <div className="card-center">
-                <div className="card-original-word">{currentWord.word}</div>
-                <div className="card-meaning">{currentWord.meaning}</div>
-                <span className={`badge badge-${currentWord.type || 'verb'}`}>
-                  Từ loại: {currentWord.type}
-                </span>
+              <div className={`card-center ${cardImage ? 'card-center-image' : ''}`}>
+                {/* Chỉ hiển thị word ở giữa nếu không có ảnh (Oxford 3000) */}
+                {!cardImage && (
+                  <div className="card-original-word">{currentWord.word}</div>
+                )}
+                
+                {/* Hiển thị ảnh minh họa nếu có (TOEIC) */}
+                {cardImage ? (
+                  <div className="flashcard-image-wrapper">
+                    {imageLoading && !imageError && (
+                      <div className="flashcard-image-skeleton">
+                        <span className="skeleton-pulse">Đang tải hình ảnh...</span>
+                      </div>
+                    )}
+                    {imageError ? (
+                      <div className="flashcard-image-error">
+                        <ImageOff size={28} />
+                        <span>Không thể tải ảnh minh họa</span>
+                      </div>
+                    ) : (
+                      <img 
+                        src={cardImage} 
+                        alt={currentWord.word} 
+                        className={`flashcard-image ${imageLoading ? 'image-hidden' : 'image-loaded'}`}
+                        onLoad={() => {
+                          setImageLoading(false);
+                          setImageError(false);
+                        }}
+                        onError={() => {
+                          setImageLoading(false);
+                          setImageError(true);
+                        }}
+                        loading="eager"
+                        fetchPriority="high"
+                      />
+                    )}
+                  </div>
+                ) : null}
+
+                {/* Hiển thị nghĩa text nếu có (Oxford 3000) */}
+                {currentWord.meaning ? (
+                  <div className="card-meaning">{currentWord.meaning}</div>
+                ) : null}
+
+                {currentWord.type && !cardImage && (
+                  <span className={`badge badge-${currentWord.type}`}>
+                    Từ loại: {currentWord.type}
+                  </span>
+                )}
               </div>
 
-              <div className="card-bottom">
+              <div className={`card-bottom ${cardImage ? 'card-bottom-toeic' : ''}`}>
                 <RotateCw size={14} />
                 <span>Nhấp để quay lại từ tiếng Anh</span>
               </div>

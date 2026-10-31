@@ -12,12 +12,16 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
   const [streak, setStreak] = useState(0);
   const inputRef = useRef(null);
 
-  if (!words || words.length === 0) {
-    return <div>Không có từ vựng nào!</div>;
-  }
+  const currentWord = (words && words.length > 0) ? (words[currentIndex] || words[0]) : null;
+  const isImageTyping = !currentWord?.meaning && !!(currentWord?.image || currentWord?.imageUrl);
+  const targetMeaning = isImageTyping ? (currentWord?.word || '') : (currentWord ? currentWord.meaning : '');
 
-  const currentWord = words[currentIndex] || words[0];
-  const targetMeaning = currentWord ? currentWord.meaning : '';
+  const handleSpeak = useCallback((e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    if (currentWord && currentWord.word) {
+      speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
+    }
+  }, [currentWord]);
 
   // Reset index when words changes (e.g. Unit switched)
   useEffect(() => {
@@ -93,11 +97,18 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
         handleNext();
         return;
       }
+
+      // Phím R: phát âm khi không focus trong ô nhập liệu (tránh xung đột khi người dùng gõ chữ r)
+      if (!isInputFocused && (e.key === 'r' || e.key === 'R')) {
+        e.preventDefault();
+        handleSpeak();
+        return;
+      }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [handleHint, handlePrev, handleNext]);
+  }, [handleHint, handlePrev, handleNext, handleSpeak]);
 
   // Check answer correctness
   const checkAnswer = () => {
@@ -138,6 +149,10 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
       checkAnswer();
     }
   };
+
+  if (!words || words.length === 0 || !currentWord) {
+    return <div>Không có từ vựng nào!</div>;
+  }
 
   const progressPercent = Math.round(((currentIndex + 1) / words.length) * 100);
 
@@ -183,32 +198,59 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
       <div key={currentWord.id} className="glass-panel typing-card card-animate-swap">
         {/* Word Prompt */}
         <div className="typing-prompt">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginBottom: '12px' }}>
-            <span className={`badge badge-${currentWord.type || 'verb'}`}>
-              {currentWord.type}
-            </span>
-            <span className="badge badge-status">
-              {currentWord.status}
-            </span>
+          <div className={`typing-badge-row ${isImageTyping ? 'has-sound' : ''}`}>
+            <div className="typing-badge-group">
+              <span className={`badge badge-${currentWord.type || 'verb'}`}>
+                {currentWord.type || (isImageTyping ? 'TOEIC' : 'verb')}
+              </span>
+              <span className="badge badge-status">
+                {currentWord.status}
+              </span>
+            </div>
+
+            {/* Nút loa phát âm cho TOEIC (đọc từ tiếng Anh của ảnh mà không lộ text đáp án) */}
+            {isImageTyping && (
+              <button 
+                type="button"
+                className="sound-btn" 
+                onClick={handleSpeak}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
+                title="Nghe phát âm (Phím R khi không gõ)"
+                aria-label="Nghe phát âm tiếng Anh"
+              >
+                <Volume2 size={18} />
+              </button>
+            )}
           </div>
 
-          <div className="typing-word">
-            {currentWord.word}
-            <button 
-              className="sound-btn" 
-              onClick={(e) => {
-                if (e && e.stopPropagation) e.stopPropagation();
-                if (currentWord) speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
-              }}
-              onTouchStart={(e) => e.stopPropagation()}
-              onTouchEnd={(e) => e.stopPropagation()}
-              title="Nghe phát âm"
-            >
-              <Volume2 size={20} />
-            </button>
-          </div>
-          <p style={{ color: 'var(--text-muted)', marginTop: '6px' }}>
-            Gõ nghĩa tiếng Việt tương ứng:
+          {isImageTyping ? (
+            <div className="typing-image-prompt">
+              <img 
+                src={currentWord.image || currentWord.imageUrl} 
+                alt="Typing prompt" 
+                className="typing-prompt-img"
+              />
+            </div>
+          ) : (
+            <div className="typing-word">
+              {currentWord.word}
+              <button 
+                type="button"
+                className="sound-btn" 
+                onClick={handleSpeak}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
+                title="Nghe phát âm"
+                aria-label="Nghe phát âm tiếng Anh"
+              >
+                <Volume2 size={20} />
+              </button>
+            </div>
+          )}
+
+          <p style={{ color: 'var(--text-muted)', marginTop: '8px' }}>
+            {isImageTyping ? 'Nhìn hình ảnh và gõ từ tiếng Anh tương ứng:' : 'Gõ nghĩa tiếng Việt tương ứng:'}
           </p>
         </div>
 

@@ -9,6 +9,7 @@ export default function WordListMode({
   onSelectUnit,
   unitCounts,
   onResetDefault,
+  resetButtonLabel = '3000 từ gốc',
   onAddWord, 
   onUpdateWord, 
   onDeleteWord, 
@@ -251,9 +252,9 @@ export default function WordListMode({
             <button 
               className="btn-backup btn-reset" 
               onClick={onResetDefault}
-              title="Khôi phục lại trọn bộ 2978 từ vựng gốc (5 Vòng)"
+              title="Khôi phục lại dữ liệu từ vựng gốc"
             >
-              <RotateCcw size={15} /> 3000 từ gốc
+              <RotateCcw size={15} /> {resetButtonLabel}
             </button>
           )}
 
@@ -292,13 +293,20 @@ export default function WordListMode({
                   onSelectUnit(e.target.value);
                   setCurrentPage(1);
                 }}
-                title="Lọc từ vựng theo Unit / Vòng"
+                title="Lọc từ vựng theo Bộ từ / Unit"
               >
-                {['Tất cả', 'Vòng 1', 'Vòng 2', 'Vòng 3', 'Vòng 4', 'Vòng 5'].map(u => (
-                  <option key={u} value={u}>
-                    {u} {unitCounts && unitCounts[u] !== undefined ? `(${unitCounts[u]})` : ''}
+                <optgroup label="📚 Oxford 3000 (~2.978 từ)">
+                  {['Tất cả', 'Vòng 1', 'Vòng 2', 'Vòng 3', 'Vòng 4', 'Vòng 5'].map(u => (
+                    <option key={u} value={u}>
+                      {u} {unitCounts && unitCounts[u] !== undefined ? `(${unitCounts[u]})` : ''}
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="🎯 TOEIC Cơ Bản (1.650 từ)">
+                  <option value="TOEIC Cơ Bản">
+                    TOEIC Cơ Bản {unitCounts && (unitCounts['TOEIC Cơ Bản'] !== undefined ? `(${unitCounts['TOEIC Cơ Bản']})` : (unitCounts['TOEIC Cơ Bản – MR. HIEP'] !== undefined ? `(${unitCounts['TOEIC Cơ Bản – MR. HIEP']})` : ''))}
                   </option>
-                ))}
+                </optgroup>
               </select>
             </div>
           )}
@@ -388,7 +396,19 @@ export default function WordListMode({
                 </div>
 
                 <div className="wordlist-meaning">
-                  {item.meaning}
+                  {(item.image || item.imageUrl) ? (
+                    <div className="wordlist-img-box">
+                      <img 
+                        src={item.image || item.imageUrl} 
+                        alt={item.word} 
+                        className="wordlist-thumb" 
+                        loading="lazy" 
+                      />
+                      {item.meaning ? <span>{item.meaning}</span> : <span className="wordlist-img-note">Ảnh minh họa nghĩa</span>}
+                    </div>
+                  ) : (
+                    item.meaning
+                  )}
                 </div>
 
                 {/* Footer: Checkbox Đánh dấu đã biết */}
