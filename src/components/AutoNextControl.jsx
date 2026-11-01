@@ -3,10 +3,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Zap, Check, X, Clock, SlidersHorizontal } from 'lucide-react';
+import { Zap, Check, X, Clock, SlidersHorizontal, RotateCcw } from 'lucide-react';
 import { 
   getAutoNextSettings, 
   saveAutoNextSettings, 
+  resetAutoNextSettings,
   subscribeAutoNext, 
   TIME_PRESETS 
 } from '../utils/autoNext';
@@ -110,6 +111,14 @@ export default function AutoNextControl({ compact = false }) {
 
     setInputError('');
     saveAutoNextSettings({ delay: num });
+  };
+
+  // Đặt lại Auto Next về mặc định (1.5s)
+  const handleResetToDefault = () => {
+    resetAutoNextSettings();
+    setCustomInputVal('1.5');
+    setInputError('');
+    showToast('Đã đưa Auto Next về mặc định (1.5s)', 'info');
   };
 
   const currentActiveMode = !settings.enabled ? 'off' : settings.mode;
@@ -243,9 +252,14 @@ export default function AutoNextControl({ compact = false }) {
                   <label className="section-title">
                     2. Thời gian chờ chuyển câu:
                   </label>
-                  <span className="current-delay-pill">
-                    <Clock size={13} /> {settings.delay} giây
-                  </span>
+                  <div className="autonext-delay-badge-group">
+                    {settings.delay === 1.5 && (
+                      <span className="badge badge-default-tag">Mặc định</span>
+                    )}
+                    <span className="current-delay-pill">
+                      <Clock size={13} /> {settings.delay} giây
+                    </span>
+                  </div>
                 </div>
 
                 {/* Preset Chips */}
@@ -258,7 +272,7 @@ export default function AutoNextControl({ compact = false }) {
                       onClick={() => handleSelectPreset(sec)}
                     >
                       {sec}s
-                      {sec === 1.2 && <span className="chip-def-star">★</span>}
+                      {sec === 1.5 && <span className="chip-def-star" title="Mặc định (1.5s)">★</span>}
                     </button>
                   ))}
                 </div>
@@ -289,10 +303,20 @@ export default function AutoNextControl({ compact = false }) {
             </div>
 
             {/* Modal Footer */}
-            <div className="modal-footer">
+            <div className="modal-footer autonext-modal-footer">
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn-reset-modal autonext-btn-reset"
+                onClick={handleResetToDefault}
+                title="Khôi phục thời gian chờ và chế độ Auto Next về mặc định (1.5s)"
+              >
+                <RotateCcw size={16} />
+                <span>Đặt về mặc định</span>
+              </button>
+
+              <button
+                type="button"
+                className="btn btn-primary autonext-btn-done"
                 onClick={() => setIsModalOpen(false)}
               >
                 <Check size={16} /> Hoàn tất

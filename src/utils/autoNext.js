@@ -11,7 +11,7 @@ export const DEFAULT_AUTONEXT_SETTINGS = {
   enabled: true,
   mode: 'correct_only', // 'correct_only' | 'always'
   lastActiveMode: 'correct_only',
-  delay: 1.2 // seconds
+  delay: 1.5 // seconds (mặc định mới: 1.5s)
 };
 
 /**
@@ -19,7 +19,7 @@ export const DEFAULT_AUTONEXT_SETTINGS = {
  */
 export const validateDelay = (val) => {
   const num = parseFloat(val);
-  if (isNaN(num) || !isFinite(num)) return 1.2;
+  if (isNaN(num) || !isFinite(num)) return 1.5;
   if (num < 0.2) return 0.2;
   if (num > 30.0) return 30.0;
   return Math.round(num * 10) / 10;
@@ -34,16 +34,32 @@ export const getAutoNextSettings = () => {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return { ...DEFAULT_AUTONEXT_SETTINGS };
     const parsed = JSON.parse(raw);
+
+    // Tự động chuyển giá trị cũ 1.2s (mặc định phiên bản trước) sang 1.5s
+    let currentDelay = validateDelay(parsed.delay);
+    if (parsed.delay === 1.2 && !parsed.explicitlySet12) {
+      currentDelay = 1.5;
+    }
+
     return {
       enabled: typeof parsed.enabled === 'boolean' ? parsed.enabled : DEFAULT_AUTONEXT_SETTINGS.enabled,
       mode: ['correct_only', 'always'].includes(parsed.mode) ? parsed.mode : DEFAULT_AUTONEXT_SETTINGS.mode,
       lastActiveMode: ['correct_only', 'always'].includes(parsed.lastActiveMode) ? parsed.lastActiveMode : DEFAULT_AUTONEXT_SETTINGS.lastActiveMode,
-      delay: validateDelay(parsed.delay)
+      delay: currentDelay
     };
   } catch (err) {
     console.warn('[AutoNext] Lỗi đọc cấu hình từ localStorage:', err);
     return { ...DEFAULT_AUTONEXT_SETTINGS };
   }
+};
+
+/**
+ * Đặt lại cấu hình Auto Next về mặc định (delay = 1.5s)
+ */
+export const resetAutoNextSettings = () => {
+  const defaults = { ...DEFAULT_AUTONEXT_SETTINGS };
+  saveAutoNextSettings(defaults);
+  return defaults;
 };
 
 /**
@@ -58,6 +74,13 @@ export const saveAutoNextSettings = (newSettings) => {
       ...newSettings,
       delay: validateDelay(newSettings.delay !== undefined ? newSettings.delay : current.delay)
     };
+
+    // Ghi nhận nếu người dùng chủ động chọn 1.2s
+    if (newSettings.delay === 1.2) {
+      updated.explicitlySet12 = true;
+    } else if (newSettings.delay !== undefined && newSettings.delay !== 1.2) {
+      delete updated.explicitlySet12;
+    }
 
     // Nếu người dùng bật mode thì cập nhật luôn lastActiveMode
     if (updated.enabled && updated.mode) {

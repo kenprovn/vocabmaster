@@ -39,8 +39,8 @@ export const DEFAULT_AUTOREAD_SETTINGS = {
   typingTrigger: 'answer', // 'answer' | 'question' | 'both' | 'off'
   playbackRate: 1.0,       // 0.75 | 0.9 | 1.0 | 1.1 | 1.25
   repeatCount: 1,          // 1 | 2 | 3
-  initialDelay: 0.3,       // 0 | 0.3 | 0.5 | 1.0 | 2.0
-  waitForAudioBeforeAutoNext: true
+  initialDelay: 0,         // 0s (Đọc ngay - Mặc định mới)
+  waitForAudioBeforeAutoNext: false // Mặc định không bật
 };
 
 /**
@@ -53,15 +53,29 @@ export const validateAutoReadSettings = (raw) => {
   const validQuizTriggers = ['answer', 'question', 'both', 'off'];
   const validTypingTriggers = ['answer', 'question', 'both', 'off'];
 
+  let initialDelay = INITIAL_DELAYS.includes(Number(raw.initialDelay)) ? Number(raw.initialDelay) : DEFAULT_AUTOREAD_SETTINGS.initialDelay;
+  let waitForAudio = typeof raw.waitForAudioBeforeAutoNext === 'boolean' ? raw.waitForAudioBeforeAutoNext : DEFAULT_AUTOREAD_SETTINGS.waitForAudioBeforeAutoNext;
+
+  // Tự động nâng cấp các giá trị mặc định phiên bản cũ (0.3s & true) sang mặc định mới (0s & false)
+  if (raw._v !== 2) {
+    if (raw.initialDelay === 0.3 && !raw.explicitDelay03) {
+      initialDelay = 0;
+    }
+    if (raw.waitForAudioBeforeAutoNext === true && !raw.explicitWaitTrue) {
+      waitForAudio = false;
+    }
+  }
+
   return {
+    _v: 2,
     enabled: typeof raw.enabled === 'boolean' ? raw.enabled : DEFAULT_AUTOREAD_SETTINGS.enabled,
     flashcardTrigger: validFlashcardTriggers.includes(raw.flashcardTrigger) ? raw.flashcardTrigger : DEFAULT_AUTOREAD_SETTINGS.flashcardTrigger,
     quizTrigger: validQuizTriggers.includes(raw.quizTrigger) ? raw.quizTrigger : DEFAULT_AUTOREAD_SETTINGS.quizTrigger,
     typingTrigger: validTypingTriggers.includes(raw.typingTrigger) ? raw.typingTrigger : DEFAULT_AUTOREAD_SETTINGS.typingTrigger,
     playbackRate: PLAYBACK_RATES.includes(Number(raw.playbackRate)) ? Number(raw.playbackRate) : DEFAULT_AUTOREAD_SETTINGS.playbackRate,
     repeatCount: REPEAT_COUNTS.includes(Number(raw.repeatCount)) ? Number(raw.repeatCount) : DEFAULT_AUTOREAD_SETTINGS.repeatCount,
-    initialDelay: INITIAL_DELAYS.includes(Number(raw.initialDelay)) ? Number(raw.initialDelay) : DEFAULT_AUTOREAD_SETTINGS.initialDelay,
-    waitForAudioBeforeAutoNext: typeof raw.waitForAudioBeforeAutoNext === 'boolean' ? raw.waitForAudioBeforeAutoNext : DEFAULT_AUTOREAD_SETTINGS.waitForAudioBeforeAutoNext
+    initialDelay,
+    waitForAudioBeforeAutoNext: waitForAudio
   };
 };
 
@@ -89,8 +103,21 @@ export const saveAutoReadSettings = (newSettings) => {
     const current = getAutoReadSettings();
     const updated = validateAutoReadSettings({
       ...current,
-      ...newSettings
+      ...newSettings,
+      _v: 2
     });
+
+    if (newSettings.initialDelay === 0.3) {
+      updated.explicitDelay03 = true;
+    } else if (newSettings.initialDelay !== undefined && newSettings.initialDelay !== 0.3) {
+      delete updated.explicitDelay03;
+    }
+
+    if (newSettings.waitForAudioBeforeAutoNext === true) {
+      updated.explicitWaitTrue = true;
+    } else if (newSettings.waitForAudioBeforeAutoNext === false) {
+      delete updated.explicitWaitTrue;
+    }
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
     window.dispatchEvent(new CustomEvent(SETTINGS_EVENT, { detail: updated }));
@@ -103,8 +130,10 @@ export const saveAutoReadSettings = (newSettings) => {
  * Đặt lại toàn bộ cấu hình Auto Read về mặc định
  */
 export const resetAutoReadSettings = () => {
-  saveAutoReadSettings(DEFAULT_AUTOREAD_SETTINGS);
-  return { ...DEFAULT_AUTOREAD_SETTINGS };
+  const defaults = { ...DEFAULT_AUTOREAD_SETTINGS, _v: 2 };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(defaults));
+  window.dispatchEvent(new CustomEvent(SETTINGS_EVENT, { detail: defaults }));
+  return defaults;
 };
 
 /**

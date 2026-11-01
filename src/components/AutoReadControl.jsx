@@ -354,9 +354,14 @@ export default function AutoReadControl({ compact = false, defaultTab = 'flashca
                     <Clock size={14} className="text-accent" />
                     4. Độ trễ trước khi đọc lượt đầu:
                   </label>
-                  <span className="current-delay-pill">
-                    {settings.initialDelay}s
-                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    {settings.initialDelay === 0 && (
+                      <span className="badge badge-default-tag">Mặc định</span>
+                    )}
+                    <span className="current-delay-pill">
+                      {settings.initialDelay === 0 ? '0s (Đọc ngay)' : `${settings.initialDelay}s`}
+                    </span>
+                  </div>
                 </div>
                 <div className="autoread-chips-row">
                   {INITIAL_DELAYS.map((sec) => {
@@ -368,35 +373,36 @@ export default function AutoReadControl({ compact = false, defaultTab = 'flashca
                         className={`preset-chip ${isSelected ? 'active' : ''}`}
                         onClick={() => handleUpdate({ initialDelay: sec })}
                       >
-                        {sec === 0 ? '0s (Đọc ngay)' : sec === 0.3 ? '0.3s (Chuẩn)' : `${sec}s`}
+                        {sec === 0 ? '0s (Đọc ngay - Mặc định)' : sec === 0.3 ? '0.3s (Chuẩn)' : `${sec}s`}
                       </button>
                     );
                   })}
                 </div>
               </div>
 
-              {/* Mục G: Phối hợp Auto Next */}
-              <div className="autoread-setting-section">
-                <label className="section-title">
-                  <Zap size={14} className="text-accent" />
-                  5. Phối hợp với Auto Next:
-                </label>
-                <div 
-                  className={`autoread-trigger-card ${settings.waitForAudioBeforeAutoNext ? 'selected' : ''}`}
-                  onClick={() => handleUpdate({ waitForAudioBeforeAutoNext: !settings.waitForAudioBeforeAutoNext })}
-                >
-                  <div className="trigger-card-header">
-                    <div className="mode-radio">
-                      {settings.waitForAudioBeforeAutoNext && <div className="radio-dot" />}
+              {/* Mục G: Phối hợp Auto Next (chỉ hiển thị khi ở tab Trắc nghiệm hoặc Gõ đáp án) */}
+              {activeTab !== 'flashcard' && (
+                <div className="autoread-setting-section">
+                  <label className="section-title">
+                    <Zap size={14} className="text-accent" />
+                    5. Phối hợp với Auto Next:
+                  </label>
+                  <div 
+                    className={`autoread-trigger-card ${settings.waitForAudioBeforeAutoNext ? 'selected' : ''}`}
+                    onClick={() => handleUpdate({ waitForAudioBeforeAutoNext: !settings.waitForAudioBeforeAutoNext })}
+                  >
+                    <div className="trigger-card-header">
+                      <div className="mode-radio">
+                        {settings.waitForAudioBeforeAutoNext && <div className="radio-dot" />}
+                      </div>
+                      <strong className="trigger-title">Chờ phát âm xong trước khi tự chuyển câu</strong>
                     </div>
-                    <strong className="trigger-title">Chờ phát âm xong trước khi tự chuyển câu</strong>
-                    <span className="badge badge-default-tag">Khuyên dùng</span>
+                    <p className="trigger-desc">
+                      Auto Next sẽ chờ phát âm hết toàn bộ số lần đọc rồi mới bắt đầu đếm thời gian chuyển câu, tránh cắt ngang audio khi học.
+                    </p>
                   </div>
-                  <p className="trigger-desc">
-                    Auto Next sẽ chờ phát âm hết toàn bộ số lần đọc rồi mới bắt đầu đếm thời gian chuyển câu, tránh cắt ngang audio khi học.
-                  </p>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Footer Modal */}
