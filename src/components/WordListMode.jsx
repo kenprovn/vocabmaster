@@ -1,7 +1,7 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
-import { 
-  Volume2, Search, Plus, Edit2, Trash2, X, Check, Download, Upload, Filter, 
-  ChevronLeft, ChevronRight, Layers, RotateCcw, Bookmark, FileText, RotateCw, Copy, BookOpen 
+import {
+  Volume2, Search, Plus, Edit2, Trash2, X, Check, Download, Upload, Filter,
+  ChevronLeft, ChevronRight, Layers, RotateCcw, Bookmark, FileText, RotateCw, Copy, BookOpen
 } from 'lucide-react';
 import { speakWord } from '../utils/speech';
 import { getSavedWords, removeSavedWord, subscribeReviewLater, formatWordsAsTxt } from '../utils/reviewLater';
@@ -9,18 +9,24 @@ import { copyToClipboard, normalizeWordForCopy } from '../utils/clipboard';
 import { showToast } from '../utils/toast';
 import TxtPreviewModal from './TxtPreviewModal';
 import FilterDropdown from './FilterDropdown';
+import {
+  OXFORD_3000_UNIT_NAMES,
+  OXFORD_5000_EXTRA_UNIT_NAMES,
+  OXFORD_5000_EXTRA_NAME,
+  OXFORD_5000_ALL_NAME
+} from '../data/oxford5000Data';
 
-export default function WordListMode({ 
-  words, 
+export default function WordListMode({
+  words,
   totalAllWords,
   selectedUnit = 'Tất cả',
   onSelectUnit,
   unitCounts,
   onResetDefault,
   resetButtonLabel = '3000 từ gốc',
-  onAddWord, 
-  onUpdateWord, 
-  onDeleteWord, 
+  onAddWord,
+  onUpdateWord,
+  onDeleteWord,
   onToggleKnown,
   onImportWords,
   onStartReviewSaved
@@ -151,7 +157,7 @@ export default function WordListMode({
 
     return words.filter(w => {
       // Tìm kiếm theo từ tiếng Anh hoặc nghĩa tiếng Việt
-      const matchesSearch = 
+      const matchesSearch =
         !search ||
         w.word.toLowerCase().includes(search) ||
         w.meaning.toLowerCase().includes(search);
@@ -187,53 +193,79 @@ export default function WordListMode({
       label: '📚 Oxford 3000 (~2.978 từ)',
       badgeClass: 'badge-oxford',
       items: [
-        { value: 'Tất cả', label: 'Tất cả Oxford', count: unitCounts?.['Tất cả'] || 2978 },
+        { value: 'Tất cả', label: 'Tất cả Oxford 3000', count: unitCounts?.['Tất cả'] || 2978 },
         { value: 'Vòng 1', label: 'Vòng 1', count: unitCounts?.['Vòng 1'] || 0 },
         { value: 'Vòng 2', label: 'Vòng 2', count: unitCounts?.['Vòng 2'] || 0 },
         { value: 'Vòng 3', label: 'Vòng 3', count: unitCounts?.['Vòng 3'] || 0 },
         { value: 'Vòng 4', label: 'Vòng 4', count: unitCounts?.['Vòng 4'] || 0 },
         { value: 'Vòng 5', label: 'Vòng 5', count: unitCounts?.['Vòng 5'] || 0 },
+        ...OXFORD_3000_UNIT_NAMES.map(u => ({
+          value: u,
+          label: `${u} (100 từ)`,
+          count: unitCounts?.[u] !== undefined ? unitCounts[u] : (u === 'Unit 30' ? 78 : 100)
+        }))
+      ]
+    },
+    {
+      label: '✨ Oxford 5000 Extra (1.996 từ B2–C1)',
+      badgeClass: 'badge-oxford5000',
+      items: [
+        {
+          value: OXFORD_5000_EXTRA_NAME,
+          label: 'Tất cả Oxford 5000 Extra',
+          count: unitCounts?.[OXFORD_5000_EXTRA_NAME] || 1996
+        },
+        {
+          value: OXFORD_5000_ALL_NAME,
+          label: 'Trọn bộ Oxford 5000 (Unit 1–50)',
+          count: unitCounts?.[OXFORD_5000_ALL_NAME] || 4974
+        },
+        ...OXFORD_5000_EXTRA_UNIT_NAMES.map(u => ({
+          value: u,
+          label: `${u} (${unitCounts?.[u] !== undefined ? unitCounts[u] : (u === 'Unit 50' ? 96 : 100)} từ)`,
+          count: unitCounts?.[u] !== undefined ? unitCounts[u] : (u === 'Unit 50' ? 96 : 100)
+        }))
       ]
     },
     {
       label: '🎯 TOEIC Cơ Bản (1.650 từ)',
       badgeClass: 'badge-toeic',
       items: [
-        { 
-          value: 'TOEIC Cơ Bản', 
-          label: 'Tất cả TOEIC', 
+        {
+          value: 'TOEIC Cơ Bản',
+          label: 'Tất cả TOEIC',
           count: unitCounts?.['TOEIC Cơ Bản'] || 1650,
-          isToeic: true 
+          isToeic: true
         },
-        { 
-          value: 'TOEIC - Vòng 1', 
-          label: 'Vòng 1 (1–330)', 
+        {
+          value: 'TOEIC - Vòng 1',
+          label: 'Vòng 1 (1–330)',
           count: unitCounts?.['TOEIC - Vòng 1'] !== undefined ? unitCounts['TOEIC - Vòng 1'] : 330,
-          isToeic: true 
+          isToeic: true
         },
-        { 
-          value: 'TOEIC - Vòng 2', 
-          label: 'Vòng 2 (331–660)', 
+        {
+          value: 'TOEIC - Vòng 2',
+          label: 'Vòng 2 (331–660)',
           count: unitCounts?.['TOEIC - Vòng 2'] !== undefined ? unitCounts['TOEIC - Vòng 2'] : 330,
-          isToeic: true 
+          isToeic: true
         },
-        { 
-          value: 'TOEIC - Vòng 3', 
-          label: 'Vòng 3 (661–990)', 
+        {
+          value: 'TOEIC - Vòng 3',
+          label: 'Vòng 3 (661–990)',
           count: unitCounts?.['TOEIC - Vòng 3'] !== undefined ? unitCounts['TOEIC - Vòng 3'] : 330,
-          isToeic: true 
+          isToeic: true
         },
-        { 
-          value: 'TOEIC - Vòng 4', 
-          label: 'Vòng 4 (991–1320)', 
+        {
+          value: 'TOEIC - Vòng 4',
+          label: 'Vòng 4 (991–1320)',
           count: unitCounts?.['TOEIC - Vòng 4'] !== undefined ? unitCounts['TOEIC - Vòng 4'] : 330,
-          isToeic: true 
+          isToeic: true
         },
-        { 
-          value: 'TOEIC - Vòng 5', 
-          label: 'Vòng 5 (1321–1650)', 
+        {
+          value: 'TOEIC - Vòng 5',
+          label: 'Vòng 5 (1321–1650)',
           count: unitCounts?.['TOEIC - Vòng 5'] !== undefined ? unitCounts['TOEIC - Vòng 5'] : 330,
-          isToeic: true 
+          isToeic: true
         }
       ]
     }
@@ -259,14 +291,24 @@ export default function WordListMode({
     { value: 'mastered', label: 'Đã thuộc', count: statusCounts.mastered }
   ], [statusCounts]);
 
-  const currentUnitLabel = selectedUnit === 'Tất cả' 
-    ? 'Tất cả Oxford' 
-    : selectedUnit === 'TOEIC Cơ Bản' 
-      ? 'Tất cả TOEIC' 
-      : selectedUnit.startsWith('TOEIC - ') 
-        ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}` 
-        : `Oxford ${selectedUnit}`;
-  const currentUnitCount = selectedUnit === 'Tất cả' 
+  const isOxford5000Unit = typeof selectedUnit === 'string' && selectedUnit.startsWith('Unit ') && parseInt(selectedUnit.replace('Unit ', ''), 10) >= 31 && parseInt(selectedUnit.replace('Unit ', ''), 10) <= 50;
+
+  const currentUnitLabel = selectedUnit === 'Tất cả'
+    ? 'Tất cả Oxford 3000'
+    : selectedUnit === OXFORD_5000_EXTRA_NAME || selectedUnit === 'Tất cả Oxford 5000 Extra'
+      ? 'Oxford 5000 Extra'
+      : selectedUnit === OXFORD_5000_ALL_NAME || selectedUnit === 'Tất cả Oxford 5000'
+        ? 'Trọn bộ Oxford 5000 (Unit 1–50)'
+        : selectedUnit === 'TOEIC Cơ Bản'
+          ? 'Tất cả TOEIC'
+          : selectedUnit.startsWith('TOEIC - ')
+            ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}`
+            : selectedUnit.startsWith('Unit ')
+              ? isOxford5000Unit
+                ? `Oxford 5000 ${selectedUnit}`
+                : `Oxford 3000 ${selectedUnit}`
+              : `Oxford ${selectedUnit}`;
+  const currentUnitCount = selectedUnit === 'Tất cả'
     ? (unitCounts?.['Tất cả'] || words.length)
     : (unitCounts?.[selectedUnit] !== undefined ? unitCounts[selectedUnit] : words.length);
 
@@ -291,8 +333,8 @@ export default function WordListMode({
     toeic: 'TOEIC 1650'
   };
   const currentSavedSourceLabel = savedSourceLabels[savedSourceFilter] || 'Tất cả nguồn';
-  const currentSavedSourceCount = savedSourceFilter === 'all' 
-    ? savedWords.length 
+  const currentSavedSourceCount = savedSourceFilter === 'all'
+    ? savedWords.length
     : (savedSourceFilter === 'oxford' ? oxfordSavedCount : toeicSavedCount);
 
   // Open modal for adding
@@ -464,24 +506,24 @@ export default function WordListMode({
 
             {/* Action Buttons: Export, Import, Reset Default, Add */}
             <div className="wordlist-header-actions">
-          <input 
-            type="file" 
-            ref={fileInputRef} 
-            accept=".json" 
-            style={{ display: 'none' }} 
-            onChange={handleImportFile} 
+          <input
+            type="file"
+            ref={fileInputRef}
+            accept=".json"
+            style={{ display: 'none' }}
+            onChange={handleImportFile}
           />
 
-          <button 
-            className="btn-backup" 
+          <button
+            className="btn-backup"
             onClick={handleExport}
             title="Tải về file vocab-backup.json"
           >
             <Download size={15} /> Xuất dữ liệu
           </button>
 
-          <button 
-            className="btn-backup" 
+          <button
+            className="btn-backup"
             onClick={() => fileInputRef.current && fileInputRef.current.click()}
             title="Nhập dữ liệu từ file JSON"
           >
@@ -489,8 +531,8 @@ export default function WordListMode({
           </button>
 
           {onResetDefault && (
-            <button 
-              className="btn-backup btn-reset" 
+            <button
+              className="btn-backup btn-reset"
               onClick={onResetDefault}
               title="Khôi phục lại dữ liệu từ vựng gốc"
             >
@@ -498,7 +540,7 @@ export default function WordListMode({
             </button>
           )}
 
-          <button 
+          <button
             className="btn btn-primary"
             onClick={handleOpenAdd}
             id="btn-add-new-word"
@@ -528,7 +570,13 @@ export default function WordListMode({
               icon={<Layers size={15} color="var(--accent-cyan)" />}
               label={currentUnitLabel}
               countBadge={currentUnitCount}
-              badgeType={selectedUnit === 'TOEIC Cơ Bản' || selectedUnit.startsWith('TOEIC') ? 'toeic' : 'oxford'}
+              badgeType={
+                selectedUnit === 'TOEIC Cơ Bản' || selectedUnit.startsWith('TOEIC')
+                  ? 'toeic'
+                  : selectedUnit === OXFORD_5000_EXTRA_NAME || selectedUnit === OXFORD_5000_ALL_NAME || isOxford5000Unit
+                    ? 'oxford5000'
+                    : 'oxford'
+              }
               groups={unitFilterGroups}
               selectedValue={selectedUnit}
               onSelect={(val) => {
@@ -568,8 +616,8 @@ export default function WordListMode({
           paginatedWords.map((item) => {
             const isKnown = item.status === 'known' || item.status === 'mastered';
             return (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className={`wordlist-item ${isKnown ? 'is-known' : ''}`}
                 onClick={(e) => handleOpenEdit(item, e)}
                 title="Nhấp vào thẻ để chỉnh sửa từ"
@@ -580,6 +628,11 @@ export default function WordListMode({
                     <span className={`badge badge-${item.type || 'verb'}`}>
                       {item.type}
                     </span>
+                    {item.level && (
+                      <span className="badge badge-level" style={{ margin: 0 }}>
+                        {item.level}
+                      </span>
+                    )}
                     {item.unit && (
                       <span className="badge badge-unit">
                         {item.unit}
@@ -588,7 +641,7 @@ export default function WordListMode({
                   </div>
 
                   <div className="word-actions">
-                    <button 
+                    <button
                       className="icon-btn"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -601,7 +654,7 @@ export default function WordListMode({
                       <Volume2 size={15} />
                     </button>
 
-                    <button 
+                    <button
                       className="icon-btn btn-edit"
                       onClick={(e) => handleOpenEdit(item, e)}
                       title="Sửa từ"
@@ -609,7 +662,7 @@ export default function WordListMode({
                       <Edit2 size={15} />
                     </button>
 
-                    <button 
+                    <button
                       className="icon-btn btn-delete"
                       onClick={(e) => handleDelete(item, e)}
                       title="Xóa từ"
@@ -621,17 +674,22 @@ export default function WordListMode({
 
                 {/* Center: Word and Meaning */}
                 <div className="wordlist-word">
-                  {item.word}
+                  <span>{item.word}</span>
+                  {item.phonetic && (
+                    <span className="wordlist-phonetic" style={{ marginLeft: '8px', fontSize: '0.85rem', color: '#38bdf8', fontWeight: 'normal' }}>
+                      {item.phonetic}
+                    </span>
+                  )}
                 </div>
 
                 <div className="wordlist-meaning">
                   {(item.image || item.imageUrl) ? (
                     <div className="wordlist-img-box">
-                      <img 
-                        src={item.image || item.imageUrl} 
-                        alt={item.word} 
-                        className="wordlist-thumb" 
-                        loading="lazy" 
+                      <img
+                        src={item.image || item.imageUrl}
+                        alt={item.word}
+                        className="wordlist-thumb"
+                        loading="lazy"
                       />
                       {item.meaning ? <span>{item.meaning}</span> : <span className="wordlist-img-note">Ảnh minh họa nghĩa</span>}
                     </div>
@@ -642,7 +700,7 @@ export default function WordListMode({
 
                 {/* Footer: Checkbox Đánh dấu đã biết */}
                 <div className="word-card-footer">
-                  <label 
+                  <label
                     className="known-checkbox-label"
                     onClick={(e) => e.stopPropagation()}
                   >
@@ -961,15 +1019,15 @@ export default function WordListMode({
               </div>
 
               <div className="modal-footer">
-                <button 
-                  type="button" 
-                  className="btn btn-secondary" 
+                <button
+                  type="button"
+                  className="btn btn-secondary"
                   onClick={handleCloseModal}
                 >
                   Hủy
                 </button>
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   className="btn btn-primary"
                 >
                   <Check size={16} /> Lưu từ

@@ -5,6 +5,16 @@ import vong3Data from '../unit/Oxford_3000_Vong_3_748_tu.json';
 import vong4Data from '../unit/Oxford_3000_Vong_4_282_tu.json';
 import vong5Data from '../unit/Oxford_3000_Vong_5_678_tu.json';
 import toeic1650Data from './data/toeic_1650.json';
+import {
+  defaultOxford5000WordsData,
+  OXFORD_3000_UNIT_NAMES,
+  OXFORD_5000_EXTRA_UNIT_NAMES,
+  ALL_50_UNIT_NAMES,
+  OXFORD_5000_EXTRA_NAME,
+  OXFORD_5000_ALL_NAME,
+  getOxford3000UnitWords,
+  getOxford5000UnitWords
+} from './data/oxford5000Data';
 import FlashcardMode from './components/FlashcardMode';
 import QuizMode from './components/QuizMode';
 import TypingMode from './components/TypingMode';
@@ -24,6 +34,7 @@ import { getFocusSpaceActive, saveFocusSpaceActive } from './utils/focusModeSett
 // Key lưu trữ riêng biệt cho từng bộ từ trong localStorage (bảo toàn 100% dữ liệu gốc)
 const OXFORD_STORAGE_KEY = 'myVocabData';
 const TOEIC_STORAGE_KEY = 'toeicVocabData';
+const OXFORD_5000_STORAGE_KEY = 'oxford5000VocabData';
 const SELECTED_UNIT_KEY = 'vocabSelectedUnit';
 
 // Gộp toàn bộ 5 Vòng thành mảng 2978 từ mặc định của Oxford 3000
@@ -62,6 +73,11 @@ export const TOEIC_UNITS = [
 
 export const ALL_UNIT_OPTIONS = [
   ...OXFORD_UNITS,
+  ...OXFORD_3000_UNIT_NAMES,
+  OXFORD_5000_EXTRA_NAME,
+  OXFORD_5000_ALL_NAME,
+  'Tất cả Oxford 5000 Extra',
+  ...OXFORD_5000_EXTRA_UNIT_NAMES,
   ...TOEIC_UNITS
 ];
 
@@ -144,6 +160,22 @@ export default function App() {
     return toeic1650Data;
   });
 
+  // 3. Quản lý kho từ Oxford 5000 Extra (Unit 31 - Unit 50, 1.996 từ - key: oxford5000VocabData)
+  const [oxford5000Words, setOxford5000Words] = useState(() => {
+    try {
+      const saved = localStorage.getItem(OXFORD_5000_STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
+      }
+    } catch (err) {
+      console.error('Lỗi khi đọc dữ liệu Oxford 5000 từ localStorage:', err);
+    }
+    return defaultOxford5000WordsData;
+  });
+
   // Tự động kiểm tra và khởi tạo localStorage nếu chưa có
   useEffect(() => {
     try {
@@ -154,6 +186,10 @@ export default function App() {
       const savedToeic = localStorage.getItem(TOEIC_STORAGE_KEY);
       if (!savedToeic) {
         localStorage.setItem(TOEIC_STORAGE_KEY, JSON.stringify(toeic1650Data));
+      }
+      const savedOxford5000 = localStorage.getItem(OXFORD_5000_STORAGE_KEY);
+      if (!savedOxford5000) {
+        localStorage.setItem(OXFORD_5000_STORAGE_KEY, JSON.stringify(defaultOxford5000WordsData));
       }
     } catch (err) {
       console.error('Lỗi khi khởi tạo localStorage:', err);
@@ -178,6 +214,15 @@ export default function App() {
     }
   }, [toeicWords]);
 
+  // Tự động đồng bộ Oxford 5000 vào localStorage khi thay đổi
+  useEffect(() => {
+    try {
+      localStorage.setItem(OXFORD_5000_STORAGE_KEY, JSON.stringify(oxford5000Words));
+    } catch (err) {
+      console.error('Lỗi khi lưu dữ liệu Oxford 5000 vào localStorage:', err);
+    }
+  }, [oxford5000Words]);
+
   // Lưu Unit đang chọn vào localStorage và hủy timer Auto Next + Undo Toast
   const handleSelectUnit = (unit) => {
     cancelCurrentAutoNext();
@@ -191,6 +236,22 @@ export default function App() {
 
   const isToeic = selectedUnit === TOEIC_UNIT_NAME || (typeof selectedUnit === 'string' && selectedUnit.startsWith('TOEIC - Vòng'));
 
+  const isOxford5000Unit = typeof selectedUnit === 'string' && selectedUnit.startsWith('Unit ') && parseInt(selectedUnit.replace('Unit ', ''), 10) >= 31 && parseInt(selectedUnit.replace('Unit ', ''), 10) <= 50;
+
+  const isOxford3000Unit = typeof selectedUnit === 'string' && selectedUnit.startsWith('Unit ') && parseInt(selectedUnit.replace('Unit ', ''), 10) >= 1 && parseInt(selectedUnit.replace('Unit ', ''), 10) <= 30;
+
+  const isOxford5000Extra = selectedUnit === OXFORD_5000_EXTRA_NAME || selectedUnit === 'Tất cả Oxford 5000 Extra';
+
+  const isAllOxford5000 = selectedUnit === OXFORD_5000_ALL_NAME || selectedUnit === 'Tất cả Oxford 5000';
+
+  // Helper kiểm tra một từ có thuộc Oxford 5000 Extra hay không
+  const isOx5000Item = (id) => {
+    const numId = Number(id);
+    if (!isNaN(numId) && numId >= 3001 && numId <= 4996) return true;
+    if (typeof id === 'string' && id.startsWith('ox5000_')) return true;
+    return false;
+  };
+
   // Trạng thái ôn tập danh sách từ tùy chỉnh (ví dụ: Từ đã lưu / Review Later)
   const [customReviewWords, setCustomReviewWords] = useState(null);
 
@@ -203,8 +264,9 @@ export default function App() {
     const enrichedList = savedList.map(item => {
       const key = normalizeWordKey(item.word);
       const inToeic = toeicWords.find(w => normalizeWordKey(w.word) === key);
+      const inOxford5000 = oxford5000Words.find(w => normalizeWordKey(w.word) === key);
       const inOxford = oxfordWords.find(w => normalizeWordKey(w.word) === key);
-      return inToeic || inOxford || item;
+      return inToeic || inOxford5000 || inOxford || item;
     });
 
     cancelCurrentAutoNext();
@@ -221,7 +283,7 @@ export default function App() {
     showToast(`Đã trở về bộ từ ${selectedUnit}`, 'info');
   };
 
-  // Đếm số lượng từ cho từng Unit của Oxford 3000
+  // Đếm số lượng từ cho từng Vòng của Oxford 3000
   const oxfordCounts = useMemo(() => {
     const counts = { 'Tất cả': oxfordWords.length };
     OXFORD_UNITS.filter(u => u !== 'Tất cả').forEach(u => {
@@ -229,6 +291,24 @@ export default function App() {
     });
     return counts;
   }, [oxfordWords]);
+
+  // Đếm số lượng từ cho 30 Unit của Oxford 3000 (100 từ/Unit, Unit 30: 78 từ)
+  const oxford3000UnitCounts = useMemo(() => {
+    const counts = {};
+    OXFORD_3000_UNIT_NAMES.forEach(u => {
+      counts[u] = getOxford3000UnitWords(oxfordWords, u).length;
+    });
+    return counts;
+  }, [oxfordWords]);
+
+  // Đếm số lượng từ cho 20 Unit của Oxford 5000 Extra (Unit 31 - Unit 50)
+  const oxford5000Counts = useMemo(() => {
+    const counts = {};
+    OXFORD_5000_EXTRA_UNIT_NAMES.forEach(u => {
+      counts[u] = getOxford5000UnitWords(oxford5000Words, u).length;
+    });
+    return counts;
+  }, [oxford5000Words]);
 
   // Đếm số lượng từ cho từng vòng TOEIC Cơ Bản (mỗi vòng đúng 330 từ, tổng 1650 từ)
   const toeicCounts = useMemo(() => {
@@ -246,9 +326,15 @@ export default function App() {
   const allUnitCounts = useMemo(() => {
     return {
       ...oxfordCounts,
+      ...oxford3000UnitCounts,
+      [OXFORD_5000_EXTRA_NAME]: oxford5000Words.length,
+      'Tất cả Oxford 5000 Extra': oxford5000Words.length,
+      [OXFORD_5000_ALL_NAME]: oxfordWords.length + oxford5000Words.length,
+      'Tất cả Oxford 5000': oxfordWords.length + oxford5000Words.length,
+      ...oxford5000Counts,
       ...toeicCounts
     };
-  }, [oxfordCounts, toeicCounts]);
+  }, [oxfordCounts, oxford3000UnitCounts, oxford5000Words.length, oxfordWords.length, oxford5000Counts, toeicCounts]);
 
   // Lọc danh sách từ theo Unit đang chọn hoặc danh sách tùy chỉnh (Từ đã lưu)
   const activeWords = useMemo(() => {
@@ -261,11 +347,34 @@ export default function App() {
       }
       return getToeicRoundWords(toeicWords, selectedUnit);
     }
+    if (isAllOxford5000) {
+      return [...oxfordWords, ...oxford5000Words];
+    }
+    if (isOxford5000Extra) {
+      return oxford5000Words;
+    }
+    if (isOxford5000Unit) {
+      return getOxford5000UnitWords(oxford5000Words, selectedUnit);
+    }
+    if (isOxford3000Unit) {
+      return getOxford3000UnitWords(oxfordWords, selectedUnit);
+    }
     if (selectedUnit === 'Tất cả') {
       return oxfordWords;
     }
     return oxfordWords.filter(w => w.unit === selectedUnit);
-  }, [customReviewWords, isToeic, selectedUnit, toeicWords, oxfordWords]);
+  }, [
+    customReviewWords,
+    isToeic,
+    isAllOxford5000,
+    isOxford5000Extra,
+    isOxford5000Unit,
+    isOxford3000Unit,
+    selectedUnit,
+    toeicWords,
+    oxfordWords,
+    oxford5000Words
+  ]);
 
   // Quản lý vị trí cuộn trang (scroll position) an toàn khi vào/ra Focus Space
   const prevScrollYRef = useRef(0);
@@ -309,15 +418,22 @@ export default function App() {
 
   // Thêm từ mới vào đúng bộ từ đang học
   const handleAddWord = (newWord) => {
+    const isOx5000 = isOxford5000Extra || isOxford5000Unit;
     const wordWithId = {
-      id: isToeic ? `toeic_custom_${Date.now()}` : `custom_${Date.now()}`,
+      id: isToeic ? `toeic_custom_${Date.now()}` : isOx5000 ? `ox5000_custom_${Date.now()}` : `custom_${Date.now()}`,
       status: 'new',
-      unit: isToeic ? TOEIC_UNIT_NAME : (newWord.unit || (selectedUnit !== 'Tất cả' ? selectedUnit : 'Vòng 1')),
+      unit: isToeic
+        ? TOEIC_UNIT_NAME
+        : isOx5000
+          ? (newWord.unit || (selectedUnit.startsWith('Unit') ? selectedUnit : 'Unit 31'))
+          : (newWord.unit || (selectedUnit !== 'Tất cả' ? selectedUnit : 'Vòng 1')),
       ...newWord
     };
 
     if (isToeic) {
       setToeicWords(prev => [wordWithId, ...prev]);
+    } else if (isOx5000) {
+      setOxford5000Words(prev => [wordWithId, ...prev]);
     } else {
       setOxfordWords(prev => [wordWithId, ...prev]);
     }
@@ -327,6 +443,8 @@ export default function App() {
   const handleUpdateWord = (updatedWord) => {
     if (isToeic) {
       setToeicWords(prev => prev.map(w => w.id === updatedWord.id ? { ...w, ...updatedWord } : w));
+    } else if (isOx5000Item(updatedWord.id)) {
+      setOxford5000Words(prev => prev.map(w => w.id === updatedWord.id ? { ...w, ...updatedWord } : w));
     } else {
       setOxfordWords(prev => prev.map(w => w.id === updatedWord.id ? { ...w, ...updatedWord } : w));
     }
@@ -336,6 +454,8 @@ export default function App() {
   const handleDeleteWord = (id) => {
     if (isToeic) {
       setToeicWords(prev => prev.filter(w => w.id !== id));
+    } else if (isOx5000Item(id)) {
+      setOxford5000Words(prev => prev.filter(w => w.id !== id));
     } else {
       setOxfordWords(prev => prev.filter(w => w.id !== id));
     }
@@ -355,6 +475,8 @@ export default function App() {
 
     if (isToeic) {
       setToeicWords(updater);
+    } else if (isOx5000Item(id)) {
+      setOxford5000Words(updater);
     } else {
       setOxfordWords(updater);
     }
@@ -379,6 +501,8 @@ export default function App() {
 
     if (isToeic) {
       setToeicWords(updater);
+    } else if (isOx5000Item(id)) {
+      setOxford5000Words(updater);
     } else {
       setOxfordWords(updater);
     }
@@ -396,6 +520,13 @@ export default function App() {
         localStorage.setItem(TOEIC_STORAGE_KEY, JSON.stringify(importedWords));
       } catch (err) {
         console.error('Lỗi khi lưu dữ liệu import TOEIC vào localStorage:', err);
+      }
+    } else if (isOxford5000Extra || isOxford5000Unit) {
+      setOxford5000Words(importedWords);
+      try {
+        localStorage.setItem(OXFORD_5000_STORAGE_KEY, JSON.stringify(importedWords));
+      } catch (err) {
+        console.error('Lỗi khi lưu dữ liệu import Oxford 5000 vào localStorage:', err);
       }
     } else {
       setOxfordWords(importedWords);
@@ -419,6 +550,18 @@ export default function App() {
           localStorage.setItem(TOEIC_STORAGE_KEY, JSON.stringify(toeic1650Data));
         } catch (err) {
           console.error('Lỗi khi khôi phục dữ liệu gốc TOEIC:', err);
+        }
+      }
+    } else if (isOxford5000Extra || isOxford5000Unit) {
+      const confirmed = window.confirm(
+        'Bạn có chắc chắn muốn khôi phục bộ từ "Oxford 5000 Extra (1996 từ)" về trạng thái gốc? Mọi chỉnh sửa cá nhân trong bộ này sẽ được đặt lại.'
+      );
+      if (confirmed) {
+        setOxford5000Words(defaultOxford5000WordsData);
+        try {
+          localStorage.setItem(OXFORD_5000_STORAGE_KEY, JSON.stringify(defaultOxford5000WordsData));
+        } catch (err) {
+          console.error('Lỗi khi khôi phục dữ liệu gốc Oxford 5000 Extra:', err);
         }
       }
     } else {
@@ -450,10 +593,9 @@ export default function App() {
     }).length;
 
     // Số từ đã thuộc (Mastered) trong Unit đang chọn
-    const mastered = activeWords.filter(w => 
-      w.status === 'known' || 
-      w.status === 'mastered' || 
-      (w.easeFactor && w.easeFactor >= 2.5)
+    const mastered = activeWords.filter(w =>
+      w.status === 'known' ||
+      w.status === 'mastered'
     ).length;
 
     return { total, needReview, mastered };
@@ -476,8 +618,8 @@ export default function App() {
 
       {/* Nút nổi để thoát Focus Mode (ở Flashcard nút Thoát đã được tích hợp gọn gàng vào header) */}
       {isFocusMode && activeMode !== 'flashcard' && (
-        <button 
-          className="focus-exit-btn" 
+        <button
+          className="focus-exit-btn"
           onClick={() => {
             setIsFocusMode(false);
             saveFocusSpaceActive(false);
@@ -508,6 +650,10 @@ export default function App() {
               selectedUnit={selectedUnit}
               onSelectUnit={handleSelectUnit}
               oxfordCounts={oxfordCounts}
+              oxford3000UnitCounts={oxford3000UnitCounts}
+              oxford5000Count={oxford5000Words.length}
+              oxford5000Counts={oxford5000Counts}
+              total5000Count={oxfordWords.length + oxford5000Words.length}
               toeicCount={toeicWords.length}
               toeicCounts={toeicCounts}
               toeicUnitName={TOEIC_UNIT_NAME}
@@ -563,14 +709,28 @@ export default function App() {
             <div className="dashboard-unit-badge">
               <span className="dash-unit-icon">📊</span>
               <span className="dash-unit-title">Bộ từ đang học:</span>
-              <span className={`dash-unit-active ${isToeic ? 'theme-toeic' : 'theme-oxford'}`}>
+              <span className={`dash-unit-active ${
+                isToeic
+                  ? 'theme-toeic'
+                  : isOxford5000Extra || isOxford5000Unit || isAllOxford5000
+                    ? 'theme-oxford5000'
+                    : 'theme-oxford'
+              }`}>
                 {selectedUnit === 'Tất cả'
-                  ? 'Tất cả Oxford'
-                  : selectedUnit === TOEIC_UNIT_NAME
-                    ? 'Tất cả TOEIC'
-                    : selectedUnit.startsWith('TOEIC - ')
-                      ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}`
-                      : `Oxford ${selectedUnit}`}
+                  ? 'Tất cả Oxford 3000'
+                  : selectedUnit === OXFORD_5000_EXTRA_NAME || selectedUnit === 'Tất cả Oxford 5000 Extra'
+                    ? 'Oxford 5000 Extra'
+                    : selectedUnit === OXFORD_5000_ALL_NAME
+                      ? 'Trọn bộ Oxford 5000 (Unit 1–50)'
+                      : selectedUnit === TOEIC_UNIT_NAME
+                        ? 'Tất cả TOEIC'
+                        : selectedUnit.startsWith('TOEIC - ')
+                          ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}`
+                          : selectedUnit.startsWith('Unit ')
+                            ? parseInt(selectedUnit.replace('Unit ', ''), 10) >= 31
+                              ? `Oxford 5000 ${selectedUnit}`
+                              : `Oxford 3000 ${selectedUnit}`
+                            : `Oxford ${selectedUnit}`}
               </span>
               <span className="dash-unit-count-chip">
                 {activeWords.length} từ
@@ -588,10 +748,14 @@ export default function App() {
                 <span className="dash-value">{stats.total}</span>
                 <span className="dash-label">
                   {selectedUnit === 'Tất cả'
-                    ? 'Tổng từ trong kho Oxford'
-                    : selectedUnit === TOEIC_UNIT_NAME
-                      ? 'Tổng từ trong kho TOEIC'
-                      : `Từ trong ${selectedUnit.startsWith('TOEIC - ') ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}` : `Oxford ${selectedUnit}`}`}
+                    ? 'Tổng từ trong kho Oxford 3000'
+                    : selectedUnit === OXFORD_5000_EXTRA_NAME || selectedUnit === 'Tất cả Oxford 5000 Extra'
+                      ? 'Tổng từ Oxford 5000 Extra'
+                      : selectedUnit === OXFORD_5000_ALL_NAME
+                        ? 'Tổng từ Oxford 5000 (Unit 1–50)'
+                        : selectedUnit === TOEIC_UNIT_NAME
+                          ? 'Tổng từ trong kho TOEIC'
+                          : `Từ trong ${selectedUnit.startsWith('TOEIC - ') ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}` : selectedUnit.startsWith('Unit ') ? `Oxford ${selectedUnit}` : `Oxford ${selectedUnit}`}`}
                 </span>
               </div>
             </div>
@@ -632,7 +796,7 @@ export default function App() {
                 <span className="custom-review-title"> Danh sách từ đã lưu (Review Later) — {customReviewWords.length} từ</span>
               </div>
             </div>
-            <button 
+            <button
               type="button"
               className="btn-exit-custom-review"
               onClick={handleExitCustomReview}
@@ -647,8 +811,8 @@ export default function App() {
       {/* Main Content Area */}
       <main className="main-content">
         {activeMode === 'flashcard' && (
-          <FlashcardMode 
-            words={activeWords} 
+          <FlashcardMode
+            words={activeWords}
             isFocusMode={isFocusMode}
             onToggleFocus={toggleFocusMode}
             selectedUnit={selectedUnit}
@@ -656,30 +820,44 @@ export default function App() {
           />
         )}
         {activeMode === 'quiz' && (
-          <QuizMode 
-            words={activeWords} 
+          <QuizMode
+            words={activeWords}
             isFocusMode={isFocusMode}
             onToggleFocus={toggleFocusMode}
             selectedUnit={selectedUnit}
           />
         )}
         {activeMode === 'typing' && (
-          <TypingMode 
-            words={activeWords} 
+          <TypingMode
+            words={activeWords}
             isFocusMode={isFocusMode}
             onToggleFocus={toggleFocusMode}
             selectedUnit={selectedUnit}
           />
         )}
         {activeMode === 'wordlist' && (
-          <WordListMode 
-            words={activeWords} 
-            totalAllWords={isToeic ? toeicWords.length : oxfordWords.length}
+          <WordListMode
+            words={activeWords}
+            totalAllWords={
+              isToeic
+                ? toeicWords.length
+                : isAllOxford5000
+                  ? oxfordWords.length + oxford5000Words.length
+                  : isOxford5000Extra || isOxford5000Unit
+                    ? oxford5000Words.length
+                    : oxfordWords.length
+            }
             selectedUnit={selectedUnit}
             onSelectUnit={handleSelectUnit}
             unitCounts={allUnitCounts}
             onResetDefault={handleResetDefault}
-            resetButtonLabel={isToeic ? '1650 từ gốc (TOEIC)' : '3000 từ gốc (Oxford)'}
+            resetButtonLabel={
+              isToeic
+                ? '1650 từ gốc (TOEIC)'
+                : isOxford5000Extra || isOxford5000Unit
+                  ? '1996 từ gốc (Oxford 5000 Extra)'
+                  : '3000 từ gốc (Oxford 3000)'
+            }
             onAddWord={handleAddWord}
             onUpdateWord={handleUpdateWord}
             onDeleteWord={handleDeleteWord}

@@ -13,12 +13,12 @@ import AutoReadControl from './AutoReadControl';
 import { getFocusModeSettings, saveFocusModeSettings, resetFocusModeSettings } from '../utils/focusModeSettings';
 import { autoReadCoordinator, cancelCurrentAutoRead } from '../utils/autoRead';
 
-export default function FlashcardMode({ 
-  words, 
-  onToggleFocus, 
-  isFocusMode, 
-  selectedUnit, 
-  onUpdateWordStatus 
+export default function FlashcardMode({
+  words,
+  onToggleFocus,
+  isFocusMode,
+  selectedUnit,
+  onUpdateWordStatus
 }) {
   const [wordList, setWordList] = useState(words);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -525,7 +525,7 @@ export default function FlashcardMode({
   // - Khi chọn 'Tùy chỉnh dịch chuyển' (custom), slider điều chỉnh từ tâm chuẩn (0px) và không cộng gộp offset 2 lần.
   const ZEN_DEFAULT_OFFSET = -24;
   const isCustomPosition = isFocusMode && focusSettings.positionMode === 'custom';
-  
+
   let targetOffsetY = 0;
   if (isZenMode && !isCustomPosition) {
     targetOffsetY = ZEN_DEFAULT_OFFSET;
@@ -536,7 +536,7 @@ export default function FlashcardMode({
   const clampedOffsetY = Math.max(safeBounds.min, Math.min(safeBounds.max, targetOffsetY));
   appliedOffsetYRef.current = clampedOffsetY;
 
-  const positionWrapperStyle = clampedOffsetY !== 0 
+  const positionWrapperStyle = clampedOffsetY !== 0
     ? { transform: `translateY(${clampedOffsetY}px)`, transition: 'transform 0.15s ease-out' }
     : undefined;
 
@@ -557,9 +557,9 @@ export default function FlashcardMode({
           <div className="progress-info flashcard-progress-info">
             <div className="flashcard-top-controls">
               {onToggleFocus && (
-                <button 
-                  type="button" 
-                  className="btn-focus" 
+                <button
+                  type="button"
+                  className="btn-focus"
                   onClick={onToggleFocus}
                   title="Kích hoạt Focus Space (Không gian tập trung - Esc để thoát)"
                 >
@@ -603,9 +603,9 @@ export default function FlashcardMode({
             </div>
 
             <div className="focus-header-actions">
-              <button 
+              <button
                 type="button"
-                className="btn-focus-settings" 
+                className="btn-focus-settings"
                 onClick={() => setIsSettingsOpen(true)}
                 title="Cài đặt Focus Space"
                 aria-label="Cài đặt Focus Space"
@@ -615,9 +615,9 @@ export default function FlashcardMode({
               </button>
 
               {onToggleFocus && (
-                <button 
+                <button
                   type="button"
-                  className="btn-focus-exit" 
+                  className="btn-focus-exit"
                   onClick={onToggleFocus}
                   title="Thoát Focus Space (Esc)"
                   aria-label="Thoát Focus Space"
@@ -644,16 +644,16 @@ export default function FlashcardMode({
 
       {/* VÙNG B — FLASHCARD KHU VỰC CHÍNH (Được bảo vệ bằng Clamping an toàn) */}
       <div className="focus-space-main">
-        <div 
+        <div
           className={`flashcard-position-wrapper ${isFocusMode ? 'in-focus-mode' : ''} ${isZenMode ? 'is-zen-position' : ''}`}
           style={positionWrapperStyle}
           ref={cardWrapperRef}
         >
-        <div 
-          key={currentWord.id} 
+        <div
+          key={currentWord.id}
           className={`flashcard-wrapper card-animate-swap ${cardImage ? 'has-card-image' : ''}`}
         >
-        <div 
+        <div
           className={`flashcard-scene ${cardImage ? 'has-card-image' : ''}`}
           onClick={handleCardClick}
           onTouchStart={handleTouchStart}
@@ -669,7 +669,7 @@ export default function FlashcardMode({
                   {currentWord.type || 'Từ vựng'}
                 </span>
 
-                <WordActionButtons 
+                <WordActionButtons
                   wordItem={currentWord}
                   onSpeak={handleSpeak}
                   source={cardImage ? 'toeic' : 'oxford'}
@@ -678,6 +678,14 @@ export default function FlashcardMode({
 
               <div className="card-center">
                 <div className="card-word">{currentWord.word}</div>
+                {currentWord.phonetic && (
+                  <div className="card-phonetic">{currentWord.phonetic}</div>
+                )}
+                {currentWord.level && (
+                  <span className="badge badge-level" title={`Trình độ ${currentWord.level}`}>
+                    {currentWord.level}
+                  </span>
+                )}
                 <span className="badge badge-status">
                   Trạng thái: {currentWord.status}
                 </span>
@@ -703,7 +711,7 @@ export default function FlashcardMode({
                   </div>
                 )}
 
-                <WordActionButtons 
+                <WordActionButtons
                   wordItem={currentWord}
                   onSpeak={handleSpeak}
                   source={cardImage ? 'toeic' : 'oxford'}
@@ -711,12 +719,7 @@ export default function FlashcardMode({
               </div>
 
               <div className={`card-center ${cardImage ? 'card-center-image' : ''}`}>
-                {/* Chỉ hiển thị word ở giữa nếu không có ảnh (Oxford 3000) */}
-                {!cardImage && (
-                  <div className="card-original-word">{currentWord.word}</div>
-                )}
-                
-                {/* Hiển thị ảnh minh họa nếu có (TOEIC) */}
+                {/* Thẻ TOEIC: hiển thị ảnh minh họa */}
                 {cardImage ? (
                   <div className="flashcard-image-wrapper">
                     {imageLoading && !imageError && (
@@ -730,9 +733,9 @@ export default function FlashcardMode({
                         <span>Không thể tải ảnh minh họa</span>
                       </div>
                     ) : (
-                      <img 
-                        src={cardImage} 
-                        alt={currentWord.word} 
+                      <img
+                        src={cardImage}
+                        alt={currentWord.word}
                         className={`flashcard-image ${imageLoading ? 'image-hidden' : 'image-loaded'}`}
                         onLoad={() => {
                           setImageLoading(false);
@@ -749,17 +752,26 @@ export default function FlashcardMode({
                       />
                     )}
                   </div>
-                ) : null}
+                ) : (
+                  /* Thẻ Oxford 3000 & 5000: vùng nội dung có thể cuộn an toàn khi text dài */
+                  <div className="card-back-scroll">
+                    <div className="card-original-word">{currentWord.word}</div>
 
-                {/* Hiển thị nghĩa text nếu có (Oxford 3000) */}
-                {currentWord.meaning ? (
-                  <div className="card-meaning">{currentWord.meaning}</div>
-                ) : null}
+                    {/* Hiển thị nghĩa tiếng Việt */}
+                    {currentWord.meaning ? (
+                      <div className="card-meaning">{currentWord.meaning}</div>
+                    ) : null}
 
-                {currentWord.type && !cardImage && (
-                  <span className={`badge badge-${currentWord.type}`}>
-                    Từ loại: {currentWord.type}
-                  </span>
+                    {/* Hiển thị câu ví dụ song ngữ nếu có (Oxford 5000 Extra) */}
+                    {currentWord.example && (
+                      <div className="card-example-box">
+                        <div className="card-example">{currentWord.example}</div>
+                        {currentWord.exampleMeaning && (
+                          <div className="card-example-meaning">{currentWord.exampleMeaning}</div>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
 
@@ -783,9 +795,9 @@ export default function FlashcardMode({
           {hasAnyNav && (
         <div className={`flashcard-controls ${!showNavShuffle && !showNavFlip ? 'is-minimal-nav' : ''}`}>
           {showNavPrevNext && (
-            <button 
+            <button
               type="button"
-              className="btn btn-secondary btn-flashcard-prev" 
+              className="btn btn-secondary btn-flashcard-prev"
               onClick={handlePrev}
               title="Từ trước (Phím A hoặc ←)"
             >
@@ -796,9 +808,9 @@ export default function FlashcardMode({
           )}
 
           {showNavShuffle && (
-            <button 
+            <button
               type="button"
-              className={`btn btn-secondary btn-flashcard-shuffle ${isShuffled ? 'is-active' : ''}`} 
+              className={`btn btn-secondary btn-flashcard-shuffle ${isShuffled ? 'is-active' : ''}`}
               onClick={handleToggleShuffle}
               aria-pressed={isShuffled}
               title={isShuffled ? "Quay lại thứ tự ban đầu (Phím X)" : "Trộn ngẫu nhiên danh sách (Phím X)"}
@@ -810,9 +822,9 @@ export default function FlashcardMode({
           )}
 
           {showNavFlip && (
-            <button 
+            <button
               type="button"
-              className="btn btn-secondary btn-flashcard-flip" 
+              className="btn btn-secondary btn-flashcard-flip"
               onClick={handleFlip}
               title="Lật thẻ (Phím W, S, Space, ↑, ↓)"
             >
@@ -822,9 +834,9 @@ export default function FlashcardMode({
           )}
 
           {showNavPrevNext && (
-            <button 
+            <button
               type="button"
-              className="btn btn-primary btn-flashcard-next" 
+              className="btn btn-primary btn-flashcard-next"
               onClick={handleNext}
               title="Từ tiếp theo (Phím D, Enter, →)"
             >
