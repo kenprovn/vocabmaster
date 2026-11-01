@@ -1,6 +1,14 @@
-import React, { useState, useRef, useMemo } from 'react';
-import { Volume2, Search, Plus, Edit2, Trash2, X, Check, Download, Upload, Filter, ChevronLeft, ChevronRight, Layers, RotateCcw } from 'lucide-react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
+import { 
+  Volume2, Search, Plus, Edit2, Trash2, X, Check, Download, Upload, Filter, 
+  ChevronLeft, ChevronRight, Layers, RotateCcw, Bookmark, FileText, RotateCw, Copy, BookOpen 
+} from 'lucide-react';
 import { speakWord } from '../utils/speech';
+import { getSavedWords, removeSavedWord, subscribeReviewLater, formatWordsAsTxt } from '../utils/reviewLater';
+import { copyToClipboard } from '../utils/clipboard';
+import { showToast } from '../utils/toast';
+import TxtPreviewModal from './TxtPreviewModal';
+import FilterDropdown from './FilterDropdown';
 
 export default function WordListMode({ 
   words, 
@@ -14,12 +22,108 @@ export default function WordListMode({
   onUpdateWord, 
   onDeleteWord, 
   onToggleKnown,
-  onImportWords 
+  onImportWords,
+  onStartReviewSaved
 }) {
+  const [activeTab, setActiveTab] = useState('main'); // 'main' | 'saved'
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'new' | 'learning' | 'mastered'
   const [currentPage, setCurrentPage] = useState(1);
   const wordsPerPage = 50;
+
+  // Review Later state
+  const [savedWords, setSavedWords] = useState(() => getSavedWords());
+  const [savedSourceFilter, setSavedSourceFilter] = useState('all'); // 'all' | 'oxford' | 'toeic'
+  const [savedSearchTerm, setSavedSearchTerm] = useState('');
+  const [isTxtModalOpen, setIsTxtModalOpen] = useState(false);
+
+  // Theo dõi cập nhật danh sách Review Later
+  useEffect(() => {
+    const unsubscribe = subscribeReviewLater((updated) => {
+      setSavedWords(updated);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const oxfordSavedCount = useMemo(() => {
+    return savedWords.filter(item => {
+      const sources = item.sources || [item.source || 'oxford'];
+      return sources.includes('oxford');
+    }).length;
+  }, [savedWords]);
+
+  const toeicSavedCount = useMemo(() => {
+    return savedWords.filter(item => {
+      const sources = item.sources || [item.source || 'oxford'];
+      return sources.includes('toeic');
+    }).length;
+  }, [savedWords]);
+
+  const filteredSavedWords = useMemo(() => {
+    const s = savedSearchTerm.trim().toLowerCase();
+    return savedWords.filter(item => {
+      // 1. Lọc theo nguồn
+      if (savedSourceFilter === 'oxford') {
+        const sources = item.sources || [item.source || 'oxford'];
+        if (!sources.includes('oxford')) return false;
+      } else if (savedSourceFilter === 'toeic') {
+        const sources = item.sources || [item.source || 'oxford'];
+        if (!sources.includes('toeic')) return false;
+      }
+
+      // 2. Lọc theo từ khóa tìm kiếm
+      if (s) {
+        const wordMatch = item.word.toLowerCase().includes(s);
+        const meaningMatch = item.meaning && item.meaning.toLowerCase().includes(s);
+        if (!wordMatch && !meaningMatch) return false;
+      }
+
+      return true;
+    });
+  }, [savedWords, savedSourceFilter, savedSearchTerm]);
+
+  const handleCopyAllSaved = async () => {
+    if (filteredSavedWords.length === 0) {
+      showToast('Danh sách từ đang trống!', 'warning');
+      return;
+    }
+    const txt = formatWordsAsTxt(filteredSavedWords);
+    const ok = await copyToClipboard(txt);
+    if (ok) {
+      showToast(`Đã sao chép ${filteredSavedWords.length} từ vào bộ nhớ tạm!`, 'success');
+    } else {
+      showToast('Không thể sao chép văn bản!', 'error');
+    }
+  };
+
+  const handleReviewSaved = () => {
+    if (filteredSavedWords.length === 0) {
+      showToast('Không có từ nào trong danh sách để ôn tập!', 'warning');
+      return;
+    }
+    if (onStartReviewSaved) {
+      onStartReviewSaved(filteredSavedWords);
+    }
+  };
+
+  const handleCopySingleWord = async (word, e) => {
+    if (e) e.stopPropagation();
+    const ok = await copyToClipboard(word);
+    if (ok) {
+      showToast(`Đã sao chép: "${word}"`, 'success');
+    }
+  };
+
+  const handleRemoveSingleWord = (word, e) => {
+    if (e) e.stopPropagation();
+    removeSavedWord(word);
+    showToast(`Đã bỏ lưu "${word}" khỏi danh sách ôn lại`, 'info');
+  };
+
+  const handleSpeakWord = (item, e) => {
+    if (e) e.stopPropagation();
+    speakWord(item.word, { id: item.id, type: item.type });
+  };
 
   const [modalMode, setModalMode] = useState(null); // null | 'add' | 'edit'
   const [editingWord, setEditingWord] = useState(null);
@@ -35,11 +139,6 @@ export default function WordListMode({
   // Handle Search & Filter change (Reset về trang 1)
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
-    setCurrentPage(1);
-  };
-
-  const handleFilterChange = (e) => {
-    setStatusFilter(e.target.value);
     setCurrentPage(1);
   };
 
@@ -79,6 +178,84 @@ export default function WordListMode({
   const paginatedWords = filteredWords.slice(startIndex, startIndex + wordsPerPage);
 
   const knownCount = words.filter(w => w.status === 'known' || w.status === 'mastered').length;
+
+  // Nhóm Bộ từ cho FilterDropdown
+  const unitFilterGroups = useMemo(() => [
+    {
+      label: '📚 Oxford 3000 (~2.978 từ)',
+      badgeClass: 'badge-oxford',
+      items: [
+        { value: 'Tất cả', label: 'Tất cả Oxford', count: unitCounts?.['Tất cả'] || 2978 },
+        { value: 'Vòng 1', label: 'Vòng 1', count: unitCounts?.['Vòng 1'] || 0 },
+        { value: 'Vòng 2', label: 'Vòng 2', count: unitCounts?.['Vòng 2'] || 0 },
+        { value: 'Vòng 3', label: 'Vòng 3', count: unitCounts?.['Vòng 3'] || 0 },
+        { value: 'Vòng 4', label: 'Vòng 4', count: unitCounts?.['Vòng 4'] || 0 },
+        { value: 'Vòng 5', label: 'Vòng 5', count: unitCounts?.['Vòng 5'] || 0 },
+      ]
+    },
+    {
+      label: '🎯 TOEIC Cơ Bản (1.650 từ)',
+      badgeClass: 'badge-toeic',
+      items: [
+        { 
+          value: 'TOEIC Cơ Bản', 
+          label: 'TOEIC Cơ Bản', 
+          count: unitCounts?.['TOEIC Cơ Bản'] || 1650,
+          isToeic: true 
+        }
+      ]
+    }
+  ], [unitCounts]);
+
+  // Thống kê số lượng theo từng trạng thái trong Unit đang chọn
+  const statusCounts = useMemo(() => {
+    const now = new Date();
+    const newCount = words.filter(w => w.status === 'new').length;
+    const learningCount = words.filter(w => w.status === 'learning' || (w.nextReviewDate && new Date(w.nextReviewDate) <= now)).length;
+    return {
+      all: words.length,
+      new: newCount,
+      learning: learningCount,
+      mastered: knownCount
+    };
+  }, [words, knownCount]);
+
+  const statusFilterItems = useMemo(() => [
+    { value: 'all', label: 'Tất cả trạng thái', count: statusCounts.all },
+    { value: 'new', label: 'Chưa học', count: statusCounts.new },
+    { value: 'learning', label: 'Cần ôn', count: statusCounts.learning },
+    { value: 'mastered', label: 'Đã thuộc', count: statusCounts.mastered }
+  ], [statusCounts]);
+
+  const currentUnitLabel = selectedUnit === 'Tất cả' ? 'Tất cả Oxford' : selectedUnit;
+  const currentUnitCount = selectedUnit === 'Tất cả' 
+    ? (unitCounts?.['Tất cả'] || words.length)
+    : (unitCounts?.[selectedUnit] !== undefined ? unitCounts[selectedUnit] : words.length);
+
+  const statusLabels = {
+    all: 'Tất cả trạng thái',
+    new: 'Chưa học',
+    learning: 'Cần ôn',
+    mastered: 'Đã thuộc'
+  };
+  const currentStatusLabel = statusLabels[statusFilter] || 'Tất cả trạng thái';
+  const currentStatusCount = statusCounts[statusFilter];
+
+  const savedSourceItems = useMemo(() => [
+    { value: 'all', label: 'Tất cả nguồn', count: savedWords.length },
+    { value: 'oxford', label: 'Oxford 3000', count: oxfordSavedCount },
+    { value: 'toeic', label: 'TOEIC 1650', count: toeicSavedCount, isToeic: true }
+  ], [savedWords.length, oxfordSavedCount, toeicSavedCount]);
+
+  const savedSourceLabels = {
+    all: 'Tất cả nguồn',
+    oxford: 'Oxford 3000',
+    toeic: 'TOEIC 1650'
+  };
+  const currentSavedSourceLabel = savedSourceLabels[savedSourceFilter] || 'Tất cả nguồn';
+  const currentSavedSourceCount = savedSourceFilter === 'all' 
+    ? savedWords.length 
+    : (savedSourceFilter === 'oxford' ? oxfordSavedCount : toeicSavedCount);
 
   // Open modal for adding
   const handleOpenAdd = () => {
@@ -211,19 +388,44 @@ export default function WordListMode({
 
   return (
     <div className="wordlist-container animate-fade-in">
-      {/* Header */}
-      <div className="mode-header">
-        <div className="mode-title-group">
-          <h2>
-            <span>📚</span> Kho Từ Vựng Cá Nhân
-          </h2>
-          <p className="mode-description">
-            Đang xem: <strong>{selectedUnit}</strong> ({words.length} từ) | Đã thuộc: <strong>{knownCount}</strong> | Chưa thuộc: <strong>{words.length - knownCount}</strong>
-          </p>
-        </div>
+      {/* Tab Switcher: Kho từ chính vs Từ đã lưu (Review Later) */}
+      <div className="wordlist-tabs-nav">
+        <button
+          type="button"
+          className={`wordlist-tab-pill ${activeTab === 'main' ? 'active' : ''}`}
+          onClick={() => setActiveTab('main')}
+        >
+          <BookOpen size={16} />
+          <span>Kho từ chính ({words.length})</span>
+        </button>
 
-        {/* Action Buttons: Export, Import, Reset Default, Add */}
-        <div className="wordlist-header-actions">
+        <button
+          type="button"
+          className={`wordlist-tab-pill ${activeTab === 'saved' ? 'active' : ''}`}
+          onClick={() => setActiveTab('saved')}
+        >
+          <Bookmark size={16} className={savedWords.length > 0 ? 'bookmark-pill-active' : ''} />
+          <span>Từ đã lưu / Review Later</span>
+          <span className="saved-counter-pill">{savedWords.length}</span>
+        </button>
+      </div>
+
+      {/* Tab 1: Kho từ chính */}
+      {activeTab === 'main' && (
+        <div className="wordlist-main-view animate-fade-in">
+          {/* Header */}
+          <div className="mode-header">
+            <div className="mode-title-group">
+              <h2>
+                <span>📚</span> Kho Từ Vựng Cá Nhân
+              </h2>
+              <p className="mode-description">
+                Đang xem: <strong>{selectedUnit}</strong> ({words.length} từ) | Đã thuộc: <strong>{knownCount}</strong> | Chưa thuộc: <strong>{words.length - knownCount}</strong>
+              </p>
+            </div>
+
+            {/* Action Buttons: Export, Import, Reset Default, Add */}
+            <div className="wordlist-header-actions">
           <input 
             type="file" 
             ref={fileInputRef} 
@@ -282,50 +484,39 @@ export default function WordListMode({
         </div>
 
         <div className="wordlist-filters-group">
-          {/* Lọc theo Unit */}
+          {/* Lọc theo Bộ từ / Unit */}
           {onSelectUnit && (
-            <div className="wordlist-filter-item">
-              <Layers size={16} color="var(--accent-cyan)" />
-              <select 
-                className="wordlist-filter-select unit-dropdown"
-                value={selectedUnit}
-                onChange={(e) => {
-                  onSelectUnit(e.target.value);
-                  setCurrentPage(1);
-                }}
-                title="Lọc từ vựng theo Bộ từ / Unit"
-              >
-                <optgroup label="📚 Oxford 3000 (~2.978 từ)">
-                  {['Tất cả', 'Vòng 1', 'Vòng 2', 'Vòng 3', 'Vòng 4', 'Vòng 5'].map(u => (
-                    <option key={u} value={u}>
-                      {u} {unitCounts && unitCounts[u] !== undefined ? `(${unitCounts[u]})` : ''}
-                    </option>
-                  ))}
-                </optgroup>
-                <optgroup label="🎯 TOEIC Cơ Bản (1.650 từ)">
-                  <option value="TOEIC Cơ Bản">
-                    TOEIC Cơ Bản {unitCounts && (unitCounts['TOEIC Cơ Bản'] !== undefined ? `(${unitCounts['TOEIC Cơ Bản']})` : (unitCounts['TOEIC Cơ Bản – MR. HIEP'] !== undefined ? `(${unitCounts['TOEIC Cơ Bản – MR. HIEP']})` : ''))}
-                  </option>
-                </optgroup>
-              </select>
-            </div>
+            <FilterDropdown
+              icon={<Layers size={15} color="var(--accent-cyan)" />}
+              label={currentUnitLabel}
+              countBadge={currentUnitCount}
+              badgeType={selectedUnit === 'TOEIC Cơ Bản' ? 'toeic' : 'oxford'}
+              groups={unitFilterGroups}
+              selectedValue={selectedUnit}
+              onSelect={(val) => {
+                onSelectUnit(val);
+                setCurrentPage(1);
+              }}
+              align="left"
+              title="Lọc từ vựng theo Bộ từ / Unit"
+            />
           )}
 
           {/* Lọc theo Trạng thái */}
-          <div className="wordlist-filter-item">
-            <Filter size={16} color="var(--text-muted)" />
-            <select 
-              className="wordlist-filter-select"
-              value={statusFilter}
-              onChange={handleFilterChange}
-              title="Lọc từ vựng theo trạng thái học"
-            >
-              <option value="all">Tất cả trạng thái ({words.length})</option>
-              <option value="new">Chưa học</option>
-              <option value="learning">Cần ôn</option>
-              <option value="mastered">Đã thuộc ({knownCount})</option>
-            </select>
-          </div>
+          <FilterDropdown
+            icon={<Filter size={15} color="var(--text-muted)" />}
+            label={currentStatusLabel}
+            countBadge={currentStatusCount}
+            badgeType="default"
+            items={statusFilterItems}
+            selectedValue={statusFilter}
+            onSelect={(val) => {
+              setStatusFilter(val);
+              setCurrentPage(1);
+            }}
+            align="left"
+            title="Lọc từ vựng theo trạng thái học"
+          />
         </div>
       </div>
 
@@ -465,6 +656,199 @@ export default function WordListMode({
           </button>
         </div>
       )}
+        </div>
+      )}
+
+      {/* Tab 2: Từ đã lưu / Review Later */}
+      {activeTab === 'saved' && (
+        <div className="saved-review-view animate-fade-in">
+          {/* Header */}
+          <div className="mode-header saved-header">
+            <div className="mode-title-group">
+              <h2>
+                <span>📑</span> Danh Sách Từ Cần Ôn Lại (Review Later)
+              </h2>
+              <p className="mode-description">
+                Tổng cộng: <strong>{savedWords.length} từ</strong> (Oxford: <strong>{oxfordSavedCount}</strong> • TOEIC: <strong>{toeicSavedCount}</strong>) • Lưu cục bộ trên trình duyệt
+              </p>
+            </div>
+
+            {/* Actions for Saved Words */}
+            <div className="wordlist-header-actions saved-header-actions">
+              <button
+                type="button"
+                className="btn-backup"
+                onClick={handleCopyAllSaved}
+                disabled={filteredSavedWords.length === 0}
+                title="Sao chép toàn bộ từ tiếng Anh trong danh sách này vào bộ nhớ tạm"
+              >
+                <Copy size={15} /> Sao chép tất cả
+              </button>
+
+              <button
+                type="button"
+                className="btn-backup"
+                onClick={() => setIsTxtModalOpen(true)}
+                disabled={filteredSavedWords.length === 0}
+                title="Xem trước và tải về file TXT"
+              >
+                <FileText size={15} /> Xuất TXT
+              </button>
+
+              {onStartReviewSaved && (
+                <button
+                  type="button"
+                  className="btn btn-primary btn-review-saved"
+                  onClick={handleReviewSaved}
+                  disabled={filteredSavedWords.length === 0}
+                  title="Ôn tập các từ đã lưu trên Flashcard"
+                >
+                  <RotateCw size={15} /> Ôn tập Flashcard ({filteredSavedWords.length})
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Toolbar: Search and Filter */}
+          <div className="wordlist-toolbar">
+            <div className="wordlist-search-wrapper">
+              <Search size={18} className="wordlist-search-icon" />
+              <input
+                type="text"
+                className="wordlist-search-input"
+                placeholder="Tìm kiếm từ tiếng Anh hoặc nghĩa tiếng Việt trong danh sách đã lưu..."
+                value={savedSearchTerm}
+                onChange={(e) => setSavedSearchTerm(e.target.value)}
+              />
+            </div>
+
+            <div className="wordlist-filters-group">
+              <FilterDropdown
+                icon={<Filter size={15} color="var(--accent-cyan)" />}
+                label={currentSavedSourceLabel}
+                countBadge={currentSavedSourceCount}
+                badgeType={savedSourceFilter === 'toeic' ? 'toeic' : (savedSourceFilter === 'oxford' ? 'oxford' : 'default')}
+                items={savedSourceItems}
+                selectedValue={savedSourceFilter}
+                onSelect={(val) => setSavedSourceFilter(val)}
+                align="left"
+                title="Lọc danh sách theo nguồn từ"
+              />
+            </div>
+          </div>
+
+          {/* Grid Cards of Saved Words */}
+          <div className="wordlist-grid saved-words-grid">
+            {filteredSavedWords.length === 0 ? (
+              <div className="saved-empty-state">
+                {savedWords.length === 0 ? (
+                  <>
+                    <div className="saved-empty-icon">
+                      <Bookmark size={42} color="#fbbf24" fill="#fbbf24" />
+                    </div>
+                    <h3 className="saved-empty-title">Chưa có từ nào trong danh sách ôn lại!</h3>
+                    <p className="saved-empty-desc">
+                      Khi học ở chế độ <strong>Flashcard</strong>, <strong>Trắc nghiệm</strong> hoặc <strong>Gõ đáp án</strong>, hãy nhấp vào biểu tượng <strong>Bookmark (Đánh dấu)</strong> ở góc trên bên phải để lưu lại từ vựng bạn muốn ôn kỹ hơn.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="saved-empty-title">Không tìm thấy từ nào khớp với bộ lọc!</h3>
+                    <p className="saved-empty-desc">Hãy thử tìm với từ khóa khác hoặc chuyển bộ lọc sang "Tất cả nguồn".</p>
+                  </>
+                )}
+              </div>
+            ) : (
+              filteredSavedWords.map((item) => {
+                const sources = item.sources || [item.source || 'oxford'];
+                const hasToeic = sources.includes('toeic');
+                const hasOxford = sources.includes('oxford');
+
+                return (
+                  <div key={item.word} className="wordlist-item saved-card-item">
+                    {/* Top: Badges & Action Buttons */}
+                    <div className="word-card-top">
+                      <div className="word-badges-wrapper">
+                        {item.type && (
+                          <span className={`badge badge-${item.type}`}>
+                            {item.type}
+                          </span>
+                        )}
+                        {hasOxford && (
+                          <span className="badge badge-oxford-tag">Oxford</span>
+                        )}
+                        {hasToeic && (
+                          <span className="badge badge-toeic-tag">TOEIC</span>
+                        )}
+                      </div>
+
+                      <div className="word-actions">
+                        <button
+                          type="button"
+                          className="icon-btn sound-icon-btn"
+                          onClick={(e) => handleSpeakWord(item, e)}
+                          title="Nghe phát âm (Sonia)"
+                          aria-label="Nghe phát âm"
+                        >
+                          <Volume2 size={15} />
+                        </button>
+
+                        <button
+                          type="button"
+                          className="icon-btn copy-icon-btn"
+                          onClick={(e) => handleCopySingleWord(item.word, e)}
+                          title="Sao chép từ tiếng Anh"
+                          aria-label="Sao chép từ"
+                        >
+                          <Copy size={15} />
+                        </button>
+
+                        <button
+                          type="button"
+                          className="icon-btn delete-icon-btn"
+                          onClick={(e) => handleRemoveSingleWord(item.word, e)}
+                          title="Bỏ lưu khỏi danh sách ôn lại"
+                          aria-label="Bỏ lưu"
+                        >
+                          <Trash2 size={15} />
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Content: English word & Vietnamese Meaning & Thumbnail */}
+                    <div className="saved-card-content">
+                      {item.image && (
+                        <div className="saved-thumb-wrapper">
+                          <img
+                            src={item.image}
+                            alt={item.word}
+                            className="saved-thumb-img"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                      <div className="saved-word-info">
+                        <div className="word-english">{item.word}</div>
+                        {item.meaning && (
+                          <div className="word-vietnamese">{item.meaning}</div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Modal xem trước và xuất file TXT */}
+      <TxtPreviewModal
+        isOpen={isTxtModalOpen}
+        onClose={() => setIsTxtModalOpen(false)}
+        wordsList={filteredSavedWords}
+        title={`Xem trước file TXT (${filteredSavedWords.length} từ)`}
+      />
 
       {/* Modal Add / Edit Word */}
       {modalMode && (

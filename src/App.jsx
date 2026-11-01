@@ -10,8 +10,12 @@ import QuizMode from './components/QuizMode';
 import TypingMode from './components/TypingMode';
 import WordListMode from './components/WordListMode';
 import AudioToast from './components/AudioToast';
+import JumpUndoToast from './components/JumpUndoToast';
 import CustomUnitSelector from './components/CustomUnitSelector';
-import { Layers, HelpCircle, Keyboard, BookOpen, GraduationCap, Clock, Award, Minimize2 } from 'lucide-react';
+import { Layers, HelpCircle, Keyboard, BookOpen, GraduationCap, Clock, Award, Minimize2, Bookmark, X } from 'lucide-react';
+import { normalizeWordKey } from './utils/reviewLater';
+import { showToast } from './utils/toast';
+import { clearJumpUndo } from './utils/jumpUndo';
 import './App.css';
 
 // Key lưu trữ riêng biệt cho từng bộ từ trong localStorage (bảo toàn 100% dữ liệu gốc)
@@ -141,6 +145,8 @@ export default function App() {
 
   // Lưu Unit đang chọn vào localStorage
   const handleSelectUnit = (unit) => {
+    clearJumpUndo();
+    setCustomReviewWords(null);
     setSelectedUnit(unit);
     try {
       localStorage.setItem(SELECTED_UNIT_KEY, unit);
@@ -148,6 +154,34 @@ export default function App() {
   };
 
   const isToeic = selectedUnit === TOEIC_UNIT_NAME;
+
+  // Trạng thái ôn tập danh sách từ tùy chỉnh (ví dụ: Từ đã lưu / Review Later)
+  const [customReviewWords, setCustomReviewWords] = useState(null);
+
+  const handleStartReviewSaved = (savedList) => {
+    if (!savedList || savedList.length === 0) {
+      showToast('Danh sách từ đã lưu đang trống!', 'warning');
+      return;
+    }
+
+    const enrichedList = savedList.map(item => {
+      const key = normalizeWordKey(item.word);
+      const inToeic = toeicWords.find(w => normalizeWordKey(w.word) === key);
+      const inOxford = oxfordWords.find(w => normalizeWordKey(w.word) === key);
+      return inToeic || inOxford || item;
+    });
+
+    clearJumpUndo();
+    setCustomReviewWords(enrichedList);
+    setActiveMode('flashcard');
+    showToast(`Bắt đầu ôn tập ${enrichedList.length} từ đã lưu trên Flashcard!`, 'success');
+  };
+
+  const handleExitCustomReview = () => {
+    clearJumpUndo();
+    setCustomReviewWords(null);
+    showToast(`Đã trở về bộ từ ${selectedUnit}`, 'info');
+  };
 
   // Đếm số lượng từ cho từng Unit
   const oxfordCounts = useMemo(() => {
@@ -165,8 +199,11 @@ export default function App() {
     };
   }, [oxfordCounts, toeicWords.length]);
 
-  // Lọc danh sách từ theo Unit đang chọn
+  // Lọc danh sách từ theo Unit đang chọn hoặc danh sách tùy chỉnh (Từ đã lưu)
   const activeWords = useMemo(() => {
+    if (customReviewWords && customReviewWords.length > 0) {
+      return customReviewWords;
+    }
     if (isToeic) {
       return toeicWords;
     }
@@ -174,7 +211,7 @@ export default function App() {
       return oxfordWords;
     }
     return oxfordWords.filter(w => w.unit === selectedUnit);
-  }, [isToeic, toeicWords, oxfordWords, selectedUnit]);
+  }, [customReviewWords, isToeic, toeicWords, oxfordWords, selectedUnit]);
 
   // Thoát Focus Mode khi bấm phím Escape (Esc)
   useEffect(() => {
@@ -319,10 +356,19 @@ export default function App() {
   }, [activeWords]);
 
 
+  const handleSwitchMode = (mode) => {
+    if (mode !== activeMode) {
+      clearJumpUndo();
+      setActiveMode(mode);
+    }
+  };
+
   return (
     <div className={`app-container ${isFocusMode ? 'focus-mode-active' : ''}`}>
       {/* Toast thông báo âm thanh / lỗi */}
       <AudioToast />
+      {/* Toast hoàn tác khi nhảy từ vựng nhầm */}
+      <JumpUndoToast />
 
       {/* Nút nổi để thoát Focus Mode */}
       {isFocusMode && (
@@ -365,7 +411,7 @@ export default function App() {
           <nav className="mode-nav">
             <button
               className={`nav-tab ${activeMode === 'flashcard' ? 'active' : ''}`}
-              onClick={() => setActiveMode('flashcard')}
+              onClick={() => handleSwitchMode('flashcard')}
               id="mode-flashcard-btn"
             >
               <Layers size={17} />
@@ -374,7 +420,7 @@ export default function App() {
 
             <button
               className={`nav-tab ${activeMode === 'quiz' ? 'active' : ''}`}
-              onClick={() => setActiveMode('quiz')}
+              onClick={() => handleSwitchMode('quiz')}
               id="mode-quiz-btn"
             >
               <HelpCircle size={17} />
@@ -383,7 +429,7 @@ export default function App() {
 
             <button
               className={`nav-tab ${activeMode === 'typing' ? 'active' : ''}`}
-              onClick={() => setActiveMode('typing')}
+              onClick={() => handleSwitchMode('typing')}
               id="mode-typing-btn"
             >
               <Keyboard size={17} />
@@ -392,7 +438,7 @@ export default function App() {
 
             <button
               className={`nav-tab ${activeMode === 'wordlist' ? 'active' : ''}`}
-              onClick={() => setActiveMode('wordlist')}
+              onClick={() => handleSwitchMode('wordlist')}
               id="mode-wordlist-btn"
             >
               <BookOpen size={17} />
@@ -407,20 +453,14 @@ export default function App() {
         <section className="dashboard-container">
           <div className="dashboard-header-row">
             <div className="dashboard-unit-badge">
-              <span className="dash-unit-title">📊 Bộ từ đang chọn:</span>
-              <span className="dash-unit-active">{selectedUnit}</span>
-              <span className="dash-unit-count">({activeWords.length} từ)</span>
-            </div>
-
-            <div className="dashboard-unit-control">
-              <CustomUnitSelector
-                selectedUnit={selectedUnit}
-                onSelectUnit={handleSelectUnit}
-                oxfordCounts={oxfordCounts}
-                toeicCount={toeicWords.length}
-                toeicUnitName={TOEIC_UNIT_NAME}
-                align="left"
-              />
+              <span className="dash-unit-icon">📊</span>
+              <span className="dash-unit-title">Bộ từ đang học:</span>
+              <span className={`dash-unit-active ${isToeic ? 'theme-toeic' : 'theme-oxford'}`}>
+                {selectedUnit === 'Tất cả' ? 'Tất cả Oxford' : selectedUnit}
+              </span>
+              <span className="dash-unit-count-chip">
+                {activeWords.length} từ
+              </span>
             </div>
           </div>
 
@@ -463,6 +503,29 @@ export default function App() {
         </section>
       )}
 
+      {/* Banner thông báo chế độ ôn tập từ đã lưu */}
+      {customReviewWords && (
+        <section className="custom-review-banner-wrapper">
+          <div className="custom-review-banner animate-fade-in">
+            <div className="custom-review-info">
+              <Bookmark size={20} color="#fbbf24" fill="#fbbf24" />
+              <div>
+                <span className="custom-review-badge">Đang trong chế độ ôn tập:</span>
+                <span className="custom-review-title"> Danh sách từ đã lưu (Review Later) — {customReviewWords.length} từ</span>
+              </div>
+            </div>
+            <button 
+              type="button"
+              className="btn-exit-custom-review"
+              onClick={handleExitCustomReview}
+              title={`Trở về bài học ${selectedUnit}`}
+            >
+              <X size={15} /> Trở về {selectedUnit}
+            </button>
+          </div>
+        </section>
+      )}
+
       {/* Main Content Area */}
       <main className="main-content">
         {activeMode === 'flashcard' && (
@@ -500,6 +563,7 @@ export default function App() {
             onDeleteWord={handleDeleteWord}
             onToggleKnown={handleToggleKnown}
             onImportWords={handleImportWords}
+            onStartReviewSaved={handleStartReviewSaved}
           />
         )}
       </main>

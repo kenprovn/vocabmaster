@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { cancelCurrentAutoNext } from '../utils/autoNext';
 
 export default function JumpToWord({ currentIndex, total, onJump }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -25,9 +26,11 @@ export default function JumpToWord({ currentIndex, total, onJump }) {
     if (isSubmittingRef.current) return;
     isSubmittingRef.current = true;
 
-    const targetNum = parseInt(inputValue, 10);
+    const rawVal = inputRef.current ? inputRef.current.value : inputValue;
+    const targetNum = parseInt(rawVal, 10);
     // Kiểm tra hợp lệ từ 1 đến tổng số từ
     if (!isNaN(targetNum) && targetNum >= 1 && targetNum <= total) {
+      cancelCurrentAutoNext();
       onJump(targetNum - 1);
     }
     // Nếu sai hoặc rỗng, giữ nguyên index cũ (không gọi onJump)

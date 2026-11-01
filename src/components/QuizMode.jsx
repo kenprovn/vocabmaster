@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Volume2, CheckCircle2, XCircle, ArrowRight, ArrowLeft, Award, Flame, CornerDownLeft, Maximize2 } from 'lucide-react';
+import { CheckCircle2, XCircle, ArrowRight, ArrowLeft, Award, Flame, CornerDownLeft, Maximize2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { speakWord } from '../utils/speech';
 import JumpToWord from './JumpToWord';
+import WordActionButtons from './WordActionButtons';
+import AutoNextControl from './AutoNextControl';
+import AutoNextCountdownBar from './AutoNextCountdownBar';
+import InteractiveSeekBar from './InteractiveSeekBar';
+import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
+import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 
 export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,6 +59,7 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
   // Reset currentIndex when words array changes (e.g. Unit switched)
   useEffect(() => {
     setCurrentIndex(0);
+    clearJumpUndo();
   }, [words]);
 
   // Update options whenever currentIndex or words changes
@@ -107,10 +114,38 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
 
   // Jump to specific word index
   const handleJump = useCallback((newIndex) => {
+    if (newIndex === currentIndex) return;
+    const prevIdx = currentIndex;
+    triggerJumpUndo({
+      fromIndex: prevIdx,
+      toIndex: newIndex,
+      total: words.length,
+      onUndo: (targetIdx) => {
+        setSelectedOptionIndex(null);
+        setIsAnswered(false);
+        setCurrentIndex(targetIdx);
+      }
+    });
     setSelectedOptionIndex(null);
     setIsAnswered(false);
     setCurrentIndex(newIndex);
-  }, []);
+  }, [currentIndex, words.length]);
+
+  const isAnswerCorrect = selectedOptionIndex !== null ? Boolean(options[selectedOptionIndex]?.isCorrect) : false;
+
+  // Auto Next Hook
+  const {
+    isCounting,
+    progressPercent: autoNextProgress,
+    cancelCountdown,
+    settings: autoNextSettings,
+  } = useAutoNextTimer({
+    isTriggered: isAnswered,
+    isCorrect: isAnswerCorrect,
+    currentIndex,
+    totalCount: words.length,
+    onNext: handleNextWord,
+  });
 
   // Touch Gesture Handlers cho Mobile (Swipe Left: Câu tiếp, Swipe Right: Câu trước)
   const handleTouchStart = (e) => {
@@ -241,17 +276,18 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
             <span>{score} điểm</span>
           </div>
 
+          <AutoNextControl />
+
           <JumpToWord
             currentIndex={currentIndex}
             total={words.length}
             onJump={handleJump}
           />
-          <div className="progress-bar-container">
-            <div 
-              className="progress-bar-fill" 
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
+          <InteractiveSeekBar
+            currentIndex={currentIndex}
+            total={words.length}
+            onJump={handleJump}
+          />
         </div>
       </div>
 
@@ -269,22 +305,17 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
               {currentWord.type || (isImageMode ? 'TOEIC' : 'verb')}
             </span>
 
-            {/* Nút loa phát âm cho TOEIC (đọc từ tiếng Anh của ảnh mà không lộ text đáp án) */}
+            {/* Nút thao tác âm thanh / copy / bookmark (chỉ hiện copy & bookmark sau khi đã trả lời) */}
             {isImageMode && (
-              <button 
-                type="button"
-                className="sound-btn" 
-                onClick={(e) => {
-                  if (e && e.stopPropagation) e.stopPropagation();
-                  handleSpeak();
-                }}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                title="Nghe phát âm (Phím R)"
-                aria-label="Nghe phát âm tiếng Anh"
-              >
-                <Volume2 size={18} />
-              </button>
+              <WordActionButtons 
+                wordItem={currentWord}
+                onSpeak={handleSpeak}
+                source="toeic"
+                showSpeaker={true}
+                showCopy={isAnswered}
+                showBookmark={isAnswered}
+                size={18}
+              />
             )}
           </div>
 
@@ -298,21 +329,16 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
             </div>
           ) : (
             <div className="quiz-word">
-              {currentWord.word}
-              <button 
-                type="button"
-                className="sound-btn" 
-                onClick={(e) => {
-                  if (e && e.stopPropagation) e.stopPropagation();
-                  handleSpeak();
-                }}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                title="Nghe phát âm (Phím R)"
-                aria-label="Nghe phát âm tiếng Anh"
-              >
-                <Volume2 size={20} />
-              </button>
+              <span>{currentWord.word}</span>
+              <WordActionButtons 
+                wordItem={currentWord}
+                onSpeak={handleSpeak}
+                source="oxford"
+                showSpeaker={true}
+                showCopy={isAnswered}
+                showBookmark={isAnswered}
+                size={18}
+              />
             </div>
           )}
 
@@ -363,6 +389,15 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
             );
           })}
         </div>
+
+        {/* Countdown Bar if Auto Next is ticking */}
+        <AutoNextCountdownBar
+          isCounting={isCounting}
+          progressPercent={autoNextProgress}
+          duration={autoNextSettings.delay}
+          isCorrect={isAnswerCorrect}
+          onCancel={cancelCountdown}
+        />
 
         {/* Feedback Bar when answered */}
         {isAnswered && (

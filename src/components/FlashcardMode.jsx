@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Volume2, RotateCw, ArrowRight, ArrowLeft, Shuffle, Maximize2, ImageOff } from 'lucide-react';
+import { RotateCw, ArrowRight, ArrowLeft, Shuffle, Maximize2, ImageOff } from 'lucide-react';
 import { speakWord } from '../utils/speech';
 import { isImageLoaded, isImageError, updatePreloadQueue } from '../utils/imagePreloader';
 import JumpToWord from './JumpToWord';
+import WordActionButtons from './WordActionButtons';
+import InteractiveSeekBar from './InteractiveSeekBar';
+import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 
 export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   const [wordList, setWordList] = useState(words);
@@ -21,6 +24,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     setWordList(words);
     setCurrentIndex(0);
     setIsFlipped(false);
+    clearJumpUndo();
   }, [words]);
 
   // Reset image loading khi chuyển từ (tận dụng cache nếu đã nạp trước thành công)
@@ -74,9 +78,20 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   }, []);
 
   const handleJump = useCallback((newIndex) => {
+    if (newIndex === currentIndex) return;
+    const prevIdx = currentIndex;
+    triggerJumpUndo({
+      fromIndex: prevIdx,
+      toIndex: newIndex,
+      total: wordList.length,
+      onUndo: (targetIdx) => {
+        setIsFlipped(false);
+        setCurrentIndex(targetIdx);
+      }
+    });
     setIsFlipped(false);
     setCurrentIndex(newIndex);
-  }, []);
+  }, [currentIndex, wordList.length]);
 
   const handleNext = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
@@ -161,6 +176,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   const handleShuffle = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
     setIsFlipped(false);
+    clearJumpUndo();
     const shuffled = [...wordList].sort(() => Math.random() - 0.5);
     setWordList(shuffled);
     setCurrentIndex(0);
@@ -248,12 +264,11 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
             total={wordList.length}
             onJump={handleJump}
           />
-          <div className="progress-bar-container">
-            <div 
-              className="progress-bar-fill" 
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
+          <InteractiveSeekBar
+            currentIndex={currentIndex}
+            total={wordList.length}
+            onJump={handleJump}
+          />
         </div>
       </div>
 
@@ -277,15 +292,11 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
                 <span className={`badge badge-${currentWord.type || 'verb'}`}>
                   {currentWord.type}
                 </span>
-                <button 
-                  className="sound-btn" 
-                  onClick={handleSpeak}
-                  onTouchStart={(e) => e.stopPropagation()}
-                  onTouchEnd={(e) => e.stopPropagation()}
-                  title="Nghe phát âm (Phím R)"
-                >
-                  <Volume2 size={18} />
-                </button>
+                <WordActionButtons 
+                  wordItem={currentWord}
+                  onSpeak={handleSpeak}
+                  source={cardImage ? 'toeic' : 'oxford'}
+                />
               </div>
 
               <div className="card-center">
@@ -315,15 +326,11 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
                   </div>
                 )}
 
-                <button 
-                  className="sound-btn" 
-                  onClick={handleSpeak}
-                  onTouchStart={(e) => e.stopPropagation()}
-                  onTouchEnd={(e) => e.stopPropagation()}
-                  title="Nghe phát âm (Phím R)"
-                >
-                  <Volume2 size={18} />
-                </button>
+                <WordActionButtons 
+                  wordItem={currentWord}
+                  onSpeak={handleSpeak}
+                  source={cardImage ? 'toeic' : 'oxford'}
+                />
               </div>
 
               <div className={`card-center ${cardImage ? 'card-center-image' : ''}`}>

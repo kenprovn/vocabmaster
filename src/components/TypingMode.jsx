@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { Volume2, Lightbulb, CheckCircle2, XCircle, ArrowRight, ArrowLeft, CornerDownLeft, Maximize2 } from 'lucide-react';
+import { Lightbulb, CheckCircle2, XCircle, ArrowRight, ArrowLeft, CornerDownLeft, Maximize2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { speakWord } from '../utils/speech';
 import JumpToWord from './JumpToWord';
+import WordActionButtons from './WordActionButtons';
+import AutoNextControl from './AutoNextControl';
+import AutoNextCountdownBar from './AutoNextCountdownBar';
+import InteractiveSeekBar from './InteractiveSeekBar';
+import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
+import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 
 export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,6 +32,7 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
   // Reset index when words changes (e.g. Unit switched)
   useEffect(() => {
     setCurrentIndex(0);
+    clearJumpUndo();
   }, [words]);
 
   // Reset state when word changes and focus input
@@ -38,19 +45,6 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
     }
   }, [currentIndex]);
 
-  // Handle Hint: reveals 1 character at a time directly into input
-  const handleHint = useCallback(() => {
-    if (hintCount < targetMeaning.length) {
-      const nextCount = hintCount + 1;
-      setHintCount(nextCount);
-      const revealed = targetMeaning.slice(0, nextCount);
-      setInputValue(revealed);
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
-    }
-  }, [hintCount, targetMeaning]);
-
   const handleNext = useCallback(() => {
     setCurrentIndex(prev => (prev + 1) % words.length);
   }, [words.length]);
@@ -60,8 +54,48 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
   }, [words.length]);
 
   const handleJump = useCallback((newIndex) => {
+    if (newIndex === currentIndex) return;
+    const prevIdx = currentIndex;
+    triggerJumpUndo({
+      fromIndex: prevIdx,
+      toIndex: newIndex,
+      total: words.length,
+      onUndo: (targetIdx) => {
+        setCurrentIndex(targetIdx);
+      }
+    });
     setCurrentIndex(newIndex);
-  }, []);
+  }, [currentIndex, words.length]);
+
+  const isTypingFinished = status === 'correct' || status === 'wrong';
+  const isTypingCorrect = status === 'correct';
+
+  const {
+    isCounting,
+    progressPercent: autoNextProgress,
+    cancelCountdown,
+    settings: autoNextSettings,
+  } = useAutoNextTimer({
+    isTriggered: isTypingFinished,
+    isCorrect: isTypingCorrect,
+    currentIndex,
+    totalCount: words.length,
+    onNext: handleNext,
+  });
+
+  // Handle Hint: reveals 1 character at a time directly into input
+  const handleHint = useCallback(() => {
+    cancelCountdown();
+    if (hintCount < targetMeaning.length) {
+      const nextCount = hintCount + 1;
+      setHintCount(nextCount);
+      const revealed = targetMeaning.slice(0, nextCount);
+      setInputValue(revealed);
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }
+  }, [cancelCountdown, hintCount, targetMeaning]);
 
   // Phím tắt bàn phím:
   // - ArrowUp / ArrowDown: Gọi chức năng Gợi ý / Hint (hoạt động ngay cả khi đang trong ô input)
@@ -180,17 +214,18 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
             </button>
           )}
 
+          <AutoNextControl />
+
           <JumpToWord
             currentIndex={currentIndex}
             total={words.length}
             onJump={handleJump}
           />
-          <div className="progress-bar-container">
-            <div 
-              className="progress-bar-fill" 
-              style={{ width: `${progressPercent}%` }}
-            />
-          </div>
+          <InteractiveSeekBar
+            currentIndex={currentIndex}
+            total={words.length}
+            onJump={handleJump}
+          />
         </div>
       </div>
 
@@ -208,19 +243,17 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
               </span>
             </div>
 
-            {/* Nút loa phát âm cho TOEIC (đọc từ tiếng Anh của ảnh mà không lộ text đáp án) */}
+            {/* Nút thao tác âm thanh / copy / bookmark (chỉ hiện copy & bookmark sau khi đã trả lời hoặc mở hết gợi ý) */}
             {isImageTyping && (
-              <button 
-                type="button"
-                className="sound-btn" 
-                onClick={handleSpeak}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                title="Nghe phát âm (Phím R khi không gõ)"
-                aria-label="Nghe phát âm tiếng Anh"
-              >
-                <Volume2 size={18} />
-              </button>
+              <WordActionButtons
+                wordItem={currentWord}
+                onSpeak={handleSpeak}
+                source="toeic"
+                showSpeaker={true}
+                showCopy={status === 'correct' || (hintCount > 0 && hintCount >= targetMeaning.length)}
+                showBookmark={status === 'correct' || (hintCount > 0 && hintCount >= targetMeaning.length)}
+                size={18}
+              />
             )}
           </div>
 
@@ -234,18 +267,16 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
             </div>
           ) : (
             <div className="typing-word">
-              {currentWord.word}
-              <button 
-                type="button"
-                className="sound-btn" 
-                onClick={handleSpeak}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-                title="Nghe phát âm"
-                aria-label="Nghe phát âm tiếng Anh"
-              >
-                <Volume2 size={20} />
-              </button>
+              <span>{currentWord.word}</span>
+              <WordActionButtons
+                wordItem={currentWord}
+                onSpeak={handleSpeak}
+                source="oxford"
+                showSpeaker={true}
+                showCopy={status === 'correct' || (hintCount > 0 && hintCount >= targetMeaning.length)}
+                showBookmark={status === 'correct' || (hintCount > 0 && hintCount >= targetMeaning.length)}
+                size={18}
+              />
             </div>
           )}
 
@@ -283,6 +314,7 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
               placeholder="Nhập nghĩa tiếng Việt rồi nhấn Enter..."
               value={inputValue}
               onChange={(e) => {
+                cancelCountdown();
                 setInputValue(e.target.value);
                 if (status === 'wrong') setStatus('idle');
               }}
@@ -325,6 +357,15 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
             </div>
           </div>
         </form>
+
+        {/* Auto Next Countdown Bar */}
+        <AutoNextCountdownBar
+          isCounting={isCounting}
+          progressPercent={autoNextProgress}
+          duration={autoNextSettings.delay}
+          isCorrect={isTypingCorrect}
+          onCancel={cancelCountdown}
+        />
 
         {/* Result Feedback Banner */}
         {status === 'correct' && (

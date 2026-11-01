@@ -44,21 +44,22 @@ export default function CustomUnitSelector({
     setIsOpen(false);
   };
 
-  // Label text for current active unit
-  const getSelectedDisplay = () => {
+  // Label and count for current active unit
+  const getSelectedInfo = () => {
     if (selectedUnit === toeicUnitName) {
-      return `TOEIC Cơ Bản (${toeicCount} từ)`;
+      return { name: 'TOEIC Cơ Bản', count: toeicCount };
     }
     if (selectedUnit === 'Tất cả') {
-      return `Tất cả Oxford (${oxfordCounts['Tất cả'] || 2978} từ)`;
+      return { name: 'Tất cả Oxford', count: oxfordCounts['Tất cả'] || 2978 };
     }
-    return `${selectedUnit} (${oxfordCounts[selectedUnit] || 0} từ)`;
+    return { name: selectedUnit, count: oxfordCounts[selectedUnit] || 0 };
   };
 
+  const selectedInfo = getSelectedInfo();
   const isToeicSelected = selectedUnit === toeicUnitName;
 
   return (
-    <div className="custom-unit-selector" ref={containerRef}>
+    <div className={`custom-unit-selector ${isOpen ? 'is-open' : ''}`} ref={containerRef}>
       {/* Trigger Button */}
       <button
         type="button"
@@ -73,7 +74,12 @@ export default function CustomUnitSelector({
         </span>
         <span className="selector-label-text">
           <span className="selector-sub">Bộ từ:</span>
-          <strong className="selector-current">{getSelectedDisplay()}</strong>
+          <span className="selector-current-row">
+            <strong className="selector-current">{selectedInfo.name}</strong>
+            <span className={`selector-count-badge ${isToeicSelected ? 'badge-toeic-chip' : 'badge-oxford-chip'}`}>
+              {selectedInfo.count}
+            </span>
+          </span>
         </span>
         <ChevronDown 
           size={16} 

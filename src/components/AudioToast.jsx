@@ -9,9 +9,10 @@ export default function AudioToast() {
     const unsubscribe = audioManager.subscribeToast((newToast) => {
       setToast(newToast);
 
+      const duration = newToast.type === 'success' || newToast.type === 'info' ? 2500 : 4000;
       const timer = setTimeout(() => {
         setToast((curr) => (curr && curr.id === newToast.id ? null : curr));
-      }, 4000);
+      }, duration);
 
       return () => clearTimeout(timer);
     });
@@ -22,6 +23,11 @@ export default function AudioToast() {
   if (!toast) return null;
 
   const isWarning = toast.type === 'warning' || toast.type === 'error';
+  const isSuccess = toast.type === 'success';
+
+  let boxClass = 'audio-toast-info';
+  if (isWarning) boxClass = 'audio-toast-warning';
+  if (isSuccess) boxClass = 'audio-toast-success';
 
   return (
     <div 
@@ -29,9 +35,11 @@ export default function AudioToast() {
       onClick={() => setToast(null)}
       role="alert"
     >
-      <div className={`audio-toast-box ${isWarning ? 'audio-toast-warning' : 'audio-toast-info'}`}>
+      <div className={`audio-toast-box ${boxClass}`}>
         <div className="audio-toast-icon">
-          {isWarning ? <AlertCircle size={18} color="#f59e0b" /> : <Info size={18} color="#06b6d4" />}
+          {isWarning && <AlertCircle size={18} color="#f59e0b" />}
+          {isSuccess && <CheckCircle size={18} color="#10b981" />}
+          {!isWarning && !isSuccess && <Info size={18} color="#06b6d4" />}
         </div>
         <div className="audio-toast-message">
           {toast.message}
