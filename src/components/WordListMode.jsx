@@ -476,7 +476,8 @@ export default function WordListMode({
           onClick={() => setActiveTab('main')}
         >
           <BookOpen size={16} />
-          <span>Kho từ chính ({words.length})</span>
+          <span className="tab-label-full">Kho từ chính ({words.length})</span>
+          <span className="tab-label-short">Kho từ ({words.length})</span>
         </button>
 
         <button
@@ -485,7 +486,8 @@ export default function WordListMode({
           onClick={() => setActiveTab('saved')}
         >
           <Bookmark size={16} className={savedWords.length > 0 ? 'bookmark-pill-active' : ''} />
-          <span>Từ đã lưu / Review Later</span>
+          <span className="tab-label-full">Từ đã lưu / Review Later</span>
+          <span className="tab-label-short">Ôn sau</span>
           <span className="saved-counter-pill">{savedWords.length}</span>
         </button>
       </div>
@@ -557,7 +559,7 @@ export default function WordListMode({
           <input
             type="text"
             className="wordlist-search-input"
-            placeholder="Tìm kiếm theo từ tiếng Anh hoặc nghĩa tiếng Việt..."
+            placeholder="Tìm từ vựng hoặc nghĩa tiếng Việt..."
             value={searchTerm}
             onChange={handleSearchChange}
           />
@@ -600,7 +602,7 @@ export default function WordListMode({
               setStatusFilter(val);
               setCurrentPage(1);
             }}
-            align="left"
+            align="right"
             title="Lọc từ vựng theo trạng thái học"
           />
         </div>
@@ -674,9 +676,9 @@ export default function WordListMode({
 
                 {/* Center: Word and Meaning */}
                 <div className="wordlist-word">
-                  <span>{item.word}</span>
+                  <span className="wordlist-text">{item.word}</span>
                   {item.phonetic && (
-                    <span className="wordlist-phonetic" style={{ marginLeft: '8px', fontSize: '0.85rem', color: '#38bdf8', fontWeight: 'normal' }}>
+                    <span className="wordlist-phonetic">
                       {item.phonetic}
                     </span>
                   )}
@@ -812,7 +814,7 @@ export default function WordListMode({
               <input
                 type="text"
                 className="wordlist-search-input"
-                placeholder="Tìm kiếm từ tiếng Anh hoặc nghĩa tiếng Việt trong danh sách đã lưu..."
+                placeholder="Tìm từ vựng hoặc nghĩa đã lưu..."
                 value={savedSearchTerm}
                 onChange={(e) => setSavedSearchTerm(e.target.value)}
               />

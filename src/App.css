@@ -1093,7 +1093,9 @@
 /* Word List Modal / View */
 .wordlist-container {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .wordlist-toolbar {
@@ -1189,13 +1191,34 @@
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.01em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.wordlist-word .wordlist-text {
+  word-break: break-word;
+}
+
+.wordlist-phonetic {
+  font-size: 0.88rem;
+  color: #38bdf8;
+  font-weight: 500;
+  word-break: break-word;
+  display: inline-block;
 }
 
 .wordlist-meaning {
   font-size: 0.95rem;
   color: #cbd5e1;
-  margin-top: 6px;
-  line-height: 1.4;
+  margin-top: 8px;
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .word-card-top {
@@ -1968,6 +1991,7 @@
   max-width: 320px;
   max-height: 380px;
   overflow-y: auto;
+  box-sizing: border-box;
   background: rgba(15, 23, 42, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -3975,18 +3999,39 @@
   .wordlist-filters-group {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
   }
 
   .filter-dropdown-container {
-    flex: 1;
-    min-width: 140px;
+    width: 100%;
+    flex: none;
   }
 
   .filter-pill-trigger {
     width: 100%;
+    box-sizing: border-box;
     justify-content: space-between;
+  }
+
+  .filter-dropdown-menu {
+    max-width: calc(100vw - 28px);
+    box-sizing: border-box;
+  }
+
+  .word-actions .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .known-checkbox-label {
+    padding: 4px 0;
+  }
+
+  .known-checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
   }
 
   .wordlist-filter-item {
@@ -4079,10 +4124,6 @@
   }
 
   .wordlist-header-actions {
-    grid-template-columns: 1fr;
-  }
-
-  .wordlist-filters-group {
     grid-template-columns: 1fr;
   }
 }
@@ -4632,6 +4673,14 @@
   font-weight: 700;
 }
 
+.tab-label-short {
+  display: none;
+}
+
+.tab-label-full {
+  display: inline;
+}
+
 /* ===================================================
    SAVED WORDS (REVIEW LATER) VIEW & GRID
    =================================================== */
@@ -4713,15 +4762,16 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .saved-word-info .word-vietnamese {
   font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.35;
+  line-height: 1.45;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Empty State */
@@ -5510,13 +5560,28 @@
 @media (max-width: 768px) {
   .wordlist-tabs-nav {
     width: 100%;
+    display: flex;
+    gap: 6px;
+    padding: 4px;
+    box-sizing: border-box;
   }
 
   .wordlist-tab-pill {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    flex: 1;
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    flex: 1 1 0;
+    min-width: 0;
     justify-content: center;
+    gap: 6px;
+    box-sizing: border-box;
+  }
+
+  .tab-label-full {
+    display: none;
+  }
+
+  .tab-label-short {
+    display: inline;
   }
 
   .action-btn {
