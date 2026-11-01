@@ -23,14 +23,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.header-unit-control {
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .brand-icon {
@@ -402,7 +408,7 @@
   perspective: 1200px;
   -webkit-perspective: 1200px;
   width: 100%;
-  min-height: 360px;
+  min-height: 400px;
   position: relative;
   cursor: pointer;
   touch-action: none; /* Ngăn cuộn trang để vuốt mượt mà cả trục X và Y */
@@ -416,7 +422,7 @@
 .flashcard {
   width: 100%;
   height: 100%;
-  min-height: 360px;
+  min-height: 400px;
   position: relative;
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
@@ -445,7 +451,7 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: var(--radius-xl);
-  padding: 36px 32px;
+  padding: 26px 24px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -457,6 +463,7 @@
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
+  overflow: hidden;
 }
 
 .flashcard-face:hover {
@@ -504,30 +511,68 @@
 }
 
 .card-center {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.card-back-scroll {
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+  padding: 2px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-back-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.card-back-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.card-back-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+.card-back-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .card-word {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #ffffff;
+  word-break: break-word;
 }
 
 .card-meaning {
-  font-size: 2.2rem;
+  font-size: clamp(1.25rem, 3vw, 1.85rem);
   font-weight: 700;
   color: #38bdf8;
-  line-height: 1.3;
+  line-height: 1.35;
+  margin: 4px 0;
+  max-width: 96%;
+  word-break: break-word;
 }
 
 .card-original-word {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  font-style: italic;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  letter-spacing: 0.02em;
+  margin-bottom: 2px;
 }
 
 /* ===================================================
@@ -1048,7 +1093,9 @@
 /* Word List Modal / View */
 .wordlist-container {
   max-width: 900px;
+  width: 100%;
   margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .wordlist-toolbar {
@@ -1144,13 +1191,34 @@
   font-weight: 700;
   color: #ffffff;
   letter-spacing: -0.01em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.wordlist-word .wordlist-text {
+  word-break: break-word;
+}
+
+.wordlist-phonetic {
+  font-size: 0.88rem;
+  color: #38bdf8;
+  font-weight: 500;
+  word-break: break-word;
+  display: inline-block;
 }
 
 .wordlist-meaning {
   font-size: 0.95rem;
   color: #cbd5e1;
-  margin-top: 6px;
-  line-height: 1.4;
+  margin-top: 8px;
+  line-height: 1.5;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .word-card-top {
@@ -1244,7 +1312,7 @@
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(168, 85, 247, 0.22);
   border-radius: 22px;
-  box-shadow: 
+  box-shadow:
     0 25px 60px -10px rgba(0, 0, 0, 0.8),
     0 0 35px -5px rgba(168, 85, 247, 0.16),
     0 0 0 1px rgba(255, 255, 255, 0.05);
@@ -1500,6 +1568,11 @@
   font-weight: 700;
   color: #ffffff;
   white-space: nowrap;
+  max-width: 175px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .selector-count-badge {
@@ -1538,20 +1611,21 @@
 .unit-dropdown-menu {
   position: absolute;
   top: calc(100% + 8px);
-  z-index: 1000;
-  min-width: 275px;
-  max-width: 340px;
+  z-index: 1100;
+  min-width: 320px;
+  max-width: 360px;
   max-height: calc(85vh - 70px);
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  background: rgba(15, 23, 42, 0.96);
+  background: #0f172a;
+  background: rgba(15, 23, 42, 0.985);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 18px;
   padding: 8px;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 30px rgba(99, 102, 241, 0.18);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(0, 0, 0, 0.6);
   animation: dropdownFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: top;
 }
@@ -1622,6 +1696,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   padding: 9px 12px;
   border-radius: 10px;
   background: transparent;
@@ -1653,32 +1728,55 @@
   border-color: rgba(168, 85, 247, 0.5);
 }
 
-.item-text-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .item-name {
   font-weight: 600;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+  line-height: 1.35;
+  color: #f8fafc;
 }
 
-.item-count {
-  font-size: 0.78rem;
+.item-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.item-badge-count {
+  font-size: 0.76rem;
+  font-weight: 600;
   color: var(--text-muted);
+  white-space: nowrap;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.dropdown-item.selected .item-count {
-  color: #93c5fd;
+.dropdown-item.selected .item-badge-count {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.item-count-oxford5000 {
+  color: #6ee7b7 !important;
+  background: rgba(16, 185, 129, 0.18) !important;
 }
 
 .item-count-toeic {
   color: #d8b4fe !important;
+  background: rgba(168, 85, 247, 0.18) !important;
 }
 
 .item-check {
   color: #38bdf8;
   flex-shrink: 0;
+}
+
+.dropdown-item.selected.item-oxford5000 .item-check {
+  color: #34d399;
 }
 
 .dropdown-item.selected.item-toeic .item-check {
@@ -1893,6 +1991,7 @@
   max-width: 320px;
   max-height: 380px;
   overflow-y: auto;
+  box-sizing: border-box;
   background: rgba(15, 23, 42, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -3285,7 +3384,8 @@
   }
 
   .unit-dropdown-menu {
-    max-width: 290px;
+    min-width: 280px;
+    max-width: min(calc(100vw - 24px), 350px);
   }
 
   /* Mode Navigation: Thanh vuốt ngang mượt mà */
@@ -3470,7 +3570,7 @@
   }
 
   .flashcard-scene {
-    min-height: 280px;
+    min-height: 380px;
     margin-bottom: 0;
     width: 100%;
     touch-action: none;
@@ -3482,7 +3582,7 @@
   }
 
   .flashcard {
-    min-height: 280px;
+    min-height: 380px;
     touch-action: none;
   }
 
@@ -3899,18 +3999,39 @@
   .wordlist-filters-group {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
   }
 
   .filter-dropdown-container {
-    flex: 1;
-    min-width: 140px;
+    width: 100%;
+    flex: none;
   }
 
   .filter-pill-trigger {
     width: 100%;
+    box-sizing: border-box;
     justify-content: space-between;
+  }
+
+  .filter-dropdown-menu {
+    max-width: calc(100vw - 28px);
+    box-sizing: border-box;
+  }
+
+  .word-actions .icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .known-checkbox-label {
+    padding: 4px 0;
+  }
+
+  .known-checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
   }
 
   .wordlist-filter-item {
@@ -4003,10 +4124,6 @@
   }
 
   .wordlist-header-actions {
-    grid-template-columns: 1fr;
-  }
-
-  .wordlist-filters-group {
     grid-template-columns: 1fr;
   }
 }
@@ -4556,6 +4673,14 @@
   font-weight: 700;
 }
 
+.tab-label-short {
+  display: none;
+}
+
+.tab-label-full {
+  display: inline;
+}
+
 /* ===================================================
    SAVED WORDS (REVIEW LATER) VIEW & GRID
    =================================================== */
@@ -4637,15 +4762,16 @@
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .saved-word-info .word-vietnamese {
   font-size: 0.92rem;
   color: var(--text-muted);
-  line-height: 1.35;
+  line-height: 1.45;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Empty State */
@@ -5358,7 +5484,7 @@
   .autonext-widget .autonext-label {
     font-size: 0.75rem;
   }
-  
+
   .autonext-modal-backdrop {
     padding: 10px !important;
   }
@@ -5385,7 +5511,7 @@
     min-height: 44px;
     border-radius: 12px;
   }
-  
+
   .autonext-presets-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 6px;
@@ -5434,13 +5560,28 @@
 @media (max-width: 768px) {
   .wordlist-tabs-nav {
     width: 100%;
+    display: flex;
+    gap: 6px;
+    padding: 4px;
+    box-sizing: border-box;
   }
 
   .wordlist-tab-pill {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    flex: 1;
+    padding: 8px 10px;
+    font-size: 0.84rem;
+    flex: 1 1 0;
+    min-width: 0;
     justify-content: center;
+    gap: 6px;
+    box-sizing: border-box;
+  }
+
+  .tab-label-full {
+    display: none;
+  }
+
+  .tab-label-short {
+    display: inline;
   }
 
   .action-btn {
@@ -6716,24 +6857,280 @@
   }
 }
 
-@media (max-width: 360px) {
-  .autoread-modal-footer {
-    flex-direction: column-reverse;
-    gap: 8px;
-    padding: 10px 12px;
-  }
+/* ==========================================================================
+   OXFORD 5000 EXTRA & MODERN UNIT SELECTOR STYLES
+   ========================================================================== */
 
-  .autoread-btn-reset,
-  .btn-reset-modal,
-  .autoread-btn-done,
-  .btn-done-modal {
-    width: 100%;
-    min-height: 44px;
-    justify-content: center;
-  }
+/* Theme Oxford 5000 (Emerald / Cyan / Teal Gradient) */
+.dash-unit-active.theme-oxford5000 {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
 }
 
+.unit-selector-btn.theme-oxford5000 {
+  border-color: rgba(16, 185, 129, 0.35);
+}
 
+.unit-selector-btn.theme-oxford5000 .selector-icon {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+}
 
+.unit-selector-btn.theme-oxford5000 .selector-sub {
+  color: #34d399;
+}
 
+.badge-oxford5000-chip {
+  background: rgba(16, 185, 129, 0.25);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.45);
+}
 
+.badge-oxford5000 {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.dropdown-item.item-oxford5000:hover {
+  background: rgba(16, 185, 129, 0.12);
+  color: #6ee7b7;
+}
+
+.dropdown-item.selected.item-oxford5000 {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(6, 182, 212, 0.2) 100%);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #ffffff;
+}
+
+.item-count-oxford5000 {
+  color: #6ee7b7 !important;
+  background: rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Tabs Switcher in Unit Selector */
+.selector-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 4px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.selector-tab-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.selector-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.selector-tab-btn.active {
+  background: rgba(99, 102, 241, 0.25);
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.45);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.selector-tab-btn.active.tab-oxford5000 {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #6ee7b7;
+}
+
+.selector-tab-btn.active.tab-toeic {
+  background: rgba(168, 85, 247, 0.25);
+  border-color: rgba(168, 85, 247, 0.5);
+  color: #e9d5ff;
+}
+
+/* Sub-titles in Dropdown */
+.selector-sub-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 4px 4px;
+}
+
+/* 5 Vòng Chips Grid */
+.selector-rounds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.round-chip-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.round-chip-btn small {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-weight: normal;
+}
+
+.round-chip-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.round-chip-btn.selected {
+  background: rgba(99, 102, 241, 0.28);
+  border-color: #818cf8;
+  color: #ffffff;
+}
+
+.round-chip-btn.selected small {
+  color: #c7d2fe;
+}
+
+/* Unit Grid (Compact Chips) */
+.selector-units-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+}
+
+.unit-chip-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 2px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.unit-chip-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.unit-chip-count {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.unit-chip-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(99, 102, 241, 0.45);
+}
+
+.unit-chip-btn.selected {
+  background: rgba(99, 102, 241, 0.32);
+  border-color: #818cf8;
+  color: #ffffff;
+}
+
+.unit-chip-btn.chip-oxford5000:hover {
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.unit-chip-btn.chip-oxford5000.selected {
+  background: rgba(16, 185, 129, 0.3);
+  border-color: #34d399;
+  color: #ffffff;
+}
+
+.unit-chip-btn.chip-oxford5000.selected .unit-chip-count {
+  color: #a7f3d0;
+}
+
+/* Flashcard Oxford 5000 Enhancements */
+.card-phonetic {
+  font-size: 1.15rem;
+  color: #38bdf8;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.badge-level {
+  background: rgba(245, 158, 11, 0.18);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.card-example-box {
+  margin-top: 10px;
+  margin-bottom: 4px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #38bdf8;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+  width: 96%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.card-example {
+  font-size: 0.94rem;
+  color: #f1f5f9;
+  font-style: italic;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.card-example-meaning {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.35;
+  word-break: break-word;
+}
