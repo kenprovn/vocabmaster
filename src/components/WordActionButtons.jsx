@@ -4,7 +4,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Volume2, Copy, Bookmark, Check } from 'lucide-react';
-import { copyToClipboard } from '../utils/clipboard';
+import { copyToClipboard, normalizeWordForCopy } from '../utils/clipboard';
 import { isWordSaved, toggleSavedWord, subscribeReviewLater, detectSource } from '../utils/reviewLater';
 import { showToast } from '../utils/toast';
 import { cancelCurrentAutoNext } from '../utils/autoNext';
@@ -32,20 +32,20 @@ export default function WordActionButtons({
     return () => unsubscribe();
   }, [wordText]);
 
-  // Xử lý sao chép chỉ từ/cụm từ tiếng Anh
+  // Xử lý sao chép chỉ từ/cụm từ tiếng Anh (chuẩn hóa chữ thường cho từ vựng thông thường)
   const handleCopy = useCallback(async (e) => {
     cancelCurrentAutoNext();
     if (e) {
       if (e.stopPropagation) e.stopPropagation();
       if (e.preventDefault) e.preventDefault();
     }
-    const clean = wordText.trim();
+    const clean = normalizeWordForCopy(wordText);
     if (!clean) return;
 
     const ok = await copyToClipboard(clean);
     if (ok) {
       setJustCopied(true);
-      showToast(`Đã sao chép: "${clean}"`, 'success');
+      showToast('Đã sao chép!', 'success');
       setTimeout(() => setJustCopied(false), 1500);
     } else {
       showToast('Không thể sao chép văn bản!', 'error');

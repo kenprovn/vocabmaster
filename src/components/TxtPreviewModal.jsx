@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { X, Download, Copy, Check, FileText } from 'lucide-react';
-import { copyToClipboard } from '../utils/clipboard';
+import { copyToClipboard, normalizeWordForCopy } from '../utils/clipboard';
 import { downloadReviewLaterTxt } from '../utils/reviewLater';
 import { showToast } from '../utils/toast';
 
@@ -16,11 +16,9 @@ export default function TxtPreviewModal({ isOpen, onClose, wordsList, title = 'X
   const seen = new Set();
   const cleanWords = [];
   (wordsList || []).forEach((item) => {
-    const raw = typeof item === 'string' ? item : item?.word;
-    const clean = (raw || '').trim();
-    const key = clean.toLowerCase();
-    if (clean && !seen.has(key)) {
-      seen.add(key);
+    const clean = normalizeWordForCopy(item);
+    if (clean && !seen.has(clean)) {
+      seen.add(clean);
       cleanWords.push(clean);
     }
   });
@@ -35,7 +33,7 @@ export default function TxtPreviewModal({ isOpen, onClose, wordsList, title = 'X
     const success = await copyToClipboard(txtContent);
     if (success) {
       setCopied(true);
-      showToast(`Đã sao chép toàn bộ ${cleanWords.length} từ vào bộ nhớ tạm!`, 'success');
+      showToast('Đã sao chép!', 'success');
       setTimeout(() => setCopied(false), 2000);
     } else {
       showToast('Không thể sao chép văn bản!', 'error');

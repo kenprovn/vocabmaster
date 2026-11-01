@@ -11,6 +11,7 @@ import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
 import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 import SessionStatsPanel from './SessionStatsPanel';
 import { getSessionStats, saveSessionStats, clearSessionStats } from '../utils/sessionStats';
+import ShortcutGuideModal from './ShortcutGuideModal';
 
 export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUnit = 'Tất cả' }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -286,38 +287,46 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
         </div>
 
         <div className="progress-info">
-          {onToggleFocus && !isFocusMode && (
-            <button 
-              className="btn-focus" 
-              onClick={onToggleFocus}
-              title="Kích hoạt chế độ tập trung (Esc để thoát)"
-            >
-              <Maximize2 size={14} /> Tập trung
-            </button>
-          )}
+          {/* Hàng 1: Thống kê phiên & tập trung */}
+          <div className="progress-stats-group">
+            {onToggleFocus && !isFocusMode && (
+              <button 
+                className="btn-focus" 
+                onClick={onToggleFocus}
+                title="Kích hoạt chế độ tập trung (Esc để thoát)"
+              >
+                <Maximize2 size={14} /> Tập trung
+              </button>
+            )}
 
-          <div className="stats-badge" title="Chuỗi trả lời đúng">
-            <Flame size={16} color="#f59e0b" />
-            <span>Chuỗi: {streak}</span>
+            <div className="stats-badge" title="Chuỗi trả lời đúng">
+              <Flame size={16} color="#f59e0b" />
+              <span>Chuỗi: {streak}</span>
+            </div>
+
+            <div className="stats-badge" title="Tổng điểm">
+              <Award size={16} color="#818cf8" />
+              <span>{score} điểm</span>
+            </div>
           </div>
 
-          <div className="stats-badge" title="Tổng điểm">
-            <Award size={16} color="#818cf8" />
-            <span>{score} điểm</span>
+          {/* Hàng 2: Điều khiển chuyển câu & tiến độ */}
+          <div className="progress-controls-group">
+            <AutoNextControl />
+
+            <div className="progress-nav-tools">
+              <JumpToWord
+                currentIndex={currentIndex}
+                total={words.length}
+                onJump={handleJump}
+              />
+              <InteractiveSeekBar
+                currentIndex={currentIndex}
+                total={words.length}
+                onJump={handleJump}
+              />
+            </div>
           </div>
-
-          <AutoNextControl />
-
-          <JumpToWord
-            currentIndex={currentIndex}
-            total={words.length}
-            onJump={handleJump}
-          />
-          <InteractiveSeekBar
-            currentIndex={currentIndex}
-            total={words.length}
-            onJump={handleJump}
-          />
         </div>
       </div>
 
@@ -482,16 +491,9 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
           </button>
         </div>
 
-        {/* Keyboard shortcut guide */}
-        <div className="shortcut-helper" style={{ marginTop: '22px', flexWrap: 'wrap', gap: '8px' }}>
-          <span>Mẹo phím tắt:</span>
-          <span className="shortcut-kbd">1</span>-<span className="shortcut-kbd">4</span><span>Chọn</span>
-          <span>•</span>
-          <span className="shortcut-kbd">A</span> / <span className="shortcut-kbd">←</span><span>Trước</span>
-          <span>•</span>
-          <span className="shortcut-kbd">D</span> / <span className="shortcut-kbd">Enter ↵</span> / <span className="shortcut-kbd">→</span><span>Tiếp</span>
-          <span>•</span>
-          <span className="shortcut-kbd">R</span><span>Đọc</span>
+        {/* Nút Phím tắt thu gọn */}
+        <div className="mode-shortcuts-wrapper">
+          <ShortcutGuideModal mode="quiz" />
         </div>
       </div>
 

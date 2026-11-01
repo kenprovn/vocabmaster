@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import { speakWord } from '../utils/speech';
 import { getSavedWords, removeSavedWord, subscribeReviewLater, formatWordsAsTxt } from '../utils/reviewLater';
-import { copyToClipboard } from '../utils/clipboard';
+import { copyToClipboard, normalizeWordForCopy } from '../utils/clipboard';
 import { showToast } from '../utils/toast';
 import TxtPreviewModal from './TxtPreviewModal';
 import FilterDropdown from './FilterDropdown';
@@ -90,7 +90,7 @@ export default function WordListMode({
     const txt = formatWordsAsTxt(filteredSavedWords);
     const ok = await copyToClipboard(txt);
     if (ok) {
-      showToast(`Đã sao chép ${filteredSavedWords.length} từ vào bộ nhớ tạm!`, 'success');
+      showToast('Đã sao chép!', 'success');
     } else {
       showToast('Không thể sao chép văn bản!', 'error');
     }
@@ -108,16 +108,18 @@ export default function WordListMode({
 
   const handleCopySingleWord = async (word, e) => {
     if (e) e.stopPropagation();
-    const ok = await copyToClipboard(word);
+    const clean = normalizeWordForCopy(word);
+    if (!clean) return;
+    const ok = await copyToClipboard(clean);
     if (ok) {
-      showToast(`Đã sao chép: "${word}"`, 'success');
+      showToast('Đã sao chép!', 'success');
     }
   };
 
   const handleRemoveSingleWord = (word, e) => {
     if (e) e.stopPropagation();
     removeSavedWord(word);
-    showToast(`Đã bỏ lưu "${word}" khỏi danh sách ôn lại`, 'info');
+    showToast('Đã bỏ lưu từ', 'info');
   };
 
   const handleSpeakWord = (item, e) => {
@@ -649,7 +651,7 @@ export default function WordListMode({
                       checked={isKnown}
                       onChange={(e) => handleToggle(item, e)}
                     />
-                    <span>{isKnown ? '✓ Đã biết (làm mờ)' : 'Chưa biết'}</span>
+                    <span>{isKnown ? '✓ Đã thuộc (làm mờ)' : 'Chưa thuộc'}</span>
                   </label>
 
                   <span style={{ fontSize: '0.75rem', color: 'var(--text-sub)' }}>

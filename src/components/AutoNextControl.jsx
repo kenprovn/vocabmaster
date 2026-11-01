@@ -60,10 +60,9 @@ export default function AutoNextControl({ compact = false }) {
     });
 
     if (nextEnabled) {
-      const modeText = targetMode === 'always' ? 'Mọi câu' : 'Khi đúng';
-      showToast(`Đã bật Auto Next: ${modeText} (${settings.delay}s)`, 'success');
+      showToast('Đã bật Auto Next', 'success');
     } else {
-      showToast('Đã tắt Auto Next (Chuyển thủ công)', 'info');
+      showToast('Đã tắt Auto Next', 'info');
     }
   };
 
@@ -85,7 +84,7 @@ export default function AutoNextControl({ compact = false }) {
     setCustomInputVal(String(sec));
     setInputError('');
     saveAutoNextSettings({ delay: sec });
-    showToast(`Đã đặt thời gian Auto Next: ${sec}s`, 'info');
+    showToast(`Đã đặt thời gian: ${sec}s`, 'info');
   };
 
   // Nhập thời gian tùy chỉnh
@@ -124,11 +123,11 @@ export default function AutoNextControl({ compact = false }) {
           className={`autonext-toggle-btn ${settings.enabled ? 'is-enabled' : 'is-disabled'}`}
           onClick={handleToggle}
           title={settings.enabled ? 'Nhấp để tắt Auto Next' : 'Nhấp để bật Auto Next'}
-          aria-label="Bật tắt Auto Next"
+          aria-label={settings.enabled ? `Tắt Auto Next (Đang bật ${settings.delay}s)` : 'Bật Auto Next'}
         >
           <Zap size={14} className={settings.enabled ? 'zap-active' : ''} />
           <span className="autonext-label">
-            {settings.enabled ? `Auto Next (${settings.delay}s)` : 'Auto Next: Tắt'}
+            {settings.enabled ? `Auto Next · ${settings.delay}s` : 'Auto Next: Tắt'}
           </span>
         </button>
 
@@ -139,7 +138,7 @@ export default function AutoNextControl({ compact = false }) {
           title="Cài đặt chế độ và thời gian Auto Next"
           aria-label="Cài đặt Auto Next"
         >
-          <SlidersHorizontal size={14} />
+          <SlidersHorizontal size={16} />
         </button>
       </div>
 

@@ -317,7 +317,30 @@ export default function App() {
     }
   };
 
-  // Đánh dấu đã biết / chưa biết
+  // Cập nhật trạng thái học tập của một từ (dùng cho Flashcard và Kho từ)
+  const handleUpdateWordStatus = (id, newStatus) => {
+    const updater = prev => prev.map(w => {
+      if (w.id === id) {
+        return {
+          ...w,
+          status: newStatus
+        };
+      }
+      return w;
+    });
+
+    if (isToeic) {
+      setToeicWords(updater);
+    } else {
+      setOxfordWords(updater);
+    }
+
+    if (customReviewWords) {
+      setCustomReviewWords(updater);
+    }
+  };
+
+  // Đánh dấu đã biết / chưa biết (Kho từ)
   const handleToggleKnown = (id) => {
     const updater = prev => prev.map(w => {
       if (w.id === id) {
@@ -334,6 +357,10 @@ export default function App() {
       setToeicWords(updater);
     } else {
       setOxfordWords(updater);
+    }
+
+    if (customReviewWords) {
+      setCustomReviewWords(updater);
     }
   };
 
@@ -597,6 +624,8 @@ export default function App() {
             words={activeWords} 
             isFocusMode={isFocusMode}
             onToggleFocus={toggleFocusMode}
+            selectedUnit={selectedUnit}
+            onUpdateWordStatus={handleUpdateWordStatus}
           />
         )}
         {activeMode === 'quiz' && (

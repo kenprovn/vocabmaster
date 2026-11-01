@@ -5,6 +5,8 @@
 const STORAGE_KEY = 'vocabmaster_review_later_v1';
 const EVENT_NAME = 'vocab_review_later_changed';
 
+import { normalizeWordForCopy } from './clipboard';
+
 /**
  * Chuẩn hóa từ tiếng Anh để so sánh chống trùng lặp (không phân biệt hoa thường, bỏ khoảng trắng thừa)
  */
@@ -137,10 +139,10 @@ export const toggleSavedWord = (item, sourceHint = '') => {
   const key = normalizeWordKey(item.word);
   if (isWordSaved(key)) {
     removeSavedWord(key);
-    return { saved: false, message: 'Đã bỏ lưu khỏi danh sách ôn lại' };
+    return { saved: false, message: 'Đã bỏ lưu từ' };
   } else {
     saveWord(item, sourceHint);
-    return { saved: true, message: 'Đã thêm vào danh sách ôn lại' };
+    return { saved: true, message: 'Đã lưu vào Review Later' };
   }
 };
 
@@ -162,6 +164,7 @@ export const subscribeReviewLater = (callback) => {
 
 /**
  * Định dạng danh sách từ tiếng Anh thành chuỗi văn bản thuần túy cho TXT và Copy Tất Cả:
+ * - Chuẩn hóa chữ thường cho từ vựng thông thường
  * - Mỗi từ/cụm từ 1 dòng
  * - Không stt, không nghĩa tiếng Việt, không header
  * - Không trùng lặp
@@ -172,12 +175,10 @@ export const formatWordsAsTxt = (wordsList) => {
   const lines = [];
 
   for (const it of wordsList) {
-    const rawWord = typeof it === 'string' ? it : (it?.word || '');
-    const clean = rawWord.trim();
-    const key = clean.toLowerCase();
-    if (clean && !seen.has(key)) {
-      seen.add(key);
-      lines.push(clean);
+    const normalized = normalizeWordForCopy(it);
+    if (normalized && !seen.has(normalized)) {
+      seen.add(normalized);
+      lines.push(normalized);
     }
   }
 

@@ -1,16 +1,25 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { RotateCw, ArrowRight, ArrowLeft, Shuffle, Maximize2, ImageOff } from 'lucide-react';
+import { RotateCw, ArrowRight, ArrowLeft, Shuffle, Maximize2, ImageOff, HelpCircle, CheckCircle2 } from 'lucide-react';
 import { speakWord } from '../utils/speech';
 import { isImageLoaded, isImageError, updatePreloadQueue } from '../utils/imagePreloader';
 import JumpToWord from './JumpToWord';
 import WordActionButtons from './WordActionButtons';
 import InteractiveSeekBar from './InteractiveSeekBar';
 import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
+import FlashcardProgressPanel from './FlashcardProgressPanel';
+import ShortcutGuideModal from './ShortcutGuideModal';
 
-export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
+export default function FlashcardMode({ 
+  words, 
+  onToggleFocus, 
+  isFocusMode, 
+  selectedUnit, 
+  onUpdateWordStatus 
+}) {
   const [wordList, setWordList] = useState(words);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [hasFlippedCurrentCard, setHasFlippedCurrentCard] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
 
@@ -19,13 +28,43 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   const touchStartYRef = useRef(null);
   const hasSwipedRef = useRef(false);
 
-  // Sync if words prop updates (e.g. Unit switched)
+  // Lưu trữ đơn vị bài học hoặc fingerprint của danh sách từ để chỉ reset khi thực sự đổi bộ từ / vòng
+  const prevUnitRef = useRef(selectedUnit);
+  const prevWordsLengthRef = useRef(words?.length || 0);
+  const prevFirstIdRef = useRef(words?.[0]?.id);
+
   useEffect(() => {
-    setWordList(words);
-    setCurrentIndex(0);
-    setIsFlipped(false);
-    clearJumpUndo();
-  }, [words]);
+    const isUnitChanged = prevUnitRef.current !== selectedUnit;
+    const isListChanged = prevWordsLengthRef.current !== (words?.length || 0) || prevFirstIdRef.current !== words?.[0]?.id;
+
+    if (isUnitChanged || isListChanged) {
+      prevUnitRef.current = selectedUnit;
+      prevWordsLengthRef.current = words?.length || 0;
+      prevFirstIdRef.current = words?.[0]?.id;
+      setWordList(words);
+      setCurrentIndex(0);
+      setIsFlipped(false);
+      setHasFlippedCurrentCard(false);
+      clearJumpUndo();
+    } else {
+      // Chỉ cập nhật thuộc tính từ (như status) vào wordList mà không làm thay đổi currentIndex hay xáo trộn
+      setWordList(prev => {
+        const statusMap = new Map(words.map(w => [w.id, w.status]));
+        return prev.map(w => {
+          const newStatus = statusMap.get(w.id);
+          if (newStatus !== undefined && newStatus !== w.status) {
+            return { ...w, status: newStatus };
+          }
+          return w;
+        });
+      });
+    }
+  }, [words, selectedUnit]);
+
+  // Khi chuyển sang từ khác, reset trạng thái lật thẻ của từ mới
+  useEffect(() => {
+    setHasFlippedCurrentCard(false);
+  }, [currentIndex]);
 
   // Reset image loading khi chuyển từ (tận dụng cache nếu đã nạp trước thành công)
   const currentWord = wordList[currentIndex] || wordList[0];
@@ -74,6 +113,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
   }, [currentIndex, wordList, cardImage]);
 
   const handleFlip = useCallback(() => {
+    setHasFlippedCurrentCard(true);
     setIsFlipped(prev => !prev);
   }, []);
 
@@ -108,6 +148,32 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
       setCurrentIndex(prev => (prev - 1 + wordList.length) % wordList.length);
     }, 150);
   }, [wordList.length]);
+
+  // Logic tự đánh giá từ vựng: Chưa nhớ (Cần ôn) / Đã nhớ (Đã thuộc)
+  // Chỉ mở khóa thao tác sau khi người học đã lật thẻ xem nghĩa ít nhất 1 lần cho từ hiện tại
+  const canEvaluate = isFlipped || hasFlippedCurrentCard;
+  const isRemembered = currentWord?.status === 'known' || currentWord?.status === 'mastered';
+  const isNotRemembered = currentWord?.status === 'learning';
+
+  const handleRateNotRemembered = useCallback((e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    if (!canEvaluate || !currentWord) return;
+    const newStatus = 'learning';
+    setWordList(prev => prev.map((w, idx) => idx === currentIndex ? { ...w, status: newStatus } : w));
+    if (onUpdateWordStatus) {
+      onUpdateWordStatus(currentWord.id, newStatus);
+    }
+  }, [canEvaluate, currentWord, currentIndex, onUpdateWordStatus]);
+
+  const handleRateRemembered = useCallback((e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
+    if (!canEvaluate || !currentWord) return;
+    const newStatus = 'known';
+    setWordList(prev => prev.map((w, idx) => idx === currentIndex ? { ...w, status: newStatus } : w));
+    if (onUpdateWordStatus) {
+      onUpdateWordStatus(currentWord.id, newStatus);
+    }
+  }, [canEvaluate, currentWord, currentIndex, onUpdateWordStatus]);
 
   // Touch Gesture Handlers cho Mobile:
   // - Vuốt Trái/Phải: Chuyển sang từ tiếp theo / Lùi lại từ trước
@@ -164,10 +230,14 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     }
   };
 
-  // Click vào thẻ: Chỉ lật thẻ khi KHÔNG phải là thao tác vuốt
+  // Click vào thẻ: Chỉ lật thẻ khi KHÔNG phải là thao tác vuốt và KHÔNG click vào action buttons
   const handleCardClick = (e) => {
     if (hasSwipedRef.current) {
       hasSwipedRef.current = false;
+      return;
+    }
+    // Ngăn lật thẻ khi người dùng click vào các nút hành động (Loa, Copy, Bookmark)
+    if (e.target.closest('.card-top-actions') || e.target.closest('button')) {
       return;
     }
     handleFlip();
@@ -233,11 +303,9 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
     return <div className="text-center py-8">Không có từ vựng nào!</div>;
   }
 
-  const progressPercent = Math.round(((currentIndex + 1) / wordList.length) * 100);
-
   return (
     <div className="animate-fade-in">
-      {/* Mode Header */}
+      {/* Mode Header (Khôi phục 100% bố cục chuẩn: Tiêu đề bên trái, Công cụ & Tập trung bên phải) */}
       <div className="mode-header">
         <div className="mode-title-group">
           <h2>
@@ -272,9 +340,9 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </div>
       </div>
 
-      {/* 3D Flashcard Container (Hỗ trợ cảm ứng vuốt Trái/Phải để đổi từ, vuốt Lên/Xuống để lật thẻ) */}
+      {/* 3D Flashcard Container: Khôi phục toàn bộ perspective, transition 3D và animation trượt khi chuyển thẻ */}
       <div 
-        key={currentWord.id}
+        key={currentWord.id} 
         className={`flashcard-wrapper card-animate-swap ${cardImage ? 'has-card-image' : ''}`}
       >
         <div 
@@ -286,12 +354,13 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
           title="Nhấp vào thẻ hoặc vuốt Lên/Xuống để lật • Vuốt Trái/Phải để đổi từ"
         >
           <div className={`flashcard ${isFlipped ? 'flipped' : ''}`}>
-            {/* Front Face: English */}
+            {/* Mặt trước: Tiếng Anh */}
             <div className="flashcard-face flashcard-front">
               <div className="card-top">
                 <span className={`badge badge-${currentWord.type || 'verb'}`}>
-                  {currentWord.type}
+                  {currentWord.type || 'Từ vựng'}
                 </span>
+
                 <WordActionButtons 
                   wordItem={currentWord}
                   onSpeak={handleSpeak}
@@ -312,7 +381,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
               </div>
             </div>
 
-            {/* Back Face: Vietnamese Meaning / Image */}
+            {/* Mặt sau: Nghĩa tiếng Việt, Ảnh minh họa (TOEIC) hoặc Từ loại */}
             <div className={`flashcard-face flashcard-back ${cardImage ? 'has-image-content' : ''}`}>
               <div className={`card-top ${cardImage ? 'card-top-toeic' : ''}`}>
                 <span className={`badge badge-${currentWord.type || 'verb'} ${cardImage ? 'badge-toeic-tag' : ''}`}>
@@ -393,9 +462,10 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </div>
       </div>
 
-      {/* Flashcard Action Buttons */}
+      {/* Cụm nút điều hướng Flashcard (Trước, Xáo trộn, Lật nghĩa, Tiếp theo) */}
       <div className="flashcard-controls">
         <button 
+          type="button"
           className="btn btn-secondary" 
           onClick={handlePrev}
           title="Từ trước (Phím A hoặc ←)"
@@ -404,6 +474,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </button>
 
         <button 
+          type="button"
           className="btn btn-secondary" 
           onClick={handleShuffle}
           title="Trộn ngẫu nhiên danh sách (Phím X)"
@@ -412,6 +483,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </button>
 
         <button 
+          type="button"
           className="btn btn-secondary" 
           onClick={handleFlip}
           title="Lật thẻ (Phím W, S, Space, ↑, ↓)"
@@ -420,6 +492,7 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </button>
 
         <button 
+          type="button"
           className="btn btn-primary" 
           onClick={handleNext}
           title="Từ tiếp theo (Phím D, Enter, →)"
@@ -428,18 +501,47 @@ export default function FlashcardMode({ words, onToggleFocus, isFocusMode }) {
         </button>
       </div>
 
-      {/* Mẹo phím tắt phong cách gamer & arrow keys */}
-      <div className="shortcut-helper" style={{ marginTop: '22px', flexWrap: 'wrap', gap: '8px' }}>
-        <span>Mẹo phím tắt:</span>
-        <span className="shortcut-kbd">A</span> / <span className="shortcut-kbd">←</span><span>Trước</span>
-        <span>•</span>
-        <span className="shortcut-kbd">D</span> / <span className="shortcut-kbd">→</span> / <span className="shortcut-kbd">Enter ↵</span><span>Tiếp</span>
-        <span>•</span>
-        <span className="shortcut-kbd">W</span> / <span className="shortcut-kbd">S</span> / <span className="shortcut-kbd">Space</span> / <span className="shortcut-kbd">↑</span> / <span className="shortcut-kbd">↓</span><span>Lật</span>
-        <span>•</span>
-        <span className="shortcut-kbd">R</span><span>Đọc</span>
-        <span>•</span>
-        <span className="shortcut-kbd">X</span><span>Xáo trộn</span>
+      {/* Nhóm hai nút tự đánh giá: Chưa nhớ / Đã nhớ (Căn giữa, đồng nhất độ rộng 580px với thẻ Flashcard) */}
+      <div className="flashcard-evaluation-section">
+        <div className="flashcard-evaluation-group">
+          <button
+            type="button"
+            className={`btn-eval btn-eval-learning ${isNotRemembered ? 'is-selected' : ''} ${!canEvaluate ? 'is-disabled' : ''}`}
+            onClick={handleRateNotRemembered}
+            disabled={!canEvaluate}
+            title={canEvaluate ? 'Đánh dấu Chưa nhớ (Cần ôn lại)' : 'Vui lòng lật thẻ xem nghĩa trước khi tự đánh giá'}
+            aria-label="Đánh dấu Chưa nhớ"
+          >
+            <HelpCircle size={18} />
+            <span>Chưa nhớ</span>
+          </button>
+
+          <button
+            type="button"
+            className={`btn-eval btn-eval-mastered ${isRemembered ? 'is-selected' : ''} ${!canEvaluate ? 'is-disabled' : ''}`}
+            onClick={handleRateRemembered}
+            disabled={!canEvaluate}
+            title={canEvaluate ? 'Đánh dấu Đã nhớ (Đã thuộc)' : 'Vui lòng lật thẻ xem nghĩa trước khi tự đánh giá'}
+            aria-label="Đánh dấu Đã nhớ"
+          >
+            <CheckCircle2 size={18} />
+            <span>Đã nhớ</span>
+          </button>
+        </div>
+
+        {!canEvaluate && (
+          <div className="eval-hint-guide animate-fade-in">
+            <span>💡 Lật thẻ xem nghĩa để mở khóa tự đánh giá</span>
+          </div>
+        )}
+      </div>
+
+      {/* Panel tiến độ tự đánh giá Flashcard (Độ rộng chuẩn 580px, chữ rõ nét dễ đọc) */}
+      <FlashcardProgressPanel words={wordList} />
+
+      {/* Nút Phím tắt thu gọn ở cuối */}
+      <div className="flashcard-shortcuts-wrapper">
+        <ShortcutGuideModal mode="flashcard" />
       </div>
     </div>
   );

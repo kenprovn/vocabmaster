@@ -11,6 +11,7 @@ import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
 import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 import SessionStatsPanel from './SessionStatsPanel';
 import { getSessionStats, saveSessionStats, clearSessionStats } from '../utils/sessionStats';
+import ShortcutGuideModal from './ShortcutGuideModal';
 
 export default function TypingMode({ words, onToggleFocus, isFocusMode, selectedUnit = 'Tất cả' }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -248,28 +249,36 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
         </div>
 
         <div className="progress-info">
-          {onToggleFocus && !isFocusMode && (
-            <button 
-              className="btn-focus" 
-              onClick={onToggleFocus}
-              title="Kích hoạt chế độ tập trung (Esc để thoát)"
-            >
-              <Maximize2 size={14} /> Tập trung
-            </button>
-          )}
+          {/* Hàng 1: Nút tập trung (nếu có) */}
+          <div className="progress-stats-group">
+            {onToggleFocus && !isFocusMode && (
+              <button 
+                className="btn-focus" 
+                onClick={onToggleFocus}
+                title="Kích hoạt chế độ tập trung (Esc để thoát)"
+              >
+                <Maximize2 size={14} /> Tập trung
+              </button>
+            )}
+          </div>
 
-          <AutoNextControl />
+          {/* Hàng 2: Điều khiển chuyển câu & tiến độ */}
+          <div className="progress-controls-group">
+            <AutoNextControl />
 
-          <JumpToWord
-            currentIndex={currentIndex}
-            total={words.length}
-            onJump={handleJump}
-          />
-          <InteractiveSeekBar
-            currentIndex={currentIndex}
-            total={words.length}
-            onJump={handleJump}
-          />
+            <div className="progress-nav-tools">
+              <JumpToWord
+                currentIndex={currentIndex}
+                total={words.length}
+                onJump={handleJump}
+              />
+              <InteractiveSeekBar
+                currentIndex={currentIndex}
+                total={words.length}
+                onJump={handleJump}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -467,14 +476,9 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
           </button>
         </div>
 
-        {/* Mẹo phím tắt */}
-        <div className="shortcut-helper" style={{ marginTop: '18px', flexWrap: 'wrap', gap: '8px' }}>
-          <span>Mẹo phím tắt:</span>
-          <span className="shortcut-kbd">Enter ↵</span><span>Kiểm tra / Tiếp</span>
-          <span>•</span>
-          <span className="shortcut-kbd">↑</span> / <span className="shortcut-kbd">↓</span><span>Gợi ý (Hint)</span>
-          <span>•</span>
-          <span className="shortcut-kbd">Ctrl + ←</span> / <span className="shortcut-kbd">Ctrl + →</span><span>Chuyển câu</span>
+        {/* Nút Phím tắt thu gọn */}
+        <div className="mode-shortcuts-wrapper">
+          <ShortcutGuideModal mode="typing" />
         </div>
       </div>
 
