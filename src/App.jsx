@@ -18,6 +18,8 @@ import { showToast } from './utils/toast';
 import { clearJumpUndo } from './utils/jumpUndo';
 import './App.css';
 
+import { cancelCurrentAutoNext } from './utils/autoNext';
+
 // Key lưu trữ riêng biệt cho từng bộ từ trong localStorage (bảo toàn 100% dữ liệu gốc)
 const OXFORD_STORAGE_KEY = 'myVocabData';
 const TOEIC_STORAGE_KEY = 'toeicVocabData';
@@ -44,10 +46,42 @@ export const OXFORD_UNITS = [
   'Vòng 5'
 ];
 
+export const TOEIC_ROUNDS = [
+  'TOEIC - Vòng 1',
+  'TOEIC - Vòng 2',
+  'TOEIC - Vòng 3',
+  'TOEIC - Vòng 4',
+  'TOEIC - Vòng 5'
+];
+
+export const TOEIC_UNITS = [
+  TOEIC_UNIT_NAME,
+  ...TOEIC_ROUNDS
+];
+
 export const ALL_UNIT_OPTIONS = [
   ...OXFORD_UNITS,
-  TOEIC_UNIT_NAME
+  ...TOEIC_UNITS
 ];
+
+// Helper cắt đúng 330 từ cho từng vòng TOEIC (giữ nguyên thứ tự 1-1650 gốc, không sắp xếp lại)
+export const getToeicRoundWords = (words, roundName) => {
+  if (!words || words.length === 0) return [];
+  switch (roundName) {
+    case 'TOEIC - Vòng 1':
+      return words.slice(0, 330);
+    case 'TOEIC - Vòng 2':
+      return words.slice(330, 660);
+    case 'TOEIC - Vòng 3':
+      return words.slice(660, 990);
+    case 'TOEIC - Vòng 4':
+      return words.slice(990, 1320);
+    case 'TOEIC - Vòng 5':
+      return words.slice(1320, 1650);
+    default:
+      return words;
+  }
+};
 
 export default function App() {
   const [activeMode, setActiveMode] = useState('flashcard'); // 'flashcard' | 'quiz' | 'typing' | 'wordlist'
@@ -143,8 +177,9 @@ export default function App() {
     }
   }, [toeicWords]);
 
-  // Lưu Unit đang chọn vào localStorage
+  // Lưu Unit đang chọn vào localStorage và hủy timer Auto Next + Undo Toast
   const handleSelectUnit = (unit) => {
+    cancelCurrentAutoNext();
     clearJumpUndo();
     setCustomReviewWords(null);
     setSelectedUnit(unit);
@@ -153,7 +188,7 @@ export default function App() {
     } catch (_) {}
   };
 
-  const isToeic = selectedUnit === TOEIC_UNIT_NAME;
+  const isToeic = selectedUnit === TOEIC_UNIT_NAME || (typeof selectedUnit === 'string' && selectedUnit.startsWith('TOEIC - Vòng'));
 
   // Trạng thái ôn tập danh sách từ tùy chỉnh (ví dụ: Từ đã lưu / Review Later)
   const [customReviewWords, setCustomReviewWords] = useState(null);
@@ -171,6 +206,7 @@ export default function App() {
       return inToeic || inOxford || item;
     });
 
+    cancelCurrentAutoNext();
     clearJumpUndo();
     setCustomReviewWords(enrichedList);
     setActiveMode('flashcard');
@@ -178,12 +214,13 @@ export default function App() {
   };
 
   const handleExitCustomReview = () => {
+    cancelCurrentAutoNext();
     clearJumpUndo();
     setCustomReviewWords(null);
     showToast(`Đã trở về bộ từ ${selectedUnit}`, 'info');
   };
 
-  // Đếm số lượng từ cho từng Unit
+  // Đếm số lượng từ cho từng Unit của Oxford 3000
   const oxfordCounts = useMemo(() => {
     const counts = { 'Tất cả': oxfordWords.length };
     OXFORD_UNITS.filter(u => u !== 'Tất cả').forEach(u => {
@@ -192,12 +229,25 @@ export default function App() {
     return counts;
   }, [oxfordWords]);
 
+  // Đếm số lượng từ cho từng vòng TOEIC Cơ Bản (mỗi vòng đúng 330 từ, tổng 1650 từ)
+  const toeicCounts = useMemo(() => {
+    const total = toeicWords.length;
+    return {
+      [TOEIC_UNIT_NAME]: total,
+      'TOEIC - Vòng 1': Math.min(330, total),
+      'TOEIC - Vòng 2': Math.max(0, Math.min(330, total - 330)),
+      'TOEIC - Vòng 3': Math.max(0, Math.min(330, total - 660)),
+      'TOEIC - Vòng 4': Math.max(0, Math.min(330, total - 990)),
+      'TOEIC - Vòng 5': Math.max(0, Math.min(330, total - 1320))
+    };
+  }, [toeicWords.length]);
+
   const allUnitCounts = useMemo(() => {
     return {
       ...oxfordCounts,
-      [TOEIC_UNIT_NAME]: toeicWords.length
+      ...toeicCounts
     };
-  }, [oxfordCounts, toeicWords.length]);
+  }, [oxfordCounts, toeicCounts]);
 
   // Lọc danh sách từ theo Unit đang chọn hoặc danh sách tùy chỉnh (Từ đã lưu)
   const activeWords = useMemo(() => {
@@ -205,13 +255,16 @@ export default function App() {
       return customReviewWords;
     }
     if (isToeic) {
-      return toeicWords;
+      if (selectedUnit === TOEIC_UNIT_NAME) {
+        return toeicWords;
+      }
+      return getToeicRoundWords(toeicWords, selectedUnit);
     }
     if (selectedUnit === 'Tất cả') {
       return oxfordWords;
     }
     return oxfordWords.filter(w => w.unit === selectedUnit);
-  }, [customReviewWords, isToeic, toeicWords, oxfordWords, selectedUnit]);
+  }, [customReviewWords, isToeic, selectedUnit, toeicWords, oxfordWords]);
 
   // Thoát Focus Mode khi bấm phím Escape (Esc)
   useEffect(() => {
@@ -402,6 +455,7 @@ export default function App() {
               onSelectUnit={handleSelectUnit}
               oxfordCounts={oxfordCounts}
               toeicCount={toeicWords.length}
+              toeicCounts={toeicCounts}
               toeicUnitName={TOEIC_UNIT_NAME}
               align="right"
             />
@@ -456,7 +510,13 @@ export default function App() {
               <span className="dash-unit-icon">📊</span>
               <span className="dash-unit-title">Bộ từ đang học:</span>
               <span className={`dash-unit-active ${isToeic ? 'theme-toeic' : 'theme-oxford'}`}>
-                {selectedUnit === 'Tất cả' ? 'Tất cả Oxford' : selectedUnit}
+                {selectedUnit === 'Tất cả'
+                  ? 'Tất cả Oxford'
+                  : selectedUnit === TOEIC_UNIT_NAME
+                    ? 'Tất cả TOEIC'
+                    : selectedUnit.startsWith('TOEIC - ')
+                      ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}`
+                      : `Oxford ${selectedUnit}`}
               </span>
               <span className="dash-unit-count-chip">
                 {activeWords.length} từ
@@ -473,7 +533,11 @@ export default function App() {
               <div className="dash-info">
                 <span className="dash-value">{stats.total}</span>
                 <span className="dash-label">
-                  {selectedUnit === 'Tất cả' ? 'Tổng từ trong kho Oxford' : `Từ trong ${selectedUnit}`}
+                  {selectedUnit === 'Tất cả'
+                    ? 'Tổng từ trong kho Oxford'
+                    : selectedUnit === TOEIC_UNIT_NAME
+                      ? 'Tổng từ trong kho TOEIC'
+                      : `Từ trong ${selectedUnit.startsWith('TOEIC - ') ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}` : `Oxford ${selectedUnit}`}`}
                 </span>
               </div>
             </div>

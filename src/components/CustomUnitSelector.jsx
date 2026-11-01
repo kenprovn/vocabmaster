@@ -6,6 +6,7 @@ export default function CustomUnitSelector({
   onSelectUnit,
   oxfordCounts = {},
   toeicCount = 1650,
+  toeicCounts = {},
   toeicUnitName = 'TOEIC Cơ Bản',
   align = 'right' // 'right' | 'left'
 }) {
@@ -44,19 +45,24 @@ export default function CustomUnitSelector({
     setIsOpen(false);
   };
 
+  const isToeicSelected = selectedUnit === toeicUnitName || (typeof selectedUnit === 'string' && selectedUnit.startsWith('TOEIC - Vòng'));
+
   // Label and count for current active unit
   const getSelectedInfo = () => {
     if (selectedUnit === toeicUnitName) {
-      return { name: 'TOEIC Cơ Bản', count: toeicCount };
+      return { name: 'Tất cả TOEIC', count: toeicCount, isToeic: true };
+    }
+    if (selectedUnit && selectedUnit.startsWith('TOEIC - Vòng')) {
+      const count = toeicCounts[selectedUnit] !== undefined ? toeicCounts[selectedUnit] : 330;
+      return { name: selectedUnit, count, isToeic: true };
     }
     if (selectedUnit === 'Tất cả') {
-      return { name: 'Tất cả Oxford', count: oxfordCounts['Tất cả'] || 2978 };
+      return { name: 'Tất cả Oxford', count: oxfordCounts['Tất cả'] || 2978, isToeic: false };
     }
-    return { name: selectedUnit, count: oxfordCounts[selectedUnit] || 0 };
+    return { name: `Oxford ${selectedUnit}`, count: oxfordCounts[selectedUnit] || 0, isToeic: false };
   };
 
   const selectedInfo = getSelectedInfo();
-  const isToeicSelected = selectedUnit === toeicUnitName;
 
   return (
     <div className={`custom-unit-selector ${isOpen ? 'is-open' : ''}`} ref={containerRef}>
@@ -148,24 +154,55 @@ export default function CustomUnitSelector({
             <div className="dropdown-group-header">
               <span className="group-badge badge-toeic">
                 <Target size={13} />
-                <span>TOEIC Cơ Bản (1.650 từ)</span>
+                <span>TOEIC Cơ Bản (~1.650 từ)</span>
               </span>
             </div>
 
             <div className="dropdown-group-items">
+              {/* Mục 1: Tất cả TOEIC (1.650 từ) */}
               <button
                 type="button"
                 role="option"
-                aria-selected={isToeicSelected}
-                className={`dropdown-item item-toeic ${isToeicSelected ? 'selected' : ''}`}
+                aria-selected={selectedUnit === toeicUnitName}
+                className={`dropdown-item item-toeic ${selectedUnit === toeicUnitName ? 'selected' : ''}`}
                 onClick={() => handleSelect(toeicUnitName)}
               >
                 <div className="item-text-group">
-                  <span className="item-name">TOEIC Cơ Bản</span>
+                  <span className="item-name">Tất cả TOEIC</span>
                   <span className="item-count item-count-toeic">({toeicCount} từ)</span>
                 </div>
-                {isToeicSelected && <Check size={16} className="item-check" />}
+                {selectedUnit === toeicUnitName && <Check size={16} className="item-check" />}
               </button>
+
+              {/* 5 Vòng học TOEIC (mỗi vòng đúng 330 từ theo thứ tự gốc) */}
+              {[
+                { id: 'TOEIC - Vòng 1', name: 'Vòng 1', range: '1–330' },
+                { id: 'TOEIC - Vòng 2', name: 'Vòng 2', range: '331–660' },
+                { id: 'TOEIC - Vòng 3', name: 'Vòng 3', range: '661–990' },
+                { id: 'TOEIC - Vòng 4', name: 'Vòng 4', range: '991–1320' },
+                { id: 'TOEIC - Vòng 5', name: 'Vòng 5', range: '1321–1650' }
+              ].map((round) => {
+                const count = toeicCounts[round.id] !== undefined ? toeicCounts[round.id] : 330;
+                const isSelected = selectedUnit === round.id;
+                return (
+                  <button
+                    key={round.id}
+                    type="button"
+                    role="option"
+                    aria-selected={isSelected}
+                    className={`dropdown-item item-toeic ${isSelected ? 'selected' : ''}`}
+                    onClick={() => handleSelect(round.id)}
+                  >
+                    <div className="item-text-group">
+                      <span className="item-name">
+                        {round.name} <small style={{ opacity: 0.75, fontWeight: 'normal', fontSize: '0.8rem' }}>({round.range})</small>
+                      </span>
+                      <span className="item-count item-count-toeic">({count} từ)</span>
+                    </div>
+                    {isSelected && <Check size={16} className="item-check" />}
+                  </button>
+                );
+              })}
             </div>
           </div>
         </div>

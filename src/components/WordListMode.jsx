@@ -199,8 +199,38 @@ export default function WordListMode({
       items: [
         { 
           value: 'TOEIC Cơ Bản', 
-          label: 'TOEIC Cơ Bản', 
+          label: 'Tất cả TOEIC', 
           count: unitCounts?.['TOEIC Cơ Bản'] || 1650,
+          isToeic: true 
+        },
+        { 
+          value: 'TOEIC - Vòng 1', 
+          label: 'Vòng 1 (1–330)', 
+          count: unitCounts?.['TOEIC - Vòng 1'] !== undefined ? unitCounts['TOEIC - Vòng 1'] : 330,
+          isToeic: true 
+        },
+        { 
+          value: 'TOEIC - Vòng 2', 
+          label: 'Vòng 2 (331–660)', 
+          count: unitCounts?.['TOEIC - Vòng 2'] !== undefined ? unitCounts['TOEIC - Vòng 2'] : 330,
+          isToeic: true 
+        },
+        { 
+          value: 'TOEIC - Vòng 3', 
+          label: 'Vòng 3 (661–990)', 
+          count: unitCounts?.['TOEIC - Vòng 3'] !== undefined ? unitCounts['TOEIC - Vòng 3'] : 330,
+          isToeic: true 
+        },
+        { 
+          value: 'TOEIC - Vòng 4', 
+          label: 'Vòng 4 (991–1320)', 
+          count: unitCounts?.['TOEIC - Vòng 4'] !== undefined ? unitCounts['TOEIC - Vòng 4'] : 330,
+          isToeic: true 
+        },
+        { 
+          value: 'TOEIC - Vòng 5', 
+          label: 'Vòng 5 (1321–1650)', 
+          count: unitCounts?.['TOEIC - Vòng 5'] !== undefined ? unitCounts['TOEIC - Vòng 5'] : 330,
           isToeic: true 
         }
       ]
@@ -227,7 +257,13 @@ export default function WordListMode({
     { value: 'mastered', label: 'Đã thuộc', count: statusCounts.mastered }
   ], [statusCounts]);
 
-  const currentUnitLabel = selectedUnit === 'Tất cả' ? 'Tất cả Oxford' : selectedUnit;
+  const currentUnitLabel = selectedUnit === 'Tất cả' 
+    ? 'Tất cả Oxford' 
+    : selectedUnit === 'TOEIC Cơ Bản' 
+      ? 'Tất cả TOEIC' 
+      : selectedUnit.startsWith('TOEIC - ') 
+        ? `TOEIC ${selectedUnit.replace('TOEIC - ', '')}` 
+        : `Oxford ${selectedUnit}`;
   const currentUnitCount = selectedUnit === 'Tất cả' 
     ? (unitCounts?.['Tất cả'] || words.length)
     : (unitCounts?.[selectedUnit] !== undefined ? unitCounts[selectedUnit] : words.length);
@@ -490,7 +526,7 @@ export default function WordListMode({
               icon={<Layers size={15} color="var(--accent-cyan)" />}
               label={currentUnitLabel}
               countBadge={currentUnitCount}
-              badgeType={selectedUnit === 'TOEIC Cơ Bản' ? 'toeic' : 'oxford'}
+              badgeType={selectedUnit === 'TOEIC Cơ Bản' || selectedUnit.startsWith('TOEIC') ? 'toeic' : 'oxford'}
               groups={unitFilterGroups}
               selectedValue={selectedUnit}
               onSelect={(val) => {
