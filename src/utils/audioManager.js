@@ -130,6 +130,25 @@ class AudioManager {
     return null;
   }
 
+  // Mở khóa âm thanh (User gesture unlock) cho Chrome Android / iOS
+  unlockAutoplay() {
+    if (typeof window === 'undefined') return;
+    try {
+      if ('speechSynthesis' in window && window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
+      const silentAudio = new Audio();
+      silentAudio.src = 'data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA';
+      silentAudio.volume = 0;
+      const p = silentAudio.play();
+      if (p && p.then) {
+        p.then(() => {
+          silentAudio.pause();
+        }).catch(() => {});
+      }
+    } catch (_) {}
+  }
+
   /**
    * Phát âm từ vựng:
    * - Bước 1: Kiểm tra Manifest và phát MP3 tĩnh nội bộ
@@ -138,6 +157,7 @@ class AudioManager {
    */
   playWord(word, options = {}) {
     if (!word || typeof word !== 'string' || !word.trim()) {
+      if (options.onEnded) options.onEnded();
       return;
     }
 
@@ -150,19 +170,25 @@ class AudioManager {
 
     if (mp3Url) {
       console.log(`[AudioManager] [ID #${playbackId}] Tìm thấy file MP3 cho "${cleanWord}": ${mp3Url}`);
-      this.playHtml5Audio(cleanWord, mp3Url, playbackId);
+      this.playHtml5Audio(cleanWord, mp3Url, playbackId, options);
     } else {
       console.log(`[AudioManager] [ID #${playbackId}] Không có file MP3 cho "${cleanWord}". Chuyển sang Web Speech API fallback.`);
-      this.fallbackToWebSpeech(cleanWord, playbackId, 'No local MP3 in manifest');
+      this.fallbackToWebSpeech(cleanWord, playbackId, 'No local MP3 in manifest', options);
     }
   }
 
   // Phát file MP3 nội bộ thông qua HTML5 Audio
-  playHtml5Audio(word, url, playbackId) {
+  playHtml5Audio(word, url, playbackId, options = {}) {
     try {
       const audio = new Audio();
       this.activeAudio = audio;
       this.setStatus('loading', { word, source: 'mp3', url });
+
+      // Áp dụng tốc độ phát âm (playbackRate)
+      const rate = typeof options.playbackRate === 'number' && options.playbackRate > 0 
+        ? options.playbackRate 
+        : 1.0;
+      audio.playbackRate = rate;
 
       // Ghi log chi tiết trạng thái Audio để debug trên Android Chrome
       audio.addEventListener('loadstart', () => {
@@ -177,14 +203,20 @@ class AudioManager {
 
       audio.addEventListener('playing', () => {
         if (this.currentPlaybackId !== playbackId) return;
-        console.log(`[AudioManager] [MP3 playing] Đang phát âm thanh: "${word}"`);
+        console.log(`[AudioManager] [MP3 playing] Đang phát âm thanh: "${word}" (Tốc độ: ${rate}x)`);
         this.setStatus('playing', { word, source: 'mp3', url });
+        if (options.onStart) {
+          try { options.onStart(); } catch (_) {}
+        }
       });
 
       audio.addEventListener('ended', () => {
         if (this.currentPlaybackId !== playbackId) return;
         console.log(`[AudioManager] [MP3 ended] Hoàn tất phát âm: "${word}"`);
         this.setStatus('idle');
+        if (options.onEnded) {
+          try { options.onEnded(); } catch (_) {}
+        }
       });
 
       audio.addEventListener('error', () => {
@@ -194,7 +226,7 @@ class AudioManager {
         console.warn(`[AudioManager] [MP3 error] Mã lỗi: ${errCode} (${errMsg}) trên url: ${url}`);
 
         // Fallback sang Web Speech API nếu tải MP3 thất bại
-        this.fallbackToWebSpeech(word, playbackId, `MP3 error code ${errCode}`);
+        this.fallbackToWebSpeech(word, playbackId, `MP3 error code ${errCode}`, options);
       });
 
       // Gán src và gọi play() TRỰC TIẾP đồng bộ trong user gesture (không await)
@@ -216,26 +248,32 @@ class AudioManager {
             if (err.name === 'NotAllowedError') {
               this.notifyToast('Trình duyệt chặn autoplay. Vui lòng bấm trực tiếp vào nút loa.', 'warning');
               this.setStatus('error');
+              if (options.onError) {
+                try { options.onError(err); } catch (_) {}
+              }
             } else {
               // Thử fallback sang Web Speech
-              this.fallbackToWebSpeech(word, playbackId, `play() rejected: ${err.name}`);
+              this.fallbackToWebSpeech(word, playbackId, `play() rejected: ${err.name}`, options);
             }
           });
       }
     } catch (err) {
       console.error('[AudioManager] Lỗi khởi tạo HTMLAudioElement:', err);
-      this.fallbackToWebSpeech(word, playbackId, 'Exception in new Audio()');
+      this.fallbackToWebSpeech(word, playbackId, 'Exception in new Audio()', options);
     }
   }
 
   // Fallback an toàn sang Web Speech API (chỉ chạy 1 lần)
-  fallbackToWebSpeech(word, playbackId, reason) {
+  fallbackToWebSpeech(word, playbackId, reason, options = {}) {
     if (this.currentPlaybackId !== playbackId) return;
 
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
       console.warn(`[AudioManager] Trình duyệt không hỗ trợ Web Speech API. Lý do fallback: ${reason}`);
       this.notifyToast(`Không thể phát âm từ "${word}". Thiết bị chưa hỗ trợ Web Speech và chưa có file MP3.`, 'warning');
       this.setStatus('error');
+      if (options.onError) {
+        try { options.onError(new Error('WebSpeech not supported')); } catch (_) {}
+      }
       return;
     }
 
@@ -247,9 +285,13 @@ class AudioManager {
         window.speechSynthesis.resume();
       }
 
+      const rate = typeof options.playbackRate === 'number' && options.playbackRate > 0 
+        ? options.playbackRate 
+        : 1.0;
+
       const utterance = new SpeechSynthesisUtterance(word);
       utterance.lang = 'en-GB';
-      utterance.rate = 0.9;
+      utterance.rate = Math.max(0.5, Math.min(2.0, rate * 0.9));
       utterance.pitch = 1.0;
 
       const bestVoice = this.getBestEnglishVoice();
@@ -270,6 +312,9 @@ class AudioManager {
         if (this.currentPlaybackId !== playbackId) return;
         console.log(`[AudioManager] [WebSpeech onstart] Bắt đầu đọc: "${word}"`);
         this.setStatus('playing', { word, source: 'webspeech' });
+        if (options.onStart) {
+          try { options.onStart(); } catch (_) {}
+        }
       };
 
       utterance.onend = () => {
@@ -278,6 +323,9 @@ class AudioManager {
         this.activeUtterance = null;
         window._currentUtterance = null;
         this.setStatus('idle');
+        if (options.onEnded) {
+          try { options.onEnded(); } catch (_) {}
+        }
       };
 
       utterance.onerror = (e) => {
@@ -288,6 +336,9 @@ class AudioManager {
         if (e.error === 'interrupted' || e.error === 'canceled') {
           console.log(`[AudioManager] [WebSpeech canceled] Đã hủy theo yêu cầu.`);
           this.setStatus('idle');
+          if (options.onEnded) {
+            try { options.onEnded(); } catch (_) {}
+          }
           return;
         }
 
@@ -299,6 +350,9 @@ class AudioManager {
           this.notifyToast(`Không thể phát âm từ "${word}" (${e.error || 'Lỗi engine TTS'}). Hãy kiểm tra cài đặt âm lượng hoặc giọng nói tiếng Anh trên máy.`, 'warning');
         }
         this.setStatus('error');
+        if (options.onError) {
+          try { options.onError(e); } catch (_) {}
+        }
       };
 
       window.speechSynthesis.speak(utterance);
@@ -306,6 +360,9 @@ class AudioManager {
       console.error('[AudioManager] Lỗi khi gọi window.speechSynthesis.speak:', err);
       this.notifyToast(`Lỗi phát âm: ${err.message || 'Không thể khởi động bộ đọc'}`, 'error');
       this.setStatus('error');
+      if (options.onError) {
+        try { options.onError(err); } catch (_) {}
+      }
     }
   }
 }

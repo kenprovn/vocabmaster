@@ -5,6 +5,7 @@ import { speakWord } from '../utils/speech';
 import JumpToWord from './JumpToWord';
 import WordActionButtons from './WordActionButtons';
 import AutoNextControl from './AutoNextControl';
+import AutoReadControl from './AutoReadControl';
 import AutoNextCountdownBar from './AutoNextCountdownBar';
 import InteractiveSeekBar from './InteractiveSeekBar';
 import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
@@ -12,6 +13,7 @@ import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 import SessionStatsPanel from './SessionStatsPanel';
 import { getSessionStats, saveSessionStats, clearSessionStats } from '../utils/sessionStats';
 import ShortcutGuideModal from './ShortcutGuideModal';
+import { autoReadCoordinator, cancelCurrentAutoRead, getAutoReadSettings } from '../utils/autoRead';
 
 export default function TypingMode({ words, onToggleFocus, isFocusMode, selectedUnit = 'Tất cả' }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,6 +21,7 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
   const [hintCount, setHintCount] = useState(0);
   const [status, setStatus] = useState('idle'); // 'idle' | 'correct' | 'wrong'
   const [streak, setStreak] = useState(0);
+  const [isWaitingForAudio, setIsWaitingForAudio] = useState(false);
   const inputRef = useRef(null);
 
   // Thống kê phiên luyện tập Typing
@@ -39,10 +42,42 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
 
   const handleSpeak = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
+    cancelCurrentAutoRead();
     if (currentWord && currentWord.word) {
       speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
     }
   }, [currentWord]);
+
+  // Kích hoạt Auto Read khi xuất hiện câu mới (luyện nghe chính tả)
+  const isInitialMountRef = useRef(true);
+  const prevTypingWordIdRef = useRef(null);
+
+  useEffect(() => {
+    setIsWaitingForAudio(false);
+    cancelCurrentAutoRead();
+
+    if (isInitialMountRef.current) {
+      isInitialMountRef.current = false;
+      prevTypingWordIdRef.current = currentWord?.id;
+      return;
+    }
+
+    if (currentWord && currentWord.id !== prevTypingWordIdRef.current) {
+      prevTypingWordIdRef.current = currentWord.id;
+      autoReadCoordinator.trigger({
+        mode: 'typing',
+        triggerType: 'question',
+        word: currentWord.word,
+        wordItem: currentWord
+      });
+    }
+  }, [currentIndex, currentWord?.id]);
+
+  useEffect(() => {
+    return () => {
+      cancelCurrentAutoRead();
+    };
+  }, []);
 
   // Reset index when words changes (e.g. Unit switched)
   useEffect(() => {
@@ -98,6 +133,7 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
     currentIndex,
     totalCount: words.length,
     onNext: handleNext,
+    isWaitingForAudio
   });
 
   // Handle Hint: reveals 1 character at a time directly into input
@@ -210,6 +246,26 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
       }
       setStreak(0);
     }
+
+    // Kích hoạt Auto Read sau khi kiểm tra đáp án (đọc từ tiếng Anh đúng, không đọc nội dung sai)
+    if (currentWord && currentWord.word) {
+      const autoReadCfg = getAutoReadSettings();
+      const willReadOnAnswer = autoReadCfg.enabled && (autoReadCfg.typingTrigger === 'answer' || autoReadCfg.typingTrigger === 'both');
+
+      if (willReadOnAnswer && autoReadCfg.waitForAudioBeforeAutoNext) {
+        setIsWaitingForAudio(true);
+      }
+
+      autoReadCoordinator.trigger({
+        mode: 'typing',
+        triggerType: 'answer',
+        word: currentWord.word,
+        wordItem: currentWord,
+        onComplete: () => {
+          setIsWaitingForAudio(false);
+        }
+      });
+    }
   };
 
   const handleResetSessionStats = useCallback(() => {
@@ -265,6 +321,7 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode, selected
           {/* Hàng 2: Điều khiển chuyển câu & tiến độ */}
           <div className="progress-controls-group">
             <AutoNextControl />
+            <AutoReadControl defaultTab="typing" />
 
             <div className="progress-nav-tools">
               <JumpToWord

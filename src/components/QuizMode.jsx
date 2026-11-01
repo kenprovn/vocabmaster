@@ -5,6 +5,7 @@ import { speakWord } from '../utils/speech';
 import JumpToWord from './JumpToWord';
 import WordActionButtons from './WordActionButtons';
 import AutoNextControl from './AutoNextControl';
+import AutoReadControl from './AutoReadControl';
 import AutoNextCountdownBar from './AutoNextCountdownBar';
 import InteractiveSeekBar from './InteractiveSeekBar';
 import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
@@ -12,6 +13,7 @@ import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 import SessionStatsPanel from './SessionStatsPanel';
 import { getSessionStats, saveSessionStats, clearSessionStats } from '../utils/sessionStats';
 import ShortcutGuideModal from './ShortcutGuideModal';
+import { autoReadCoordinator, cancelCurrentAutoRead, getAutoReadSettings } from '../utils/autoRead';
 
 export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUnit = 'Tất cả' }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -21,7 +23,44 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
   const [streak, setStreak] = useState(0);
   const [options, setOptions] = useState([]);
   const [sessionStats, setSessionStats] = useState(() => getSessionStats('quiz', selectedUnit));
+  const [isWaitingForAudio, setIsWaitingForAudio] = useState(false);
   const hasAnsweredRef = useRef(false);
+
+  const currentWord = (words && words.length > 0) ? (words[currentIndex] || words[0]) : null;
+  const isImageMode = Boolean(currentWord && !currentWord.meaning && (currentWord.image || currentWord.imageUrl));
+
+  const isInitialMountRef = useRef(true);
+  const prevQuizWordIdRef = useRef(null);
+
+  // Kích hoạt Auto Read khi xuất hiện câu hỏi mới (chỉ đọc khi không lộ đáp án)
+  useEffect(() => {
+    setIsWaitingForAudio(false);
+    cancelCurrentAutoRead();
+
+    if (isInitialMountRef.current) {
+      isInitialMountRef.current = false;
+      prevQuizWordIdRef.current = currentWord?.id;
+      return;
+    }
+
+    if (currentWord && currentWord.id !== prevQuizWordIdRef.current) {
+      prevQuizWordIdRef.current = currentWord.id;
+      autoReadCoordinator.trigger({
+        mode: 'quiz',
+        triggerType: 'question',
+        word: currentWord.word,
+        wordItem: currentWord,
+        isImagePrompt: isImageMode
+      });
+    }
+  }, [currentIndex, currentWord?.id, isImageMode]);
+
+  // Cleanup khi đổi chế độ hoặc unmount Quiz
+  useEffect(() => {
+    return () => {
+      cancelCurrentAutoRead();
+    };
+  }, []);
 
   // Đồng bộ lại thống kê phiên khi đổi bộ từ / vòng học
   useEffect(() => {
@@ -118,7 +157,27 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
       });
       setStreak(0);
     }
-  }, [isAnswered, options, selectedUnit]);
+
+    // Kích hoạt Auto Read sau khi chọn đáp án (đọc từ tiếng Anh đúng của câu hỏi)
+    if (currentWord && currentWord.word) {
+      const autoReadCfg = getAutoReadSettings();
+      const willReadOnAnswer = autoReadCfg.enabled && (autoReadCfg.quizTrigger === 'answer' || autoReadCfg.quizTrigger === 'both');
+      
+      if (willReadOnAnswer && autoReadCfg.waitForAudioBeforeAutoNext) {
+        setIsWaitingForAudio(true);
+      }
+
+      autoReadCoordinator.trigger({
+        mode: 'quiz',
+        triggerType: 'answer',
+        word: currentWord.word,
+        wordItem: currentWord,
+        onComplete: () => {
+          setIsWaitingForAudio(false);
+        }
+      });
+    }
+  }, [isAnswered, options, selectedUnit, currentWord]);
 
   const handleResetSessionStats = useCallback(() => {
     clearSessionStats('quiz', selectedUnit);
@@ -176,6 +235,7 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
     currentIndex,
     totalCount: words.length,
     onNext: handleNextWord,
+    isWaitingForAudio
   });
 
   // Touch Gesture Handlers cho Mobile (Swipe Left: Câu tiếp, Swipe Right: Câu trước)
@@ -210,10 +270,8 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
     }
   };
 
-  const currentWord = (words && words.length > 0) ? (words[currentIndex] || words[0]) : null;
-  const isImageMode = Boolean(currentWord && !currentWord.meaning && (currentWord.image || currentWord.imageUrl));
-
   const handleSpeak = useCallback(() => {
+    cancelCurrentAutoRead();
     if (currentWord && currentWord.word) {
       speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
     }
@@ -313,6 +371,7 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUn
           {/* Hàng 2: Điều khiển chuyển câu & tiến độ */}
           <div className="progress-controls-group">
             <AutoNextControl />
+            <AutoReadControl defaultTab="quiz" />
 
             <div className="progress-nav-tools">
               <JumpToWord

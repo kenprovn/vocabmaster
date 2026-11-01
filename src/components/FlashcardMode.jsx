@@ -9,7 +9,9 @@ import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
 import FlashcardProgressPanel from './FlashcardProgressPanel';
 import ShortcutGuideModal from './ShortcutGuideModal';
 import FocusSettingsModal from './FocusSettingsModal';
+import AutoReadControl from './AutoReadControl';
 import { getFocusModeSettings, saveFocusModeSettings, resetFocusModeSettings } from '../utils/focusModeSettings';
+import { autoReadCoordinator, cancelCurrentAutoRead } from '../utils/autoRead';
 
 export default function FlashcardMode({ 
   words, 
@@ -140,10 +142,53 @@ export default function FlashcardMode({
     updatePreloadQueue(cardImage, upcomingUrls, previousUrls);
   }, [currentIndex, wordList, cardImage]);
 
+  // Theo dõi chuyển từ mới và kích hoạt Auto Read theo đúng cấu hình
+  const previousWordIdRef = useRef(null);
+  const isInitialMountRef = useRef(true);
+
+  useEffect(() => {
+    // Bỏ qua lượt đầu tiên lúc F5/mở trang để tránh autoplay bị chặn ngoài ý muốn
+    if (isInitialMountRef.current) {
+      isInitialMountRef.current = false;
+      previousWordIdRef.current = currentWord?.id;
+      return;
+    }
+
+    if (currentWord && currentWord.id !== previousWordIdRef.current) {
+      previousWordIdRef.current = currentWord.id;
+      cancelCurrentAutoRead();
+      autoReadCoordinator.trigger({
+        mode: 'flashcard',
+        triggerType: 'new',
+        word: currentWord.word,
+        wordItem: currentWord
+      });
+    }
+  }, [currentWord?.id]);
+
+  // Hủy Auto Read khi đổi chế độ hoặc unmount Flashcard
+  useEffect(() => {
+    return () => {
+      cancelCurrentAutoRead();
+    };
+  }, []);
+
   const handleFlip = useCallback(() => {
     setHasFlippedCurrentCard(true);
-    setIsFlipped(prev => !prev);
-  }, []);
+    setIsFlipped(prev => {
+      const nextFlipped = !prev;
+      // Chỉ tự đọc khi lật từ Tiếng Anh (false) sang Nghĩa tiếng Việt (true)
+      if (nextFlipped && currentWord && currentWord.word) {
+        autoReadCoordinator.trigger({
+          mode: 'flashcard',
+          triggerType: 'flip',
+          word: currentWord.word,
+          wordItem: currentWord
+        });
+      }
+      return nextFlipped;
+    });
+  }, [currentWord]);
 
   const handleJump = useCallback((newIndex) => {
     if (newIndex === currentIndex) return;
@@ -337,9 +382,10 @@ export default function FlashcardMode({
     }
   }, [isShuffled, wordList, currentIndex]);
 
-  // Phát âm từ vựng (gọi trực tiếp speakWord trong user gesture)
+  // Phát âm từ vựng (gọi trực tiếp speakWord trong user gesture, ưu tiên hủy Auto Read đang chạy)
   const handleSpeak = useCallback((e) => {
     if (e && e.stopPropagation) e.stopPropagation();
+    cancelCurrentAutoRead();
     if (currentWord && currentWord.word) {
       speakWord(currentWord.word, { id: currentWord.id, type: currentWord.type });
     }
@@ -520,6 +566,8 @@ export default function FlashcardMode({
                   <Maximize2 size={14} /> Tập trung
                 </button>
               )}
+
+              <AutoReadControl defaultTab="flashcard" />
 
               <JumpToWord
                 currentIndex={currentIndex}

@@ -9,7 +9,8 @@ export function useAutoNextTimer({
   isCorrect,
   currentIndex,
   totalCount,
-  onNext
+  onNext,
+  isWaitingForAudio = false
 }) {
   const [settings, setSettings] = useState(() => getAutoNextSettings());
   const [isCounting, setIsCounting] = useState(false);
@@ -67,7 +68,15 @@ export function useAutoNextTimer({
     // 3. Nếu đang ở câu cuối cùng (currentIndex === totalCount - 1), không tự động nhảy vòng lại
     if (totalCount > 0 && currentIndex >= totalCount - 1) return;
 
-    // 4. Bắt đầu đếm ngược
+    // 4. Nếu đang chờ Auto Read phát âm xong, giữ trạng thái chờ và chưa đếm ngược
+    if (isWaitingForAudio) {
+      cancelledRef.current = false;
+      setIsCounting(true);
+      setProgressPercent(100);
+      return;
+    }
+
+    // 5. Bắt đầu đếm ngược chuyển câu
     cancelledRef.current = false;
     setIsCounting(true);
     setProgressPercent(100);
@@ -102,7 +111,7 @@ export function useAutoNextTimer({
     return () => {
       cancelCountdown();
     };
-  }, [isTriggered, isCorrect, currentIndex, totalCount, settings, onNext, cancelCountdown]);
+  }, [isTriggered, isCorrect, currentIndex, totalCount, settings, onNext, cancelCountdown, isWaitingForAudio]);
 
   return {
     settings,
