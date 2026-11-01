@@ -100,6 +100,44 @@ export const getToeicRoundWords = (words, roundName) => {
   }
 };
 
+/**
+ * Helper đồng bộ 4 trường mới (phonetic, level, example, exampleMeaning) vào dữ liệu Oxford 3000
+ * Bảo toàn 100% tiến độ học tập (status, repetition, interval, easeFactor, nextReviewDate, lastReviewDate, history, v.v.)
+ */
+export const syncOxford3000Data = (savedWords, defaultWords) => {
+  if (!Array.isArray(savedWords) || savedWords.length === 0) {
+    return defaultWords;
+  }
+  const defaultMap = new Map(defaultWords.map(item => [item.id, item]));
+  const seenIds = new Set();
+
+  const merged = savedWords.map(savedItem => {
+    seenIds.add(savedItem.id);
+    const defaultItem = defaultMap.get(savedItem.id);
+    if (!defaultItem) {
+      // Từ tùy chỉnh do người dùng tự thêm
+      return savedItem;
+    }
+    // Bổ sung hoặc cập nhật 4 trường nội dung mới từ file JSON gốc
+    return {
+      ...savedItem,
+      phonetic: defaultItem.phonetic || savedItem.phonetic || '',
+      level: defaultItem.level || savedItem.level || '',
+      example: defaultItem.example || savedItem.example || '',
+      exampleMeaning: defaultItem.exampleMeaning || savedItem.exampleMeaning || ''
+    };
+  });
+
+  // Bổ sung các từ gốc nếu trong savedWords chưa có (bảo đảm luôn đủ 2.978 từ)
+  for (const defaultItem of defaultWords) {
+    if (!seenIds.has(defaultItem.id)) {
+      merged.push(defaultItem);
+    }
+  }
+
+  return merged;
+};
+
 export default function App() {
   const [activeMode, setActiveMode] = useState('flashcard'); // 'flashcard' | 'quiz' | 'typing' | 'wordlist'
   const [isFocusMode, setIsFocusMode] = useState(() => getFocusSpaceActive());
@@ -119,13 +157,18 @@ export default function App() {
   });
 
   // 1. Quản lý kho từ Oxford 3000 (key: myVocabData)
+  // Tự động đồng bộ 4 trường mới (phonetic, level, example, exampleMeaning), bảo toàn 100% tiến độ học
   const [oxfordWords, setOxfordWords] = useState(() => {
     try {
       const saved = localStorage.getItem(OXFORD_STORAGE_KEY);
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length > 0 && parsed.some(w => w.unit && w.unit.startsWith('Vòng'))) {
-          return parsed;
+          const synced = syncOxford3000Data(parsed, defaultOxfordWordsData);
+          try {
+            localStorage.setItem(OXFORD_STORAGE_KEY, JSON.stringify(synced));
+          } catch (_) {}
+          return synced;
         }
       }
     } catch (err) {
@@ -182,6 +225,18 @@ export default function App() {
       const savedOxford = localStorage.getItem(OXFORD_STORAGE_KEY);
       if (!savedOxford) {
         localStorage.setItem(OXFORD_STORAGE_KEY, JSON.stringify(defaultOxfordWordsData));
+      } else {
+        // Đảm bảo dữ liệu đã lưu trong localStorage được cập nhật 4 trường mới (phonetic, level, example, exampleMeaning)
+        try {
+          const parsed = JSON.parse(savedOxford);
+          if (Array.isArray(parsed) && parsed.length > 0 && parsed.some(w => w.unit && w.unit.startsWith('Vòng'))) {
+            const hasMissingFields = parsed.some(w => !w.phonetic || !w.level || !w.example);
+            if (hasMissingFields) {
+              const synced = syncOxford3000Data(parsed, defaultOxfordWordsData);
+              localStorage.setItem(OXFORD_STORAGE_KEY, JSON.stringify(synced));
+            }
+          }
+        } catch (_) {}
       }
       const savedToeic = localStorage.getItem(TOEIC_STORAGE_KEY);
       if (!savedToeic) {
@@ -529,9 +584,10 @@ export default function App() {
         console.error('Lỗi khi lưu dữ liệu import Oxford 5000 vào localStorage:', err);
       }
     } else {
-      setOxfordWords(importedWords);
+      const synced = syncOxford3000Data(importedWords, defaultOxfordWordsData);
+      setOxfordWords(synced);
       try {
-        localStorage.setItem(OXFORD_STORAGE_KEY, JSON.stringify(importedWords));
+        localStorage.setItem(OXFORD_STORAGE_KEY, JSON.stringify(synced));
       } catch (err) {
         console.error('Lỗi khi lưu dữ liệu import Oxford vào localStorage:', err);
       }

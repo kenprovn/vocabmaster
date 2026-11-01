@@ -9,7 +9,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ə/",
+    "level": "A1",
+    "example": "She has a small garden behind her family home.",
+    "exampleMeaning": "Cô ấy có một khu vườn nhỏ phía sau nhà gia đình."
   },
   {
     "id": "vong1_2",
@@ -21,7 +25,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əˈbaʊt/",
+    "level": "A1",
+    "example": "We talked about our holiday plans after dinner yesterday.",
+    "exampleMeaning": "Chúng tôi đã nói về kế hoạch nghỉ lễ sau bữa tối hôm qua."
   },
   {
     "id": "vong1_3",
@@ -33,7 +41,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əˈbʌv/",
+    "level": "A1",
+    "example": "The picture hangs above the sofa in our living room.",
+    "exampleMeaning": "Bức tranh treo phía trên ghế sofa trong phòng khách của chúng tôi."
   },
   {
     "id": "vong1_4",
@@ -45,7 +57,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/æd/",
+    "level": "A1",
+    "example": "Please add some milk to my cup of tea.",
+    "exampleMeaning": "Làm ơn thêm một ít sữa vào tách trà của tôi."
   },
   {
     "id": "vong1_5",
@@ -57,7 +73,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɑːftə/",
+    "level": "A1",
+    "example": "We usually go for a walk after our evening meal.",
+    "exampleMeaning": "Chúng tôi thường đi dạo sau bữa tối."
   },
   {
     "id": "vong1_6",
@@ -69,7 +89,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌɑːftəˈnuːn/",
+    "level": "A1",
+    "example": "I often finish my homework in the late afternoon.",
+    "exampleMeaning": "Tôi thường làm xong bài tập về nhà vào cuối buổi chiều."
   },
   {
     "id": "vong1_7",
@@ -81,7 +105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əˈɡen/",
+    "level": "A1",
+    "example": "Could you please say that again a little more slowly?",
+    "exampleMeaning": "Bạn có thể vui lòng nói lại điều đó chậm hơn một chút không?"
   },
   {
     "id": "vong1_8",
@@ -93,7 +121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/eɪdʒ/",
+    "level": "A1",
+    "example": "Children of this age usually enjoy playing outside together.",
+    "exampleMeaning": "Trẻ em ở độ tuổi này thường thích chơi cùng nhau ngoài trời."
   },
   {
     "id": "vong1_9",
@@ -105,7 +137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əˈɡəʊ/",
+    "level": "A1",
+    "example": "My parents moved to this town five years ago.",
+    "exampleMeaning": "Bố mẹ tôi chuyển đến thị trấn này cách đây năm năm."
   },
   {
     "id": "vong1_10",
@@ -117,7 +153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/eə/",
+    "level": "A1",
+    "example": "Open the window and let some fresh air inside.",
+    "exampleMeaning": "Hãy mở cửa sổ để không khí trong lành vào phòng."
   },
   {
     "id": "vong1_11",
@@ -129,7 +169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɔːl/",
+    "level": "A1",
+    "example": "All the students arrived at school before eight o'clock.",
+    "exampleMeaning": "Tất cả học sinh đều đến trường trước tám giờ."
   },
   {
     "id": "vong1_12",
@@ -141,7 +185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌɔːl ˈraɪt/",
+    "level": "A2",
+    "example": "Everything is all right, so you do not need to worry.",
+    "exampleMeaning": "Mọi chuyện đều ổn, nên bạn không cần lo lắng."
   },
   {
     "id": "vong1_13",
@@ -153,7 +201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɒlsəʊ/",
+    "level": "A1",
+    "example": "My sister speaks English and she also studies French.",
+    "exampleMeaning": "Chị gái tôi nói tiếng Anh và cũng học tiếng Pháp."
   },
   {
     "id": "vong1_14",
@@ -165,7 +217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɔːlweɪz/",
+    "level": "A1",
+    "example": "My grandfather always drinks a cup of tea after breakfast.",
+    "exampleMeaning": "Ông tôi luôn uống một tách trà sau bữa sáng."
   },
   {
     "id": "vong1_15",
@@ -177,7 +233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ænd/",
+    "level": "A1",
+    "example": "Tom and his sister often play football after school.",
+    "exampleMeaning": "Tom và chị gái thường chơi bóng đá sau giờ học."
   },
   {
     "id": "vong1_16",
@@ -189,7 +249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈænɪməl/",
+    "level": "A1",
+    "example": "The children saw a wild animal near the river.",
+    "exampleMeaning": "Bọn trẻ nhìn thấy một con vật hoang dã gần con sông."
   },
   {
     "id": "vong1_17",
@@ -201,7 +265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɑːnsə/",
+    "level": "A1",
+    "example": "Please write your answer clearly at the bottom of the page.",
+    "exampleMeaning": "Hãy viết câu trả lời của bạn rõ ràng ở cuối trang."
   },
   {
     "id": "vong1_18",
@@ -213,7 +281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈeni/",
+    "level": "A1",
+    "example": "Do you have any questions about tomorrow's English lesson?",
+    "exampleMeaning": "Bạn có câu hỏi nào về tiết tiếng Anh ngày mai không?"
   },
   {
     "id": "vong1_19",
@@ -225,7 +297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈenibɒdi/",
+    "level": "A2",
+    "example": "Does anybody know where I left my school bag?",
+    "exampleMeaning": "Có ai biết tôi đã để cặp sách ở đâu không?"
   },
   {
     "id": "vong1_20",
@@ -237,7 +313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈeniwʌn/",
+    "level": "A1",
+    "example": "Anyone can learn to cook with a little practice.",
+    "exampleMeaning": "Bất kỳ ai cũng có thể học nấu ăn nếu luyện tập một chút."
   },
   {
     "id": "vong1_21",
@@ -249,7 +329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈeniθɪŋ/",
+    "level": "A1",
+    "example": "Would you like anything to eat before we leave?",
+    "exampleMeaning": "Bạn có muốn ăn gì trước khi chúng ta đi không?"
   },
   {
     "id": "vong1_22",
@@ -261,7 +345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈeniweə/",
+    "level": "A2",
+    "example": "I cannot find my phone anywhere in the house.",
+    "exampleMeaning": "Tôi không thể tìm thấy điện thoại ở đâu trong nhà."
   },
   {
     "id": "vong1_23",
@@ -273,7 +361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈæpəl/",
+    "level": "A1",
+    "example": "She eats a fresh apple every morning before school.",
+    "exampleMeaning": "Cô ấy ăn một quả táo tươi mỗi sáng trước khi đến trường."
   },
   {
     "id": "vong1_24",
@@ -285,7 +377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈeɪprəl/",
+    "level": "A1",
+    "example": "Our school usually closes for a short holiday in April.",
+    "exampleMeaning": "Trường chúng tôi thường nghỉ một kỳ ngắn vào tháng Tư."
   },
   {
     "id": "vong1_25",
@@ -297,7 +393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɑːm/",
+    "level": "A1",
+    "example": "He hurt his left arm while playing football yesterday.",
+    "exampleMeaning": "Hôm qua anh ấy bị đau cánh tay trái khi chơi bóng đá."
   },
   {
     "id": "vong1_26",
@@ -309,7 +409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əz/",
+    "level": "A1",
+    "example": "She works as a teacher at our local school.",
+    "exampleMeaning": "Cô ấy làm giáo viên tại trường học ở địa phương chúng tôi."
   },
   {
     "id": "vong1_27",
@@ -321,7 +425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɑːsk/",
+    "level": "A1",
+    "example": "You can ask your teacher if you need help.",
+    "exampleMeaning": "Bạn có thể hỏi giáo viên nếu cần giúp đỡ."
   },
   {
     "id": "vong1_28",
@@ -333,7 +441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/æt/",
+    "level": "A1",
+    "example": "We will meet at the library after our classes.",
+    "exampleMeaning": "Chúng ta sẽ gặp nhau ở thư viện sau giờ học."
   },
   {
     "id": "vong1_29",
@@ -345,7 +457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɑːnt/",
+    "level": "A1",
+    "example": "My aunt often visits us on Sunday afternoons.",
+    "exampleMeaning": "Dì tôi thường đến thăm chúng tôi vào chiều Chủ nhật."
   },
   {
     "id": "vong1_30",
@@ -357,7 +473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əˈweɪ/",
+    "level": "A1",
+    "example": "The children ran away when they heard the noise.",
+    "exampleMeaning": "Bọn trẻ chạy đi khi nghe thấy tiếng động."
   },
   {
     "id": "vong1_31",
@@ -369,7 +489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbeɪbi/",
+    "level": "A1",
+    "example": "The baby is sleeping quietly in her little bed.",
+    "exampleMeaning": "Em bé đang ngủ yên trong chiếc giường nhỏ của mình."
   },
   {
     "id": "vong1_32",
@@ -381,7 +505,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bæk/",
+    "level": "A1",
+    "example": "Please put the books back on the classroom shelf.",
+    "exampleMeaning": "Hãy đặt sách trở lại lên kệ của lớp học."
   },
   {
     "id": "vong1_33",
@@ -393,7 +521,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bæd/",
+    "level": "A1",
+    "example": "The weather was bad, so we stayed at home.",
+    "exampleMeaning": "Thời tiết xấu nên chúng tôi ở nhà."
   },
   {
     "id": "vong1_34",
@@ -405,7 +537,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bæɡ/",
+    "level": "A1",
+    "example": "I keep my keys and phone in this small bag.",
+    "exampleMeaning": "Tôi để chìa khóa và điện thoại trong chiếc túi nhỏ này."
   },
   {
     "id": "vong1_35",
@@ -417,7 +553,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɔːl/",
+    "level": "A1",
+    "example": "The little boy kicked the ball across the garden.",
+    "exampleMeaning": "Cậu bé đá quả bóng qua khu vườn."
   },
   {
     "id": "vong1_36",
@@ -429,7 +569,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bəˈnɑːnə/",
+    "level": "A1",
+    "example": "I usually eat a banana before my morning run.",
+    "exampleMeaning": "Tôi thường ăn một quả chuối trước khi chạy bộ buổi sáng."
   },
   {
     "id": "vong1_37",
@@ -441,7 +585,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɑːθ/",
+    "level": "A1",
+    "example": "She took a warm bath after a long day.",
+    "exampleMeaning": "Cô ấy tắm nước ấm sau một ngày dài."
   },
   {
     "id": "vong1_38",
@@ -453,7 +601,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbɑːθruːm/",
+    "level": "A1",
+    "example": "The bathroom is next to my parents' bedroom upstairs.",
+    "exampleMeaning": "Phòng tắm nằm cạnh phòng ngủ của bố mẹ tôi ở tầng trên."
   },
   {
     "id": "vong1_39",
@@ -465,7 +617,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/biː/",
+    "level": "A1",
+    "example": "I want to be a doctor when I grow up.",
+    "exampleMeaning": "Tôi muốn trở thành bác sĩ khi lớn lên."
   },
   {
     "id": "vong1_40",
@@ -477,7 +633,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/biːtʃ/",
+    "level": "A1",
+    "example": "We spent the afternoon walking along the sandy beach.",
+    "exampleMeaning": "Chúng tôi dành buổi chiều đi dạo dọc bãi biển đầy cát."
   },
   {
     "id": "vong1_41",
@@ -489,7 +649,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/biːn/",
+    "level": "A2",
+    "example": "My mother added a green bean to the soup.",
+    "exampleMeaning": "Mẹ tôi cho một hạt đậu xanh vào món súp."
   },
   {
     "id": "vong1_42",
@@ -501,7 +665,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbjuːtɪfəl/",
+    "level": "A1",
+    "example": "The garden looks beautiful when the flowers are blooming.",
+    "exampleMeaning": "Khu vườn trông thật đẹp khi những bông hoa đang nở."
   },
   {
     "id": "vong1_43",
@@ -513,7 +681,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɪˈkɒz/",
+    "level": "A1",
+    "example": "I stayed inside because it was raining very heavily.",
+    "exampleMeaning": "Tôi ở trong nhà vì trời đang mưa rất to."
   },
   {
     "id": "vong1_44",
@@ -525,7 +697,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bed/",
+    "level": "A1",
+    "example": "Please go to bed early before your important exam.",
+    "exampleMeaning": "Hãy đi ngủ sớm trước kỳ thi quan trọng của bạn."
   },
   {
     "id": "vong1_45",
@@ -537,7 +713,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbedruːm/",
+    "level": "A1",
+    "example": "My younger brother keeps his toys in his bedroom.",
+    "exampleMeaning": "Em trai tôi cất đồ chơi trong phòng ngủ của mình."
   },
   {
     "id": "vong1_46",
@@ -549,7 +729,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɪˈfɔː/",
+    "level": "A1",
+    "example": "Please wash your hands before you eat your lunch.",
+    "exampleMeaning": "Hãy rửa tay trước khi ăn bữa trưa."
   },
   {
     "id": "vong1_47",
@@ -561,7 +745,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɪˈɡɪn/",
+    "level": "A1",
+    "example": "The English lesson will begin at nine o'clock tomorrow.",
+    "exampleMeaning": "Tiết tiếng Anh sẽ bắt đầu lúc chín giờ ngày mai."
   },
   {
     "id": "vong1_48",
@@ -573,7 +761,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɪˈhaɪnd/",
+    "level": "A1",
+    "example": "Our little dog likes sleeping behind the front door.",
+    "exampleMeaning": "Chú chó nhỏ của chúng tôi thích ngủ phía sau cửa trước."
   },
   {
     "id": "vong1_49",
@@ -585,7 +777,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɪˈləʊ/",
+    "level": "A1",
+    "example": "The village lies just below the mountains in the valley.",
+    "exampleMeaning": "Ngôi làng nằm ngay bên dưới những ngọn núi trong thung lũng."
   },
   {
     "id": "vong1_50",
@@ -597,7 +793,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/best/",
+    "level": "A1",
+    "example": "She is my best friend from primary school.",
+    "exampleMeaning": "Cô ấy là người bạn thân nhất của tôi từ thời tiểu học."
   },
   {
     "id": "vong1_51",
@@ -609,7 +809,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɪɡ/",
+    "level": "A1",
+    "example": "They bought a big table for their new kitchen.",
+    "exampleMeaning": "Họ mua một chiếc bàn lớn cho căn bếp mới."
   },
   {
     "id": "vong1_52",
@@ -621,7 +825,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/baɪk/",
+    "level": "A1",
+    "example": "My brother rides his bike to school every morning.",
+    "exampleMeaning": "Em trai tôi đạp xe đến trường mỗi sáng."
   },
   {
     "id": "vong1_53",
@@ -633,7 +841,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɜːd/",
+    "level": "A1",
+    "example": "A little bird is singing outside my bedroom window.",
+    "exampleMeaning": "Một chú chim nhỏ đang hót bên ngoài cửa sổ phòng ngủ."
   },
   {
     "id": "vong1_54",
@@ -645,7 +857,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbɜːθdeɪ/",
+    "level": "A1",
+    "example": "We made a chocolate cake for her birthday yesterday.",
+    "exampleMeaning": "Hôm qua chúng tôi làm bánh sô cô la mừng sinh nhật cô ấy."
   },
   {
     "id": "vong1_55",
@@ -657,7 +873,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/blæk/",
+    "level": "A1",
+    "example": "She wore a black dress to the family party.",
+    "exampleMeaning": "Cô ấy mặc một chiếc váy đen đến bữa tiệc gia đình."
   },
   {
     "id": "vong1_56",
@@ -669,7 +889,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bluː/",
+    "level": "A1",
+    "example": "The sky looks bright blue on this sunny morning.",
+    "exampleMeaning": "Bầu trời trông xanh biếc vào buổi sáng đầy nắng này."
   },
   {
     "id": "vong1_57",
@@ -681,7 +905,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bəʊt/",
+    "level": "A1",
+    "example": "We crossed the lake in a small wooden boat.",
+    "exampleMeaning": "Chúng tôi băng qua hồ trên một chiếc thuyền gỗ nhỏ."
   },
   {
     "id": "vong1_58",
@@ -693,7 +921,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbɒdi/",
+    "level": "A1",
+    "example": "Regular exercise helps keep your body healthy and strong.",
+    "exampleMeaning": "Tập thể dục thường xuyên giúp cơ thể khỏe mạnh và cường tráng."
   },
   {
     "id": "vong1_59",
@@ -705,7 +937,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bʊk/",
+    "level": "A1",
+    "example": "I borrowed a book about animals from the library.",
+    "exampleMeaning": "Tôi mượn một cuốn sách về động vật ở thư viện."
   },
   {
     "id": "vong1_60",
@@ -717,7 +953,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/buːt/",
+    "level": "A1",
+    "example": "He found an old boot beside the garden gate.",
+    "exampleMeaning": "Anh ấy tìm thấy một chiếc ủng cũ cạnh cổng vườn."
   },
   {
     "id": "vong1_61",
@@ -729,7 +969,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbɒtəl/",
+    "level": "A1",
+    "example": "Please bring a bottle of water for the trip.",
+    "exampleMeaning": "Hãy mang theo một chai nước cho chuyến đi."
   },
   {
     "id": "vong1_62",
@@ -741,7 +985,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɒks/",
+    "level": "A1",
+    "example": "The children put all their toys into one box.",
+    "exampleMeaning": "Bọn trẻ đặt tất cả đồ chơi vào một chiếc hộp."
   },
   {
     "id": "vong1_63",
@@ -753,7 +1001,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bɔɪ/",
+    "level": "A1",
+    "example": "The little boy is learning to ride his bike.",
+    "exampleMeaning": "Cậu bé đang học cách đi xe đạp."
   },
   {
     "id": "vong1_64",
@@ -765,7 +1017,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bred/",
+    "level": "A1",
+    "example": "We bought fresh bread from the bakery this morning.",
+    "exampleMeaning": "Sáng nay chúng tôi mua bánh mì tươi ở tiệm bánh."
   },
   {
     "id": "vong1_65",
@@ -777,7 +1033,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbrekfəst/",
+    "level": "A1",
+    "example": "I usually have eggs and toast for my breakfast.",
+    "exampleMeaning": "Tôi thường ăn trứng và bánh mì nướng vào bữa sáng."
   },
   {
     "id": "vong1_66",
@@ -789,7 +1049,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbrʌðə/",
+    "level": "A1",
+    "example": "My older brother works at a hospital in London.",
+    "exampleMeaning": "Anh trai tôi làm việc tại một bệnh viện ở London."
   },
   {
     "id": "vong1_67",
@@ -801,7 +1065,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/braʊn/",
+    "level": "A1",
+    "example": "She has brown eyes and long dark hair.",
+    "exampleMeaning": "Cô ấy có đôi mắt nâu và mái tóc đen dài."
   },
   {
     "id": "vong1_68",
@@ -813,7 +1081,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bʌs/",
+    "level": "A1",
+    "example": "We take the bus to the city centre every Saturday.",
+    "exampleMeaning": "Chúng tôi đi xe buýt đến trung tâm thành phố mỗi thứ Bảy."
   },
   {
     "id": "vong1_69",
@@ -825,7 +1097,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/bʌt/",
+    "level": "A1",
+    "example": "I wanted to go outside, but it started raining.",
+    "exampleMeaning": "Tôi muốn ra ngoài nhưng trời bắt đầu mưa."
   },
   {
     "id": "vong1_70",
@@ -837,7 +1113,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈbʌtə/",
+    "level": "A1",
+    "example": "Please put a little butter on my bread.",
+    "exampleMeaning": "Làm ơn phết một ít bơ lên bánh mì của tôi."
   },
   {
     "id": "vong1_71",
@@ -849,7 +1129,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/baɪ/",
+    "level": "A1",
+    "example": "We need to buy some fruit for tomorrow's picnic.",
+    "exampleMeaning": "Chúng ta cần mua ít trái cây cho buổi dã ngoại ngày mai."
   },
   {
     "id": "vong1_72",
@@ -861,7 +1145,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/baɪ/",
+    "level": "A1",
+    "example": "This picture was painted by my younger sister.",
+    "exampleMeaning": "Bức tranh này do em gái tôi vẽ."
   },
   {
     "id": "vong1_73",
@@ -873,7 +1161,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/baɪ/",
+    "level": "A1",
+    "example": "She waved and said bye to her school friends.",
+    "exampleMeaning": "Cô ấy vẫy tay chào tạm biệt các bạn ở trường."
   },
   {
     "id": "vong1_74",
@@ -885,7 +1177,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkæfeɪ/",
+    "level": "A1",
+    "example": "We stopped at a small cafe for some coffee.",
+    "exampleMeaning": "Chúng tôi ghé một quán cà phê nhỏ để uống cà phê."
   },
   {
     "id": "vong1_75",
@@ -897,7 +1193,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/keɪk/",
+    "level": "A1",
+    "example": "Dad made a delicious cake for our family dinner.",
+    "exampleMeaning": "Bố làm một chiếc bánh ngon cho bữa tối gia đình."
   },
   {
     "id": "vong1_76",
@@ -909,7 +1209,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkæmərə/",
+    "level": "A1",
+    "example": "She took her camera to the mountains last weekend.",
+    "exampleMeaning": "Cô ấy mang máy ảnh lên núi vào cuối tuần trước."
   },
   {
     "id": "vong1_77",
@@ -921,7 +1225,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kæn/",
+    "level": "A1",
+    "example": "I can help you with your English homework tonight.",
+    "exampleMeaning": "Tôi có thể giúp bạn làm bài tập tiếng Anh tối nay."
   },
   {
     "id": "vong1_78",
@@ -933,7 +1241,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkænɒt/",
+    "level": "A1",
+    "example": "We cannot go swimming because the pool is closed.",
+    "exampleMeaning": "Chúng tôi không thể đi bơi vì hồ bơi đã đóng cửa."
   },
   {
     "id": "vong1_79",
@@ -945,7 +1257,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kɑː/",
+    "level": "A1",
+    "example": "My father drives his car to work every weekday.",
+    "exampleMeaning": "Bố tôi lái ô tô đi làm mỗi ngày trong tuần."
   },
   {
     "id": "vong1_80",
@@ -957,7 +1273,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kɑːd/",
+    "level": "A1",
+    "example": "I sent my grandmother a birthday card last week.",
+    "exampleMeaning": "Tuần trước tôi gửi bà một tấm thiệp sinh nhật."
   },
   {
     "id": "vong1_81",
@@ -969,7 +1289,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kæt/",
+    "level": "A1",
+    "example": "Our cat likes to sleep on the warm sofa.",
+    "exampleMeaning": "Con mèo của chúng tôi thích ngủ trên ghế sofa ấm áp."
   },
   {
     "id": "vong1_82",
@@ -981,7 +1305,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tʃeə/",
+    "level": "A1",
+    "example": "Please sit on this chair beside the window.",
+    "exampleMeaning": "Hãy ngồi trên chiếc ghế này cạnh cửa sổ."
   },
   {
     "id": "vong1_83",
@@ -993,7 +1321,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tʃæt/",
+    "level": "A2",
+    "example": "I often chat with my cousins after our family dinner.",
+    "exampleMeaning": "Tôi thường trò chuyện với anh chị em họ sau bữa tối gia đình."
   },
   {
     "id": "vong1_84",
@@ -1005,7 +1337,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tʃiːp/",
+    "level": "A1",
+    "example": "These shoes are quite cheap, but they look nice.",
+    "exampleMeaning": "Đôi giày này khá rẻ nhưng trông đẹp."
   },
   {
     "id": "vong1_85",
@@ -1017,7 +1353,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tʃiːz/",
+    "level": "A1",
+    "example": "She put some cheese on the sandwiches for lunch.",
+    "exampleMeaning": "Cô ấy cho một ít phô mai vào bánh mì kẹp cho bữa trưa."
   },
   {
     "id": "vong1_86",
@@ -1029,7 +1369,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtʃɪkɪn/",
+    "level": "A1",
+    "example": "We had roast chicken and vegetables for Sunday lunch.",
+    "exampleMeaning": "Chúng tôi ăn gà quay và rau vào bữa trưa Chủ nhật."
   },
   {
     "id": "vong1_87",
@@ -1041,7 +1385,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tʃaɪld/",
+    "level": "A1",
+    "example": "Every child in the class received a small gift.",
+    "exampleMeaning": "Mỗi đứa trẻ trong lớp đều nhận được một món quà nhỏ."
   },
   {
     "id": "vong1_88",
@@ -1053,7 +1401,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtʃɒklət/",
+    "level": "A1",
+    "example": "My little sister loves eating chocolate after her meals.",
+    "exampleMeaning": "Em gái tôi thích ăn sô cô la sau bữa ăn."
   },
   {
     "id": "vong1_89",
@@ -1065,7 +1417,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsɪnəmə/",
+    "level": "A1",
+    "example": "We watched a funny film at the cinema yesterday.",
+    "exampleMeaning": "Hôm qua chúng tôi xem một bộ phim hài ở rạp chiếu phim."
   },
   {
     "id": "vong1_90",
@@ -1077,7 +1433,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsɜːkəl/",
+    "level": "A2",
+    "example": "Please draw a circle around the correct answer below.",
+    "exampleMeaning": "Hãy khoanh một vòng tròn quanh đáp án đúng bên dưới."
   },
   {
     "id": "vong1_91",
@@ -1089,7 +1449,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsɪti/",
+    "level": "A1",
+    "example": "This city has many parks and beautiful old buildings.",
+    "exampleMeaning": "Thành phố này có nhiều công viên và tòa nhà cổ đẹp."
   },
   {
     "id": "vong1_92",
@@ -1101,7 +1465,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/klæs/",
+    "level": "A1",
+    "example": "Our English class begins at eight every Monday morning.",
+    "exampleMeaning": "Lớp tiếng Anh của chúng tôi bắt đầu lúc tám giờ mỗi sáng thứ Hai."
   },
   {
     "id": "vong1_93",
@@ -1113,7 +1481,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈklæsruːm/",
+    "level": "A1",
+    "example": "The students cleaned their classroom after the art lesson.",
+    "exampleMeaning": "Các học sinh dọn sạch phòng học sau tiết mỹ thuật."
   },
   {
     "id": "vong1_94",
@@ -1125,7 +1497,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kliːn/",
+    "level": "A1",
+    "example": "Please clean the kitchen before your grandparents arrive.",
+    "exampleMeaning": "Hãy dọn sạch bếp trước khi ông bà đến."
   },
   {
     "id": "vong1_95",
@@ -1137,7 +1513,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/klɒk/",
+    "level": "A1",
+    "example": "The clock on the wall says it is six.",
+    "exampleMeaning": "Chiếc đồng hồ trên tường chỉ sáu giờ."
   },
   {
     "id": "vong1_96",
@@ -1149,7 +1529,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kləʊðz/",
+    "level": "A1",
+    "example": "She put her clean clothes away in the cupboard.",
+    "exampleMeaning": "Cô ấy cất quần áo sạch vào tủ."
   },
   {
     "id": "vong1_97",
@@ -1161,7 +1545,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/klaʊd/",
+    "level": "A2",
+    "example": "A large white cloud covered the sun for a moment.",
+    "exampleMeaning": "Một đám mây trắng lớn che khuất mặt trời trong chốc lát."
   },
   {
     "id": "vong1_98",
@@ -1173,7 +1561,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kəʊt/",
+    "level": "A1",
+    "example": "Bring a warm coat because it is cold outside.",
+    "exampleMeaning": "Hãy mang áo khoác ấm vì bên ngoài trời lạnh."
   },
   {
     "id": "vong1_99",
@@ -1185,7 +1577,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkɒfi/",
+    "level": "A1",
+    "example": "My parents drink coffee together every morning before work.",
+    "exampleMeaning": "Bố mẹ tôi uống cà phê cùng nhau mỗi sáng trước khi đi làm."
   },
   {
     "id": "vong1_100",
@@ -1197,7 +1593,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kəʊld/",
+    "level": "A1",
+    "example": "I caught a bad cold during our winter holiday.",
+    "exampleMeaning": "Tôi bị cảm nặng trong kỳ nghỉ mùa đông."
   },
   {
     "id": "vong1_101",
@@ -1209,7 +1609,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkʌlə/",
+    "level": "A1",
+    "example": "Please choose a bright colour for your new bedroom.",
+    "exampleMeaning": "Hãy chọn một màu tươi sáng cho phòng ngủ mới của bạn."
   },
   {
     "id": "vong1_102",
@@ -1221,7 +1625,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kəmˈpjuːtə/",
+    "level": "A1",
+    "example": "I use my computer to finish my homework every evening.",
+    "exampleMeaning": "Tôi dùng máy tính để làm xong bài tập mỗi tối."
   },
   {
     "id": "vong1_103",
@@ -1233,7 +1641,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kʊk/",
+    "level": "A1",
+    "example": "My father likes to cook dinner for the whole family.",
+    "exampleMeaning": "Bố tôi thích nấu bữa tối cho cả gia đình."
   },
   {
     "id": "vong1_104",
@@ -1245,7 +1657,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkʊkɪŋ/",
+    "level": "A1",
+    "example": "Cooking together is a fun way to spend Sunday afternoons.",
+    "exampleMeaning": "Nấu ăn cùng nhau là cách thú vị để tận hưởng chiều Chủ nhật."
   },
   {
     "id": "vong1_105",
@@ -1257,7 +1673,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kuːl/",
+    "level": "A1",
+    "example": "The weather is cool enough for a walk outside.",
+    "exampleMeaning": "Thời tiết đủ mát để đi dạo bên ngoài."
   },
   {
     "id": "vong1_106",
@@ -1269,7 +1689,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkʌntri/",
+    "level": "A1",
+    "example": "My grandparents live in a quiet village in the country.",
+    "exampleMeaning": "Ông bà tôi sống tại một ngôi làng yên tĩnh ở vùng quê."
   },
   {
     "id": "vong1_107",
@@ -1281,7 +1705,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkʌzən/",
+    "level": "A1",
+    "example": "My cousin is coming to stay with us this weekend.",
+    "exampleMeaning": "Anh họ tôi sẽ đến ở cùng chúng tôi cuối tuần này."
   },
   {
     "id": "vong1_108",
@@ -1293,7 +1721,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kaʊ/",
+    "level": "A1",
+    "example": "We saw a brown cow eating grass in the field.",
+    "exampleMeaning": "Chúng tôi thấy một con bò nâu đang ăn cỏ trên cánh đồng."
   },
   {
     "id": "vong1_109",
@@ -1305,7 +1737,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kʌp/",
+    "level": "A1",
+    "example": "Would you like a cup of tea with your breakfast?",
+    "exampleMeaning": "Bạn có muốn một tách trà cùng bữa sáng không?"
   },
   {
     "id": "vong1_110",
@@ -1317,7 +1753,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dæd/",
+    "level": "A1",
+    "example": "My dad takes me to school on his bike.",
+    "exampleMeaning": "Bố chở tôi đến trường bằng xe đạp của bố."
   },
   {
     "id": "vong1_111",
@@ -1329,7 +1769,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dɑːns/",
+    "level": "A1",
+    "example": "The children love to dance when they hear music.",
+    "exampleMeaning": "Bọn trẻ thích nhảy múa khi nghe nhạc."
   },
   {
     "id": "vong1_112",
@@ -1341,7 +1785,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dɑːk/",
+    "level": "A1",
+    "example": "It gets dark early during the winter months here.",
+    "exampleMeaning": "Ở đây trời tối sớm trong những tháng mùa đông."
   },
   {
     "id": "vong1_113",
@@ -1353,7 +1801,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdɔːtə/",
+    "level": "A1",
+    "example": "Their daughter has just started studying at university.",
+    "exampleMeaning": "Con gái của họ vừa bắt đầu học đại học."
   },
   {
     "id": "vong1_114",
@@ -1365,7 +1817,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/deɪ/",
+    "level": "A1",
+    "example": "We spent the whole day playing games in the garden.",
+    "exampleMeaning": "Chúng tôi dành cả ngày chơi trò chơi trong vườn."
   },
   {
     "id": "vong1_115",
@@ -1377,7 +1833,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dɪˈsembə/",
+    "level": "A1",
+    "example": "Our family usually visits our grandparents in December.",
+    "exampleMeaning": "Gia đình chúng tôi thường thăm ông bà vào tháng Mười Hai."
   },
   {
     "id": "vong1_116",
@@ -1389,7 +1849,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/desk/",
+    "level": "A1",
+    "example": "I left my notebook on the desk near the door.",
+    "exampleMeaning": "Tôi để quyển vở trên bàn học gần cửa."
   },
   {
     "id": "vong1_117",
@@ -1401,7 +1865,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdɪkʃənri/",
+    "level": "A1",
+    "example": "Use a dictionary when you find an unfamiliar word.",
+    "exampleMeaning": "Hãy dùng từ điển khi gặp một từ chưa biết."
   },
   {
     "id": "vong1_118",
@@ -1413,7 +1881,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdɪnə/",
+    "level": "A1",
+    "example": "We usually eat dinner together at seven in the evening.",
+    "exampleMeaning": "Chúng tôi thường ăn tối cùng nhau lúc bảy giờ."
   },
   {
     "id": "vong1_119",
@@ -1425,7 +1897,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdɜːti/",
+    "level": "A1",
+    "example": "Please wash your hands because they are very dirty.",
+    "exampleMeaning": "Hãy rửa tay vì tay bạn rất bẩn."
   },
   {
     "id": "vong1_120",
@@ -1437,7 +1913,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/duː/",
+    "level": "A1",
+    "example": "I must do my homework before watching television tonight.",
+    "exampleMeaning": "Tôi phải làm bài tập trước khi xem tivi tối nay."
   },
   {
     "id": "vong1_121",
@@ -1449,7 +1929,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdɒktə/",
+    "level": "A1",
+    "example": "The doctor checked my temperature and told me to rest.",
+    "exampleMeaning": "Bác sĩ kiểm tra nhiệt độ của tôi và dặn tôi nghỉ ngơi."
   },
   {
     "id": "vong1_122",
@@ -1461,7 +1945,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dɒɡ/",
+    "level": "A1",
+    "example": "Our dog waits by the door when we come home.",
+    "exampleMeaning": "Chú chó của chúng tôi chờ cạnh cửa khi chúng tôi về nhà."
   },
   {
     "id": "vong1_123",
@@ -1473,7 +1961,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dɔː/",
+    "level": "A1",
+    "example": "Please close the door when you leave the room.",
+    "exampleMeaning": "Hãy đóng cửa khi bạn rời khỏi phòng."
   },
   {
     "id": "vong1_124",
@@ -1485,7 +1977,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdrɔːɪŋ/",
+    "level": "A2",
+    "example": "She showed us a beautiful drawing of her family.",
+    "exampleMeaning": "Cô ấy cho chúng tôi xem một bức vẽ gia đình rất đẹp."
   },
   {
     "id": "vong1_125",
@@ -1497,7 +1993,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dres/",
+    "level": "A1",
+    "example": "She bought a new dress for her sister's wedding.",
+    "exampleMeaning": "Cô ấy mua một chiếc váy mới để dự đám cưới chị gái."
   },
   {
     "id": "vong1_126",
@@ -1509,7 +2009,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/drɪŋk/",
+    "level": "A1",
+    "example": "Please drink plenty of water after playing football outside.",
+    "exampleMeaning": "Hãy uống nhiều nước sau khi chơi bóng đá ngoài trời."
   },
   {
     "id": "vong1_127",
@@ -1521,7 +2025,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdraɪvə/",
+    "level": "A1",
+    "example": "The bus driver helped an old woman with her bags.",
+    "exampleMeaning": "Tài xế xe buýt giúp một bà cụ mang túi."
   },
   {
     "id": "vong1_128",
@@ -1533,7 +2041,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/draɪ/",
+    "level": "A2",
+    "example": "Hang your clothes outside so they can dry quickly.",
+    "exampleMeaning": "Hãy phơi quần áo bên ngoài để chúng khô nhanh."
   },
   {
     "id": "vong1_129",
@@ -1545,7 +2057,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/iːtʃ/",
+    "level": "A1",
+    "example": "Each student needs to bring a pencil to class.",
+    "exampleMeaning": "Mỗi học sinh cần mang một cây bút chì đến lớp."
   },
   {
     "id": "vong1_130",
@@ -1557,7 +2073,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪə/",
+    "level": "A1",
+    "example": "She whispered something quietly into her friend's left ear.",
+    "exampleMeaning": "Cô ấy thì thầm điều gì đó vào tai trái của bạn mình."
   },
   {
     "id": "vong1_131",
@@ -1569,7 +2089,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈiːzi/",
+    "level": "A1",
+    "example": "The first question was easy for everyone in our class.",
+    "exampleMeaning": "Câu hỏi đầu tiên dễ đối với mọi người trong lớp."
   },
   {
     "id": "vong1_132",
@@ -1581,7 +2105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/iːt/",
+    "level": "A1",
+    "example": "We usually eat lunch together at the school canteen.",
+    "exampleMeaning": "Chúng tôi thường ăn trưa cùng nhau tại căng tin trường."
   },
   {
     "id": "vong1_133",
@@ -1593,7 +2121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/eɡ/",
+    "level": "A1",
+    "example": "She cooked an egg for breakfast this morning.",
+    "exampleMeaning": "Sáng nay cô ấy nấu một quả trứng cho bữa sáng."
   },
   {
     "id": "vong1_134",
@@ -1605,7 +2137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/eɪt/",
+    "level": "A1",
+    "example": "There are eight children playing in the school garden.",
+    "exampleMeaning": "Có tám đứa trẻ đang chơi trong khu vườn của trường."
   },
   {
     "id": "vong1_135",
@@ -1617,7 +2153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌeɪˈtiːn/",
+    "level": "A1",
+    "example": "My sister will be eighteen years old next month.",
+    "exampleMeaning": "Chị gái tôi sẽ tròn mười tám tuổi vào tháng tới."
   },
   {
     "id": "vong1_136",
@@ -1629,7 +2169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈeɪti/",
+    "level": "A1",
+    "example": "My grandfather is eighty years old but still walks daily.",
+    "exampleMeaning": "Ông tôi đã tám mươi tuổi nhưng vẫn đi bộ hằng ngày."
   },
   {
     "id": "vong1_137",
@@ -1641,7 +2185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪˈlevən/",
+    "level": "A1",
+    "example": "Eleven students joined the school music club this year.",
+    "exampleMeaning": "Có mười một học sinh tham gia câu lạc bộ âm nhạc năm nay."
   },
   {
     "id": "vong1_138",
@@ -1653,7 +2201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈiːmeɪl/",
+    "level": "A1",
+    "example": "Please send me an email with the meeting details.",
+    "exampleMeaning": "Hãy gửi cho tôi một email ghi thông tin cuộc họp."
   },
   {
     "id": "vong1_139",
@@ -1665,7 +2217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈempti/",
+    "level": "A2",
+    "example": "The bottle is empty, so please fill it with water.",
+    "exampleMeaning": "Chai đã rỗng, vì vậy hãy đổ đầy nước vào."
   },
   {
     "id": "vong1_140",
@@ -1677,7 +2233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/end/",
+    "level": "A1",
+    "example": "The film has a very surprising end that made us laugh.",
+    "exampleMeaning": "Bộ phim có một cái kết rất bất ngờ khiến chúng tôi bật cười."
   },
   {
     "id": "vong1_141",
@@ -1689,7 +2249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈiːvnɪŋ/",
+    "level": "A1",
+    "example": "We enjoy sitting together in the garden every evening.",
+    "exampleMeaning": "Chúng tôi thích ngồi cùng nhau trong vườn mỗi buổi tối."
   },
   {
     "id": "vong1_142",
@@ -1701,7 +2265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈevrɪ/",
+    "level": "A1",
+    "example": "Every child should have a safe place to play.",
+    "exampleMeaning": "Mỗi đứa trẻ nên có một nơi an toàn để vui chơi."
   },
   {
     "id": "vong1_143",
@@ -1713,7 +2281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈevribɒdi/",
+    "level": "A1",
+    "example": "Everybody was excited about the school trip next week.",
+    "exampleMeaning": "Mọi người đều hào hứng với chuyến đi của trường tuần tới."
   },
   {
     "id": "vong1_144",
@@ -1725,7 +2297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈevriwʌn/",
+    "level": "A1",
+    "example": "Everyone in my family likes eating together on Sundays.",
+    "exampleMeaning": "Mọi người trong gia đình tôi đều thích ăn cùng nhau vào Chủ nhật."
   },
   {
     "id": "vong1_145",
@@ -1737,7 +2313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈevriθɪŋ/",
+    "level": "A1",
+    "example": "She put everything into her suitcase before leaving home.",
+    "exampleMeaning": "Cô ấy cho mọi thứ vào va li trước khi rời nhà."
   },
   {
     "id": "vong1_146",
@@ -1749,7 +2329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈevriweə/",
+    "level": "A2",
+    "example": "We looked everywhere for the missing house keys yesterday.",
+    "exampleMeaning": "Hôm qua chúng tôi tìm khắp nơi chiếc chìa khóa nhà bị mất."
   },
   {
     "id": "vong1_147",
@@ -1761,7 +2345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪɡˈzɑːmpəl/",
+    "level": "A1",
+    "example": "Can you give me an example of a healthy breakfast?",
+    "exampleMeaning": "Bạn có thể cho tôi một ví dụ về bữa sáng lành mạnh không?"
   },
   {
     "id": "vong1_148",
@@ -1773,7 +2361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/aɪ/",
+    "level": "A1",
+    "example": "She closed one eye while looking through the camera.",
+    "exampleMeaning": "Cô ấy nhắm một mắt khi nhìn qua máy ảnh."
   },
   {
     "id": "vong1_149",
@@ -1785,7 +2377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/feɪs/",
+    "level": "A1",
+    "example": "Wash your face with warm water every morning.",
+    "exampleMeaning": "Hãy rửa mặt bằng nước ấm mỗi buổi sáng."
   },
   {
     "id": "vong1_150",
@@ -1797,7 +2393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfæməli/",
+    "level": "A1",
+    "example": "Our whole family gathered together for a special meal.",
+    "exampleMeaning": "Cả gia đình chúng tôi quây quần bên nhau trong một bữa ăn đặc biệt."
   },
   {
     "id": "vong1_151",
@@ -1809,7 +2409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɑːm/",
+    "level": "A1",
+    "example": "My uncle keeps sheep and cows on his small farm.",
+    "exampleMeaning": "Chú tôi nuôi cừu và bò tại nông trại nhỏ của mình."
   },
   {
     "id": "vong1_152",
@@ -1821,7 +2425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɑːst/",
+    "level": "A1",
+    "example": "The train was fast enough to reach the city early.",
+    "exampleMeaning": "Tàu chạy đủ nhanh để đến thành phố sớm."
   },
   {
     "id": "vong1_153",
@@ -1833,7 +2441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fæt/",
+    "level": "A1",
+    "example": "The cat is too fat because it eats so much.",
+    "exampleMeaning": "Con mèo quá béo vì nó ăn quá nhiều."
   },
   {
     "id": "vong1_154",
@@ -1845,7 +2457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfɑːðə/",
+    "level": "A1",
+    "example": "My father usually reads the newspaper after breakfast.",
+    "exampleMeaning": "Bố tôi thường đọc báo sau bữa sáng."
   },
   {
     "id": "vong1_155",
@@ -1857,7 +2473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌfɪfˈtiːn/",
+    "level": "A1",
+    "example": "There were fifteen children at the birthday party yesterday.",
+    "exampleMeaning": "Hôm qua có mười lăm đứa trẻ tại bữa tiệc sinh nhật."
   },
   {
     "id": "vong1_156",
@@ -1869,7 +2489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɪfθ/",
+    "level": "A1",
+    "example": "Our classroom is on the fifth floor of the building.",
+    "exampleMeaning": "Phòng học của chúng tôi ở tầng năm của tòa nhà."
   },
   {
     "id": "vong1_157",
@@ -1881,7 +2505,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfɪfti/",
+    "level": "A1",
+    "example": "The restaurant can serve up to fifty guests tonight.",
+    "exampleMeaning": "Nhà hàng có thể phục vụ tối đa năm mươi khách tối nay."
   },
   {
     "id": "vong1_158",
@@ -1893,7 +2521,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɪlm/",
+    "level": "A1",
+    "example": "We watched a funny film together on Saturday night.",
+    "exampleMeaning": "Chúng tôi cùng xem một bộ phim hài vào tối thứ Bảy."
   },
   {
     "id": "vong1_159",
@@ -1905,7 +2537,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/faɪnd/",
+    "level": "A1",
+    "example": "I cannot find my glasses anywhere in the house.",
+    "exampleMeaning": "Tôi không thể tìm thấy kính của mình ở đâu trong nhà."
   },
   {
     "id": "vong1_160",
@@ -1917,7 +2553,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfɪŋɡə/",
+    "level": "A2",
+    "example": "She cut her finger while preparing vegetables for dinner.",
+    "exampleMeaning": "Cô ấy bị đứt ngón tay khi chuẩn bị rau cho bữa tối."
   },
   {
     "id": "vong1_161",
@@ -1929,7 +2569,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfaɪə/",
+    "level": "A1",
+    "example": "We sat near the fire to keep warm last night.",
+    "exampleMeaning": "Tối qua chúng tôi ngồi gần lửa để giữ ấm."
   },
   {
     "id": "vong1_162",
@@ -1941,7 +2585,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɜːst/",
+    "level": "A1",
+    "example": "This is the first time I have visited London.",
+    "exampleMeaning": "Đây là lần đầu tiên tôi đến London."
   },
   {
     "id": "vong1_163",
@@ -1953,7 +2601,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɪʃ/",
+    "level": "A1",
+    "example": "My grandfather goes fishing and catches fresh fish every weekend.",
+    "exampleMeaning": "Ông tôi đi câu và bắt cá tươi vào mỗi cuối tuần."
   },
   {
     "id": "vong1_164",
@@ -1965,7 +2617,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/faɪv/",
+    "level": "A1",
+    "example": "We have five lessons at school on Monday morning.",
+    "exampleMeaning": "Chúng tôi có năm tiết học ở trường vào sáng thứ Hai."
   },
   {
     "id": "vong1_165",
@@ -1977,7 +2633,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/flæɡ/",
+    "level": "B1",
+    "example": "The school flag flew above the building during the ceremony.",
+    "exampleMeaning": "Lá cờ của trường tung bay phía trên tòa nhà trong buổi lễ."
   },
   {
     "id": "vong1_166",
@@ -1989,7 +2649,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/flæt/",
+    "level": "A1",
+    "example": "My grandparents live in a small flat near the station.",
+    "exampleMeaning": "Ông bà tôi sống trong một căn hộ nhỏ gần nhà ga."
   },
   {
     "id": "vong1_167",
@@ -2001,7 +2665,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/flɔː/",
+    "level": "A1",
+    "example": "The children sat on the floor and played games.",
+    "exampleMeaning": "Bọn trẻ ngồi trên sàn nhà và chơi trò chơi."
   },
   {
     "id": "vong1_168",
@@ -2013,7 +2681,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈflaʊə/",
+    "level": "A1",
+    "example": "She picked a beautiful flower from the garden for Mum.",
+    "exampleMeaning": "Cô ấy hái một bông hoa đẹp trong vườn tặng mẹ."
   },
   {
     "id": "vong1_169",
@@ -2025,7 +2697,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/flaɪ/",
+    "level": "A1",
+    "example": "Many birds fly south when the winter weather gets cold.",
+    "exampleMeaning": "Nhiều loài chim bay về phương nam khi mùa đông trở lạnh."
   },
   {
     "id": "vong1_170",
@@ -2037,7 +2713,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fuːd/",
+    "level": "A1",
+    "example": "We need to buy some food for the picnic tomorrow.",
+    "exampleMeaning": "Chúng ta cần mua ít đồ ăn cho buổi dã ngoại ngày mai."
   },
   {
     "id": "vong1_171",
@@ -2049,7 +2729,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fʊt/",
+    "level": "A1",
+    "example": "He hurt his right foot while running in the park.",
+    "exampleMeaning": "Anh ấy bị đau bàn chân phải khi chạy trong công viên."
   },
   {
     "id": "vong1_172",
@@ -2061,7 +2745,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfʊtbɔːl/",
+    "level": "A1",
+    "example": "My friends play football in the park every Sunday.",
+    "exampleMeaning": "Bạn bè tôi chơi bóng đá ở công viên mỗi Chủ nhật."
   },
   {
     "id": "vong1_173",
@@ -2073,7 +2761,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɔː/",
+    "level": "A1",
+    "example": "I made a sandwich for my sister before school.",
+    "exampleMeaning": "Tôi làm một chiếc bánh mì kẹp cho em gái trước giờ học."
   },
   {
     "id": "vong1_174",
@@ -2085,7 +2777,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɔːk/",
+    "level": "A2",
+    "example": "Please use a fork to eat the pasta neatly.",
+    "exampleMeaning": "Hãy dùng nĩa để ăn mì Ý cho gọn gàng."
   },
   {
     "id": "vong1_175",
@@ -2097,7 +2793,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɔː/",
+    "level": "A1",
+    "example": "Four friends came to my house for dinner yesterday.",
+    "exampleMeaning": "Hôm qua bốn người bạn đến nhà tôi ăn tối."
   },
   {
     "id": "vong1_176",
@@ -2109,7 +2809,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌfɔːˈtiːn/",
+    "level": "A1",
+    "example": "Our class has fourteen students in the English club.",
+    "exampleMeaning": "Lớp chúng tôi có mười bốn học sinh trong câu lạc bộ tiếng Anh."
   },
   {
     "id": "vong1_177",
@@ -2121,7 +2825,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fɔːθ/",
+    "level": "A1",
+    "example": "She came fourth in the school running race yesterday.",
+    "exampleMeaning": "Hôm qua cô ấy về thứ tư trong cuộc chạy đua ở trường."
   },
   {
     "id": "vong1_178",
@@ -2133,7 +2841,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfraɪdeɪ/",
+    "level": "A1",
+    "example": "We have a music lesson every Friday afternoon.",
+    "exampleMeaning": "Chúng tôi có tiết âm nhạc mỗi chiều thứ Sáu."
   },
   {
     "id": "vong1_179",
@@ -2145,7 +2857,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/frend/",
+    "level": "A1",
+    "example": "My best friend lives just across the street.",
+    "exampleMeaning": "Bạn thân nhất của tôi sống ngay bên kia đường."
   },
   {
     "id": "vong1_180",
@@ -2157,7 +2873,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/frɒm/",
+    "level": "A1",
+    "example": "My uncle came home from work late last night.",
+    "exampleMeaning": "Chú tôi về nhà muộn sau giờ làm tối qua."
   },
   {
     "id": "vong1_181",
@@ -2169,7 +2889,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/frʌnt/",
+    "level": "A1",
+    "example": "Please wait for me in front of the school.",
+    "exampleMeaning": "Hãy đợi tôi ở phía trước trường học."
   },
   {
     "id": "vong1_182",
@@ -2181,7 +2905,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fruːt/",
+    "level": "A1",
+    "example": "Fresh fruit is a healthy snack for young children.",
+    "exampleMeaning": "Trái cây tươi là món ăn nhẹ lành mạnh cho trẻ nhỏ."
   },
   {
     "id": "vong1_183",
@@ -2193,7 +2921,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fʊl/",
+    "level": "A1",
+    "example": "The bus was full, so we waited for another one.",
+    "exampleMeaning": "Xe buýt đã đầy nên chúng tôi đợi chuyến khác."
   },
   {
     "id": "vong1_184",
@@ -2205,7 +2937,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fʌn/",
+    "level": "A1",
+    "example": "We had great fun playing games in the garden.",
+    "exampleMeaning": "Chúng tôi đã rất vui khi chơi trò chơi trong vườn."
   },
   {
     "id": "vong1_185",
@@ -2217,7 +2953,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfʌni/",
+    "level": "A1",
+    "example": "The story was so funny that everyone laughed loudly.",
+    "exampleMeaning": "Câu chuyện buồn cười đến mức mọi người đều cười lớn."
   },
   {
     "id": "vong1_186",
@@ -2229,7 +2969,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡeɪm/",
+    "level": "A1",
+    "example": "Our family played a board game together last night.",
+    "exampleMeaning": "Gia đình chúng tôi cùng chơi một trò chơi cờ bàn tối qua."
   },
   {
     "id": "vong1_187",
@@ -2241,7 +2985,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɡɑːdən/",
+    "level": "A1",
+    "example": "My mother grows tomatoes and flowers in her garden.",
+    "exampleMeaning": "Mẹ tôi trồng cà chua và hoa trong vườn."
   },
   {
     "id": "vong1_188",
@@ -2253,7 +3001,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡɪft/",
+    "level": "A2",
+    "example": "I bought a small gift for my teacher yesterday.",
+    "exampleMeaning": "Hôm qua tôi mua một món quà nhỏ cho giáo viên."
   },
   {
     "id": "vong1_189",
@@ -2265,7 +3017,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡɜːl/",
+    "level": "A1",
+    "example": "The girl in the red coat is my cousin.",
+    "exampleMeaning": "Cô bé mặc áo khoác đỏ là em họ của tôi."
   },
   {
     "id": "vong1_190",
@@ -2277,7 +3033,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡlɑːs/",
+    "level": "A1",
+    "example": "Please pour a glass of water for your grandfather.",
+    "exampleMeaning": "Hãy rót một cốc nước cho ông của bạn."
   },
   {
     "id": "vong1_191",
@@ -2289,7 +3049,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡəʊ/",
+    "level": "A1",
+    "example": "We usually go to the beach during summer holidays.",
+    "exampleMeaning": "Chúng tôi thường đi biển trong kỳ nghỉ hè."
   },
   {
     "id": "vong1_192",
@@ -2301,7 +3065,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡʊd/",
+    "level": "A1",
+    "example": "She is a good student who always helps others.",
+    "exampleMeaning": "Cô ấy là một học sinh giỏi và luôn giúp đỡ người khác."
   },
   {
     "id": "vong1_193",
@@ -2313,7 +3081,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌɡʊdˈbaɪ/",
+    "level": "A1",
+    "example": "We said goodbye to our friends at the airport.",
+    "exampleMeaning": "Chúng tôi chào tạm biệt bạn bè ở sân bay."
   },
   {
     "id": "vong1_194",
@@ -2325,7 +3097,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɡrænfɑːðə/",
+    "level": "A1",
+    "example": "My grandfather tells us stories about his childhood.",
+    "exampleMeaning": "Ông tôi kể cho chúng tôi nghe chuyện thời thơ ấu."
   },
   {
     "id": "vong1_195",
@@ -2337,7 +3113,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɡrænmʌðə/",
+    "level": "A1",
+    "example": "My grandmother makes delicious soup for the whole family.",
+    "exampleMeaning": "Bà tôi nấu món súp ngon cho cả gia đình."
   },
   {
     "id": "vong1_196",
@@ -2349,7 +3129,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɡrænpeərənt/",
+    "level": "A1",
+    "example": "Each grandparent received a handmade card from the children.",
+    "exampleMeaning": "Mỗi ông bà đều nhận được một tấm thiệp thủ công từ bọn trẻ."
   },
   {
     "id": "vong1_197",
@@ -2361,7 +3145,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡrɑːs/",
+    "level": "A2",
+    "example": "The children sat on the grass and ate sandwiches.",
+    "exampleMeaning": "Bọn trẻ ngồi trên cỏ và ăn bánh mì kẹp."
   },
   {
     "id": "vong1_198",
@@ -2373,7 +3161,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡriːn/",
+    "level": "A1",
+    "example": "The leaves turn green again when spring arrives.",
+    "exampleMeaning": "Những chiếc lá lại chuyển màu xanh khi mùa xuân đến."
   },
   {
     "id": "vong1_199",
@@ -2385,7 +3177,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɡreɪ/",
+    "level": "A1",
+    "example": "He wore a grey jacket to work yesterday morning.",
+    "exampleMeaning": "Sáng hôm qua anh ấy mặc áo khoác màu xám đi làm."
   },
   {
     "id": "vong1_200",
@@ -2397,7 +3193,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/heə/",
+    "level": "A1",
+    "example": "She has long black hair and bright brown eyes.",
+    "exampleMeaning": "Cô ấy có mái tóc đen dài và đôi mắt nâu sáng."
   },
   {
     "id": "vong1_201",
@@ -2409,7 +3209,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɑːf/",
+    "level": "A1",
+    "example": "We walked for half an hour before stopping for lunch.",
+    "exampleMeaning": "Chúng tôi đi bộ nửa giờ trước khi dừng lại ăn trưa."
   },
   {
     "id": "vong1_202",
@@ -2421,7 +3225,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hænd/",
+    "level": "A1",
+    "example": "Please raise your hand if you know the answer.",
+    "exampleMeaning": "Hãy giơ tay nếu bạn biết câu trả lời."
   },
   {
     "id": "vong1_203",
@@ -2433,7 +3241,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈhæpi/",
+    "level": "A1",
+    "example": "The children were happy to see their grandparents again.",
+    "exampleMeaning": "Bọn trẻ vui mừng khi được gặp lại ông bà."
   },
   {
     "id": "vong1_204",
@@ -2445,7 +3257,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hæt/",
+    "level": "A1",
+    "example": "He wore a warm hat during the winter walk.",
+    "exampleMeaning": "Anh ấy đội mũ ấm trong chuyến đi dạo mùa đông."
   },
   {
     "id": "vong1_205",
@@ -2457,7 +3273,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hæv/",
+    "level": "A1",
+    "example": "We have two cats and one small dog at home.",
+    "exampleMeaning": "Chúng tôi nuôi hai con mèo và một con chó nhỏ ở nhà."
   },
   {
     "id": "vong1_206",
@@ -2469,7 +3289,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hiː/",
+    "level": "A1",
+    "example": "He always arrives at the office before eight o'clock.",
+    "exampleMeaning": "Anh ấy luôn đến văn phòng trước tám giờ."
   },
   {
     "id": "vong1_207",
@@ -2481,7 +3305,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hed/",
+    "level": "A1",
+    "example": "She shook her head because she did not agree.",
+    "exampleMeaning": "Cô ấy lắc đầu vì không đồng ý."
   },
   {
     "id": "vong1_208",
@@ -2493,7 +3321,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɪə/",
+    "level": "A1",
+    "example": "I can hear the children playing outside our window.",
+    "exampleMeaning": "Tôi có thể nghe tiếng bọn trẻ chơi bên ngoài cửa sổ."
   },
   {
     "id": "vong1_209",
@@ -2505,7 +3337,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɑːt/",
+    "level": "A2",
+    "example": "Regular exercise is good for your heart and health.",
+    "exampleMeaning": "Tập thể dục thường xuyên tốt cho tim và sức khỏe."
   },
   {
     "id": "vong1_210",
@@ -2517,7 +3353,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/həˈləʊ/",
+    "level": "A1",
+    "example": "She smiled and said hello to her new neighbours.",
+    "exampleMeaning": "Cô ấy mỉm cười và chào những người hàng xóm mới."
   },
   {
     "id": "vong1_211",
@@ -2529,7 +3369,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɜː/",
+    "level": "A1",
+    "example": "I gave her a book for her birthday last week.",
+    "exampleMeaning": "Tuần trước tôi tặng cô ấy một cuốn sách nhân sinh nhật."
   },
   {
     "id": "vong1_212",
@@ -2541,7 +3385,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɪə/",
+    "level": "A1",
+    "example": "Please come here and help me carry these bags.",
+    "exampleMeaning": "Hãy đến đây và giúp tôi xách những chiếc túi này."
   },
   {
     "id": "vong1_213",
@@ -2553,7 +3401,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/heɪ/",
+    "level": "A1",
+    "example": "Hey, are you coming to the football match tomorrow?",
+    "exampleMeaning": "Này, ngày mai bạn có đến xem trận bóng đá không?"
   },
   {
     "id": "vong1_214",
@@ -2565,7 +3417,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/haɪ/",
+    "level": "A1",
+    "example": "She said hi to everyone when she entered the room.",
+    "exampleMeaning": "Cô ấy chào mọi người khi bước vào phòng."
   },
   {
     "id": "vong1_215",
@@ -2577,7 +3433,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɪm/",
+    "level": "A1",
+    "example": "I met him at the library after school yesterday.",
+    "exampleMeaning": "Hôm qua tôi gặp anh ấy ở thư viện sau giờ học."
   },
   {
     "id": "vong1_216",
@@ -2589,7 +3449,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɪz/",
+    "level": "A1",
+    "example": "His younger sister loves drawing pictures of small animals.",
+    "exampleMeaning": "Em gái của anh ấy thích vẽ tranh các con vật nhỏ."
   },
   {
     "id": "vong1_217",
@@ -2601,7 +3465,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈhɒbi/",
+    "level": "A1",
+    "example": "Playing the piano is my favourite hobby after school.",
+    "exampleMeaning": "Chơi đàn piano là sở thích yêu thích của tôi sau giờ học."
   },
   {
     "id": "vong1_218",
@@ -2613,7 +3481,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/həʊm/",
+    "level": "A1",
+    "example": "We stayed at home because the weather was bad.",
+    "exampleMeaning": "Chúng tôi ở nhà vì thời tiết xấu."
   },
   {
     "id": "vong1_219",
@@ -2625,7 +3497,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈhəʊmwɜːk/",
+    "level": "A1",
+    "example": "I finish my homework before I play games online.",
+    "exampleMeaning": "Tôi làm xong bài tập về nhà trước khi chơi trò chơi trực tuyến."
   },
   {
     "id": "vong1_220",
@@ -2637,7 +3513,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɔːs/",
+    "level": "A1",
+    "example": "The white horse ran quickly across the green field.",
+    "exampleMeaning": "Con ngựa trắng chạy nhanh qua cánh đồng xanh."
   },
   {
     "id": "vong1_221",
@@ -2649,7 +3529,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/hɒt/",
+    "level": "A1",
+    "example": "It is very hot outside, so drink plenty of water.",
+    "exampleMeaning": "Bên ngoài trời rất nóng nên hãy uống nhiều nước."
   },
   {
     "id": "vong1_222",
@@ -2661,7 +3545,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/həʊˈtel/",
+    "level": "A1",
+    "example": "We stayed at a small hotel near the beach.",
+    "exampleMeaning": "Chúng tôi ở một khách sạn nhỏ gần bãi biển."
   },
   {
     "id": "vong1_223",
@@ -2673,7 +3561,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/haʊs/",
+    "level": "A1",
+    "example": "My family moved into a new house last summer.",
+    "exampleMeaning": "Gia đình tôi chuyển đến một ngôi nhà mới vào mùa hè năm ngoái."
   },
   {
     "id": "vong1_224",
@@ -2685,7 +3577,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/haʊ/",
+    "level": "A1",
+    "example": "How do you usually travel to school each morning?",
+    "exampleMeaning": "Bạn thường đến trường bằng cách nào mỗi sáng?"
   },
   {
     "id": "vong1_225",
@@ -2697,7 +3593,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈhʌndrəd/",
+    "level": "A1",
+    "example": "There are about a hundred books on these shelves.",
+    "exampleMeaning": "Có khoảng một trăm cuốn sách trên những kệ này."
   },
   {
     "id": "vong1_226",
@@ -2709,7 +3609,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈhʌŋɡri/",
+    "level": "A1",
+    "example": "I feel hungry because I missed breakfast this morning.",
+    "exampleMeaning": "Tôi thấy đói vì sáng nay đã bỏ bữa sáng."
   },
   {
     "id": "vong1_227",
@@ -2721,7 +3625,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/aɪ/",
+    "level": "A1",
+    "example": "I usually read a book before going to sleep.",
+    "exampleMeaning": "Tôi thường đọc sách trước khi đi ngủ."
   },
   {
     "id": "vong1_228",
@@ -2733,7 +3641,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/aɪs/",
+    "level": "A1",
+    "example": "Please put some ice in my glass of water.",
+    "exampleMeaning": "Hãy cho một ít đá vào cốc nước của tôi."
   },
   {
     "id": "vong1_229",
@@ -2745,7 +3657,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈaɪs kriːm/",
+    "level": "A1",
+    "example": "The children enjoyed eating ice cream after the picnic.",
+    "exampleMeaning": "Bọn trẻ thích ăn kem sau buổi dã ngoại."
   },
   {
     "id": "vong1_230",
@@ -2757,7 +3673,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/aɪˈdɪə/",
+    "level": "A1",
+    "example": "She had a great idea for our school project.",
+    "exampleMeaning": "Cô ấy có một ý tưởng tuyệt vời cho dự án của trường."
   },
   {
     "id": "vong1_231",
@@ -2769,7 +3689,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪf/",
+    "level": "A1",
+    "example": "If it rains tomorrow, we will stay at home.",
+    "exampleMeaning": "Nếu ngày mai trời mưa, chúng tôi sẽ ở nhà."
   },
   {
     "id": "vong1_232",
@@ -2781,7 +3705,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪn/",
+    "level": "A1",
+    "example": "My little brother is playing in the garden now.",
+    "exampleMeaning": "Em trai tôi đang chơi trong vườn lúc này."
   },
   {
     "id": "vong1_233",
@@ -2793,7 +3721,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɪntəˌnet/",
+    "level": "A1",
+    "example": "I use the internet to find information for school.",
+    "exampleMeaning": "Tôi dùng Internet để tìm thông tin phục vụ việc học."
   },
   {
     "id": "vong1_234",
@@ -2805,7 +3737,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈaɪlənd/",
+    "level": "A1",
+    "example": "We visited a small island during our summer holiday.",
+    "exampleMeaning": "Chúng tôi đến thăm một hòn đảo nhỏ trong kỳ nghỉ hè."
   },
   {
     "id": "vong1_235",
@@ -2817,7 +3753,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪt/",
+    "level": "A1",
+    "example": "It looks like a beautiful place to have lunch.",
+    "exampleMeaning": "Nơi đó trông có vẻ đẹp để ăn trưa."
   },
   {
     "id": "vong1_236",
@@ -2829,7 +3769,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɪts/",
+    "level": "A1",
+    "example": "The cat is licking its paws after eating dinner.",
+    "exampleMeaning": "Con mèo đang liếm chân sau khi ăn tối."
   },
   {
     "id": "vong1_237",
@@ -2841,7 +3785,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdʒækɪt/",
+    "level": "A1",
+    "example": "Please wear your jacket because the weather is cold.",
+    "exampleMeaning": "Hãy mặc áo khoác vì trời lạnh."
   },
   {
     "id": "vong1_238",
@@ -2853,7 +3801,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒæm/",
+    "level": "A1",
+    "example": "My grandmother makes strawberry jam every summer at home.",
+    "exampleMeaning": "Bà tôi làm mứt dâu tại nhà mỗi mùa hè."
   },
   {
     "id": "vong1_239",
@@ -2865,7 +3817,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈdʒænjuəri/",
+    "level": "A1",
+    "example": "We returned to school in January after the holiday.",
+    "exampleMeaning": "Chúng tôi trở lại trường vào tháng Một sau kỳ nghỉ."
   },
   {
     "id": "vong1_240",
@@ -2877,7 +3833,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒiːnz/",
+    "level": "A1",
+    "example": "She always wears blue jeans and a white shirt.",
+    "exampleMeaning": "Cô ấy luôn mặc quần jean xanh và áo sơ mi trắng."
   },
   {
     "id": "vong1_241",
@@ -2889,7 +3849,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒɒb/",
+    "level": "A1",
+    "example": "My first job was helping customers in a small shop.",
+    "exampleMeaning": "Công việc đầu tiên của tôi là giúp khách hàng trong một cửa hàng nhỏ."
   },
   {
     "id": "vong1_242",
@@ -2901,7 +3865,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒəʊk/",
+    "level": "A2",
+    "example": "My grandfather told us a funny joke after dinner.",
+    "exampleMeaning": "Ông tôi kể cho chúng tôi một câu chuyện cười sau bữa tối."
   },
   {
     "id": "vong1_243",
@@ -2913,7 +3881,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒuːs/",
+    "level": "A1",
+    "example": "Would you like some fresh orange juice with breakfast?",
+    "exampleMeaning": "Bạn có muốn uống nước cam tươi vào bữa sáng không?"
   },
   {
     "id": "vong1_244",
@@ -2925,7 +3897,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒuˈlaɪ/",
+    "level": "A1",
+    "example": "Our family is planning a holiday in July this year.",
+    "exampleMeaning": "Gia đình chúng tôi đang lên kế hoạch đi nghỉ vào tháng Bảy năm nay."
   },
   {
     "id": "vong1_245",
@@ -2937,7 +3913,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒʌmp/",
+    "level": "A2",
+    "example": "The little children love to jump into the swimming pool.",
+    "exampleMeaning": "Bọn trẻ rất thích nhảy xuống hồ bơi."
   },
   {
     "id": "vong1_246",
@@ -2949,7 +3929,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/dʒuːn/",
+    "level": "A1",
+    "example": "The school year finishes in June before summer begins.",
+    "exampleMeaning": "Năm học kết thúc vào tháng Sáu trước khi mùa hè bắt đầu."
   },
   {
     "id": "vong1_247",
@@ -2961,7 +3945,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kiː/",
+    "level": "A1",
+    "example": "I cannot find the key to the front door.",
+    "exampleMeaning": "Tôi không thể tìm thấy chìa khóa cửa trước."
   },
   {
     "id": "vong1_248",
@@ -2973,7 +3961,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kɪd/",
+    "level": "A2",
+    "example": "Every kid in the class received a colourful balloon.",
+    "exampleMeaning": "Mỗi đứa trẻ trong lớp đều được nhận một quả bóng bay nhiều màu."
   },
   {
     "id": "vong1_249",
@@ -2985,7 +3977,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kɪŋ/",
+    "level": "A2",
+    "example": "The king lived in a large castle near the sea.",
+    "exampleMeaning": "Nhà vua sống trong một lâu đài lớn gần biển."
   },
   {
     "id": "vong1_250",
@@ -2997,7 +3993,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkɪtʃən/",
+    "level": "A1",
+    "example": "My mother is making soup in the kitchen now.",
+    "exampleMeaning": "Mẹ tôi đang nấu súp trong bếp."
   },
   {
     "id": "vong1_251",
@@ -3009,7 +4009,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/niː/",
+    "level": "A2",
+    "example": "He hurt his knee while playing football at school.",
+    "exampleMeaning": "Cậu ấy bị đau đầu gối khi chơi bóng đá ở trường."
   },
   {
     "id": "vong1_252",
@@ -3021,7 +4025,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/naɪf/",
+    "level": "A2",
+    "example": "Use a sharp knife carefully when cutting vegetables.",
+    "exampleMeaning": "Hãy dùng dao sắc cẩn thận khi cắt rau."
   },
   {
     "id": "vong1_253",
@@ -3033,7 +4041,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/leɪk/",
+    "level": "A2",
+    "example": "We spent the afternoon walking around the beautiful lake.",
+    "exampleMeaning": "Chúng tôi dành buổi chiều đi dạo quanh hồ nước đẹp."
   },
   {
     "id": "vong1_254",
@@ -3045,7 +4057,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/læmp/",
+    "level": "A2",
+    "example": "She turned on the lamp beside her bed to read.",
+    "exampleMeaning": "Cô ấy bật đèn cạnh giường để đọc sách."
   },
   {
     "id": "vong1_255",
@@ -3057,7 +4073,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlæŋɡwɪdʒ/",
+    "level": "A1",
+    "example": "Learning a new language takes time and regular practice.",
+    "exampleMeaning": "Học một ngôn ngữ mới cần thời gian và luyện tập thường xuyên."
   },
   {
     "id": "vong1_256",
@@ -3069,7 +4089,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/lɑːf/",
+    "level": "A1",
+    "example": "The children began to laugh when Dad told a joke.",
+    "exampleMeaning": "Bọn trẻ bắt đầu cười khi bố kể một câu chuyện hài."
   },
   {
     "id": "vong1_257",
@@ -3081,7 +4105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/left/",
+    "level": "A1",
+    "example": "Turn left at the next street and walk straight.",
+    "exampleMeaning": "Hãy rẽ trái ở con phố tiếp theo rồi đi thẳng."
   },
   {
     "id": "vong1_258",
@@ -3093,7 +4121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/leɡ/",
+    "level": "A1",
+    "example": "She broke her leg while skiing in the mountains.",
+    "exampleMeaning": "Cô ấy bị gãy chân khi trượt tuyết trên núi."
   },
   {
     "id": "vong1_259",
@@ -3105,7 +4137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlemən/",
+    "level": "A2",
+    "example": "I put a slice of lemon into my tea.",
+    "exampleMeaning": "Tôi cho một lát chanh vào tách trà."
   },
   {
     "id": "vong1_260",
@@ -3117,7 +4153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlesən/",
+    "level": "A1",
+    "example": "Our English lesson starts at nine every Tuesday morning.",
+    "exampleMeaning": "Tiết tiếng Anh của chúng tôi bắt đầu lúc chín giờ mỗi sáng thứ Ba."
   },
   {
     "id": "vong1_261",
@@ -3129,7 +4169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈletə/",
+    "level": "A1",
+    "example": "My friend sent me a long letter from Australia.",
+    "exampleMeaning": "Bạn tôi gửi cho tôi một lá thư dài từ Úc."
   },
   {
     "id": "vong1_262",
@@ -3141,7 +4185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlaɪbrəri/",
+    "level": "A1",
+    "example": "I borrowed three books from the school library yesterday.",
+    "exampleMeaning": "Hôm qua tôi mượn ba cuốn sách ở thư viện trường."
   },
   {
     "id": "vong1_263",
@@ -3153,7 +4201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/laɪk/",
+    "level": "A1",
+    "example": "I like listening to music when I do homework.",
+    "exampleMeaning": "Tôi thích nghe nhạc khi làm bài tập về nhà."
   },
   {
     "id": "vong1_264",
@@ -3165,7 +4217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlaɪən/",
+    "level": "A1",
+    "example": "We saw a lion sleeping under a tree at the zoo.",
+    "exampleMeaning": "Chúng tôi thấy một con sư tử ngủ dưới gốc cây tại sở thú."
   },
   {
     "id": "vong1_265",
@@ -3177,7 +4233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/lɪst/",
+    "level": "A1",
+    "example": "Please make a list of everything we need to buy.",
+    "exampleMeaning": "Hãy lập danh sách tất cả những thứ chúng ta cần mua."
   },
   {
     "id": "vong1_266",
@@ -3189,7 +4249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlɪsən/",
+    "level": "A1",
+    "example": "Please listen carefully when the teacher explains the rules.",
+    "exampleMeaning": "Hãy chú ý lắng nghe khi giáo viên giải thích các quy tắc."
   },
   {
     "id": "vong1_267",
@@ -3201,7 +4265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlɪtəl/",
+    "level": "A1",
+    "example": "My little sister wants to learn how to swim.",
+    "exampleMeaning": "Em gái nhỏ của tôi muốn học bơi."
   },
   {
     "id": "vong1_268",
@@ -3213,7 +4281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/lɒŋ/",
+    "level": "A1",
+    "example": "It takes a long time to travel by bus.",
+    "exampleMeaning": "Đi bằng xe buýt mất rất nhiều thời gian."
   },
   {
     "id": "vong1_269",
@@ -3225,7 +4297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/laʊd/",
+    "level": "A2",
+    "example": "The music was too loud for the baby to sleep.",
+    "exampleMeaning": "Nhạc quá to khiến em bé không thể ngủ."
   },
   {
     "id": "vong1_270",
@@ -3237,7 +4313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/lʌv/",
+    "level": "A1",
+    "example": "I love spending time with my family at weekends.",
+    "exampleMeaning": "Tôi thích dành thời gian với gia đình vào cuối tuần."
   },
   {
     "id": "vong1_271",
@@ -3249,7 +4329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈlʌki/",
+    "level": "A2",
+    "example": "We were lucky to catch the last bus home.",
+    "exampleMeaning": "Chúng tôi thật may mắn khi kịp chuyến xe buýt cuối về nhà."
   },
   {
     "id": "vong1_272",
@@ -3261,7 +4345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/lʌntʃ/",
+    "level": "A1",
+    "example": "We usually have lunch at school with our friends.",
+    "exampleMeaning": "Chúng tôi thường ăn trưa ở trường cùng bạn bè."
   },
   {
     "id": "vong1_273",
@@ -3273,7 +4361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌmæɡəˈziːn/",
+    "level": "A1",
+    "example": "She bought a magazine to read on the train.",
+    "exampleMeaning": "Cô ấy mua một cuốn tạp chí để đọc trên tàu."
   },
   {
     "id": "vong1_274",
@@ -3285,7 +4377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/mæn/",
+    "level": "A1",
+    "example": "The man in the blue shirt is my teacher.",
+    "exampleMeaning": "Người đàn ông mặc áo xanh là thầy giáo của tôi."
   },
   {
     "id": "vong1_275",
@@ -3297,7 +4393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmeni/",
+    "level": "A1",
+    "example": "Many people enjoy walking in the park after work.",
+    "exampleMeaning": "Nhiều người thích đi dạo trong công viên sau giờ làm."
   },
   {
     "id": "vong1_276",
@@ -3309,7 +4409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/mæp/",
+    "level": "A1",
+    "example": "I looked at the map to find our hotel.",
+    "exampleMeaning": "Tôi xem bản đồ để tìm khách sạn của chúng tôi."
   },
   {
     "id": "vong1_277",
@@ -3321,7 +4425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/mɑːtʃ/",
+    "level": "A1",
+    "example": "The weather often becomes warmer here in March.",
+    "exampleMeaning": "Thời tiết ở đây thường ấm hơn vào tháng Ba."
   },
   {
     "id": "vong1_278",
@@ -3333,7 +4441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/mæθs/",
+    "level": "A2",
+    "example": "My sister is very good at maths and science.",
+    "exampleMeaning": "Chị gái tôi học rất giỏi toán và khoa học."
   },
   {
     "id": "vong1_279",
@@ -3345,7 +4457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/miːl/",
+    "level": "A1",
+    "example": "We shared a delicious meal with our neighbours yesterday.",
+    "exampleMeaning": "Hôm qua chúng tôi cùng hàng xóm thưởng thức một bữa ăn ngon."
   },
   {
     "id": "vong1_280",
@@ -3357,7 +4473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/miːt/",
+    "level": "A1",
+    "example": "My brother does not eat meat, but he eats fish.",
+    "exampleMeaning": "Anh trai tôi không ăn thịt nhưng có ăn cá."
   },
   {
     "id": "vong1_281",
@@ -3369,7 +4489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmenjuː/",
+    "level": "A1",
+    "example": "Please look at the menu before ordering your food.",
+    "exampleMeaning": "Hãy xem thực đơn trước khi gọi món."
   },
   {
     "id": "vong1_282",
@@ -3381,7 +4505,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmiːtə/",
+    "level": "A1",
+    "example": "The river is one metre deep near the bridge.",
+    "exampleMeaning": "Con sông sâu một mét ở gần cây cầu."
   },
   {
     "id": "vong1_283",
@@ -3393,7 +4521,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmɪdəl/",
+    "level": "A2",
+    "example": "The little dog was sleeping in the middle of the room.",
+    "exampleMeaning": "Chú chó nhỏ đang ngủ giữa phòng."
   },
   {
     "id": "vong1_284",
@@ -3405,7 +4537,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/mɪlk/",
+    "level": "A1",
+    "example": "My children drink a glass of milk every morning.",
+    "exampleMeaning": "Các con tôi uống một ly sữa mỗi sáng."
   },
   {
     "id": "vong1_285",
@@ -3417,7 +4553,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmɪrə/",
+    "level": "A2",
+    "example": "She looked in the mirror before leaving the house.",
+    "exampleMeaning": "Cô ấy soi gương trước khi ra khỏi nhà."
   },
   {
     "id": "vong1_286",
@@ -3429,7 +4569,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈməʊbaɪl/",
+    "level": "A2",
+    "example": "I left my mobile phone on the kitchen table.",
+    "exampleMeaning": "Tôi để điện thoại di động trên bàn bếp."
   },
   {
     "id": "vong1_287",
@@ -3441,7 +4585,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmʌndeɪ/",
+    "level": "A1",
+    "example": "Our English lessons are on Monday and Wednesday mornings.",
+    "exampleMeaning": "Các tiết tiếng Anh của chúng tôi diễn ra vào sáng thứ Hai và thứ Tư."
   },
   {
     "id": "vong1_288",
@@ -3453,7 +4601,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmʌni/",
+    "level": "A1",
+    "example": "She saves some money every month for her summer holiday.",
+    "exampleMeaning": "Cô ấy tiết kiệm một ít tiền mỗi tháng cho kỳ nghỉ hè."
   },
   {
     "id": "vong1_289",
@@ -3465,7 +4617,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmʌnki/",
+    "level": "A2",
+    "example": "The monkey climbed a tree to reach some fruit.",
+    "exampleMeaning": "Con khỉ trèo lên cây để với tới trái cây."
   },
   {
     "id": "vong1_290",
@@ -3477,7 +4633,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/mʌnθ/",
+    "level": "A1",
+    "example": "My birthday is next month, so I am excited.",
+    "exampleMeaning": "Tháng sau là sinh nhật tôi nên tôi rất háo hức."
   },
   {
     "id": "vong1_291",
@@ -3489,7 +4649,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/muːn/",
+    "level": "A2",
+    "example": "The moon looked very bright in the night sky.",
+    "exampleMeaning": "Mặt trăng trông rất sáng trên bầu trời đêm."
   },
   {
     "id": "vong1_292",
@@ -3501,7 +4665,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmɔːnɪŋ/",
+    "level": "A1",
+    "example": "I wake up early every morning before going to school.",
+    "exampleMeaning": "Tôi thức dậy sớm mỗi sáng trước khi đến trường."
   },
   {
     "id": "vong1_293",
@@ -3513,7 +4681,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmʌðə/",
+    "level": "A1",
+    "example": "My mother helps me prepare lunch for the family.",
+    "exampleMeaning": "Mẹ giúp tôi chuẩn bị bữa trưa cho gia đình."
   },
   {
     "id": "vong1_294",
@@ -3525,7 +4697,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmaʊntɪn/",
+    "level": "A1",
+    "example": "We climbed a small mountain during our holiday last summer.",
+    "exampleMeaning": "Chúng tôi leo một ngọn núi nhỏ trong kỳ nghỉ hè năm ngoái."
   },
   {
     "id": "vong1_295",
@@ -3537,7 +4713,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/maʊs/",
+    "level": "A1",
+    "example": "A tiny mouse ran across the kitchen floor last night.",
+    "exampleMeaning": "Tối qua một con chuột nhỏ chạy qua sàn bếp."
   },
   {
     "id": "vong1_296",
@@ -3549,7 +4729,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/maʊθ/",
+    "level": "A1",
+    "example": "The dentist asked me to open my mouth wide.",
+    "exampleMeaning": "Nha sĩ yêu cầu tôi há miệng thật rộng."
   },
   {
     "id": "vong1_297",
@@ -3561,7 +4745,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmuːvi/",
+    "level": "A1",
+    "example": "We watched a new movie together at home last night.",
+    "exampleMeaning": "Tối qua chúng tôi cùng xem một bộ phim mới ở nhà."
   },
   {
     "id": "vong1_298",
@@ -3573,7 +4761,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈmjuːzɪk/",
+    "level": "A1",
+    "example": "Listening to music helps me relax after a busy day.",
+    "exampleMeaning": "Nghe nhạc giúp tôi thư giãn sau một ngày bận rộn."
   },
   {
     "id": "vong1_299",
@@ -3585,7 +4777,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/maɪ/",
+    "level": "A1",
+    "example": "My younger brother likes playing with my old toys.",
+    "exampleMeaning": "Em trai tôi thích chơi những món đồ chơi cũ của tôi."
   },
   {
     "id": "vong1_300",
@@ -3597,7 +4793,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/maɪˈself/",
+    "level": "A2",
+    "example": "I made this birthday card myself for my grandmother.",
+    "exampleMeaning": "Tôi tự tay làm tấm thiệp sinh nhật này cho bà."
   },
   {
     "id": "vong1_301",
@@ -3609,7 +4809,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/neɪm/",
+    "level": "A1",
+    "example": "Please write your full name at the top of the page.",
+    "exampleMeaning": "Hãy viết họ tên đầy đủ ở đầu trang."
   },
   {
     "id": "vong1_302",
@@ -3621,7 +4825,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nɪə/",
+    "level": "A1",
+    "example": "There is a small shop near our school building.",
+    "exampleMeaning": "Có một cửa hàng nhỏ gần tòa nhà trường học chúng tôi."
   },
   {
     "id": "vong1_303",
@@ -3633,7 +4841,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈneɪbə/",
+    "level": "A1",
+    "example": "Our new neighbour invited us over for tea yesterday.",
+    "exampleMeaning": "Hôm qua người hàng xóm mới mời chúng tôi sang uống trà."
   },
   {
     "id": "vong1_304",
@@ -3645,7 +4857,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/naɪt/",
+    "level": "A1",
+    "example": "The stars looked beautiful in the clear night sky.",
+    "exampleMeaning": "Những ngôi sao trông thật đẹp trên bầu trời đêm quang đãng."
   },
   {
     "id": "vong1_305",
@@ -3657,7 +4873,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/naɪn/",
+    "level": "A1",
+    "example": "Nine students joined the school trip to the museum.",
+    "exampleMeaning": "Có chín học sinh tham gia chuyến đi bảo tàng của trường."
   },
   {
     "id": "vong1_306",
@@ -3669,7 +4889,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌnaɪnˈtiːn/",
+    "level": "A1",
+    "example": "My cousin will be nineteen years old next Friday.",
+    "exampleMeaning": "Anh họ tôi sẽ tròn mười chín tuổi vào thứ Sáu tới."
   },
   {
     "id": "vong1_307",
@@ -3681,7 +4905,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈnaɪnti/",
+    "level": "A1",
+    "example": "My grandmother is ninety years old and still active.",
+    "exampleMeaning": "Bà tôi chín mươi tuổi nhưng vẫn rất năng động."
   },
   {
     "id": "vong1_308",
@@ -3693,7 +4921,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nəʊ/",
+    "level": "A1",
+    "example": "She said no because she was too tired to go.",
+    "exampleMeaning": "Cô ấy nói không vì quá mệt để đi."
   },
   {
     "id": "vong1_309",
@@ -3705,7 +4937,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈnəʊbɒdi/",
+    "level": "A1",
+    "example": "Nobody was at home when the delivery man arrived.",
+    "exampleMeaning": "Không có ai ở nhà khi người giao hàng đến."
   },
   {
     "id": "vong1_310",
@@ -3717,7 +4953,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nʌn/",
+    "level": "A2",
+    "example": "None of the children wanted to leave the playground.",
+    "exampleMeaning": "Không đứa trẻ nào muốn rời sân chơi."
   },
   {
     "id": "vong1_311",
@@ -3729,7 +4969,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nəʊz/",
+    "level": "A1",
+    "example": "My nose gets cold when I walk outside in winter.",
+    "exampleMeaning": "Mũi tôi bị lạnh khi đi bộ ngoài trời vào mùa đông."
   },
   {
     "id": "vong1_312",
@@ -3741,7 +4985,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nɒt/",
+    "level": "A1",
+    "example": "Please do not touch the painting in the museum.",
+    "exampleMeaning": "Xin đừng chạm vào bức tranh trong bảo tàng."
   },
   {
     "id": "vong1_313",
@@ -3753,7 +5001,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈnʌθɪŋ/",
+    "level": "A1",
+    "example": "There was nothing in the fridge for breakfast this morning.",
+    "exampleMeaning": "Sáng nay không có gì trong tủ lạnh để ăn sáng."
   },
   {
     "id": "vong1_314",
@@ -3765,7 +5017,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nəʊˈvembə/",
+    "level": "A1",
+    "example": "Our school holds a sports day every November.",
+    "exampleMeaning": "Trường chúng tôi tổ chức ngày hội thể thao vào mỗi tháng Mười Một."
   },
   {
     "id": "vong1_315",
@@ -3777,7 +5033,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/naʊ/",
+    "level": "A1",
+    "example": "We need to leave now or we will miss the train.",
+    "exampleMeaning": "Chúng ta phải đi ngay nếu không sẽ lỡ tàu."
   },
   {
     "id": "vong1_316",
@@ -3789,7 +5049,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/nɜːs/",
+    "level": "A1",
+    "example": "The nurse helped the doctor care for the patient.",
+    "exampleMeaning": "Y tá giúp bác sĩ chăm sóc bệnh nhân."
   },
   {
     "id": "vong1_317",
@@ -3801,7 +5065,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əˈklɒk/",
+    "level": "A1",
+    "example": "We usually have dinner together at seven o'clock.",
+    "exampleMeaning": "Chúng tôi thường ăn tối cùng nhau lúc bảy giờ."
   },
   {
     "id": "vong1_318",
@@ -3813,7 +5081,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɒkˈtəʊbə/",
+    "level": "A1",
+    "example": "The weather becomes cooler in October in our town.",
+    "exampleMeaning": "Thời tiết ở thị trấn chúng tôi mát hơn vào tháng Mười."
   },
   {
     "id": "vong1_319",
@@ -3825,7 +5097,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɒfɪs/",
+    "level": "A1",
+    "example": "My mother works in an office near the railway station.",
+    "exampleMeaning": "Mẹ tôi làm việc tại một văn phòng gần ga tàu."
   },
   {
     "id": "vong1_320",
@@ -3837,7 +5113,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əʊ/",
+    "level": "A1",
+    "example": "Oh, I forgot to bring my English book today!",
+    "exampleMeaning": "Ôi, hôm nay tôi quên mang sách tiếng Anh rồi!"
   },
   {
     "id": "vong1_321",
@@ -3849,7 +5129,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɔɪl/",
+    "level": "A2",
+    "example": "Please add a little oil to the hot pan.",
+    "exampleMeaning": "Hãy cho một ít dầu vào chiếc chảo nóng."
   },
   {
     "id": "vong1_322",
@@ -3861,7 +5145,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌəʊˈkeɪ/",
+    "level": "A1",
+    "example": "Is it OK if I open the window now?",
+    "exampleMeaning": "Tôi mở cửa sổ bây giờ có được không?"
   },
   {
     "id": "vong1_323",
@@ -3873,7 +5161,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/əʊld/",
+    "level": "A1",
+    "example": "My old bicycle still works well after many years.",
+    "exampleMeaning": "Chiếc xe đạp cũ của tôi vẫn chạy tốt sau nhiều năm."
   },
   {
     "id": "vong1_324",
@@ -3885,7 +5177,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɒn/",
+    "level": "A1",
+    "example": "The keys are on the table near the door.",
+    "exampleMeaning": "Chìa khóa ở trên bàn gần cửa."
   },
   {
     "id": "vong1_325",
@@ -3897,7 +5193,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wʌn/",
+    "level": "A1",
+    "example": "I only need one ticket for the train today.",
+    "exampleMeaning": "Hôm nay tôi chỉ cần một vé tàu."
   },
   {
     "id": "vong1_326",
@@ -3909,7 +5209,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ɔː/",
+    "level": "A1",
+    "example": "Would you like tea or coffee with your breakfast?",
+    "exampleMeaning": "Bạn muốn uống trà hay cà phê cùng bữa sáng?"
   },
   {
     "id": "vong1_327",
@@ -3921,7 +5225,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈɒrɪndʒ/",
+    "level": "A1",
+    "example": "She ate a fresh orange after her morning run.",
+    "exampleMeaning": "Cô ấy ăn một quả cam tươi sau buổi chạy sáng."
   },
   {
     "id": "vong1_328",
@@ -3933,7 +5241,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/aʊə/",
+    "level": "A1",
+    "example": "Our teacher asked us to finish the project by Friday.",
+    "exampleMeaning": "Giáo viên yêu cầu chúng tôi hoàn thành dự án trước thứ Sáu."
   },
   {
     "id": "vong1_329",
@@ -3945,7 +5257,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/peɪdʒ/",
+    "level": "A1",
+    "example": "Please turn to page ten in your English book.",
+    "exampleMeaning": "Hãy mở đến trang mười trong sách tiếng Anh."
   },
   {
     "id": "vong1_330",
@@ -3957,7 +5273,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpeɪntɪŋ/",
+    "level": "A1",
+    "example": "Her painting of the sea won a school prize.",
+    "exampleMeaning": "Bức tranh biển của cô ấy giành giải thưởng ở trường."
   },
   {
     "id": "vong1_331",
@@ -3969,7 +5289,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/peə/",
+    "level": "A1",
+    "example": "I bought a new pair of shoes for school.",
+    "exampleMeaning": "Tôi mua một đôi giày mới để đi học."
   },
   {
     "id": "vong1_332",
@@ -3981,7 +5305,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pæn/",
+    "level": "B1",
+    "example": "Heat some water in the pan before adding the rice.",
+    "exampleMeaning": "Hãy đun một ít nước trong nồi trước khi cho gạo vào."
   },
   {
     "id": "vong1_333",
@@ -3993,7 +5321,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpeɪpə/",
+    "level": "A1",
+    "example": "Please write your answer on a clean sheet of paper.",
+    "exampleMeaning": "Hãy viết câu trả lời lên một tờ giấy sạch."
   },
   {
     "id": "vong1_334",
@@ -4005,7 +5337,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpeərənt/",
+    "level": "A1",
+    "example": "Every parent wants their children to be happy and healthy.",
+    "exampleMeaning": "Mỗi bậc cha mẹ đều muốn con mình hạnh phúc và khỏe mạnh."
   },
   {
     "id": "vong1_335",
@@ -4017,7 +5353,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pɑːk/",
+    "level": "A1",
+    "example": "We often play in the park after school on Fridays.",
+    "exampleMeaning": "Chúng tôi thường chơi ở công viên sau giờ học vào thứ Sáu."
   },
   {
     "id": "vong1_336",
@@ -4029,7 +5369,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pen/",
+    "level": "A1",
+    "example": "I borrowed a blue pen from my best friend.",
+    "exampleMeaning": "Tôi mượn một cây bút mực xanh từ bạn thân."
   },
   {
     "id": "vong1_337",
@@ -4041,7 +5385,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpensəl/",
+    "level": "A1",
+    "example": "Please bring a pencil to the drawing lesson tomorrow.",
+    "exampleMeaning": "Hãy mang bút chì đến tiết học vẽ ngày mai."
   },
   {
     "id": "vong1_338",
@@ -4053,7 +5401,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpiːpəl/",
+    "level": "A1",
+    "example": "Many people come to this market early every morning.",
+    "exampleMeaning": "Nhiều người đến khu chợ này rất sớm mỗi sáng."
   },
   {
     "id": "vong1_339",
@@ -4065,7 +5417,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pet/",
+    "level": "A2",
+    "example": "Our family has a small pet rabbit in the garden.",
+    "exampleMeaning": "Gia đình chúng tôi nuôi một chú thỏ cảnh nhỏ trong vườn."
   },
   {
     "id": "vong1_340",
@@ -4077,7 +5433,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/fəʊn/",
+    "level": "A1",
+    "example": "She called her mother on the phone after school.",
+    "exampleMeaning": "Cô ấy gọi điện cho mẹ sau giờ học."
   },
   {
     "id": "vong1_341",
@@ -4089,7 +5449,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈfəʊtəʊ/",
+    "level": "A1",
+    "example": "We took a family photo in front of the house.",
+    "exampleMeaning": "Chúng tôi chụp một bức ảnh gia đình trước ngôi nhà."
   },
   {
     "id": "vong1_342",
@@ -4101,7 +5465,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpɪktʃə/",
+    "level": "A1",
+    "example": "This picture shows our family on holiday by the sea.",
+    "exampleMeaning": "Bức ảnh này chụp gia đình chúng tôi khi nghỉ mát bên biển."
   },
   {
     "id": "vong1_343",
@@ -4113,7 +5481,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/piːs/",
+    "level": "A1",
+    "example": "Would you like another piece of cake with your tea?",
+    "exampleMeaning": "Bạn có muốn thêm một miếng bánh ngọt cùng trà không?"
   },
   {
     "id": "vong1_344",
@@ -4125,7 +5497,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pɪɡ/",
+    "level": "A1",
+    "example": "The pink pig was sleeping near the farm gate.",
+    "exampleMeaning": "Con lợn màu hồng đang ngủ gần cổng nông trại."
   },
   {
     "id": "vong1_345",
@@ -4137,7 +5513,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pɪŋk/",
+    "level": "A1",
+    "example": "She wore a pink hat to her friend's birthday party.",
+    "exampleMeaning": "Cô ấy đội mũ hồng đến tiệc sinh nhật của bạn."
   },
   {
     "id": "vong1_346",
@@ -4149,7 +5529,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pleɪn/",
+    "level": "A1",
+    "example": "Our plane left the airport at nine this morning.",
+    "exampleMeaning": "Máy bay của chúng tôi rời sân bay lúc chín giờ sáng nay."
   },
   {
     "id": "vong1_347",
@@ -4161,7 +5545,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/plænt/",
+    "level": "A1",
+    "example": "My grandmother grows a beautiful plant beside the window.",
+    "exampleMeaning": "Bà tôi trồng một cây cảnh đẹp cạnh cửa sổ."
   },
   {
     "id": "vong1_348",
@@ -4173,7 +5561,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pleɪt/",
+    "level": "A2",
+    "example": "Please put your dirty plate in the kitchen sink.",
+    "exampleMeaning": "Hãy đặt đĩa bẩn vào bồn rửa trong bếp."
   },
   {
     "id": "vong1_349",
@@ -4185,7 +5577,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈpleɪə/",
+    "level": "A1",
+    "example": "The youngest player scored the winning goal for our team.",
+    "exampleMeaning": "Cầu thủ trẻ nhất ghi bàn thắng quyết định cho đội chúng tôi."
   },
   {
     "id": "vong1_350",
@@ -4197,7 +5593,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pliːz/",
+    "level": "A1",
+    "example": "Could you please help me carry these heavy bags?",
+    "exampleMeaning": "Bạn có thể vui lòng giúp tôi xách những chiếc túi nặng này không?"
   },
   {
     "id": "vong1_351",
@@ -4209,7 +5609,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pəˈliːs/",
+    "level": "A1",
+    "example": "The police arrived quickly after someone reported the accident.",
+    "exampleMeaning": "Cảnh sát đến nhanh sau khi có người báo vụ tai nạn."
   },
   {
     "id": "vong1_352",
@@ -4221,7 +5625,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pʊə/",
+    "level": "A1",
+    "example": "They helped a poor family buy food and warm clothes.",
+    "exampleMeaning": "Họ giúp một gia đình nghèo mua đồ ăn và quần áo ấm."
   },
   {
     "id": "vong1_353",
@@ -4233,7 +5641,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pɒp/",
+    "level": "A2",
+    "example": "My younger sister loves listening to pop music after school.",
+    "exampleMeaning": "Em gái tôi rất thích nghe nhạc pop sau giờ học."
   },
   {
     "id": "vong1_354",
@@ -4245,7 +5657,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pəˈteɪtəʊ/",
+    "level": "A1",
+    "example": "She baked a large potato for her dinner tonight.",
+    "exampleMeaning": "Cô ấy nướng một củ khoai tây lớn cho bữa tối nay."
   },
   {
     "id": "vong1_355",
@@ -4257,7 +5673,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/prɪnt/",
+    "level": "A2",
+    "example": "Please print two copies of the homework for tomorrow.",
+    "exampleMeaning": "Hãy in hai bản bài tập về nhà cho ngày mai."
   },
   {
     "id": "vong1_356",
@@ -4269,7 +5689,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pʊl/",
+    "level": "A2",
+    "example": "You need to pull the door towards you to open it.",
+    "exampleMeaning": "Bạn cần kéo cửa về phía mình để mở."
   },
   {
     "id": "vong1_357",
@@ -4281,7 +5705,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/pʊʃ/",
+    "level": "A2",
+    "example": "Please push the button to open the train doors.",
+    "exampleMeaning": "Hãy nhấn nút để mở cửa tàu."
   },
   {
     "id": "vong1_358",
@@ -4293,7 +5721,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kwiːn/",
+    "level": "A2",
+    "example": "The queen greeted the children during her visit to school.",
+    "exampleMeaning": "Nữ hoàng chào đón bọn trẻ trong chuyến thăm trường."
   },
   {
     "id": "vong1_359",
@@ -4305,7 +5737,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkwestʃən/",
+    "level": "A1",
+    "example": "Please ask a question if you do not understand.",
+    "exampleMeaning": "Hãy đặt câu hỏi nếu bạn không hiểu."
   },
   {
     "id": "vong1_360",
@@ -4317,7 +5753,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/kwɪk/",
+    "level": "A1",
+    "example": "We took a quick break before starting the next lesson.",
+    "exampleMeaning": "Chúng tôi nghỉ giải lao ngắn trước khi bắt đầu tiết học tiếp theo."
   },
   {
     "id": "vong1_361",
@@ -4329,7 +5769,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkwɪkli/",
+    "level": "A1",
+    "example": "She finished her homework quickly and went outside to play.",
+    "exampleMeaning": "Cô ấy làm bài tập nhanh rồi ra ngoài chơi."
   },
   {
     "id": "vong1_362",
@@ -4341,7 +5785,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈkwaɪət/",
+    "level": "A1",
+    "example": "Please be quiet because the baby is sleeping upstairs.",
+    "exampleMeaning": "Hãy giữ yên lặng vì em bé đang ngủ trên tầng."
   },
   {
     "id": "vong1_363",
@@ -4353,7 +5801,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈreɪdiəʊ/",
+    "level": "A1",
+    "example": "My grandfather listens to the radio every morning at breakfast.",
+    "exampleMeaning": "Ông tôi nghe đài mỗi sáng trong bữa ăn."
   },
   {
     "id": "vong1_364",
@@ -4365,7 +5817,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/reɪn/",
+    "level": "A1",
+    "example": "Heavy rain stopped us from playing football this afternoon.",
+    "exampleMeaning": "Mưa lớn khiến chúng tôi không thể chơi bóng đá chiều nay."
   },
   {
     "id": "vong1_365",
@@ -4377,7 +5833,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/riːd/",
+    "level": "A1",
+    "example": "I like to read a book before going to bed.",
+    "exampleMeaning": "Tôi thích đọc một cuốn sách trước khi đi ngủ."
   },
   {
     "id": "vong1_366",
@@ -4389,7 +5849,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈriːdɪŋ/",
+    "level": "A1",
+    "example": "Reading English stories every day helps improve your vocabulary.",
+    "exampleMeaning": "Đọc truyện tiếng Anh mỗi ngày giúp cải thiện vốn từ vựng."
   },
   {
     "id": "vong1_367",
@@ -4401,7 +5865,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈredi/",
+    "level": "A1",
+    "example": "The children were ready to leave for school at eight.",
+    "exampleMeaning": "Bọn trẻ đã sẵn sàng đến trường lúc tám giờ."
   },
   {
     "id": "vong1_368",
@@ -4413,7 +5881,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/rɪəl/",
+    "level": "A1",
+    "example": "She told us a real story about her childhood.",
+    "exampleMeaning": "Cô ấy kể cho chúng tôi một câu chuyện có thật về tuổi thơ."
   },
   {
     "id": "vong1_369",
@@ -4425,7 +5897,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/red/",
+    "level": "A1",
+    "example": "He wore a bright red shirt to the party.",
+    "exampleMeaning": "Anh ấy mặc một chiếc áo đỏ tươi đến bữa tiệc."
   },
   {
     "id": "vong1_370",
@@ -4437,7 +5913,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈrestrɒnt/",
+    "level": "A1",
+    "example": "We had dinner at a small restaurant near the station.",
+    "exampleMeaning": "Chúng tôi ăn tối tại một nhà hàng nhỏ gần ga."
   },
   {
     "id": "vong1_371",
@@ -4449,7 +5929,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/raɪs/",
+    "level": "A1",
+    "example": "My family often eats rice with vegetables for dinner.",
+    "exampleMeaning": "Gia đình tôi thường ăn cơm với rau vào bữa tối."
   },
   {
     "id": "vong1_372",
@@ -4461,7 +5945,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/rɪtʃ/",
+    "level": "A1",
+    "example": "The rich man donated money to help local schools.",
+    "exampleMeaning": "Người đàn ông giàu có quyên góp tiền giúp các trường địa phương."
   },
   {
     "id": "vong1_373",
@@ -4473,7 +5961,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/rɪŋ/",
+    "level": "A2",
+    "example": "She wore a beautiful silver ring on her left hand.",
+    "exampleMeaning": "Cô ấy đeo một chiếc nhẫn bạc đẹp trên tay trái."
   },
   {
     "id": "vong1_374",
@@ -4485,7 +5977,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈrɪvə/",
+    "level": "A1",
+    "example": "We walked beside the river after breakfast on Sunday.",
+    "exampleMeaning": "Chúng tôi đi dạo dọc sông sau bữa sáng Chủ nhật."
   },
   {
     "id": "vong1_375",
@@ -4497,7 +5993,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/rəʊd/",
+    "level": "A1",
+    "example": "Be careful when you cross the busy main road.",
+    "exampleMeaning": "Hãy cẩn thận khi băng qua con đường chính đông xe."
   },
   {
     "id": "vong1_376",
@@ -4509,7 +6009,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/rɒk/",
+    "level": "A2",
+    "example": "The children found an unusual rock beside the lake.",
+    "exampleMeaning": "Bọn trẻ tìm thấy một hòn đá lạ bên hồ."
   },
   {
     "id": "vong1_377",
@@ -4521,7 +6025,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ruːm/",
+    "level": "A1",
+    "example": "My little brother keeps his toys in his room.",
+    "exampleMeaning": "Em trai tôi cất đồ chơi trong phòng mình."
   },
   {
     "id": "vong1_378",
@@ -4533,7 +6041,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sæd/",
+    "level": "A1",
+    "example": "She felt sad when her best friend moved away.",
+    "exampleMeaning": "Cô ấy buồn khi người bạn thân nhất chuyển đi."
   },
   {
     "id": "vong1_379",
@@ -4545,7 +6057,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/seɪf/",
+    "level": "A2",
+    "example": "This playground is safe for young children to use.",
+    "exampleMeaning": "Sân chơi này an toàn cho trẻ nhỏ sử dụng."
   },
   {
     "id": "vong1_380",
@@ -4557,7 +6073,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɒlt/",
+    "level": "A1",
+    "example": "Please add a little salt to the vegetable soup.",
+    "exampleMeaning": "Hãy thêm một ít muối vào món súp rau."
   },
   {
     "id": "vong1_381",
@@ -4569,7 +6089,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsætədeɪ/",
+    "level": "A1",
+    "example": "We usually visit our grandparents on Saturday afternoons.",
+    "exampleMeaning": "Chúng tôi thường thăm ông bà vào chiều thứ Bảy."
   },
   {
     "id": "vong1_382",
@@ -4581,7 +6105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/skuːl/",
+    "level": "A1",
+    "example": "The children walk to school together every morning.",
+    "exampleMeaning": "Bọn trẻ cùng đi bộ đến trường mỗi sáng."
   },
   {
     "id": "vong1_383",
@@ -4593,7 +6121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/siː/",
+    "level": "A1",
+    "example": "We went swimming in the sea during our holiday.",
+    "exampleMeaning": "Chúng tôi đi bơi ở biển trong kỳ nghỉ."
   },
   {
     "id": "vong1_384",
@@ -4605,7 +6137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/siːt/",
+    "level": "A2",
+    "example": "She found an empty seat near the classroom window.",
+    "exampleMeaning": "Cô ấy tìm được một chỗ ngồi trống gần cửa sổ lớp học."
   },
   {
     "id": "vong1_385",
@@ -4617,7 +6153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sepˈtembə/",
+    "level": "A1",
+    "example": "Our new school year starts in September every year.",
+    "exampleMeaning": "Năm học mới của chúng tôi bắt đầu vào tháng Chín hằng năm."
   },
   {
     "id": "vong1_386",
@@ -4629,7 +6169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsevən/",
+    "level": "A1",
+    "example": "Seven people joined us for dinner at home last night.",
+    "exampleMeaning": "Tối qua có bảy người đến nhà ăn tối cùng chúng tôi."
   },
   {
     "id": "vong1_387",
@@ -4641,7 +6185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌsevənˈtiːn/",
+    "level": "A1",
+    "example": "My younger brother will turn seventeen next summer.",
+    "exampleMeaning": "Em trai tôi sẽ tròn mười bảy tuổi vào mùa hè tới."
   },
   {
     "id": "vong1_388",
@@ -4653,7 +6201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsevənti/",
+    "level": "A1",
+    "example": "My grandfather is seventy years old and enjoys gardening.",
+    "exampleMeaning": "Ông tôi bảy mươi tuổi và thích làm vườn."
   },
   {
     "id": "vong1_389",
@@ -4665,7 +6217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʃiː/",
+    "level": "A1",
+    "example": "She likes painting flowers in her free time after school.",
+    "exampleMeaning": "Cô ấy thích vẽ hoa khi rảnh sau giờ học."
   },
   {
     "id": "vong1_390",
@@ -4677,7 +6233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʃiːp/",
+    "level": "A1",
+    "example": "We saw a sheep standing alone in the field.",
+    "exampleMeaning": "Chúng tôi thấy một con cừu đứng một mình trên cánh đồng."
   },
   {
     "id": "vong1_391",
@@ -4689,7 +6249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʃɜːt/",
+    "level": "A1",
+    "example": "He wore a clean white shirt to his interview.",
+    "exampleMeaning": "Anh ấy mặc một chiếc áo sơ mi trắng sạch đến buổi phỏng vấn."
   },
   {
     "id": "vong1_392",
@@ -4701,7 +6265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʃuː/",
+    "level": "A1",
+    "example": "He lost one shoe while running across the playground.",
+    "exampleMeaning": "Cậu ấy làm mất một chiếc giày khi chạy qua sân chơi."
   },
   {
     "id": "vong1_393",
@@ -4713,7 +6281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʃɒp/",
+    "level": "A1",
+    "example": "We stopped at a small shop to buy some water.",
+    "exampleMeaning": "Chúng tôi ghé cửa hàng nhỏ để mua ít nước."
   },
   {
     "id": "vong1_394",
@@ -4725,7 +6297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʃɔːt/",
+    "level": "A1",
+    "example": "She wrote a short story about her family holiday.",
+    "exampleMeaning": "Cô ấy viết một truyện ngắn về kỳ nghỉ gia đình."
   },
   {
     "id": "vong1_395",
@@ -4737,7 +6313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈʃaʊə/",
+    "level": "A1",
+    "example": "I usually take a shower before going to bed.",
+    "exampleMeaning": "Tôi thường tắm vòi sen trước khi đi ngủ."
   },
   {
     "id": "vong1_396",
@@ -4749,7 +6329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɪk/",
+    "level": "A1",
+    "example": "My little sister felt sick and stayed home from school.",
+    "exampleMeaning": "Em gái tôi thấy không khỏe nên nghỉ học ở nhà."
   },
   {
     "id": "vong1_397",
@@ -4761,7 +6345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsɪstə/",
+    "level": "A1",
+    "example": "My older sister is studying English at the university.",
+    "exampleMeaning": "Chị gái tôi đang học tiếng Anh ở trường đại học."
   },
   {
     "id": "vong1_398",
@@ -4773,7 +6361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɪt/",
+    "level": "A1",
+    "example": "Please sit beside me so we can read together.",
+    "exampleMeaning": "Hãy ngồi cạnh tôi để chúng ta có thể cùng đọc sách."
   },
   {
     "id": "vong1_399",
@@ -4785,7 +6377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɪks/",
+    "level": "A1",
+    "example": "Six friends came over to celebrate my birthday yesterday.",
+    "exampleMeaning": "Hôm qua sáu người bạn đến nhà mừng sinh nhật tôi."
   },
   {
     "id": "vong1_400",
@@ -4797,7 +6393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌsɪksˈtiːn/",
+    "level": "A1",
+    "example": "My cousin will be sixteen years old next week.",
+    "exampleMeaning": "Anh họ tôi sẽ tròn mười sáu tuổi vào tuần tới."
   },
   {
     "id": "vong1_401",
@@ -4809,7 +6409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsɪksti/",
+    "level": "A1",
+    "example": "My grandfather turned sixty this year and still works.",
+    "exampleMeaning": "Ông tôi tròn sáu mươi tuổi năm nay và vẫn đi làm."
   },
   {
     "id": "vong1_402",
@@ -4821,7 +6425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/saɪz/",
+    "level": "A2",
+    "example": "Do you have this shirt in a smaller size?",
+    "exampleMeaning": "Bạn có chiếc áo này cỡ nhỏ hơn không?"
   },
   {
     "id": "vong1_403",
@@ -4833,7 +6441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/skaɪ/",
+    "level": "A2",
+    "example": "The sky was full of bright stars last night.",
+    "exampleMeaning": "Bầu trời đầy những ngôi sao sáng vào tối qua."
   },
   {
     "id": "vong1_404",
@@ -4845,7 +6457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sliːp/",
+    "level": "A1",
+    "example": "I usually sleep for eight hours every night.",
+    "exampleMeaning": "Tôi thường ngủ tám tiếng mỗi đêm."
   },
   {
     "id": "vong1_405",
@@ -4857,7 +6473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sləʊ/",
+    "level": "A1",
+    "example": "The bus was very slow because of heavy traffic.",
+    "exampleMeaning": "Xe buýt chạy rất chậm vì giao thông đông đúc."
   },
   {
     "id": "vong1_406",
@@ -4869,7 +6489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/smɔːl/",
+    "level": "A1",
+    "example": "She lives in a small house near the sea.",
+    "exampleMeaning": "Cô ấy sống trong một ngôi nhà nhỏ gần biển."
   },
   {
     "id": "vong1_407",
@@ -4881,7 +6505,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/smaɪl/",
+    "level": "A2",
+    "example": "The baby gave everyone a big smile this morning.",
+    "exampleMeaning": "Em bé nở nụ cười thật tươi với mọi người sáng nay."
   },
   {
     "id": "vong1_408",
@@ -4893,7 +6521,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/snəʊ/",
+    "level": "A1",
+    "example": "The children were excited when the snow began to fall.",
+    "exampleMeaning": "Bọn trẻ hào hứng khi tuyết bắt đầu rơi."
   },
   {
     "id": "vong1_409",
@@ -4905,7 +6537,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/səʊ/",
+    "level": "A1",
+    "example": "I was tired, so I went to bed early.",
+    "exampleMeaning": "Tôi mệt nên đi ngủ sớm."
   },
   {
     "id": "vong1_410",
@@ -4917,7 +6553,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/səʊp/",
+    "level": "A2",
+    "example": "Please wash your hands with soap before eating dinner.",
+    "exampleMeaning": "Hãy rửa tay bằng xà phòng trước khi ăn tối."
   },
   {
     "id": "vong1_411",
@@ -4929,7 +6569,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɒk/",
+    "level": "A2",
+    "example": "I cannot find my other sock anywhere in the bedroom.",
+    "exampleMeaning": "Tôi không thể tìm thấy chiếc tất còn lại ở đâu trong phòng ngủ."
   },
   {
     "id": "vong1_412",
@@ -4941,7 +6585,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɒft/",
+    "level": "A2",
+    "example": "This blanket feels soft and warm on cold nights.",
+    "exampleMeaning": "Chiếc chăn này mềm và ấm vào những đêm lạnh."
   },
   {
     "id": "vong1_413",
@@ -4953,7 +6601,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sʌm/",
+    "level": "A1",
+    "example": "Would you like some bread with your vegetable soup?",
+    "exampleMeaning": "Bạn có muốn ăn một ít bánh mì cùng súp rau không?"
   },
   {
     "id": "vong1_414",
@@ -4965,7 +6617,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsʌmwʌn/",
+    "level": "A1",
+    "example": "Someone left a blue umbrella near the front door.",
+    "exampleMeaning": "Có ai đó để một chiếc ô xanh gần cửa trước."
   },
   {
     "id": "vong1_415",
@@ -4977,7 +6633,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsʌmθɪŋ/",
+    "level": "A1",
+    "example": "I have something important to tell you after class.",
+    "exampleMeaning": "Tôi có điều quan trọng muốn nói với bạn sau giờ học."
   },
   {
     "id": "vong1_416",
@@ -4989,7 +6649,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sʌn/",
+    "level": "A1",
+    "example": "Their son has just started school this September.",
+    "exampleMeaning": "Con trai họ vừa bắt đầu đi học vào tháng Chín này."
   },
   {
     "id": "vong1_417",
@@ -5001,7 +6665,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sɒŋ/",
+    "level": "A1",
+    "example": "We sang our favourite song together on the bus.",
+    "exampleMeaning": "Chúng tôi cùng hát bài hát yêu thích trên xe buýt."
   },
   {
     "id": "vong1_418",
@@ -5013,7 +6681,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsɒri/",
+    "level": "A1",
+    "example": "I am sorry for arriving late to our meeting.",
+    "exampleMeaning": "Tôi xin lỗi vì đến muộn cuộc họp của chúng ta."
   },
   {
     "id": "vong1_419",
@@ -5025,7 +6697,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/suːp/",
+    "level": "A1",
+    "example": "My grandmother made hot vegetable soup for our lunch.",
+    "exampleMeaning": "Bà tôi nấu súp rau nóng cho bữa trưa."
   },
   {
     "id": "vong1_420",
@@ -5037,7 +6713,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/spiːk/",
+    "level": "A1",
+    "example": "Please speak slowly so everyone can understand your question.",
+    "exampleMeaning": "Hãy nói chậm để mọi người hiểu câu hỏi của bạn."
   },
   {
     "id": "vong1_421",
@@ -5049,7 +6729,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/spɔːt/",
+    "level": "A1",
+    "example": "Swimming is my favourite sport during the summer months.",
+    "exampleMeaning": "Bơi lội là môn thể thao yêu thích của tôi vào mùa hè."
   },
   {
     "id": "vong1_422",
@@ -5061,7 +6745,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/skweə/",
+    "level": "A2",
+    "example": "The children drew a large square on the paper.",
+    "exampleMeaning": "Bọn trẻ vẽ một hình vuông lớn trên giấy."
   },
   {
     "id": "vong1_423",
@@ -5073,7 +6761,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/stɑː/",
+    "level": "A1",
+    "example": "We saw a bright star above the mountains last night.",
+    "exampleMeaning": "Tối qua chúng tôi thấy một ngôi sao sáng trên núi."
   },
   {
     "id": "vong1_424",
@@ -5085,7 +6777,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/step/",
+    "level": "A2",
+    "example": "Be careful when you take the next step downstairs.",
+    "exampleMeaning": "Hãy cẩn thận khi bước xuống bậc cầu thang tiếp theo."
   },
   {
     "id": "vong1_425",
@@ -5097,7 +6793,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈstɔːri/",
+    "level": "A1",
+    "example": "My grandmother tells us a bedtime story every evening.",
+    "exampleMeaning": "Bà tôi kể chuyện trước giờ ngủ cho chúng tôi mỗi tối."
   },
   {
     "id": "vong1_426",
@@ -5109,7 +6809,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/striːt/",
+    "level": "A1",
+    "example": "The children crossed the street carefully after school.",
+    "exampleMeaning": "Bọn trẻ băng qua đường cẩn thận sau giờ học."
   },
   {
     "id": "vong1_427",
@@ -5121,7 +6825,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/strɒŋ/",
+    "level": "A1",
+    "example": "Regular exercise helps make your legs strong and healthy.",
+    "exampleMeaning": "Tập thể dục thường xuyên giúp đôi chân khỏe và săn chắc."
   },
   {
     "id": "vong1_428",
@@ -5133,7 +6841,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈstjuːdənt/",
+    "level": "A1",
+    "example": "Every student must bring a notebook to English class.",
+    "exampleMeaning": "Mỗi học sinh phải mang vở đến lớp tiếng Anh."
   },
   {
     "id": "vong1_429",
@@ -5145,7 +6857,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈʃʊɡə/",
+    "level": "A1",
+    "example": "Please do not put too much sugar in my tea.",
+    "exampleMeaning": "Xin đừng cho quá nhiều đường vào trà của tôi."
   },
   {
     "id": "vong1_430",
@@ -5157,7 +6873,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsʌmə/",
+    "level": "A1",
+    "example": "We usually spend our summer holiday at the beach.",
+    "exampleMeaning": "Chúng tôi thường dành kỳ nghỉ hè ở bãi biển."
   },
   {
     "id": "vong1_431",
@@ -5169,7 +6889,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/sʌn/",
+    "level": "A1",
+    "example": "The sun came out after the heavy rain stopped.",
+    "exampleMeaning": "Mặt trời ló dạng sau khi cơn mưa lớn ngừng."
   },
   {
     "id": "vong1_432",
@@ -5181,7 +6905,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsʌndeɪ/",
+    "level": "A1",
+    "example": "We visit my grandparents every Sunday after lunch.",
+    "exampleMeaning": "Chúng tôi thăm ông bà mỗi Chủ nhật sau bữa trưa."
   },
   {
     "id": "vong1_433",
@@ -5193,7 +6921,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈsuːpəˌmɑːkɪt/",
+    "level": "A1",
+    "example": "My mother buys fresh vegetables at the supermarket nearby.",
+    "exampleMeaning": "Mẹ tôi mua rau tươi tại siêu thị gần nhà."
   },
   {
     "id": "vong1_434",
@@ -5205,7 +6937,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/swiːt/",
+    "level": "A2",
+    "example": "These strawberries are very sweet and taste really delicious.",
+    "exampleMeaning": "Những quả dâu này rất ngọt và có vị rất ngon."
   },
   {
     "id": "vong1_435",
@@ -5217,7 +6953,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/swɪm/",
+    "level": "A1",
+    "example": "I like to swim in the sea during summer.",
+    "exampleMeaning": "Tôi thích bơi ở biển vào mùa hè."
   },
   {
     "id": "vong1_436",
@@ -5229,7 +6969,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈswɪmɪŋ/",
+    "level": "A1",
+    "example": "Swimming every week helps me stay fit and healthy.",
+    "exampleMeaning": "Bơi lội mỗi tuần giúp tôi giữ vóc dáng và sức khỏe."
   },
   {
     "id": "vong1_437",
@@ -5241,7 +6985,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈteɪbəl/",
+    "level": "A1",
+    "example": "Please put the plates on the kitchen table now.",
+    "exampleMeaning": "Hãy đặt các chiếc đĩa lên bàn bếp ngay bây giờ."
   },
   {
     "id": "vong1_438",
@@ -5253,7 +7001,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tɔːl/",
+    "level": "A1",
+    "example": "My brother is tall enough to reach the shelf.",
+    "exampleMeaning": "Anh trai tôi đủ cao để với tới chiếc kệ."
   },
   {
     "id": "vong1_439",
@@ -5265,7 +7017,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtæksi/",
+    "level": "A1",
+    "example": "We took a taxi from the airport to our hotel.",
+    "exampleMeaning": "Chúng tôi đi taxi từ sân bay đến khách sạn."
   },
   {
     "id": "vong1_440",
@@ -5277,7 +7033,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tiː/",
+    "level": "A1",
+    "example": "My grandmother drinks hot tea with milk every morning.",
+    "exampleMeaning": "Bà tôi uống trà nóng pha sữa mỗi sáng."
   },
   {
     "id": "vong1_441",
@@ -5289,7 +7049,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tiːm/",
+    "level": "A1",
+    "example": "Our football team won the final match last Saturday.",
+    "exampleMeaning": "Đội bóng của chúng tôi thắng trận chung kết thứ Bảy tuần trước."
   },
   {
     "id": "vong1_442",
@@ -5301,7 +7065,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtelɪˌvɪʒən/",
+    "level": "A1",
+    "example": "My parents watch the evening news on television together.",
+    "exampleMeaning": "Bố mẹ tôi cùng xem bản tin tối trên truyền hình."
   },
   {
     "id": "vong1_443",
@@ -5313,7 +7081,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ten/",
+    "level": "A1",
+    "example": "Ten students stayed after class to clean the room.",
+    "exampleMeaning": "Mười học sinh ở lại sau giờ học để dọn phòng."
   },
   {
     "id": "vong1_444",
@@ -5325,7 +7097,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tekst/",
+    "level": "A1",
+    "example": "Please send me a text when you arrive home.",
+    "exampleMeaning": "Hãy nhắn tin cho tôi khi bạn về đến nhà."
   },
   {
     "id": "vong1_445",
@@ -5337,7 +7113,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/θæŋk/",
+    "level": "A1",
+    "example": "I want to thank you for helping me yesterday.",
+    "exampleMeaning": "Tôi muốn cảm ơn bạn vì đã giúp tôi hôm qua."
   },
   {
     "id": "vong1_446",
@@ -5349,7 +7129,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/θæŋks/",
+    "level": "A1",
+    "example": "She said thanks to everyone who came to her party.",
+    "exampleMeaning": "Cô ấy cảm ơn tất cả mọi người đã đến dự tiệc."
   },
   {
     "id": "vong1_447",
@@ -5361,7 +7145,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ðə/",
+    "level": "A1",
+    "example": "The children are playing in the garden after lunch.",
+    "exampleMeaning": "Bọn trẻ đang chơi trong vườn sau bữa trưa."
   },
   {
     "id": "vong1_448",
@@ -5373,7 +7161,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ðeɪ/",
+    "level": "A1",
+    "example": "They usually walk to school together every morning.",
+    "exampleMeaning": "Họ thường cùng đi bộ đến trường mỗi sáng."
   },
   {
     "id": "vong1_449",
@@ -5385,7 +7177,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/θɪn/",
+    "level": "A2",
+    "example": "The young girl has very thin arms and legs.",
+    "exampleMeaning": "Cô bé có cánh tay và đôi chân rất gầy."
   },
   {
     "id": "vong1_450",
@@ -5397,7 +7193,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/θɜːd/",
+    "level": "A1",
+    "example": "He finished third in the school swimming competition.",
+    "exampleMeaning": "Cậu ấy về thứ ba trong cuộc thi bơi của trường."
   },
   {
     "id": "vong1_451",
@@ -5409,7 +7209,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌθɜːˈtiːn/",
+    "level": "A1",
+    "example": "My little sister will be thirteen years old tomorrow.",
+    "exampleMeaning": "Em gái tôi sẽ tròn mười ba tuổi vào ngày mai."
   },
   {
     "id": "vong1_452",
@@ -5421,7 +7225,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈθɜːti/",
+    "level": "A1",
+    "example": "There are thirty children in our English class this year.",
+    "exampleMeaning": "Năm nay có ba mươi học sinh trong lớp tiếng Anh của chúng tôi."
   },
   {
     "id": "vong1_453",
@@ -5433,7 +7241,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/θriː/",
+    "level": "A1",
+    "example": "We bought three tickets for the train to London.",
+    "exampleMeaning": "Chúng tôi mua ba vé tàu đến London."
   },
   {
     "id": "vong1_454",
@@ -5445,7 +7257,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈθɜːzdeɪ/",
+    "level": "A1",
+    "example": "Our class goes swimming every Thursday after school.",
+    "exampleMeaning": "Lớp chúng tôi đi bơi mỗi thứ Năm sau giờ học."
   },
   {
     "id": "vong1_455",
@@ -5457,7 +7273,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tuː/",
+    "level": "A1",
+    "example": "I want to learn to play the guitar this year.",
+    "exampleMeaning": "Tôi muốn học chơi đàn ghi-ta trong năm nay."
   },
   {
     "id": "vong1_456",
@@ -5469,7 +7289,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/təˈdeɪ/",
+    "level": "A1",
+    "example": "We have an English test at school today.",
+    "exampleMeaning": "Hôm nay chúng tôi có bài kiểm tra tiếng Anh ở trường."
   },
   {
     "id": "vong1_457",
@@ -5481,7 +7305,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtɔɪlət/",
+    "level": "A1",
+    "example": "Excuse me, where is the nearest public toilet, please?",
+    "exampleMeaning": "Xin lỗi, nhà vệ sinh công cộng gần nhất ở đâu vậy?"
   },
   {
     "id": "vong1_458",
@@ -5493,7 +7321,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/təˈmɑːtəʊ/",
+    "level": "A1",
+    "example": "She sliced a ripe tomato for her cheese sandwich.",
+    "exampleMeaning": "Cô ấy thái một quả cà chua chín cho bánh mì kẹp phô mai."
   },
   {
     "id": "vong1_459",
@@ -5505,7 +7337,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/təˈmɒrəʊ/",
+    "level": "A1",
+    "example": "We are going to visit our grandparents tomorrow morning.",
+    "exampleMeaning": "Chúng tôi sẽ đến thăm ông bà vào sáng mai."
   },
   {
     "id": "vong1_460",
@@ -5517,7 +7353,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/təˈnaɪt/",
+    "level": "A1",
+    "example": "I will call you tonight after I finish dinner.",
+    "exampleMeaning": "Tôi sẽ gọi cho bạn tối nay sau khi ăn xong."
   },
   {
     "id": "vong1_461",
@@ -5529,7 +7369,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/taʊn/",
+    "level": "A1",
+    "example": "We live in a small town near the mountains.",
+    "exampleMeaning": "Chúng tôi sống trong một thị trấn nhỏ gần núi."
   },
   {
     "id": "vong1_462",
@@ -5541,7 +7385,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tɔɪ/",
+    "level": "A2",
+    "example": "The little boy received a new toy for his birthday.",
+    "exampleMeaning": "Cậu bé nhận được một món đồ chơi mới nhân sinh nhật."
   },
   {
     "id": "vong1_463",
@@ -5553,7 +7401,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/triː/",
+    "level": "A1",
+    "example": "There is a tall tree in front of our house.",
+    "exampleMeaning": "Có một cây cao ở phía trước nhà chúng tôi."
   },
   {
     "id": "vong1_464",
@@ -5565,7 +7417,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/trɪp/",
+    "level": "A1",
+    "example": "Our school trip to the museum was really interesting.",
+    "exampleMeaning": "Chuyến tham quan bảo tàng của trường chúng tôi rất thú vị."
   },
   {
     "id": "vong1_465",
@@ -5577,7 +7433,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtraʊsəz/",
+    "level": "A1",
+    "example": "He bought a new pair of trousers for work.",
+    "exampleMeaning": "Anh ấy mua một chiếc quần dài mới để đi làm."
   },
   {
     "id": "vong1_466",
@@ -5589,7 +7449,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtjuːzdeɪ/",
+    "level": "A1",
+    "example": "We have a maths lesson every Tuesday afternoon.",
+    "exampleMeaning": "Chúng tôi có tiết toán vào mỗi chiều thứ Ba."
   },
   {
     "id": "vong1_467",
@@ -5601,7 +7465,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/twelv/",
+    "level": "A1",
+    "example": "Twelve children joined the school's new art club.",
+    "exampleMeaning": "Mười hai đứa trẻ tham gia câu lạc bộ mỹ thuật mới của trường."
   },
   {
     "id": "vong1_468",
@@ -5613,7 +7481,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈtwenti/",
+    "level": "A1",
+    "example": "Twenty people came to our family party last weekend.",
+    "exampleMeaning": "Hai mươi người đến dự tiệc gia đình chúng tôi cuối tuần trước."
   },
   {
     "id": "vong1_469",
@@ -5625,7 +7497,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/tuː/",
+    "level": "A1",
+    "example": "I bought two bottles of water for our journey.",
+    "exampleMeaning": "Tôi mua hai chai nước cho chuyến đi của chúng tôi."
   },
   {
     "id": "vong1_470",
@@ -5637,7 +7513,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈʌŋkəl/",
+    "level": "A1",
+    "example": "My uncle lives in a quiet village near the sea.",
+    "exampleMeaning": "Chú tôi sống trong một ngôi làng yên tĩnh gần biển."
   },
   {
     "id": "vong1_471",
@@ -5649,7 +7529,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈʌndə/",
+    "level": "A1",
+    "example": "The cat is sleeping under the table in the kitchen.",
+    "exampleMeaning": "Con mèo đang ngủ dưới bàn trong bếp."
   },
   {
     "id": "vong1_472",
@@ -5661,7 +7545,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʌp/",
+    "level": "A1",
+    "example": "Please look up when the teacher calls your name.",
+    "exampleMeaning": "Hãy ngẩng lên khi giáo viên gọi tên bạn."
   },
   {
     "id": "vong1_473",
@@ -5673,7 +7561,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ʌs/",
+    "level": "A1",
+    "example": "Our teacher asked us to finish the exercise together.",
+    "exampleMeaning": "Giáo viên yêu cầu chúng tôi cùng hoàn thành bài tập."
   },
   {
     "id": "vong1_474",
@@ -5685,7 +7577,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈveri/",
+    "level": "A1",
+    "example": "She is very kind and always helps her classmates.",
+    "exampleMeaning": "Cô ấy rất tốt bụng và luôn giúp đỡ bạn cùng lớp."
   },
   {
     "id": "vong1_475",
@@ -5697,7 +7593,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈvɪdɪəʊ/",
+    "level": "A1",
+    "example": "We watched a short video about animals in class.",
+    "exampleMeaning": "Chúng tôi xem một video ngắn về động vật trong lớp."
   },
   {
     "id": "vong1_476",
@@ -5709,7 +7609,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/weɪt/",
+    "level": "A1",
+    "example": "Please wait here until the doctor calls your name.",
+    "exampleMeaning": "Hãy đợi ở đây cho đến khi bác sĩ gọi tên bạn."
   },
   {
     "id": "vong1_477",
@@ -5721,7 +7625,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/weɪk/",
+    "level": "A1",
+    "example": "I wake up at six every morning for school.",
+    "exampleMeaning": "Tôi thức dậy lúc sáu giờ mỗi sáng để đi học."
   },
   {
     "id": "vong1_478",
@@ -5733,7 +7641,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɔːk/",
+    "level": "A1",
+    "example": "We like to walk along the beach after dinner.",
+    "exampleMeaning": "Chúng tôi thích đi dạo dọc bãi biển sau bữa tối."
   },
   {
     "id": "vong1_479",
@@ -5745,7 +7657,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɔːl/",
+    "level": "A1",
+    "example": "There is a large clock on the classroom wall.",
+    "exampleMeaning": "Có một chiếc đồng hồ lớn trên tường lớp học."
   },
   {
     "id": "vong1_480",
@@ -5757,7 +7673,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɔːm/",
+    "level": "A1",
+    "example": "Wear a warm coat when you go outside tonight.",
+    "exampleMeaning": "Hãy mặc áo khoác ấm khi ra ngoài tối nay."
   },
   {
     "id": "vong1_481",
@@ -5769,7 +7689,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɒʃ/",
+    "level": "A1",
+    "example": "Remember to wash your hands before eating your lunch.",
+    "exampleMeaning": "Hãy nhớ rửa tay trước khi ăn trưa."
   },
   {
     "id": "vong1_482",
@@ -5781,7 +7705,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwɔːtə/",
+    "level": "A1",
+    "example": "Drink plenty of water when the weather is hot.",
+    "exampleMeaning": "Hãy uống nhiều nước khi thời tiết nóng."
   },
   {
     "id": "vong1_483",
@@ -5793,7 +7721,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wiː/",
+    "level": "A1",
+    "example": "We usually do our homework together after school.",
+    "exampleMeaning": "Chúng tôi thường làm bài tập cùng nhau sau giờ học."
   },
   {
     "id": "vong1_484",
@@ -5805,7 +7737,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwebsaɪt/",
+    "level": "A1",
+    "example": "Our school website has information about the new classes.",
+    "exampleMeaning": "Trang web của trường có thông tin về các lớp học mới."
   },
   {
     "id": "vong1_485",
@@ -5817,7 +7753,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwenzdeɪ/",
+    "level": "A1",
+    "example": "I have a music lesson every Wednesday afternoon.",
+    "exampleMeaning": "Tôi có tiết âm nhạc mỗi chiều thứ Tư."
   },
   {
     "id": "vong1_486",
@@ -5829,7 +7769,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wiːk/",
+    "level": "A1",
+    "example": "We go swimming at the sports centre every week.",
+    "exampleMeaning": "Chúng tôi đi bơi ở trung tâm thể thao mỗi tuần."
   },
   {
     "id": "vong1_487",
@@ -5841,7 +7785,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˌwiːkˈend/",
+    "level": "A1",
+    "example": "My family often visits the countryside at the weekend.",
+    "exampleMeaning": "Gia đình tôi thường về vùng quê vào cuối tuần."
   },
   {
     "id": "vong1_488",
@@ -5853,7 +7801,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwelkʌm/",
+    "level": "A1",
+    "example": "We welcome every new student with a friendly smile.",
+    "exampleMeaning": "Chúng tôi chào đón mỗi học sinh mới bằng nụ cười thân thiện."
   },
   {
     "id": "vong1_489",
@@ -5865,7 +7817,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wel/",
+    "level": "A1",
+    "example": "She speaks English very well for her young age.",
+    "exampleMeaning": "Cô ấy nói tiếng Anh rất tốt so với tuổi còn nhỏ."
   },
   {
     "id": "vong1_490",
@@ -5877,7 +7833,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/west/",
+    "level": "A1",
+    "example": "The sun sets in the west every evening.",
+    "exampleMeaning": "Mặt trời lặn ở hướng tây mỗi buổi chiều."
   },
   {
     "id": "vong1_491",
@@ -5889,7 +7849,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wet/",
+    "level": "A2",
+    "example": "My shoes were wet after walking through the rain.",
+    "exampleMeaning": "Giày tôi bị ướt sau khi đi dưới mưa."
   },
   {
     "id": "vong1_492",
@@ -5901,7 +7865,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɒt/",
+    "level": "A1",
+    "example": "What would you like to eat for lunch today?",
+    "exampleMeaning": "Hôm nay bạn muốn ăn gì vào bữa trưa?"
   },
   {
     "id": "vong1_493",
@@ -5913,7 +7881,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wen/",
+    "level": "A1",
+    "example": "When does the next train leave for the city?",
+    "exampleMeaning": "Khi nào chuyến tàu tiếp theo khởi hành đến thành phố?"
   },
   {
     "id": "vong1_494",
@@ -5925,7 +7897,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/weə/",
+    "level": "A1",
+    "example": "Where did you put the keys to the house?",
+    "exampleMeaning": "Bạn đã để chìa khóa nhà ở đâu?"
   },
   {
     "id": "vong1_495",
@@ -5937,7 +7913,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/waɪt/",
+    "level": "A1",
+    "example": "She wore a white dress to the summer party.",
+    "exampleMeaning": "Cô ấy mặc một chiếc váy trắng đến bữa tiệc mùa hè."
   },
   {
     "id": "vong1_496",
@@ -5949,7 +7929,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/huː/",
+    "level": "A1",
+    "example": "Who is coming to your birthday party this weekend?",
+    "exampleMeaning": "Ai sẽ đến dự tiệc sinh nhật của bạn cuối tuần này?"
   },
   {
     "id": "vong1_497",
@@ -5961,7 +7945,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/waɪ/",
+    "level": "A1",
+    "example": "Why did you leave your English book at home?",
+    "exampleMeaning": "Tại sao bạn để sách tiếng Anh ở nhà?"
   },
   {
     "id": "vong1_498",
@@ -5973,7 +7961,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/waɪf/",
+    "level": "A1",
+    "example": "His wife works as a nurse at the local hospital.",
+    "exampleMeaning": "Vợ anh ấy làm y tá tại bệnh viện địa phương."
   },
   {
     "id": "vong1_499",
@@ -5985,7 +7977,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwɪndəʊ/",
+    "level": "A1",
+    "example": "Please open the window because the room is too hot.",
+    "exampleMeaning": "Hãy mở cửa sổ vì trong phòng quá nóng."
   },
   {
     "id": "vong1_500",
@@ -5997,7 +7993,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwɪntə/",
+    "level": "A1",
+    "example": "We often go skiing in the mountains during winter.",
+    "exampleMeaning": "Chúng tôi thường đi trượt tuyết trên núi vào mùa đông."
   },
   {
     "id": "vong1_501",
@@ -6009,7 +8009,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwʊmən/",
+    "level": "A1",
+    "example": "The woman in the blue coat is my teacher.",
+    "exampleMeaning": "Người phụ nữ mặc áo khoác xanh là giáo viên của tôi."
   },
   {
     "id": "vong1_502",
@@ -6021,7 +8025,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɜːd/",
+    "level": "A1",
+    "example": "Please write each new word in your vocabulary notebook.",
+    "exampleMeaning": "Hãy viết mỗi từ mới vào sổ tay từ vựng của bạn."
   },
   {
     "id": "vong1_503",
@@ -6033,7 +8041,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/wɜːld/",
+    "level": "A1",
+    "example": "People from around the world visit this famous city.",
+    "exampleMeaning": "Người từ khắp nơi trên thế giới đến thăm thành phố nổi tiếng này."
   },
   {
     "id": "vong1_504",
@@ -6045,7 +8057,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈwʌrid/",
+    "level": "A2",
+    "example": "My mother was worried when I came home late.",
+    "exampleMeaning": "Mẹ lo lắng khi tôi về nhà muộn."
   },
   {
     "id": "vong1_505",
@@ -6057,7 +8073,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/rɒŋ/",
+    "level": "A1",
+    "example": "I wrote the wrong answer because I misunderstood the question.",
+    "exampleMeaning": "Tôi viết sai đáp án vì hiểu nhầm câu hỏi."
   },
   {
     "id": "vong1_506",
@@ -6069,7 +8089,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/jeh/",
+    "level": "A1",
+    "example": "Yeah, I would love to come to your party.",
+    "exampleMeaning": "Ừ, tôi rất muốn đến dự bữa tiệc của bạn."
   },
   {
     "id": "vong1_507",
@@ -6081,7 +8105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈjiə/",
+    "level": "A1",
+    "example": "We visit our grandparents at least once every year.",
+    "exampleMeaning": "Chúng tôi đến thăm ông bà ít nhất một lần mỗi năm."
   },
   {
     "id": "vong1_508",
@@ -6093,7 +8121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈjeləʊ/",
+    "level": "A1",
+    "example": "She wore a yellow dress to the summer festival.",
+    "exampleMeaning": "Cô ấy mặc một chiếc váy vàng đến lễ hội mùa hè."
   },
   {
     "id": "vong1_509",
@@ -6105,7 +8137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/jes/",
+    "level": "A1",
+    "example": "He said yes when I asked him for help.",
+    "exampleMeaning": "Anh ấy đồng ý khi tôi nhờ giúp đỡ."
   },
   {
     "id": "vong1_510",
@@ -6117,7 +8153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈjestədeɪ/",
+    "level": "A1",
+    "example": "I met my old school friends in town yesterday.",
+    "exampleMeaning": "Hôm qua tôi gặp các bạn học cũ trong thị trấn."
   },
   {
     "id": "vong1_511",
@@ -6129,7 +8169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/juː/",
+    "level": "A1",
+    "example": "You can borrow my notebook if you need it.",
+    "exampleMeaning": "Bạn có thể mượn vở của tôi nếu cần."
   },
   {
     "id": "vong1_512",
@@ -6141,7 +8185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/jʌŋ/",
+    "level": "A1",
+    "example": "My younger sister is still too young to drive.",
+    "exampleMeaning": "Em gái tôi vẫn còn quá nhỏ để lái xe."
   },
   {
     "id": "vong1_513",
@@ -6153,7 +8201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/jɔː/",
+    "level": "A1",
+    "example": "Please remember to bring your passport to the airport.",
+    "exampleMeaning": "Hãy nhớ mang hộ chiếu của bạn đến sân bay."
   },
   {
     "id": "vong1_514",
@@ -6165,7 +8217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/jɔːz/",
+    "level": "A2",
+    "example": "Is this blue jacket yours or does it belong to Tom?",
+    "exampleMeaning": "Chiếc áo khoác xanh này là của bạn hay của Tom?"
   },
   {
     "id": "vong1_515",
@@ -6177,7 +8233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/jɔːˈself/",
+    "level": "A1",
+    "example": "You should give yourself enough time to finish the work.",
+    "exampleMeaning": "Bạn nên dành đủ thời gian cho bản thân để hoàn thành công việc."
   },
   {
     "id": "vong1_516",
@@ -6189,6 +8249,10 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 1"
+    "unit": "Vòng 1",
+    "phonetic": "/ˈzɪərəʊ/",
+    "level": "A2",
+    "example": "The temperature fell below zero during the cold winter night.",
+    "exampleMeaning": "Nhiệt độ giảm xuống dưới không độ trong đêm đông lạnh giá."
   }
 ]

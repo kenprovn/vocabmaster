@@ -9,7 +9,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əˈkrɒs/",
+    "level": "A1",
+    "example": "We walked across the bridge before the rain began.",
+    "exampleMeaning": "Chúng tôi đi qua cây cầu trước khi trời bắt đầu mưa."
   },
   {
     "id": "vong4_2",
@@ -21,7 +25,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əˈɡenst/",
+    "level": "A2",
+    "example": "The football team played against their strongest local rivals.",
+    "exampleMeaning": "Đội bóng thi đấu với những đối thủ địa phương mạnh nhất."
   },
   {
     "id": "vong4_3",
@@ -33,7 +41,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/eɪdʒd/",
+    "level": "B1",
+    "example": "The programme offers free lessons for children aged ten.",
+    "exampleMeaning": "Chương trình cung cấp các buổi học miễn phí cho trẻ mười tuổi."
   },
   {
     "id": "vong4_4",
@@ -45,7 +57,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈeɪdʒənt/",
+    "level": "B1",
+    "example": "Our travel agent helped us book flights to Japan.",
+    "exampleMeaning": "Đại lý du lịch đã giúp chúng tôi đặt vé máy bay đến Nhật Bản."
   },
   {
     "id": "vong4_5",
@@ -57,7 +73,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈeəkrɑːft/",
+    "level": "B2",
+    "example": "The aircraft landed safely despite the strong winds yesterday.",
+    "exampleMeaning": "Chiếc máy bay hạ cánh an toàn bất chấp gió mạnh hôm qua."
   },
   {
     "id": "vong4_6",
@@ -69,7 +89,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈælkəhɒl/",
+    "level": "B1",
+    "example": "This cleaning product contains alcohol and should be stored carefully.",
+    "exampleMeaning": "Sản phẩm tẩy rửa này chứa cồn và cần được cất giữ cẩn thận."
   },
   {
     "id": "vong4_7",
@@ -81,7 +105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌælkəˈhɒlɪk/",
+    "level": "B1",
+    "example": "The restaurant does not serve alcoholic drinks to children.",
+    "exampleMeaning": "Nhà hàng không phục vụ đồ uống có cồn cho trẻ em."
   },
   {
     "id": "vong4_8",
@@ -93,7 +121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈæŋɡrəli/",
+    "level": "B2",
+    "example": "He spoke angrily when he discovered that his bike was missing.",
+    "exampleMeaning": "Anh ấy nói một cách giận dữ khi phát hiện xe đạp bị mất."
   },
   {
     "id": "vong4_9",
@@ -105,7 +137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌænɪˈvɜːsəri/",
+    "level": "B2",
+    "example": "They celebrated their wedding anniversary with a family dinner.",
+    "exampleMeaning": "Họ kỷ niệm ngày cưới bằng một bữa tối gia đình."
   },
   {
     "id": "vong4_10",
@@ -117,7 +153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌeni ˈmɔː/",
+    "level": "A2",
+    "example": "She does not work at that company any more.",
+    "exampleMeaning": "Cô ấy không còn làm việc ở công ty đó nữa."
   },
   {
     "id": "vong4_11",
@@ -129,7 +169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əˈprɒksɪmətli/",
+    "level": "B1",
+    "example": "The journey takes approximately three hours by train.",
+    "exampleMeaning": "Chuyến đi mất khoảng ba giờ bằng tàu hỏa."
   },
   {
     "id": "vong4_12",
@@ -141,7 +185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈɑːkɪtekt/",
+    "level": "A2",
+    "example": "The architect designed a modern house with large windows.",
+    "exampleMeaning": "Kiến trúc sư thiết kế một ngôi nhà hiện đại với những cửa sổ lớn."
   },
   {
     "id": "vong4_13",
@@ -153,7 +201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈɑːkɪtektʃə/",
+    "level": "A2",
+    "example": "I love the traditional architecture of these old buildings.",
+    "exampleMeaning": "Tôi yêu phong cách kiến trúc truyền thống của những tòa nhà cổ này."
   },
   {
     "id": "vong4_14",
@@ -165,7 +217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɑːmd/",
+    "level": "B2",
+    "example": "Armed police officers guarded the entrance during the event.",
+    "exampleMeaning": "Các sĩ quan cảnh sát có vũ trang canh gác lối vào trong sự kiện."
   },
   {
     "id": "vong4_15",
@@ -177,7 +233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əˈreɪndʒmənt/",
+    "level": "A2",
+    "example": "We made an arrangement to meet outside the cinema.",
+    "exampleMeaning": "Chúng tôi đã thỏa thuận gặp nhau bên ngoài rạp chiếu phim."
   },
   {
     "id": "vong4_16",
@@ -189,7 +249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əˈrest/",
+    "level": "B1",
+    "example": "The police decided to arrest the suspect after investigating.",
+    "exampleMeaning": "Cảnh sát quyết định bắt giữ nghi phạm sau khi điều tra."
   },
   {
     "id": "vong4_17",
@@ -201,7 +265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɑːˈtɪstɪk/",
+    "level": "B2",
+    "example": "Her artistic talent became clear during the painting competition.",
+    "exampleMeaning": "Tài năng nghệ thuật của cô ấy bộc lộ rõ trong cuộc thi vẽ."
   },
   {
     "id": "vong4_18",
@@ -213,7 +281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈætməsfɪə/",
+    "level": "B1",
+    "example": "The restaurant has a friendly atmosphere and excellent food.",
+    "exampleMeaning": "Nhà hàng có bầu không khí thân thiện và đồ ăn tuyệt vời."
   },
   {
     "id": "vong4_19",
@@ -225,7 +297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/bækˈtɪəriə/",
+    "level": "B2",
+    "example": "Washing your hands helps prevent harmful bacteria from spreading.",
+    "exampleMeaning": "Rửa tay giúp ngăn vi khuẩn có hại lây lan."
   },
   {
     "id": "vong4_20",
@@ -237,7 +313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈbiːɪŋ/",
+    "level": "B2",
+    "example": "Every living being needs water to survive and grow.",
+    "exampleMeaning": "Mọi sinh vật đều cần nước để tồn tại và phát triển."
   },
   {
     "id": "vong4_21",
@@ -249,7 +329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/baɪˈɒlədʒi/",
+    "level": "A2",
+    "example": "My sister studies biology because she loves learning about animals.",
+    "exampleMeaning": "Chị gái tôi học sinh học vì thích tìm hiểu về động vật."
   },
   {
     "id": "vong4_22",
@@ -261,7 +345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/bɒm/",
+    "level": "B1",
+    "example": "The old bomb was discovered during road construction work.",
+    "exampleMeaning": "Quả bom cũ được phát hiện trong lúc thi công đường."
   },
   {
     "id": "vong4_23",
@@ -273,7 +361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈbɔːdə/",
+    "level": "B1",
+    "example": "We crossed the border early in the morning by car.",
+    "exampleMeaning": "Chúng tôi đi qua biên giới bằng ô tô vào sáng sớm."
   },
   {
     "id": "vong4_24",
@@ -285,7 +377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/brænd/",
+    "level": "B1",
+    "example": "This clothing brand is popular among university students.",
+    "exampleMeaning": "Thương hiệu quần áo này được sinh viên đại học ưa chuộng."
   },
   {
     "id": "vong4_25",
@@ -297,7 +393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/brest/",
+    "level": "B2",
+    "example": "The nurse asked whether she had noticed any breast pain.",
+    "exampleMeaning": "Y tá hỏi liệu cô ấy có nhận thấy đau ở vùng ngực không."
   },
   {
     "id": "vong4_26",
@@ -309,7 +409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/breθ/",
+    "level": "B1",
+    "example": "Take a deep breath before you begin your speech.",
+    "exampleMeaning": "Hãy hít một hơi thật sâu trước khi bắt đầu bài phát biểu."
   },
   {
     "id": "vong4_27",
@@ -321,7 +425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/briːð/",
+    "level": "B1",
+    "example": "It is easier to breathe when the air is clean.",
+    "exampleMeaning": "Việc hít thở dễ dàng hơn khi không khí trong lành."
   },
   {
     "id": "vong4_28",
@@ -333,7 +441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈbriːðɪŋ/",
+    "level": "B1",
+    "example": "Regular exercise can improve your breathing and overall health.",
+    "exampleMeaning": "Tập thể dục thường xuyên có thể cải thiện nhịp thở và sức khỏe tổng thể."
   },
   {
     "id": "vong4_29",
@@ -345,7 +457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈbʊlɪt/",
+    "level": "B2",
+    "example": "The detective found a bullet near the broken window.",
+    "exampleMeaning": "Thám tử tìm thấy một viên đạn gần cửa sổ bị vỡ."
   },
   {
     "id": "vong4_30",
@@ -357,7 +473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/bʊʃ/",
+    "level": "B2",
+    "example": "A small bird was hiding inside the thick bush.",
+    "exampleMeaning": "Một con chim nhỏ đang ẩn trong bụi cây rậm rạp."
   },
   {
     "id": "vong4_31",
@@ -369,7 +489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkæmpəs/",
+    "level": "B1",
+    "example": "The university campus has several libraries and sports facilities.",
+    "exampleMeaning": "Khuôn viên trường đại học có nhiều thư viện và cơ sở thể thao."
   },
   {
     "id": "vong4_32",
@@ -381,7 +505,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkætəɡəri/",
+    "level": "B1",
+    "example": "Choose the correct category before uploading your new photograph.",
+    "exampleMeaning": "Hãy chọn đúng danh mục trước khi tải ảnh mới lên."
   },
   {
     "id": "vong4_33",
@@ -393,7 +521,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/səˈlebrəti/",
+    "level": "A2",
+    "example": "A famous celebrity visited our school to support the event.",
+    "exampleMeaning": "Một người nổi tiếng đến thăm trường để ủng hộ sự kiện."
   },
   {
     "id": "vong4_34",
@@ -405,7 +537,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtʃeəmən/",
+    "level": "B2",
+    "example": "The chairman opened the meeting with a short speech.",
+    "exampleMeaning": "Chủ tịch khai mạc cuộc họp bằng một bài phát biểu ngắn."
   },
   {
     "id": "vong4_35",
@@ -417,7 +553,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kəʊl/",
+    "level": "B1",
+    "example": "The factory stopped using coal to reduce air pollution.",
+    "exampleMeaning": "Nhà máy ngừng sử dụng than đá để giảm ô nhiễm không khí."
   },
   {
     "id": "vong4_36",
@@ -429,7 +569,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkɒmənli/",
+    "level": "B2",
+    "example": "This expression is commonly used in everyday British English.",
+    "exampleMeaning": "Cách diễn đạt này thường được dùng trong tiếng Anh Anh hằng ngày."
   },
   {
     "id": "vong4_37",
@@ -441,7 +585,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kəˈmjuːnɪkeɪt/",
+    "level": "A2",
+    "example": "Good teachers communicate clearly with students and their parents.",
+    "exampleMeaning": "Giáo viên giỏi giao tiếp rõ ràng với học sinh và phụ huynh."
   },
   {
     "id": "vong4_38",
@@ -453,7 +601,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kəˌmjuːnɪˈkeɪʃn/",
+    "level": "B1",
+    "example": "Clear communication can prevent many problems at work.",
+    "exampleMeaning": "Giao tiếp rõ ràng có thể ngăn ngừa nhiều vấn đề trong công việc."
   },
   {
     "id": "vong4_39",
@@ -465,7 +617,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kəmˈpiːt/",
+    "level": "A2",
+    "example": "Several teams compete for the national championship each year.",
+    "exampleMeaning": "Nhiều đội tranh tài để giành chức vô địch quốc gia hằng năm."
   },
   {
     "id": "vong4_40",
@@ -477,7 +633,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌkɒmpəˈtɪʃn/",
+    "level": "A2",
+    "example": "She won first prize in the school singing competition.",
+    "exampleMeaning": "Cô ấy giành giải nhất trong cuộc thi hát của trường."
   },
   {
     "id": "vong4_41",
@@ -489,7 +649,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kəmˈpetɪtə/",
+    "level": "B1",
+    "example": "Our main competitor recently opened a shop nearby.",
+    "exampleMeaning": "Đối thủ cạnh tranh chính của chúng tôi vừa mở cửa hàng gần đây."
   },
   {
     "id": "vong4_42",
@@ -501,7 +665,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkɒmpleks/",
+    "level": "B1",
+    "example": "The instructions seem complex, but the task is manageable.",
+    "exampleMeaning": "Hướng dẫn có vẻ phức tạp nhưng nhiệm vụ vẫn có thể thực hiện được."
   },
   {
     "id": "vong4_43",
@@ -513,7 +681,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kənˈkluːʒn/",
+    "level": "B1",
+    "example": "The researchers reached a surprising conclusion after studying the results.",
+    "exampleMeaning": "Các nhà nghiên cứu đưa ra kết luận bất ngờ sau khi nghiên cứu kết quả."
   },
   {
     "id": "vong4_44",
@@ -525,7 +697,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkɒnfɪdəns/",
+    "level": "B2",
+    "example": "Speaking in public has helped improve my confidence greatly.",
+    "exampleMeaning": "Nói trước đám đông đã giúp tôi cải thiện sự tự tin rất nhiều."
   },
   {
     "id": "vong4_45",
@@ -537,7 +713,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkɒnfɪdənt/",
+    "level": "B1",
+    "example": "She feels confident about passing her English examination tomorrow.",
+    "exampleMeaning": "Cô ấy tự tin rằng mình sẽ vượt qua kỳ thi tiếng Anh ngày mai."
   },
   {
     "id": "vong4_46",
@@ -549,7 +729,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kənˈfjuːz/",
+    "level": "B1",
+    "example": "Similar names often confuse people who are new here.",
+    "exampleMeaning": "Những cái tên giống nhau thường khiến người mới đến đây nhầm lẫn."
   },
   {
     "id": "vong4_47",
@@ -561,7 +745,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kənˈfjuːzɪŋ/",
+    "level": "B2",
+    "example": "The map was confusing because several roads had changed.",
+    "exampleMeaning": "Bản đồ gây khó hiểu vì một số con đường đã thay đổi."
   },
   {
     "id": "vong4_48",
@@ -573,7 +761,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kənˈstrʌkʃn/",
+    "level": "B2",
+    "example": "The construction of the new hospital will begin next month.",
+    "exampleMeaning": "Việc xây dựng bệnh viện mới sẽ bắt đầu vào tháng tới."
   },
   {
     "id": "vong4_49",
@@ -585,7 +777,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkɒntest/",
+    "level": "B2",
+    "example": "My brother entered a photography contest and won a prize.",
+    "exampleMeaning": "Anh trai tôi tham gia cuộc thi nhiếp ảnh và đoạt giải."
   },
   {
     "id": "vong4_50",
@@ -597,7 +793,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kɒst/",
+    "level": "A1",
+    "example": "The total cost of the trip includes breakfast and transport.",
+    "exampleMeaning": "Tổng chi phí chuyến đi bao gồm bữa sáng và đi lại."
   },
   {
     "id": "vong4_51",
@@ -609,7 +809,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈkɒtɪdʒ/",
+    "level": "B1",
+    "example": "We rented a small cottage near the lake last summer.",
+    "exampleMeaning": "Mùa hè năm ngoái chúng tôi thuê một ngôi nhà nhỏ gần hồ."
   },
   {
     "id": "vong4_52",
@@ -621,7 +825,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kʊd/",
+    "level": "A1",
+    "example": "Could you help me carry these boxes upstairs, please?",
+    "exampleMeaning": "Bạn có thể giúp tôi mang những chiếc hộp này lên lầu không?"
   },
   {
     "id": "vong4_53",
@@ -633,7 +841,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/kɜːvd/",
+    "level": "B2",
+    "example": "A curved path leads through the garden to the pond.",
+    "exampleMeaning": "Một con đường cong dẫn qua vườn đến hồ nước."
   },
   {
     "id": "vong4_54",
@@ -645,7 +857,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/deɪt/",
+    "level": "A1",
+    "example": "Please check the date on your train ticket carefully.",
+    "exampleMeaning": "Hãy kiểm tra kỹ ngày trên vé tàu của bạn."
   },
   {
     "id": "vong4_55",
@@ -657,7 +873,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈdiːpli/",
+    "level": "B2",
+    "example": "She was deeply upset by the news about her friend.",
+    "exampleMeaning": "Cô ấy vô cùng buồn bã trước tin tức về bạn mình."
   },
   {
     "id": "vong4_56",
@@ -669,7 +889,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈdefɪnətli/",
+    "level": "A2",
+    "example": "I will definitely call you when I reach the hotel.",
+    "exampleMeaning": "Tôi chắc chắn sẽ gọi khi đến khách sạn."
   },
   {
     "id": "vong4_57",
@@ -681,7 +905,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/dəˈrektli/",
+    "level": "B1",
+    "example": "Please contact the manager directly if you need help.",
+    "exampleMeaning": "Hãy liên hệ trực tiếp với quản lý nếu bạn cần giúp đỡ."
   },
   {
     "id": "vong4_58",
@@ -693,7 +921,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈdɪstrɪkt/",
+    "level": "B2",
+    "example": "This district has several excellent schools and public parks.",
+    "exampleMeaning": "Quận này có nhiều trường tốt và công viên công cộng."
   },
   {
     "id": "vong4_59",
@@ -705,7 +937,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/dɪˈvaɪd/",
+    "level": "B1",
+    "example": "We need to divide the work equally among four people.",
+    "exampleMeaning": "Chúng ta cần chia đều công việc cho bốn người."
   },
   {
     "id": "vong4_60",
@@ -717,7 +953,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/dɪˈvɪʒn/",
+    "level": "B2",
+    "example": "The division of responsibilities made the project much easier.",
+    "exampleMeaning": "Việc phân chia trách nhiệm giúp dự án dễ thực hiện hơn nhiều."
   },
   {
     "id": "vong4_61",
@@ -729,7 +969,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/dɪˈvɔːst/",
+    "level": "A2",
+    "example": "Her parents are divorced but remain on friendly terms.",
+    "exampleMeaning": "Bố mẹ cô ấy đã ly hôn nhưng vẫn giữ quan hệ thân thiện."
   },
   {
     "id": "vong4_62",
@@ -741,7 +985,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/dəˈmestɪk/",
+    "level": "B2",
+    "example": "Domestic flights are usually cheaper than international flights here.",
+    "exampleMeaning": "Các chuyến bay nội địa ở đây thường rẻ hơn chuyến bay quốc tế."
   },
   {
     "id": "vong4_63",
@@ -753,7 +1001,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/daʊn/",
+    "level": "A1",
+    "example": "The children ran down the hill towards the river.",
+    "exampleMeaning": "Bọn trẻ chạy xuống đồi về phía con sông."
   },
   {
     "id": "vong4_64",
@@ -765,7 +1017,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈdaʊnwədz/",
+    "level": "B2",
+    "example": "The path slopes downwards towards the village and river.",
+    "exampleMeaning": "Con đường dốc xuống hướng về ngôi làng và con sông."
   },
   {
     "id": "vong4_65",
@@ -777,7 +1033,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/drəˈmætɪk/",
+    "level": "B2",
+    "example": "There was a dramatic change in the weather overnight.",
+    "exampleMeaning": "Thời tiết thay đổi đáng kể chỉ sau một đêm."
   },
   {
     "id": "vong4_66",
@@ -789,7 +1049,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/drɔː/",
+    "level": "A1",
+    "example": "Please draw a picture of your favourite childhood memory.",
+    "exampleMeaning": "Hãy vẽ một bức tranh về kỷ niệm tuổi thơ yêu thích."
   },
   {
     "id": "vong4_67",
@@ -801,7 +1065,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/draɪv/",
+    "level": "A1",
+    "example": "It takes an hour to drive to the airport.",
+    "exampleMeaning": "Lái xe đến sân bay mất một giờ."
   },
   {
     "id": "vong4_68",
@@ -813,7 +1081,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/drʌɡ/",
+    "level": "A2",
+    "example": "The doctor prescribed a new drug to treat the infection.",
+    "exampleMeaning": "Bác sĩ kê một loại thuốc mới để điều trị nhiễm trùng."
   },
   {
     "id": "vong4_69",
@@ -825,7 +1097,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈedɪtə/",
+    "level": "B1",
+    "example": "The editor checked every article before publishing the magazine.",
+    "exampleMeaning": "Biên tập viên kiểm tra từng bài viết trước khi xuất bản tạp chí."
   },
   {
     "id": "vong4_70",
@@ -837,7 +1113,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌelsˈweə/",
+    "level": "B2",
+    "example": "If this restaurant is full, we can eat elsewhere.",
+    "exampleMeaning": "Nếu nhà hàng này hết chỗ, chúng ta có thể ăn nơi khác."
   },
   {
     "id": "vong4_71",
@@ -849,7 +1129,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪˈnʌf/",
+    "level": "A1",
+    "example": "We have enough food to feed everyone at the party.",
+    "exampleMeaning": "Chúng ta có đủ thức ăn cho mọi người trong bữa tiệc."
   },
   {
     "id": "vong4_72",
@@ -861,7 +1145,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌeksɪˈbɪʃn/",
+    "level": "B1",
+    "example": "The museum is holding an exhibition of local photography.",
+    "exampleMeaning": "Bảo tàng đang tổ chức một triển lãm nhiếp ảnh địa phương."
   },
   {
     "id": "vong4_73",
@@ -873,7 +1161,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈfɜːstli/",
+    "level": "A2",
+    "example": "Firstly, please read the instructions before starting the exercise.",
+    "exampleMeaning": "Trước tiên, hãy đọc hướng dẫn trước khi bắt đầu bài tập."
   },
   {
     "id": "vong4_74",
@@ -885,7 +1177,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈfəʊldɪŋ/",
+    "level": "B2",
+    "example": "We bought a folding table for our small balcony.",
+    "exampleMeaning": "Chúng tôi mua một chiếc bàn gấp cho ban công nhỏ."
   },
   {
     "id": "vong4_75",
@@ -897,7 +1193,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈfriːkwəntli/",
+    "level": "B1",
+    "example": "She frequently visits her grandparents during the summer holidays.",
+    "exampleMeaning": "Cô ấy thường xuyên thăm ông bà trong kỳ nghỉ hè."
   },
   {
     "id": "vong4_76",
@@ -909,7 +1209,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈfraɪtn/",
+    "level": "B1",
+    "example": "Sudden loud noises can frighten small children and animals.",
+    "exampleMeaning": "Tiếng động lớn đột ngột có thể khiến trẻ nhỏ và động vật sợ hãi."
   },
   {
     "id": "vong4_77",
@@ -921,7 +1225,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/fɜː/",
+    "level": "B1",
+    "example": "The cat has thick fur that keeps it warm.",
+    "exampleMeaning": "Con mèo có bộ lông dày giúp nó giữ ấm."
   },
   {
     "id": "vong4_78",
@@ -933,7 +1241,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈdʒenrəli/",
+    "level": "B1",
+    "example": "People generally feel happier when they get enough sleep.",
+    "exampleMeaning": "Nhìn chung mọi người cảm thấy vui hơn khi ngủ đủ giấc."
   },
   {
     "id": "vong4_79",
@@ -945,7 +1257,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌdʒenəˈreɪʃn/",
+    "level": "B1",
+    "example": "Each generation faces different problems and opportunities in life.",
+    "exampleMeaning": "Mỗi thế hệ đối mặt với những vấn đề và cơ hội khác nhau trong cuộc sống."
   },
   {
     "id": "vong4_80",
@@ -957,7 +1273,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɡɪv/",
+    "level": "A1",
+    "example": "Please give your teacher the completed form before Friday.",
+    "exampleMeaning": "Hãy đưa mẫu đơn đã điền cho giáo viên trước thứ Sáu."
   },
   {
     "id": "vong4_81",
@@ -969,7 +1289,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɡreɪn/",
+    "level": "B1",
+    "example": "Farmers store the grain in a dry building after harvest.",
+    "exampleMeaning": "Nông dân cất ngũ cốc trong nhà kho khô ráo sau thu hoạch."
   },
   {
     "id": "vong4_82",
@@ -981,7 +1305,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɡes/",
+    "level": "A1",
+    "example": "Can you guess how many people attended the concert?",
+    "exampleMeaning": "Bạn có thể đoán có bao nhiêu người tham dự buổi hòa nhạc không?"
   },
   {
     "id": "vong4_83",
@@ -993,7 +1321,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈhɑːmfəl/",
+    "level": "B2",
+    "example": "Too much sunlight can be harmful to your skin.",
+    "exampleMeaning": "Quá nhiều ánh nắng có thể gây hại cho làn da."
   },
   {
     "id": "vong4_84",
@@ -1005,7 +1337,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈhiːtɪŋ/",
+    "level": "B1",
+    "example": "The heating stopped working during the cold winter night.",
+    "exampleMeaning": "Hệ thống sưởi ngừng hoạt động trong đêm đông lạnh giá."
   },
   {
     "id": "vong4_85",
@@ -1017,7 +1353,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈhaʊshəʊld/",
+    "level": "B2",
+    "example": "Every household in the village received clean drinking water.",
+    "exampleMeaning": "Mỗi hộ gia đình trong làng đều nhận được nước uống sạch."
   },
   {
     "id": "vong4_86",
@@ -1029,7 +1369,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈhjuːmərəs/",
+    "level": "B2",
+    "example": "Our teacher told a humorous story about her first job.",
+    "exampleMeaning": "Giáo viên kể một câu chuyện hài hước về công việc đầu tiên của mình."
   },
   {
     "id": "vong4_87",
@@ -1041,7 +1385,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈhjuːmə/",
+    "level": "B2",
+    "example": "His wonderful sense of humour made everyone feel relaxed.",
+    "exampleMeaning": "Khiếu hài hước tuyệt vời của anh ấy khiến mọi người thấy thoải mái."
   },
   {
     "id": "vong4_88",
@@ -1053,7 +1401,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/hʌnt/",
+    "level": "B1",
+    "example": "Some animals hunt for food mainly during the night.",
+    "exampleMeaning": "Một số loài động vật chủ yếu săn mồi vào ban đêm."
   },
   {
     "id": "vong4_89",
@@ -1065,7 +1417,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌɪləˈstreɪʃn/",
+    "level": "B2",
+    "example": "This book contains a colourful illustration on every page.",
+    "exampleMeaning": "Cuốn sách này có hình minh họa đầy màu sắc trên mỗi trang."
   },
   {
     "id": "vong4_90",
@@ -1077,7 +1433,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪˈmædʒɪnəri/",
+    "level": "B1",
+    "example": "The little boy invented an imaginary friend for his stories.",
+    "exampleMeaning": "Cậu bé tự tạo ra một người bạn tưởng tượng cho các câu chuyện."
   },
   {
     "id": "vong4_91",
@@ -1089,7 +1449,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪmˈpeɪʃnt/",
+    "level": "B2",
+    "example": "The impatient customer complained about waiting for his order.",
+    "exampleMeaning": "Vị khách thiếu kiên nhẫn phàn nàn vì phải đợi món ăn."
   },
   {
     "id": "vong4_92",
@@ -1101,7 +1465,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪmˈpɔːtns/",
+    "level": "B1",
+    "example": "The lesson explains the importance of protecting our environment.",
+    "exampleMeaning": "Bài học giải thích tầm quan trọng của việc bảo vệ môi trường."
   },
   {
     "id": "vong4_93",
@@ -1113,7 +1481,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪnˈdʌstriəl/",
+    "level": "B2",
+    "example": "The city developed rapidly after the new industrial park opened.",
+    "exampleMeaning": "Thành phố phát triển nhanh sau khi khu công nghiệp mới mở cửa."
   },
   {
     "id": "vong4_94",
@@ -1125,7 +1497,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪnˈfekʃn/",
+    "level": "B2",
+    "example": "The doctor treated the infection before it became serious.",
+    "exampleMeaning": "Bác sĩ điều trị tình trạng nhiễm trùng trước khi nó trở nên nghiêm trọng."
   },
   {
     "id": "vong4_95",
@@ -1137,7 +1513,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪnˈfɔːml/",
+    "level": "A2",
+    "example": "We usually wear informal clothes to our family gatherings.",
+    "exampleMeaning": "Chúng tôi thường mặc trang phục thoải mái khi họp mặt gia đình."
   },
   {
     "id": "vong4_96",
@@ -1149,7 +1529,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪnˈstrʌkʃn/",
+    "level": "A2",
+    "example": "Read each instruction carefully before using the new machine.",
+    "exampleMeaning": "Hãy đọc kỹ từng chỉ dẫn trước khi sử dụng máy mới."
   },
   {
     "id": "vong4_97",
@@ -1161,7 +1545,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌɪntəˈrʌpt/",
+    "level": "B2",
+    "example": "Please do not interrupt her while she is speaking.",
+    "exampleMeaning": "Xin đừng ngắt lời cô ấy khi cô ấy đang nói."
   },
   {
     "id": "vong4_98",
@@ -1173,7 +1561,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɪnˈvent/",
+    "level": "A2",
+    "example": "Scientists hope to invent better ways to store energy.",
+    "exampleMeaning": "Các nhà khoa học hy vọng phát minh những cách lưu trữ năng lượng tốt hơn."
   },
   {
     "id": "vong4_99",
@@ -1185,7 +1577,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈdʒuːəlri/",
+    "level": "A2",
+    "example": "She wore beautiful silver jewellery at her sister's wedding.",
+    "exampleMeaning": "Cô ấy đeo trang sức bạc đẹp tại đám cưới chị gái."
   },
   {
     "id": "vong4_100",
@@ -1197,7 +1593,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/nəʊ/",
+    "level": "A1",
+    "example": "I know the answer because I studied this topic yesterday.",
+    "exampleMeaning": "Tôi biết câu trả lời vì đã học chủ đề này hôm qua."
   },
   {
     "id": "vong4_101",
@@ -1209,7 +1609,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈleɪbl/",
+    "level": "B1",
+    "example": "Please check the label before washing your new shirt.",
+    "exampleMeaning": "Hãy kiểm tra nhãn trước khi giặt áo mới."
   },
   {
     "id": "vong4_102",
@@ -1221,7 +1625,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ləˈbɒrətri/",
+    "level": "B1",
+    "example": "Students performed the experiment in the school laboratory yesterday.",
+    "exampleMeaning": "Hôm qua học sinh thực hiện thí nghiệm trong phòng thí nghiệm của trường."
   },
   {
     "id": "vong4_103",
@@ -1233,7 +1641,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈlændskeɪp/",
+    "level": "B2",
+    "example": "The mountain landscape looked beautiful in the morning sunshine.",
+    "exampleMeaning": "Phong cảnh núi non trông thật đẹp dưới nắng sớm."
   },
   {
     "id": "vong4_104",
@@ -1245,7 +1657,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/liːɡ/",
+    "level": "B2",
+    "example": "Our football club hopes to join the national league.",
+    "exampleMeaning": "Câu lạc bộ bóng đá của chúng tôi hy vọng tham gia giải vô địch quốc gia."
   },
   {
     "id": "vong4_105",
@@ -1257,7 +1673,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/lɜːn/",
+    "level": "A1",
+    "example": "Children learn new languages faster when they practise regularly.",
+    "exampleMeaning": "Trẻ em học ngôn ngữ mới nhanh hơn khi luyện tập thường xuyên."
   },
   {
     "id": "vong4_106",
@@ -1269,7 +1689,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/lɪp/",
+    "level": "B1",
+    "example": "She bit her lower lip while trying not to laugh.",
+    "exampleMeaning": "Cô ấy cắn môi dưới khi cố nhịn cười."
   },
   {
     "id": "vong4_107",
@@ -1281,7 +1705,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈlɪtrətʃə/",
+    "level": "B1",
+    "example": "Our teacher encouraged us to read more English literature.",
+    "exampleMeaning": "Giáo viên khuyến khích chúng tôi đọc thêm văn học tiếng Anh."
   },
   {
     "id": "vong4_108",
@@ -1293,7 +1721,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/lɪv/",
+    "level": "A1",
+    "example": "My grandparents live in a quiet village near the sea.",
+    "exampleMeaning": "Ông bà tôi sống ở một ngôi làng yên tĩnh gần biển."
   },
   {
     "id": "vong4_109",
@@ -1305,7 +1737,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈlaɪvli/",
+    "level": "B2",
+    "example": "The lively music encouraged everyone to dance at the party.",
+    "exampleMeaning": "Âm nhạc sôi động khiến mọi người muốn nhảy múa tại bữa tiệc."
   },
   {
     "id": "vong4_110",
@@ -1317,7 +1753,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ləʊn/",
+    "level": "B2",
+    "example": "She applied for a loan to start her small business.",
+    "exampleMeaning": "Cô ấy xin một khoản vay để bắt đầu kinh doanh nhỏ."
   },
   {
     "id": "vong4_111",
@@ -1329,7 +1769,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈlɒdʒɪkl/",
+    "level": "B2",
+    "example": "Your explanation is logical and easy for everyone to follow.",
+    "exampleMeaning": "Lời giải thích của bạn hợp lý và dễ hiểu với mọi người."
   },
   {
     "id": "vong4_112",
@@ -1341,7 +1785,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈlɒri/",
+    "level": "A2",
+    "example": "A large lorry delivered fresh vegetables to the supermarket.",
+    "exampleMeaning": "Một chiếc xe tải lớn giao rau tươi đến siêu thị."
   },
   {
     "id": "vong4_113",
@@ -1353,7 +1801,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/lʌŋ/",
+    "level": "B2",
+    "example": "The accident seriously injured his right lung last year.",
+    "exampleMeaning": "Vụ tai nạn làm tổn thương nghiêm trọng lá phổi phải của anh ấy năm ngoái."
   },
   {
     "id": "vong4_114",
@@ -1365,7 +1817,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmætʃɪŋ/",
+    "level": "B2",
+    "example": "The sisters wore matching dresses to their family celebration.",
+    "exampleMeaning": "Hai chị em mặc những chiếc váy đồng bộ đến buổi lễ gia đình."
   },
   {
     "id": "vong4_115",
@@ -1377,7 +1833,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmæksɪməm/",
+    "level": "B2",
+    "example": "The maximum number of passengers allowed is fifty.",
+    "exampleMeaning": "Số hành khách tối đa được phép là năm mươi người."
   },
   {
     "id": "vong4_116",
@@ -1389,7 +1849,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmɪlətri/",
+    "level": "B2",
+    "example": "He joined the military when he was twenty years old.",
+    "exampleMeaning": "Anh ấy gia nhập quân đội khi hai mươi tuổi."
   },
   {
     "id": "vong4_117",
@@ -1401,7 +1865,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmɪnərəl/",
+    "level": "B2",
+    "example": "This mineral is important for healthy bones and teeth.",
+    "exampleMeaning": "Khoáng chất này quan trọng đối với xương và răng khỏe mạnh."
   },
   {
     "id": "vong4_118",
@@ -1413,7 +1881,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmɪnɪməm/",
+    "level": "B2",
+    "example": "You must spend a minimum of thirty minutes practising daily.",
+    "exampleMeaning": "Bạn phải dành tối thiểu ba mươi phút luyện tập mỗi ngày."
   },
   {
     "id": "vong4_119",
@@ -1425,7 +1897,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmɪnɪstə/",
+    "level": "B2",
+    "example": "The minister announced new plans to improve public transport.",
+    "exampleMeaning": "Bộ trưởng công bố những kế hoạch mới nhằm cải thiện giao thông công cộng."
   },
   {
     "id": "vong4_120",
@@ -1437,7 +1913,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmɪkstʃə/",
+    "level": "B1",
+    "example": "Stir the mixture slowly until all the sugar dissolves.",
+    "exampleMeaning": "Hãy khuấy hỗn hợp từ từ cho đến khi đường tan hết."
   },
   {
     "id": "vong4_121",
@@ -1449,7 +1929,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmɜːdə/",
+    "level": "B1",
+    "example": "The police investigated the murder for several months.",
+    "exampleMeaning": "Cảnh sát điều tra vụ giết người trong nhiều tháng."
   },
   {
     "id": "vong4_122",
@@ -1461,7 +1945,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmʌsl/",
+    "level": "B1",
+    "example": "Stretching can help prevent muscle pain after intense exercise.",
+    "exampleMeaning": "Giãn cơ có thể giúp ngăn đau cơ sau khi tập nặng."
   },
   {
     "id": "vong4_123",
@@ -1473,7 +1961,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈmjuːzɪkl/",
+    "level": "A2",
+    "example": "The school is producing a musical for the summer festival.",
+    "exampleMeaning": "Trường đang dàn dựng một vở nhạc kịch cho lễ hội mùa hè."
   },
   {
     "id": "vong4_124",
@@ -1485,7 +1977,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/mʌst/",
+    "level": "A1",
+    "example": "You must wear a helmet when riding a motorbike.",
+    "exampleMeaning": "Bạn phải đội mũ bảo hiểm khi đi xe máy."
   },
   {
     "id": "vong4_125",
@@ -1497,7 +1993,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/mɪˈstɪəriəs/",
+    "level": "B2",
+    "example": "We heard a mysterious sound coming from the empty house.",
+    "exampleMeaning": "Chúng tôi nghe thấy âm thanh bí ẩn phát ra từ ngôi nhà bỏ trống."
   },
   {
     "id": "vong4_126",
@@ -1509,7 +2009,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/neɪl/",
+    "level": "B1",
+    "example": "I broke a nail while trying to open the box.",
+    "exampleMeaning": "Tôi bị gãy một móng tay khi cố mở chiếc hộp."
   },
   {
     "id": "vong4_127",
@@ -1521,7 +2025,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈniːdl/",
+    "level": "B1",
+    "example": "The nurse used a clean needle to take a sample.",
+    "exampleMeaning": "Y tá dùng một cây kim sạch để lấy mẫu."
   },
   {
     "id": "vong4_128",
@@ -1533,7 +2041,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈneɪbəhʊd/",
+    "level": "B1",
+    "example": "Our neighbourhood has a small park and several shops.",
+    "exampleMeaning": "Khu phố chúng tôi có công viên nhỏ và vài cửa hàng."
   },
   {
     "id": "vong4_129",
@@ -1545,7 +2057,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/nɜːv/",
+    "level": "B2",
+    "example": "The accident damaged a nerve in his left arm.",
+    "exampleMeaning": "Vụ tai nạn làm tổn thương một dây thần kinh ở cánh tay trái."
   },
   {
     "id": "vong4_130",
@@ -1557,7 +2073,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/net/",
+    "level": "B1",
+    "example": "The goalkeeper caught the ball before it reached the net.",
+    "exampleMeaning": "Thủ môn bắt được bóng trước khi nó vào lưới."
   },
   {
     "id": "vong4_131",
@@ -1569,7 +2089,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈnjuːkliə/",
+    "level": "B1",
+    "example": "Many countries are investing in cleaner nuclear energy systems.",
+    "exampleMeaning": "Nhiều quốc gia đang đầu tư vào các hệ thống năng lượng hạt nhân sạch hơn."
   },
   {
     "id": "vong4_132",
@@ -1581,7 +2105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əˈbeɪ/",
+    "level": "B2",
+    "example": "Children should obey the safety rules at the swimming pool.",
+    "exampleMeaning": "Trẻ em nên tuân theo quy định an toàn tại hồ bơi."
   },
   {
     "id": "vong4_133",
@@ -1593,7 +2121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/əv/",
+    "level": "A1",
+    "example": "The roof of the house was damaged during the storm.",
+    "exampleMeaning": "Mái nhà bị hư hại trong cơn bão."
   },
   {
     "id": "vong4_134",
@@ -1605,7 +2137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ɒf/",
+    "level": "A1",
+    "example": "Please turn off the lights before leaving the office.",
+    "exampleMeaning": "Hãy tắt đèn trước khi rời văn phòng."
   },
   {
     "id": "vong4_135",
@@ -1617,7 +2153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈɔːɡən/",
+    "level": "B2",
+    "example": "The heart is an organ that pumps blood around the body.",
+    "exampleMeaning": "Tim là một cơ quan bơm máu đi khắp cơ thể."
   },
   {
     "id": "vong4_136",
@@ -1629,7 +2169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈɔːɡənaɪzd/",
+    "level": "B1",
+    "example": "She is very organized and always finishes her work early.",
+    "exampleMeaning": "Cô ấy rất ngăn nắp và luôn hoàn thành công việc sớm."
   },
   {
     "id": "vong4_137",
@@ -1641,7 +2185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈɔːɡənaɪzə/",
+    "level": "B1",
+    "example": "The event organizer sent invitations to all the guests.",
+    "exampleMeaning": "Người tổ chức sự kiện gửi lời mời đến tất cả khách."
   },
   {
     "id": "vong4_138",
@@ -1653,7 +2201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/aʊt/",
+    "level": "A1",
+    "example": "The children ran out of the classroom after the bell.",
+    "exampleMeaning": "Bọn trẻ chạy ra khỏi lớp sau tiếng chuông."
   },
   {
     "id": "vong4_139",
@@ -1665,7 +2217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈaʊtə/",
+    "level": "B2",
+    "example": "The outer walls of the building need fresh paint.",
+    "exampleMeaning": "Những bức tường bên ngoài tòa nhà cần được sơn lại."
   },
   {
     "id": "vong4_140",
@@ -1677,7 +2233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈəʊvə/",
+    "level": "A1",
+    "example": "A beautiful rainbow appeared over the hills after the rain.",
+    "exampleMeaning": "Một cầu vồng đẹp xuất hiện trên những ngọn đồi sau cơn mưa."
   },
   {
     "id": "vong4_141",
@@ -1689,7 +2249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/peɪl/",
+    "level": "B1",
+    "example": "Her face looked pale after she heard the bad news.",
+    "exampleMeaning": "Mặt cô ấy trông nhợt nhạt sau khi nghe tin xấu."
   },
   {
     "id": "vong4_142",
@@ -1701,7 +2265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɑːtli/",
+    "level": "B2",
+    "example": "The match was cancelled partly because of the heavy rain.",
+    "exampleMeaning": "Trận đấu bị hủy một phần do mưa lớn."
   },
   {
     "id": "vong4_143",
@@ -1713,7 +2281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpæʃn/",
+    "level": "B1",
+    "example": "His passion for music began when he was a child.",
+    "exampleMeaning": "Niềm đam mê âm nhạc của anh ấy bắt đầu từ khi còn nhỏ."
   },
   {
     "id": "vong4_144",
@@ -1725,7 +2297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pɑːθ/",
+    "level": "B1",
+    "example": "We followed a narrow path through the forest to the lake.",
+    "exampleMeaning": "Chúng tôi đi theo lối mòn hẹp xuyên rừng đến hồ."
   },
   {
     "id": "vong4_145",
@@ -1737,7 +2313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpeni/",
+    "level": "A2",
+    "example": "I found a shiny penny near the bus stop yesterday.",
+    "exampleMeaning": "Hôm qua tôi tìm thấy một đồng penny sáng bóng gần trạm xe buýt."
   },
   {
     "id": "vong4_146",
@@ -1749,7 +2329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pəˈsentɪdʒ/",
+    "level": "B1",
+    "example": "A large percentage of students travel to school by bus.",
+    "exampleMeaning": "Một tỷ lệ lớn học sinh đến trường bằng xe buýt."
   },
   {
     "id": "vong4_147",
@@ -1761,7 +2345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɜːmənənt/",
+    "level": "B2",
+    "example": "She is looking for a permanent job after graduation.",
+    "exampleMeaning": "Cô ấy đang tìm việc làm lâu dài sau khi tốt nghiệp."
   },
   {
     "id": "vong4_148",
@@ -1773,7 +2361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɜːsn/",
+    "level": "A1",
+    "example": "Only one person knew the correct answer to the question.",
+    "exampleMeaning": "Chỉ có một người biết đáp án đúng cho câu hỏi đó."
   },
   {
     "id": "vong4_149",
@@ -1785,7 +2377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɜːsənəli/",
+    "level": "B1",
+    "example": "I personally believe that regular exercise improves mental health.",
+    "exampleMeaning": "Cá nhân tôi tin rằng tập thể dục thường xuyên cải thiện sức khỏe tinh thần."
   },
   {
     "id": "vong4_150",
@@ -1797,7 +2393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/fɪˈlɒsəfi/",
+    "level": "B2",
+    "example": "He studied philosophy at university before becoming a teacher.",
+    "exampleMeaning": "Anh ấy học triết học ở đại học trước khi trở thành giáo viên."
   },
   {
     "id": "vong4_151",
@@ -1809,7 +2409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/paɪl/",
+    "level": "B2",
+    "example": "There was a huge pile of clothes on the bed.",
+    "exampleMeaning": "Có một đống quần áo lớn trên giường."
   },
   {
     "id": "vong4_152",
@@ -1821,7 +2425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/paɪp/",
+    "level": "B1",
+    "example": "A broken pipe caused water to flood the kitchen.",
+    "exampleMeaning": "Một đường ống bị vỡ khiến nước tràn ngập nhà bếp."
   },
   {
     "id": "vong4_153",
@@ -1833,7 +2441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pleɪs/",
+    "level": "A1",
+    "example": "This is a great place to watch the sunset.",
+    "exampleMeaning": "Đây là một nơi tuyệt vời để ngắm hoàng hôn."
   },
   {
     "id": "vong4_154",
@@ -1845,7 +2457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/plæn/",
+    "level": "A1",
+    "example": "We need to plan the school trip before Friday.",
+    "exampleMeaning": "Chúng ta cần lên kế hoạch cho chuyến đi của trường trước thứ Sáu."
   },
   {
     "id": "vong4_155",
@@ -1857,7 +2473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈplætfɔːm/",
+    "level": "A2",
+    "example": "Please wait on the platform until your train arrives.",
+    "exampleMeaning": "Hãy đợi trên sân ga cho đến khi tàu đến."
   },
   {
     "id": "vong4_156",
@@ -1869,7 +2489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pleɪ/",
+    "level": "A1",
+    "example": "The children love to play outside after finishing their homework.",
+    "exampleMeaning": "Bọn trẻ thích chơi ngoài trời sau khi làm xong bài tập."
   },
   {
     "id": "vong4_157",
@@ -1881,7 +2505,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpəʊɪt/",
+    "level": "B1",
+    "example": "The young poet wrote beautiful poems about life in the countryside.",
+    "exampleMeaning": "Nhà thơ trẻ viết những bài thơ đẹp về cuộc sống miền quê."
   },
   {
     "id": "vong4_158",
@@ -1893,7 +2521,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpəʊətri/",
+    "level": "B1",
+    "example": "Reading poetry aloud can help improve your English pronunciation.",
+    "exampleMeaning": "Đọc thơ thành tiếng có thể giúp cải thiện phát âm tiếng Anh."
   },
   {
     "id": "vong4_159",
@@ -1905,7 +2537,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɔɪzn/",
+    "level": "B1",
+    "example": "The warning said the poison must stay away from children.",
+    "exampleMeaning": "Dòng cảnh báo ghi rằng phải để chất độc xa trẻ em."
   },
   {
     "id": "vong4_160",
@@ -1917,7 +2553,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɔɪzənəs/",
+    "level": "B1",
+    "example": "Some wild mushrooms are poisonous and should never be eaten.",
+    "exampleMeaning": "Một số nấm hoang dã có độc và tuyệt đối không nên ăn."
   },
   {
     "id": "vong4_161",
@@ -1929,7 +2569,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pəˈliːsmən/",
+    "level": "A1",
+    "example": "The policeman helped the lost child find his parents.",
+    "exampleMeaning": "Viên cảnh sát giúp đứa trẻ bị lạc tìm bố mẹ."
   },
   {
     "id": "vong4_162",
@@ -1941,7 +2585,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pəˈluːʃn/",
+    "level": "A2",
+    "example": "Air pollution is a serious problem in many large cities.",
+    "exampleMeaning": "Ô nhiễm không khí là vấn đề nghiêm trọng tại nhiều thành phố lớn."
   },
   {
     "id": "vong4_163",
@@ -1953,7 +2601,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌpɒpjuˈlærəti/",
+    "level": "B2",
+    "example": "The singer's popularity increased after her first television performance.",
+    "exampleMeaning": "Độ nổi tiếng của ca sĩ tăng sau lần đầu biểu diễn trên truyền hình."
   },
   {
     "id": "vong4_164",
@@ -1965,7 +2617,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpɔːtreɪt/",
+    "level": "B1",
+    "example": "The artist painted a wonderful portrait of her grandmother.",
+    "exampleMeaning": "Họa sĩ vẽ một bức chân dung tuyệt đẹp của bà mình."
   },
   {
     "id": "vong4_165",
@@ -1977,7 +2633,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpaʊdə/",
+    "level": "B1",
+    "example": "Add a little baking powder to make the cake rise.",
+    "exampleMeaning": "Thêm một ít bột nở để bánh nở lên."
   },
   {
     "id": "vong4_166",
@@ -1989,7 +2649,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpaʊəfl/",
+    "level": "B1",
+    "example": "The storm brought powerful winds and heavy rain overnight.",
+    "exampleMeaning": "Cơn bão mang theo gió mạnh và mưa lớn suốt đêm."
   },
   {
     "id": "vong4_167",
@@ -2001,7 +2665,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/preɪ/",
+    "level": "B1",
+    "example": "Many people pray for peace during difficult times.",
+    "exampleMeaning": "Nhiều người cầu nguyện cho hòa bình trong những thời điểm khó khăn."
   },
   {
     "id": "vong4_168",
@@ -2013,7 +2681,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/preə/",
+    "level": "B1",
+    "example": "She said a short prayer before the important examination.",
+    "exampleMeaning": "Cô ấy đọc một lời cầu nguyện ngắn trước kỳ thi quan trọng."
   },
   {
     "id": "vong4_169",
@@ -2025,7 +2697,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpreɡnənt/",
+    "level": "B2",
+    "example": "The doctor gave the pregnant woman advice about healthy eating.",
+    "exampleMeaning": "Bác sĩ tư vấn ăn uống lành mạnh cho người phụ nữ mang thai."
   },
   {
     "id": "vong4_170",
@@ -2037,7 +2713,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/prɪˈpeə/",
+    "level": "A1",
+    "example": "We need to prepare everything before the guests arrive.",
+    "exampleMeaning": "Chúng ta cần chuẩn bị mọi thứ trước khi khách đến."
   },
   {
     "id": "vong4_171",
@@ -2049,7 +2729,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/prɪˈtend/",
+    "level": "B1",
+    "example": "The children sometimes pretend to be famous explorers.",
+    "exampleMeaning": "Bọn trẻ đôi khi giả vờ làm những nhà thám hiểm nổi tiếng."
   },
   {
     "id": "vong4_172",
@@ -2061,7 +2745,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/priːst/",
+    "level": "B1",
+    "example": "The priest welcomed everyone to the small village church.",
+    "exampleMeaning": "Linh mục chào đón mọi người đến nhà thờ nhỏ trong làng."
   },
   {
     "id": "vong4_173",
@@ -2073,7 +2761,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈprɪntɪŋ/",
+    "level": "B1",
+    "example": "The printing of the new textbooks begins next week.",
+    "exampleMeaning": "Việc in những cuốn sách giáo khoa mới bắt đầu vào tuần tới."
   },
   {
     "id": "vong4_174",
@@ -2085,7 +2777,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈprɪzn/",
+    "level": "A2",
+    "example": "The man spent five years in prison for his crimes.",
+    "exampleMeaning": "Người đàn ông phải ngồi tù năm năm vì tội của mình."
   },
   {
     "id": "vong4_175",
@@ -2097,7 +2793,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈprɪznə/",
+    "level": "B1",
+    "example": "The prisoner was allowed to write letters to his family.",
+    "exampleMeaning": "Tù nhân được phép viết thư cho gia đình."
   },
   {
     "id": "vong4_176",
@@ -2109,7 +2809,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpraɪvət/",
+    "level": "B1",
+    "example": "Please respect other people's private information when using social media.",
+    "exampleMeaning": "Hãy tôn trọng thông tin riêng tư của người khác khi dùng mạng xã hội."
   },
   {
     "id": "vong4_177",
@@ -2121,7 +2825,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/praɪz/",
+    "level": "A2",
+    "example": "She won a special prize for her excellent science project.",
+    "exampleMeaning": "Cô ấy giành giải đặc biệt cho dự án khoa học xuất sắc."
   },
   {
     "id": "vong4_178",
@@ -2133,7 +2841,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/prəˈdjuːsə/",
+    "level": "B1",
+    "example": "The music producer worked closely with the young singer.",
+    "exampleMeaning": "Nhà sản xuất âm nhạc hợp tác chặt chẽ với ca sĩ trẻ."
   },
   {
     "id": "vong4_179",
@@ -2145,7 +2857,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/prəˈfeʃn/",
+    "level": "B1",
+    "example": "Teaching is a profession that requires patience and dedication.",
+    "exampleMeaning": "Dạy học là một nghề đòi hỏi sự kiên nhẫn và tận tâm."
   },
   {
     "id": "vong4_180",
@@ -2157,7 +2873,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈprəʊfaɪl/",
+    "level": "A2",
+    "example": "Please update your online profile with your current contact information.",
+    "exampleMeaning": "Hãy cập nhật hồ sơ trực tuyến bằng thông tin liên hệ hiện tại."
   },
   {
     "id": "vong4_181",
@@ -2169,7 +2889,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/pʌb/",
+    "level": "A2",
+    "example": "We stopped at a traditional pub for a meal.",
+    "exampleMeaning": "Chúng tôi ghé một quán rượu truyền thống để ăn bữa nhẹ."
   },
   {
     "id": "vong4_182",
@@ -2181,7 +2905,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpʌnɪʃ/",
+    "level": "B1",
+    "example": "Parents should not punish children without explaining the reason.",
+    "exampleMeaning": "Cha mẹ không nên phạt con khi chưa giải thích lý do."
   },
   {
     "id": "vong4_183",
@@ -2193,7 +2921,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpʌnɪʃmənt/",
+    "level": "B1",
+    "example": "The school introduced a new punishment for repeated bullying.",
+    "exampleMeaning": "Nhà trường đưa ra hình thức xử phạt mới đối với hành vi bắt nạt tái diễn."
   },
   {
     "id": "vong4_184",
@@ -2205,7 +2937,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈpjuːpl/",
+    "level": "B2",
+    "example": "Every pupil received a free book on the first day.",
+    "exampleMeaning": "Mỗi học sinh nhận được một cuốn sách miễn phí vào ngày đầu tiên."
   },
   {
     "id": "vong4_185",
@@ -2217,7 +2953,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈreɪsɪŋ/",
+    "level": "B1",
+    "example": "My brother enjoys racing and watches major competitions every weekend.",
+    "exampleMeaning": "Anh trai tôi thích môn đua xe và xem các giải lớn mỗi cuối tuần."
   },
   {
     "id": "vong4_186",
@@ -2229,7 +2969,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɔː/",
+    "level": "B2",
+    "example": "You should wash raw vegetables carefully before eating them.",
+    "exampleMeaning": "Bạn nên rửa rau sống thật kỹ trước khi ăn."
   },
   {
     "id": "vong4_187",
@@ -2241,7 +2985,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈsiːt/",
+    "level": "B1",
+    "example": "Please keep your receipt in case you need a refund.",
+    "exampleMeaning": "Hãy giữ biên lai phòng khi bạn cần hoàn tiền."
   },
   {
     "id": "vong4_188",
@@ -2253,7 +3001,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈsepʃn/",
+    "level": "A2",
+    "example": "The hotel reception is open twenty-four hours a day.",
+    "exampleMeaning": "Quầy lễ tân khách sạn mở cửa hai mươi bốn giờ mỗi ngày."
   },
   {
     "id": "vong4_189",
@@ -2265,7 +3017,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈlɪdʒən/",
+    "level": "B1",
+    "example": "The course explores the history of religion in different countries.",
+    "exampleMeaning": "Khóa học tìm hiểu lịch sử tôn giáo ở nhiều quốc gia."
   },
   {
     "id": "vong4_190",
@@ -2277,7 +3033,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈlɪdʒəs/",
+    "level": "B1",
+    "example": "They visited several religious buildings during their trip abroad.",
+    "exampleMeaning": "Họ thăm một số công trình tôn giáo trong chuyến đi nước ngoài."
   },
   {
     "id": "vong4_191",
@@ -2289,7 +3049,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈməʊt/",
+    "level": "B1",
+    "example": "She works from a remote village in the mountains.",
+    "exampleMeaning": "Cô ấy làm việc tại một ngôi làng xa xôi trên núi."
   },
   {
     "id": "vong4_192",
@@ -2301,7 +3065,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈreskjuː/",
+    "level": "B1",
+    "example": "Volunteers helped rescue the hikers after the sudden storm.",
+    "exampleMeaning": "Các tình nguyện viên giúp cứu những người đi bộ đường dài sau cơn bão bất ngờ."
   },
   {
     "id": "vong4_193",
@@ -2313,7 +3081,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈsɜːtʃə/",
+    "level": "A2",
+    "example": "The researcher collected information from hundreds of local families.",
+    "exampleMeaning": "Nhà nghiên cứu thu thập thông tin từ hàng trăm gia đình địa phương."
   },
   {
     "id": "vong4_194",
@@ -2325,7 +3097,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈrezɪdənt/",
+    "level": "B2",
+    "example": "Every resident received a letter about the new parking rules.",
+    "exampleMeaning": "Mỗi cư dân nhận được thư về quy định đỗ xe mới."
   },
   {
     "id": "vong4_195",
@@ -2337,7 +3113,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈzɔːt/",
+    "level": "B1",
+    "example": "We stayed at a seaside resort during our summer holiday.",
+    "exampleMeaning": "Chúng tôi ở một khu nghỉ dưỡng ven biển trong kỳ nghỉ hè."
   },
   {
     "id": "vong4_196",
@@ -2349,7 +3129,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈtaɪə/",
+    "level": "B1",
+    "example": "My father plans to retire when he turns sixty-five.",
+    "exampleMeaning": "Bố tôi dự định nghỉ hưu khi tròn sáu mươi lăm tuổi."
   },
   {
     "id": "vong4_197",
@@ -2361,7 +3145,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rɪˈtaɪəd/",
+    "level": "B1",
+    "example": "My retired neighbour enjoys gardening and helping local charities.",
+    "exampleMeaning": "Người hàng xóm đã nghỉ hưu của tôi thích làm vườn và giúp các tổ chức từ thiện."
   },
   {
     "id": "vong4_198",
@@ -2373,7 +3161,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈrɪðəm/",
+    "level": "B2",
+    "example": "The song has a lively rhythm that makes people dance.",
+    "exampleMeaning": "Bài hát có nhịp điệu sôi động khiến mọi người muốn nhảy."
   },
   {
     "id": "vong4_199",
@@ -2385,7 +3177,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ruːˈtiːn/",
+    "level": "A1",
+    "example": "A morning routine helps me start each day calmly.",
+    "exampleMeaning": "Thói quen buổi sáng giúp tôi bắt đầu mỗi ngày bình tĩnh."
   },
   {
     "id": "vong4_200",
@@ -2397,7 +3193,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rəʊ/",
+    "level": "B1",
+    "example": "Please sit in the front row during the school concert.",
+    "exampleMeaning": "Hãy ngồi ở hàng ghế đầu trong buổi hòa nhạc của trường."
   },
   {
     "id": "vong4_201",
@@ -2409,7 +3209,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈrɔɪəl/",
+    "level": "B1",
+    "example": "The royal family attended the national celebration last weekend.",
+    "exampleMeaning": "Gia đình hoàng gia tham dự lễ kỷ niệm quốc gia cuối tuần trước."
   },
   {
     "id": "vong4_202",
@@ -2421,7 +3225,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/rʌb/",
+    "level": "A2",
+    "example": "Rub your hands together to warm them on cold days.",
+    "exampleMeaning": "Hãy chà hai bàn tay vào nhau để làm ấm vào ngày lạnh."
   },
   {
     "id": "vong4_203",
@@ -2433,7 +3241,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈrʌɡbi/",
+    "level": "B1",
+    "example": "Our school rugby team practises every Wednesday after classes.",
+    "exampleMeaning": "Đội bóng rugby của trường luyện tập mỗi thứ Tư sau giờ học."
   },
   {
     "id": "vong4_204",
@@ -2445,7 +3257,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈrʌnə/",
+    "level": "A2",
+    "example": "The runner crossed the finish line just before sunset.",
+    "exampleMeaning": "Người chạy bộ băng qua vạch đích ngay trước hoàng hôn."
   },
   {
     "id": "vong4_205",
@@ -2457,7 +3273,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/seɪl/",
+    "level": "A2",
+    "example": "We learned to sail a small boat during the holiday.",
+    "exampleMeaning": "Chúng tôi học lái một chiếc thuyền buồm nhỏ trong kỳ nghỉ."
   },
   {
     "id": "vong4_206",
@@ -2469,7 +3289,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈseɪlɪŋ/",
+    "level": "A2",
+    "example": "Sailing became her favourite hobby after the summer camp.",
+    "exampleMeaning": "Đi thuyền buồm trở thành sở thích yêu thích của cô ấy sau trại hè."
   },
   {
     "id": "vong4_207",
@@ -2481,7 +3305,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈseɪlə/",
+    "level": "B1",
+    "example": "The sailor spent several months working on a large ship.",
+    "exampleMeaning": "Người thủy thủ làm việc trên con tàu lớn trong vài tháng."
   },
   {
     "id": "vong4_208",
@@ -2493,7 +3321,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsæləri/",
+    "level": "A2",
+    "example": "Her monthly salary covers rent, food and transport costs.",
+    "exampleMeaning": "Tiền lương hằng tháng của cô ấy đủ trả tiền thuê nhà, ăn uống và đi lại."
   },
   {
     "id": "vong4_209",
@@ -2505,7 +3337,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsætəlaɪt/",
+    "level": "B1",
+    "example": "The satellite sends weather information back to scientists on Earth.",
+    "exampleMeaning": "Vệ tinh gửi thông tin thời tiết về cho các nhà khoa học trên Trái Đất."
   },
   {
     "id": "vong4_210",
@@ -2517,7 +3353,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈseɪvɪŋ/",
+    "level": "B2",
+    "example": "Buying a monthly travel pass can mean a significant saving.",
+    "exampleMeaning": "Mua vé đi lại theo tháng có thể giúp tiết kiệm đáng kể."
   },
   {
     "id": "vong4_211",
@@ -2529,7 +3369,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/skæn/",
+    "level": "B1",
+    "example": "Please scan this document and send it by email.",
+    "exampleMeaning": "Hãy quét tài liệu này rồi gửi qua email."
   },
   {
     "id": "vong4_212",
@@ -2541,7 +3385,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈskʌlptʃə/",
+    "level": "B1",
+    "example": "The sculpture stands in the centre of the city square.",
+    "exampleMeaning": "Tác phẩm điêu khắc nằm ở giữa quảng trường thành phố."
   },
   {
     "id": "vong4_213",
@@ -2553,7 +3401,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/siːd/",
+    "level": "B1",
+    "example": "Plant each seed in moist soil and water it regularly.",
+    "exampleMeaning": "Hãy gieo mỗi hạt giống vào đất ẩm và tưới nước thường xuyên."
   },
   {
     "id": "vong4_214",
@@ -2565,7 +3417,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsiːniə/",
+    "level": "B2",
+    "example": "A senior manager will review your application next week.",
+    "exampleMeaning": "Một quản lý cấp cao sẽ xem xét đơn đăng ký của bạn tuần tới."
   },
   {
     "id": "vong4_215",
@@ -2577,7 +3433,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/seks/",
+    "level": "B1",
+    "example": "The form asks you to state your age and sex.",
+    "exampleMeaning": "Biểu mẫu yêu cầu bạn ghi tuổi và giới tính."
   },
   {
     "id": "vong4_216",
@@ -2589,7 +3449,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsekʃuəl/",
+    "level": "B1",
+    "example": "Schools should provide accurate information about sexual health education.",
+    "exampleMeaning": "Trường học nên cung cấp thông tin chính xác về giáo dục sức khỏe tình dục."
   },
   {
     "id": "vong4_217",
@@ -2601,7 +3465,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈʃæləʊ/",
+    "level": "B2",
+    "example": "The water is shallow near the edge of the lake.",
+    "exampleMeaning": "Nước nông ở gần mép hồ."
   },
   {
     "id": "vong4_218",
@@ -2613,7 +3481,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈʃuːtɪŋ/",
+    "level": "B2",
+    "example": "Police investigated the shooting that occurred near the station.",
+    "exampleMeaning": "Cảnh sát điều tra vụ nổ súng xảy ra gần nhà ga."
   },
   {
     "id": "vong4_219",
@@ -2625,7 +3497,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/sɪlk/",
+    "level": "B2",
+    "example": "She wore a beautiful silk scarf to the wedding.",
+    "exampleMeaning": "Cô ấy quàng một chiếc khăn lụa đẹp đến đám cưới."
   },
   {
     "id": "vong4_220",
@@ -2637,7 +3513,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/skiː/",
+    "level": "A2",
+    "example": "Many tourists come here to ski during the winter months.",
+    "exampleMeaning": "Nhiều du khách đến đây trượt tuyết vào những tháng mùa đông."
   },
   {
     "id": "vong4_221",
@@ -2649,7 +3529,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈskiːɪŋ/",
+    "level": "A2",
+    "example": "We went skiing in the mountains during our holiday.",
+    "exampleMeaning": "Chúng tôi đi trượt tuyết trên núi trong kỳ nghỉ."
   },
   {
     "id": "vong4_222",
@@ -2661,7 +3545,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/sləʊp/",
+    "level": "B2",
+    "example": "Be careful when walking down this steep mountain slope.",
+    "exampleMeaning": "Hãy cẩn thận khi đi xuống sườn núi dốc này."
   },
   {
     "id": "vong4_223",
@@ -2673,7 +3561,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsməʊkɪŋ/",
+    "level": "A2",
+    "example": "Smoking is not allowed anywhere inside this hospital building.",
+    "exampleMeaning": "Không được hút thuốc ở bất kỳ đâu trong tòa nhà bệnh viện này."
   },
   {
     "id": "vong4_224",
@@ -2685,7 +3577,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/smuːð/",
+    "level": "B1",
+    "example": "The baby's skin felt smooth and soft after the bath.",
+    "exampleMeaning": "Da em bé mịn màng và mềm mại sau khi tắm."
   },
   {
     "id": "vong4_225",
@@ -2697,7 +3593,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/sɔɪl/",
+    "level": "B1",
+    "example": "Good soil helps vegetables grow well in the garden.",
+    "exampleMeaning": "Đất tốt giúp rau phát triển tốt trong vườn."
   },
   {
     "id": "vong4_226",
@@ -2709,7 +3609,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsəʊlə/",
+    "level": "B2",
+    "example": "The school installed solar panels to reduce electricity bills.",
+    "exampleMeaning": "Trường lắp đặt các tấm pin mặt trời để giảm hóa đơn tiền điện."
   },
   {
     "id": "vong4_227",
@@ -2721,7 +3625,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsəʊldʒə/",
+    "level": "A2",
+    "example": "The young soldier returned home safely after his training.",
+    "exampleMeaning": "Người lính trẻ trở về nhà an toàn sau đợt huấn luyện."
   },
   {
     "id": "vong4_228",
@@ -2733,7 +3641,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsʌmbədi/",
+    "level": "A1",
+    "example": "Somebody left a red umbrella near the classroom door.",
+    "exampleMeaning": "Có ai đó để một chiếc ô đỏ gần cửa lớp."
   },
   {
     "id": "vong4_229",
@@ -2745,7 +3657,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/səʊl/",
+    "level": "B2",
+    "example": "She believes music can touch the soul and bring comfort.",
+    "exampleMeaning": "Cô ấy tin âm nhạc có thể chạm đến tâm hồn và mang lại sự an ủi."
   },
   {
     "id": "vong4_230",
@@ -2757,7 +3673,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsʌðən/",
+    "level": "B1",
+    "example": "We spent our holiday exploring the beautiful southern coast.",
+    "exampleMeaning": "Chúng tôi dành kỳ nghỉ khám phá bờ biển miền nam xinh đẹp."
   },
   {
     "id": "vong4_231",
@@ -2769,7 +3689,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈspiːkə/",
+    "level": "A2",
+    "example": "The guest speaker shared useful advice with the students.",
+    "exampleMeaning": "Diễn giả khách mời chia sẻ lời khuyên hữu ích với học sinh."
   },
   {
     "id": "vong4_232",
@@ -2781,7 +3705,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/spel/",
+    "level": "A1",
+    "example": "Can you spell your surname slowly for the receptionist?",
+    "exampleMeaning": "Bạn có thể đánh vần họ của mình chậm cho lễ tân không?"
   },
   {
     "id": "vong4_233",
@@ -2793,7 +3721,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈspendɪŋ/",
+    "level": "B1",
+    "example": "The company reduced spending on travel during the winter.",
+    "exampleMeaning": "Công ty giảm chi tiêu cho việc đi lại trong mùa đông."
   },
   {
     "id": "vong4_234",
@@ -2805,7 +3737,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈspəʊkən/",
+    "level": "B1",
+    "example": "Regular practice can improve your spoken English quite quickly.",
+    "exampleMeaning": "Luyện tập thường xuyên có thể cải thiện tiếng Anh nói khá nhanh."
   },
   {
     "id": "vong4_235",
@@ -2817,7 +3753,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/stɑːf/",
+    "level": "B1",
+    "example": "All staff must attend the safety training next Monday.",
+    "exampleMeaning": "Toàn bộ nhân viên phải tham gia tập huấn an toàn thứ Hai tới."
   },
   {
     "id": "vong4_236",
@@ -2829,7 +3769,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/stəˈtɪstɪk/",
+    "level": "B1",
+    "example": "This statistic shows how many people use public transport daily.",
+    "exampleMeaning": "Số liệu thống kê này cho biết bao nhiêu người đi phương tiện công cộng hằng ngày."
   },
   {
     "id": "vong4_237",
@@ -2841,7 +3785,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/stiːp/",
+    "level": "B2",
+    "example": "The road is too steep for young children to cycle.",
+    "exampleMeaning": "Con đường quá dốc để trẻ nhỏ đạp xe."
   },
   {
     "id": "vong4_238",
@@ -2853,7 +3801,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/striːm/",
+    "level": "B2",
+    "example": "A clear stream runs through the village into the river.",
+    "exampleMeaning": "Một dòng suối trong chảy qua làng rồi đổ vào sông."
   },
   {
     "id": "vong4_239",
@@ -2865,7 +3817,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/stres/",
+    "level": "A2",
+    "example": "Too much stress can affect your sleep and concentration.",
+    "exampleMeaning": "Quá nhiều căng thẳng có thể ảnh hưởng giấc ngủ và khả năng tập trung."
   },
   {
     "id": "vong4_240",
@@ -2877,7 +3833,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/strɪkt/",
+    "level": "B2",
+    "example": "Our teacher is strict but always treats students fairly.",
+    "exampleMeaning": "Giáo viên của chúng tôi nghiêm khắc nhưng luôn đối xử công bằng với học sinh."
   },
   {
     "id": "vong4_241",
@@ -2889,7 +3849,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/strɪŋ/",
+    "level": "B1",
+    "example": "She tied the package tightly with a piece of string.",
+    "exampleMeaning": "Cô ấy buộc chặt gói hàng bằng một đoạn dây."
   },
   {
     "id": "vong4_242",
@@ -2901,7 +3865,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈstrɒŋli/",
+    "level": "B1",
+    "example": "The doctor strongly advised him to exercise more regularly.",
+    "exampleMeaning": "Bác sĩ khuyên anh ấy một cách kiên quyết nên tập thể dục đều đặn hơn."
   },
   {
     "id": "vong4_243",
@@ -2913,7 +3881,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈstjuːdiəʊ/",
+    "level": "B1",
+    "example": "The singer recorded her new album at a local studio.",
+    "exampleMeaning": "Ca sĩ thu âm album mới tại một phòng thu địa phương."
   },
   {
     "id": "vong4_244",
@@ -2925,7 +3897,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/səkˈsesfəli/",
+    "level": "B1",
+    "example": "She successfully completed the difficult course before the deadline.",
+    "exampleMeaning": "Cô ấy hoàn thành thành công khóa học khó trước thời hạn."
   },
   {
     "id": "vong4_245",
@@ -2937,7 +3913,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsʌdn/",
+    "level": "B1",
+    "example": "We heard a sudden noise coming from the kitchen.",
+    "exampleMeaning": "Chúng tôi nghe thấy tiếng động đột ngột phát ra từ nhà bếp."
   },
   {
     "id": "vong4_246",
@@ -2949,7 +3929,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/səˈpɔːtə/",
+    "level": "B1",
+    "example": "Every supporter cheered loudly when the team scored a goal.",
+    "exampleMeaning": "Mỗi người hâm mộ đều reo hò khi đội ghi bàn."
   },
   {
     "id": "vong4_247",
@@ -2961,7 +3945,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈsɜːdʒəri/",
+    "level": "B2",
+    "example": "The doctor explained why surgery was necessary for his recovery.",
+    "exampleMeaning": "Bác sĩ giải thích vì sao phẫu thuật cần thiết để anh ấy hồi phục."
   },
   {
     "id": "vong4_248",
@@ -2973,7 +3961,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/swiːp/",
+    "level": "B2",
+    "example": "Please sweep the kitchen floor after everyone finishes dinner.",
+    "exampleMeaning": "Hãy quét sàn bếp sau khi mọi người ăn tối xong."
   },
   {
     "id": "vong4_249",
@@ -2985,7 +3977,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/teɪl/",
+    "level": "B2",
+    "example": "My grandfather told us an old tale about a clever fox.",
+    "exampleMeaning": "Ông tôi kể một câu chuyện xưa về con cáo thông minh."
   },
   {
     "id": "vong4_250",
@@ -2997,7 +3993,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtælənt/",
+    "level": "B1",
+    "example": "She has a natural talent for learning foreign languages.",
+    "exampleMeaning": "Cô ấy có năng khiếu bẩm sinh trong việc học ngoại ngữ."
   },
   {
     "id": "vong4_251",
@@ -3009,7 +4009,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtæləntɪd/",
+    "level": "B1",
+    "example": "The talented young musician performed beautifully at the concert.",
+    "exampleMeaning": "Nhạc sĩ trẻ tài năng biểu diễn rất hay tại buổi hòa nhạc."
   },
   {
     "id": "vong4_252",
@@ -3021,7 +4025,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/tæŋk/",
+    "level": "B2",
+    "example": "The farm stores rainwater in a large metal tank.",
+    "exampleMeaning": "Nông trại chứa nước mưa trong một bể kim loại lớn."
   },
   {
     "id": "vong4_253",
@@ -3033,7 +4041,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈteknɪkl/",
+    "level": "B1",
+    "example": "Please contact technical support if the computer stops working.",
+    "exampleMeaning": "Hãy liên hệ bộ phận hỗ trợ kỹ thuật nếu máy tính ngừng hoạt động."
   },
   {
     "id": "vong4_254",
@@ -3045,7 +4057,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/θiːm/",
+    "level": "B1",
+    "example": "The main theme of the conference is climate change.",
+    "exampleMeaning": "Chủ đề chính của hội nghị là biến đổi khí hậu."
   },
   {
     "id": "vong4_255",
@@ -3057,7 +4073,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈθerəpi/",
+    "level": "B2",
+    "example": "The doctor recommended physical therapy after her knee injury.",
+    "exampleMeaning": "Bác sĩ khuyên cô ấy vật lý trị liệu sau chấn thương đầu gối."
   },
   {
     "id": "vong4_256",
@@ -3069,7 +4089,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/tɪn/",
+    "level": "B1",
+    "example": "She bought a tin of soup for her lunch.",
+    "exampleMeaning": "Cô ấy mua một hộp súp cho bữa trưa."
   },
   {
     "id": "vong4_257",
@@ -3081,7 +4105,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/tʌŋ/",
+    "level": "B1",
+    "example": "The dentist asked him to stick out his tongue.",
+    "exampleMeaning": "Nha sĩ yêu cầu anh ấy thè lưỡi ra."
   },
   {
     "id": "vong4_258",
@@ -3093,7 +4121,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtʊərɪzəm/",
+    "level": "A2",
+    "example": "Tourism provides jobs for many people in coastal towns.",
+    "exampleMeaning": "Ngành du lịch tạo việc làm cho nhiều người ở các thị trấn ven biển."
   },
   {
     "id": "vong4_259",
@@ -3105,7 +4137,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/trəˈdɪʃn/",
+    "level": "A2",
+    "example": "Giving gifts is an important tradition during this festival.",
+    "exampleMeaning": "Tặng quà là một truyền thống quan trọng trong lễ hội này."
   },
   {
     "id": "vong4_260",
@@ -3117,7 +4153,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtreɪnə/",
+    "level": "A2",
+    "example": "Our new trainer teaches us how to exercise safely.",
+    "exampleMeaning": "Huấn luyện viên mới dạy chúng tôi cách tập thể dục an toàn."
   },
   {
     "id": "vong4_261",
@@ -3129,7 +4169,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtrɒpɪkl/",
+    "level": "B2",
+    "example": "Many tropical plants need warm temperatures and plenty of rain.",
+    "exampleMeaning": "Nhiều cây nhiệt đới cần nhiệt độ ấm và nhiều mưa."
   },
   {
     "id": "vong4_262",
@@ -3141,7 +4185,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/tjuːn/",
+    "level": "B2",
+    "example": "She played a familiar tune on the piano yesterday evening.",
+    "exampleMeaning": "Cô ấy chơi một giai điệu quen thuộc trên đàn piano tối qua."
   },
   {
     "id": "vong4_263",
@@ -3153,7 +4201,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtʌnl/",
+    "level": "B2",
+    "example": "The train passed through a long tunnel beneath the mountains.",
+    "exampleMeaning": "Tàu đi qua một đường hầm dài bên dưới những ngọn núi."
   },
   {
     "id": "vong4_264",
@@ -3165,7 +4217,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈtaɪə/",
+    "level": "B1",
+    "example": "The mechanic checked the tyre before we continued driving.",
+    "exampleMeaning": "Thợ sửa xe kiểm tra lốp trước khi chúng tôi tiếp tục lái xe."
   },
   {
     "id": "vong4_265",
@@ -3177,7 +4233,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ʌnˈkɒnʃəs/",
+    "level": "B2",
+    "example": "The injured cyclist was unconscious when the ambulance arrived.",
+    "exampleMeaning": "Người đi xe đạp bị thương đã bất tỉnh khi xe cứu thương đến."
   },
   {
     "id": "vong4_266",
@@ -3189,7 +4249,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌʌnɪkˈspektɪd/",
+    "level": "B2",
+    "example": "We received an unexpected invitation to our friend's wedding.",
+    "exampleMeaning": "Chúng tôi nhận được lời mời bất ngờ tới đám cưới của bạn."
   },
   {
     "id": "vong4_267",
@@ -3201,7 +4265,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/juˈnaɪtɪd/",
+    "level": "A2",
+    "example": "The volunteers remained united despite their different personal opinions.",
+    "exampleMeaning": "Các tình nguyện viên vẫn đoàn kết dù có những quan điểm cá nhân khác nhau."
   },
   {
     "id": "vong4_268",
@@ -3213,7 +4281,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ʌnˈpleznt/",
+    "level": "B1",
+    "example": "There was an unpleasant smell coming from the rubbish bin.",
+    "exampleMeaning": "Một mùi khó chịu bốc ra từ thùng rác."
   },
   {
     "id": "vong4_269",
@@ -3225,7 +4297,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈʌpə/",
+    "level": "B2",
+    "example": "Her office is located on the upper floor of the building.",
+    "exampleMeaning": "Văn phòng cô ấy nằm ở tầng trên của tòa nhà."
   },
   {
     "id": "vong4_270",
@@ -3237,7 +4313,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈʌpwədz/",
+    "level": "B2",
+    "example": "The hot air moved upwards through the open window.",
+    "exampleMeaning": "Không khí nóng di chuyển lên trên qua cửa sổ đang mở."
   },
   {
     "id": "vong4_271",
@@ -3249,7 +4329,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈvæli/",
+    "level": "A2",
+    "example": "The little village lies in a peaceful green valley.",
+    "exampleMeaning": "Ngôi làng nhỏ nằm trong một thung lũng xanh yên bình."
   },
   {
     "id": "vong4_272",
@@ -3261,7 +4345,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈvjuːə/",
+    "level": "B1",
+    "example": "Every viewer was surprised by the ending of the series.",
+    "exampleMeaning": "Mỗi người xem đều bất ngờ trước cái kết của bộ phim dài tập."
   },
   {
     "id": "vong4_273",
@@ -3273,7 +4361,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈvaɪələns/",
+    "level": "B2",
+    "example": "The school organized a workshop to help prevent violence.",
+    "exampleMeaning": "Nhà trường tổ chức hội thảo giúp ngăn ngừa bạo lực."
   },
   {
     "id": "vong4_274",
@@ -3285,7 +4377,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈvaɪələnt/",
+    "level": "B1",
+    "example": "The violent storm destroyed several houses near the coast.",
+    "exampleMeaning": "Cơn bão dữ dội phá hủy nhiều ngôi nhà gần bờ biển."
   },
   {
     "id": "vong4_275",
@@ -3297,7 +4393,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈwɒʃɪŋ/",
+    "level": "A2",
+    "example": "I usually do the washing on Saturday mornings at home.",
+    "exampleMeaning": "Tôi thường giặt giũ ở nhà vào sáng thứ Bảy."
   },
   {
     "id": "vong4_276",
@@ -3309,7 +4409,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈwiːknəs/",
+    "level": "B2",
+    "example": "She recognized her weakness and worked hard to improve.",
+    "exampleMeaning": "Cô ấy nhận ra điểm yếu và cố gắng cải thiện."
   },
   {
     "id": "vong4_277",
@@ -3321,7 +4425,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈwepən/",
+    "level": "B1",
+    "example": "Police found a dangerous weapon near the abandoned building.",
+    "exampleMeaning": "Cảnh sát tìm thấy một vũ khí nguy hiểm gần tòa nhà bỏ hoang."
   },
   {
     "id": "vong4_278",
@@ -3333,7 +4441,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈwaɪldlaɪf/",
+    "level": "B2",
+    "example": "The national park protects wildlife and their natural habitats.",
+    "exampleMeaning": "Vườn quốc gia bảo vệ động vật hoang dã và môi trường sống tự nhiên."
   },
   {
     "id": "vong4_279",
@@ -3345,7 +4457,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/wɪl/",
+    "level": "A1",
+    "example": "I will call you as soon as the meeting finishes.",
+    "exampleMeaning": "Tôi sẽ gọi cho bạn ngay khi cuộc họp kết thúc."
   },
   {
     "id": "vong4_280",
@@ -3357,7 +4473,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˈwaɪə/",
+    "level": "B2",
+    "example": "The electrician replaced a damaged wire behind the television.",
+    "exampleMeaning": "Thợ điện thay một sợi dây bị hỏng phía sau tivi."
   },
   {
     "id": "vong4_281",
@@ -3369,7 +4489,11 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/wʊl/",
+    "level": "B1",
+    "example": "This warm sweater is made from natural sheep's wool.",
+    "exampleMeaning": "Chiếc áo len ấm này được làm từ lông cừu tự nhiên."
   },
   {
     "id": "vong4_282",
@@ -3381,6 +4505,10 @@
     "repetition": 0,
     "easeFactor": 2.5,
     "interval": 0,
-    "unit": "Vòng 4"
+    "unit": "Vòng 4",
+    "phonetic": "/ˌwɜːldˈwaɪd/",
+    "level": "B1",
+    "example": "The company's products are now sold worldwide through online stores.",
+    "exampleMeaning": "Sản phẩm của công ty hiện được bán trên toàn thế giới qua cửa hàng trực tuyến."
   }
 ]
