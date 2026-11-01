@@ -9,14 +9,28 @@ import AutoNextCountdownBar from './AutoNextCountdownBar';
 import InteractiveSeekBar from './InteractiveSeekBar';
 import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
 import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
+import SessionStatsPanel from './SessionStatsPanel';
+import { getSessionStats, saveSessionStats, clearSessionStats } from '../utils/sessionStats';
 
-export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
+export default function TypingMode({ words, onToggleFocus, isFocusMode, selectedUnit = 'Tất cả' }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [inputValue, setInputValue] = useState('');
   const [hintCount, setHintCount] = useState(0);
   const [status, setStatus] = useState('idle'); // 'idle' | 'correct' | 'wrong'
   const [streak, setStreak] = useState(0);
   const inputRef = useRef(null);
+
+  // Thống kê phiên luyện tập Typing
+  const [sessionStats, setSessionStats] = useState(() => getSessionStats('typing', selectedUnit));
+  const hasGradedThisSubmissionRef = useRef(false);
+  const lastGradedInputRef = useRef('');
+
+  // Đồng bộ lại thống kê phiên khi đổi bộ từ / vòng học
+  useEffect(() => {
+    setSessionStats(getSessionStats('typing', selectedUnit));
+    hasGradedThisSubmissionRef.current = false;
+    lastGradedInputRef.current = '';
+  }, [selectedUnit]);
 
   const currentWord = (words && words.length > 0) ? (words[currentIndex] || words[0]) : null;
   const isImageTyping = !currentWord?.meaning && !!(currentWord?.image || currentWord?.imageUrl);
@@ -40,6 +54,8 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
     setInputValue('');
     setHintCount(0);
     setStatus('idle');
+    hasGradedThisSubmissionRef.current = false;
+    lastGradedInputRef.current = '';
     if (inputRef.current) {
       inputRef.current.focus();
     }
@@ -155,8 +171,20 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
     const synonyms = fullMeaning.split(',').map(s => s.trim().toLowerCase());
     const isMatch = (normalizedInput === fullMeaning) || synonyms.includes(normalizedInput);
 
+    // Chống cộng trùng: Chỉ tính lượt chấm nếu là câu mới hoặc nội dung đã sửa đổi khác lần chấm trước
+    const isNewAttempt = !hasGradedThisSubmissionRef.current || normalizedInput !== lastGradedInputRef.current;
+
     if (isMatch) {
       setStatus('correct');
+      if (isNewAttempt) {
+        hasGradedThisSubmissionRef.current = true;
+        lastGradedInputRef.current = normalizedInput;
+        setSessionStats(prev => {
+          const next = { ...prev, correct: prev.correct + 1 };
+          saveSessionStats('typing', selectedUnit, next);
+          return next;
+        });
+      }
       setStreak(s => {
         const next = s + 1;
         if (next % 3 === 0) {
@@ -170,9 +198,25 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
       });
     } else {
       setStatus('wrong');
+      if (isNewAttempt) {
+        hasGradedThisSubmissionRef.current = true;
+        lastGradedInputRef.current = normalizedInput;
+        setSessionStats(prev => {
+          const next = { ...prev, wrong: prev.wrong + 1 };
+          saveSessionStats('typing', selectedUnit, next);
+          return next;
+        });
+      }
       setStreak(0);
     }
   };
+
+  const handleResetSessionStats = useCallback(() => {
+    clearSessionStats('typing', selectedUnit);
+    setSessionStats({ correct: 0, wrong: 0 });
+    hasGradedThisSubmissionRef.current = false;
+    lastGradedInputRef.current = '';
+  }, [selectedUnit]);
 
   // Form submission (Enter key)
   const handleSubmit = (e) => {
@@ -433,6 +477,16 @@ export default function TypingMode({ words, onToggleFocus, isFocusMode }) {
           <span className="shortcut-kbd">Ctrl + ←</span> / <span className="shortcut-kbd">Ctrl + →</span><span>Chuyển câu</span>
         </div>
       </div>
+
+      {/* Bảng thống kê phiên luyện tập */}
+      <SessionStatsPanel
+        correct={sessionStats.correct}
+        wrong={sessionStats.wrong}
+        onReset={handleResetSessionStats}
+        modeName="Gõ đáp án"
+        unitName={selectedUnit}
+        maxWidth="620px"
+      />
     </div>
   );
 }

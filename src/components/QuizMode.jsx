@@ -9,14 +9,23 @@ import AutoNextCountdownBar from './AutoNextCountdownBar';
 import InteractiveSeekBar from './InteractiveSeekBar';
 import { useAutoNextTimer } from '../hooks/useAutoNextTimer';
 import { triggerJumpUndo, clearJumpUndo } from '../utils/jumpUndo';
+import SessionStatsPanel from './SessionStatsPanel';
+import { getSessionStats, saveSessionStats, clearSessionStats } from '../utils/sessionStats';
 
-export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
+export default function QuizMode({ words, onToggleFocus, isFocusMode, selectedUnit = 'Tất cả' }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [options, setOptions] = useState([]);
+  const [sessionStats, setSessionStats] = useState(() => getSessionStats('quiz', selectedUnit));
+  const hasAnsweredRef = useRef(false);
+
+  // Đồng bộ lại thống kê phiên khi đổi bộ từ / vòng học
+  useEffect(() => {
+    setSessionStats(getSessionStats('quiz', selectedUnit));
+  }, [selectedUnit]);
 
   // Ref theo dõi thao tác vuốt (Swipe) trên Mobile
   const touchStartXRef = useRef(null);
@@ -68,13 +77,15 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
       const currentWord = words[currentIndex] || words[0];
       setOptions(generateOptions(currentWord, words));
       setSelectedOptionIndex(null);
+      hasAnsweredRef.current = false;
       setIsAnswered(false);
     }
   }, [currentIndex, words, generateOptions]);
 
   // Handle selecting an option
   const handleSelectOption = useCallback((optionIndex) => {
-    if (isAnswered || !options[optionIndex]) return;
+    if (hasAnsweredRef.current || isAnswered || !options[optionIndex]) return;
+    hasAnsweredRef.current = true;
 
     const chosen = options[optionIndex];
     setSelectedOptionIndex(optionIndex);
@@ -82,6 +93,11 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
 
     if (chosen.isCorrect) {
       setScore(s => s + 10);
+      setSessionStats(prev => {
+        const next = { ...prev, correct: prev.correct + 1 };
+        saveSessionStats('quiz', selectedUnit, next);
+        return next;
+      });
       setStreak(st => {
         const newStreak = st + 1;
         if (newStreak % 3 === 0) {
@@ -94,12 +110,23 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
         return newStreak;
       });
     } else {
+      setSessionStats(prev => {
+        const next = { ...prev, wrong: prev.wrong + 1 };
+        saveSessionStats('quiz', selectedUnit, next);
+        return next;
+      });
       setStreak(0);
     }
-  }, [isAnswered, options]);
+  }, [isAnswered, options, selectedUnit]);
+
+  const handleResetSessionStats = useCallback(() => {
+    clearSessionStats('quiz', selectedUnit);
+    setSessionStats({ correct: 0, wrong: 0 });
+  }, [selectedUnit]);
 
   // Go to next word
   const handleNextWord = useCallback(() => {
+    hasAnsweredRef.current = false;
     setSelectedOptionIndex(null);
     setIsAnswered(false);
     setCurrentIndex(prev => (prev + 1) % words.length);
@@ -107,6 +134,7 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
 
   // Go to previous word
   const handlePrevWord = useCallback(() => {
+    hasAnsweredRef.current = false;
     setSelectedOptionIndex(null);
     setIsAnswered(false);
     setCurrentIndex(prev => (prev - 1 + words.length) % words.length);
@@ -121,11 +149,13 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
       toIndex: newIndex,
       total: words.length,
       onUndo: (targetIdx) => {
+        hasAnsweredRef.current = false;
         setSelectedOptionIndex(null);
         setIsAnswered(false);
         setCurrentIndex(targetIdx);
       }
     });
+    hasAnsweredRef.current = false;
     setSelectedOptionIndex(null);
     setIsAnswered(false);
     setCurrentIndex(newIndex);
@@ -464,6 +494,16 @@ export default function QuizMode({ words, onToggleFocus, isFocusMode }) {
           <span className="shortcut-kbd">R</span><span>Đọc</span>
         </div>
       </div>
+
+      {/* Bảng thống kê phiên luyện tập */}
+      <SessionStatsPanel
+        correct={sessionStats.correct}
+        wrong={sessionStats.wrong}
+        onReset={handleResetSessionStats}
+        modeName="Trắc nghiệm"
+        unitName={selectedUnit}
+        maxWidth="680px"
+      />
     </div>
   );
 }

@@ -604,6 +604,7 @@ export default function App() {
             words={activeWords} 
             isFocusMode={isFocusMode}
             onToggleFocus={toggleFocusMode}
+            selectedUnit={selectedUnit}
           />
         )}
         {activeMode === 'typing' && (
@@ -611,6 +612,7 @@ export default function App() {
             words={activeWords} 
             isFocusMode={isFocusMode}
             onToggleFocus={toggleFocusMode}
+            selectedUnit={selectedUnit}
           />
         )}
         {activeMode === 'wordlist' && (
