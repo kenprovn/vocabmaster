@@ -2,11 +2,26 @@
 // Nút bấm và Popover hướng dẫn phím tắt thu gọn cho Flashcard, Quiz và Typing
 
 import React, { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Keyboard, X } from 'lucide-react';
 
 export default function ShortcutGuideModal({ mode = 'flashcard', className = '' }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth <= 768;
+    }
+    return false;
+  });
   const popoverRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Đóng bằng phím Escape
   useEffect(() => {
@@ -78,7 +93,7 @@ export default function ShortcutGuideModal({ mode = 'flashcard', className = '' 
             <div className="shortcut-item-keys">
               <span className="shortcut-kbd">X</span>
             </div>
-            <div className="shortcut-item-desc">Xáo trộn ngẫu nhiên</div>
+            <div className="shortcut-item-desc">Bật/Tắt xáo trộn (Toggle)</div>
           </div>
         </div>
       );
@@ -145,6 +160,54 @@ export default function ShortcutGuideModal({ mode = 'flashcard', className = '' 
     );
   };
 
+  const modalContent = isOpen ? (
+    <>
+      <div 
+        className="shortcut-modal-backdrop" 
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(false);
+        }}
+        onTouchStart={(e) => e.stopPropagation()}
+        aria-hidden="true"
+      />
+      <div 
+        className="shortcut-popover glass-panel animate-fade-in" 
+        role="dialog" 
+        aria-modal="true"
+        onClick={(e) => e.stopPropagation()}
+        onTouchStart={(e) => e.stopPropagation()}
+      >
+        <div className="shortcut-popover-header">
+          <div className="shortcut-popover-title">
+            <Keyboard size={16} className="text-accent" />
+            <span>Phím tắt hỗ trợ</span>
+          </div>
+          <button
+            type="button"
+            className="shortcut-close-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen(false);
+            }}
+            title="Đóng bảng phím tắt (Esc)"
+            aria-label="Đóng"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <div className="shortcut-popover-body">
+          {renderShortcuts()}
+        </div>
+
+        <div className="shortcut-popover-footer">
+          <span className="shortcut-footer-hint">Nhấn <kbd className="mini-kbd">Esc</kbd> hoặc chạm ra ngoài để đóng</span>
+        </div>
+      </div>
+    </>
+  ) : null;
+
   return (
     <div className={`shortcut-guide-container ${className}`} ref={popoverRef}>
       <button
@@ -158,32 +221,11 @@ export default function ShortcutGuideModal({ mode = 'flashcard', className = '' 
         <span>Phím tắt</span>
       </button>
 
+      {/* Trên Mobile render qua createPortal vào body để căn chính giữa viewport và thoát khỏi transform ancestor */}
       {isOpen && (
-        <div className="shortcut-popover glass-panel animate-fade-in" role="dialog" aria-modal="true">
-          <div className="shortcut-popover-header">
-            <div className="shortcut-popover-title">
-              <Keyboard size={16} className="text-accent" />
-              <span>Phím tắt hỗ trợ</span>
-            </div>
-            <button
-              type="button"
-              className="shortcut-close-btn"
-              onClick={() => setIsOpen(false)}
-              title="Đóng bảng phím tắt (Esc)"
-              aria-label="Đóng"
-            >
-              <X size={15} />
-            </button>
-          </div>
-
-          <div className="shortcut-popover-body">
-            {renderShortcuts()}
-          </div>
-
-          <div className="shortcut-popover-footer">
-            <span className="shortcut-footer-hint">Nhấn <kbd className="mini-kbd">Esc</kbd> hoặc bấm ra ngoài để đóng</span>
-          </div>
-        </div>
+        isMobile && typeof document !== 'undefined'
+          ? createPortal(modalContent, document.body)
+          : modalContent
       )}
     </div>
   );

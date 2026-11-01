@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import vong1Data from '../unit/Oxford_3000_Vong_1_516_tu.json';
 import vong2Data from '../unit/Oxford_3000_Vong_2_754_tu.json';
 import vong3Data from '../unit/Oxford_3000_Vong_3_748_tu.json';
@@ -19,6 +19,7 @@ import { clearJumpUndo } from './utils/jumpUndo';
 import './App.css';
 
 import { cancelCurrentAutoNext } from './utils/autoNext';
+import { getFocusSpaceActive, saveFocusSpaceActive } from './utils/focusModeSettings';
 
 // Key lưu trữ riêng biệt cho từng bộ từ trong localStorage (bảo toàn 100% dữ liệu gốc)
 const OXFORD_STORAGE_KEY = 'myVocabData';
@@ -85,7 +86,7 @@ export const getToeicRoundWords = (words, roundName) => {
 
 export default function App() {
   const [activeMode, setActiveMode] = useState('flashcard'); // 'flashcard' | 'quiz' | 'typing' | 'wordlist'
-  const [isFocusMode, setIsFocusMode] = useState(false);
+  const [isFocusMode, setIsFocusMode] = useState(() => getFocusSpaceActive());
 
   // Đọc Unit đã chọn từ localStorage (hoặc mặc định 'Tất cả')
   const [selectedUnit, setSelectedUnit] = useState(() => {
@@ -266,12 +267,20 @@ export default function App() {
     return oxfordWords.filter(w => w.unit === selectedUnit);
   }, [customReviewWords, isToeic, selectedUnit, toeicWords, oxfordWords]);
 
+  // Quản lý vị trí cuộn trang (scroll position) an toàn khi vào/ra Focus Space
+  const prevScrollYRef = useRef(0);
+
   // Thoát Focus Mode khi bấm phím Escape (Esc)
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape' && isFocusMode) {
         e.preventDefault();
+        const restoreY = prevScrollYRef.current;
         setIsFocusMode(false);
+        saveFocusSpaceActive(false);
+        setTimeout(() => {
+          window.scrollTo({ top: restoreY, behavior: 'instant' });
+        }, 50);
       }
     };
 
@@ -280,7 +289,22 @@ export default function App() {
   }, [isFocusMode]);
 
   const toggleFocusMode = () => {
-    setIsFocusMode(prev => !prev);
+    setIsFocusMode(prev => {
+      const next = !prev;
+      saveFocusSpaceActive(next);
+      if (next) {
+        // Vào Focus Space: Lưu vị trí cuộn hiện tại và cuộn lên đỉnh để Header luôn trong tầm nhìn
+        prevScrollYRef.current = window.scrollY || 0;
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else {
+        // Thoát Focus Space: Khôi phục vị trí cuộn trang cũ
+        const restoreY = prevScrollYRef.current;
+        setTimeout(() => {
+          window.scrollTo({ top: restoreY, behavior: 'instant' });
+        }, 50);
+      }
+      return next;
+    });
   };
 
   // Thêm từ mới vào đúng bộ từ đang học
@@ -450,11 +474,14 @@ export default function App() {
       {/* Toast hoàn tác khi nhảy từ vựng nhầm */}
       <JumpUndoToast />
 
-      {/* Nút nổi để thoát Focus Mode */}
-      {isFocusMode && (
+      {/* Nút nổi để thoát Focus Mode (ở Flashcard nút Thoát đã được tích hợp gọn gàng vào header) */}
+      {isFocusMode && activeMode !== 'flashcard' && (
         <button 
           className="focus-exit-btn" 
-          onClick={() => setIsFocusMode(false)}
+          onClick={() => {
+            setIsFocusMode(false);
+            saveFocusSpaceActive(false);
+          }}
           title="Thoát chế độ tập trung (Nhấn phím Esc)"
         >
           <Minimize2 size={15} /> Thoát tập trung (Esc)

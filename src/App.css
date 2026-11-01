@@ -2130,7 +2130,7 @@
 }
 
 /* ===================================================
-   FOCUS MODE
+   FOCUS SPACE MODE & BỐ CỤC 3 VÙNG ĐỘC LẬP
    =================================================== */
 .focus-mode-active {
   background: #050811 !important;
@@ -2146,9 +2146,11 @@
 }
 
 .focus-mode-active .main-content {
-  min-height: 100vh;
-  justify-content: center;
-  padding: 30px 20px;
+  min-height: 100dvh;
+  justify-content: flex-start !important;
+  align-items: center;
+  padding: 16px 16px 40px !important;
+  box-sizing: border-box;
 }
 
 .focus-exit-btn {
@@ -2196,6 +2198,914 @@
   background: rgba(99, 102, 241, 0.2);
   border-color: var(--primary);
   color: #ffffff;
+}
+
+/* ===================================================
+   VÙNG A: FOCUS SPACE HEADER ĐỘC LẬP & AN TOÀN
+   =================================================== */
+.focus-space-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto 16px auto;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.focus-header-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.focus-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.focus-space-branding .focus-space-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c4b5fd;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 4px 10px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+}
+
+.focus-header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Nút Cài đặt Focus Space */
+.btn-focus-settings {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  min-height: 38px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: var(--radius-md);
+  color: #c4b5fd;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  z-index: 52;
+  pointer-events: auto;
+}
+
+.btn-focus-settings:hover {
+  background: rgba(139, 92, 246, 0.3);
+  border-color: rgba(139, 92, 246, 0.7);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-focus-settings:active {
+  transform: scale(0.97);
+}
+
+/* Nút Thoát Focus Space */
+.btn-focus-exit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 14px;
+  min-height: 38px;
+  background: rgba(244, 63, 94, 0.15);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  border-radius: var(--radius-md);
+  color: #fda4af;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  position: relative;
+  z-index: 52;
+  pointer-events: auto;
+}
+
+.btn-focus-exit:hover {
+  background: rgba(244, 63, 94, 0.3);
+  border-color: rgba(244, 63, 94, 0.7);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-focus-exit:active {
+  transform: scale(0.97);
+}
+
+/* Hàng Seek Bar trong Focus Space */
+.focus-header-seekbar-row {
+  width: 100%;
+  display: flex;
+}
+
+.focus-header-seekbar-row .interactive-seek-bar {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 1;
+}
+
+/* ===================================================
+   VÙNG B & C: FOCUS SPACE MAIN & TOOLS
+   =================================================== */
+.focus-space-mode {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.focus-space-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Wrapper bố cục riêng cho vị trí Flashcard (Bảo toàn 100% 3D rotation bên trong) */
+.flashcard-position-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.focus-space-tools {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Chế độ Zen Space: Căn giữa Flashcard trong vùng khả dụng BÊN DƯỚI Header */
+.focus-space-mode.is-zen-space {
+  min-height: calc(100dvh - 36px);
+  justify-content: flex-start;
+}
+
+.focus-space-mode.is-zen-space .focus-space-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  width: 100%;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.focus-space-mode.is-zen-space .flashcard-wrapper {
+  margin-bottom: 0 !important;
+}
+
+/* Thông báo giới hạn an toàn Clamping */
+.safe-bound-notice {
+  padding: 6px 10px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 8px;
+  color: #fde68a;
+  font-size: 0.74rem;
+  line-height: 1.3;
+}
+
+/* Cụm điều hướng Minimal Mode: Chỉ có 2 nút [Trước] và [Tiếp theo] trên cùng 1 hàng */
+.flashcard-controls.is-minimal-nav {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px;
+  max-width: 580px;
+  width: 100%;
+  margin: 0 auto 12px auto;
+}
+
+/* ===================================================
+   FOCUS SPACE SETTINGS MODAL
+   =================================================== */
+.focus-settings-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1060;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.focus-settings-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.focus-settings-modal {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 500px;
+  max-height: min(88dvh, calc(100vh - 32px));
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(139, 92, 246, 0.25);
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: auto;
+  animation: focusModalScaleIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes focusModalScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.focus-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.focus-settings-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.focus-settings-title-group .title-text-box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.focus-settings-title-group h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.focus-settings-title-group .subtitle-text {
+  margin: 0;
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.focus-settings-close-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.focus-settings-close-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.focus-settings-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #c4b5fd;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.focus-presets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.preset-btn {
+  padding: 12px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.preset-btn:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.preset-btn.is-active {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #8b5cf6;
+  box-shadow: 0 0 14px rgba(139, 92, 246, 0.35);
+}
+
+.preset-btn .preset-name {
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #ffffff;
+}
+
+.preset-btn .preset-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+.core-buttons-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 10px;
+  font-size: 0.78rem;
+  color: #a7f3d0;
+  line-height: 1.4;
+}
+
+.core-buttons-notice .notice-icons {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  color: #34d399;
+}
+
+.toggle-group-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.group-card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-sub);
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.toggle-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.toggle-item-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.toggle-item-hint {
+  font-size: 0.72rem;
+  color: var(--text-sub);
+}
+
+/* Switch Toggle phong cách iOS */
+.switch-toggle {
+  width: 44px;
+  height: 24px;
+  min-width: 44px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.switch-toggle.is-on {
+  background: #8b5cf6;
+  border-color: #a78bfa;
+}
+
+.switch-slider {
+  width: 18px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  transform: translateX(0);
+}
+
+.switch-toggle.is-on .switch-slider {
+  transform: translateX(20px);
+}
+
+/* Vị trí Flashcard */
+.position-mode-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.position-mode-btn {
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.position-mode-btn.is-active {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: #8b5cf6;
+  color: #ffffff;
+}
+
+.position-slider-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.position-slider-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+}
+
+.position-slider-header .slider-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-sub);
+}
+
+.slider-val-badge {
+  padding: 2px 8px;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 6px;
+  color: #c4b5fd;
+  font-size: 0.8rem;
+}
+
+.slider-track-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-bound-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.position-range-input {
+  flex: 1;
+  accent-color: #8b5cf6;
+  cursor: pointer;
+  height: 6px;
+}
+
+.btn-reset-offset {
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-reset-offset:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Nút Xem trước vị trí trong modal */
+.slider-actions-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn-start-preview {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  border-radius: 8px;
+  color: #c4b5fd;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-start-preview:hover {
+  background: rgba(139, 92, 246, 0.28);
+  border-color: rgba(139, 92, 246, 0.6);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ===================================================
+   THANH ĐIỀU KHIỂN NỔI XEM TRƯỚC VỊ TRÍ (LIVE PREVIEW BAR)
+   =================================================== */
+.focus-preview-bottom-bar {
+  position: fixed;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  left: 16px;
+  right: 16px;
+  margin: 0 auto;
+  width: auto;
+  max-width: 460px;
+  z-index: 9999;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-radius: 16px;
+  padding: 12px 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.75), 0 0 25px rgba(139, 92, 246, 0.28);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Hàng 1: Vị trí thẻ & Nút thao tác */
+.preview-bar-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.preview-bar-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  min-width: 0;
+  flex: 1;
+}
+
+.preview-label-text {
+  white-space: nowrap;
+}
+
+.preview-bar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-preview-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-preview-reset:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.btn-preview-done {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #8b5cf6;
+  border: 1px solid #a78bfa;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+}
+
+.btn-preview-done:hover {
+  background: #7c3aed;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
+}
+
+.btn-preview-done-desktop {
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  min-height: 32px;
+}
+
+/* Hàng 2: [ Lên ] ───── SLIDER ───── [ Xuống ] */
+.preview-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.slider-bound-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.preview-slider-input {
+  flex: 1;
+  min-width: 0;
+  height: 8px;
+  accent-color: #8b5cf6;
+  cursor: pointer;
+}
+
+.preview-safe-bound-notice {
+  margin: 0;
+  font-size: 0.72rem;
+  padding: 4px 8px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 6px;
+  color: #fde68a;
+  text-align: center;
+}
+
+/* Hàng 3: Nút Hoàn tất mobile (mặc định ẩn trên desktop) */
+.preview-bar-row-footer-mobile {
+  display: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-preview-done-mobile {
+  width: 100%;
+  min-height: 42px;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE MOBILE <= 640px */
+@media (max-width: 640px) {
+  .focus-preview-bottom-bar {
+    left: 12px;
+    right: 12px;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 14px;
+    max-width: none;
+  }
+
+  .preview-bar-row-header {
+    gap: 6px;
+  }
+
+  .preview-bar-label {
+    font-size: 0.78rem;
+  }
+
+  .btn-preview-done-desktop {
+    display: none; /* Ẩn nút Hoàn tất góc trên, chuyển xuống Hàng 3 */
+  }
+
+  .preview-bar-row-footer-mobile {
+    display: block; /* Hiện nút Hoàn tất toàn chiều ngang ở Hàng 3 */
+    margin-top: 2px;
+  }
+
+  .btn-preview-reset {
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    min-height: 28px;
+  }
+}
+
+.focus-settings-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 14, 28, 0.6);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.btn-reset-focus-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-reset-focus-mode:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.btn-close-focus-modal {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  background: #8b5cf6;
+  border: 1px solid #a78bfa;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-close-focus-modal:hover {
+  background: #7c3aed;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+@media (max-width: 480px) {
+  .focus-settings-overlay {
+    padding: 10px;
+  }
+  .focus-settings-modal {
+    max-height: calc(100dvh - 20px);
+    border-radius: 16px;
+  }
+  .focus-settings-header {
+    padding: 12px 14px;
+  }
+  .focus-settings-body {
+    padding: 12px 14px;
+    gap: 14px;
+  }
+  .focus-settings-footer {
+    padding: 12px 14px;
+  }
+  .focus-presets-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .preset-btn {
+    padding: 10px 8px;
+  }
+  .preset-btn .preset-name {
+    font-size: 0.86rem;
+  }
+  .preset-btn .preset-desc {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .focus-presets-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===================================================
@@ -2634,17 +3544,260 @@
     word-break: break-word;
   }
 
-  .flashcard-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  /* Focus Space trên Mobile: gọn gàng từ trên xuống, không bị khoảng đệm thừa */
+  .focus-mode-active .main-content {
+    padding: 10px 12px 32px !important;
+    justify-content: flex-start !important;
+    min-height: auto !important;
+  }
+
+  .focus-space-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+  }
+
+  .focus-space-header .btn-focus-exit,
+  .focus-space-header .btn-focus-settings {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    height: 44px !important;
+    padding: 0 12px !important;
+    font-size: 0.85rem !important;
+    border-radius: 12px !important;
+  }
+
+  .focus-space-header .focus-header-seekbar-row .interactive-seek-bar {
+    height: 38px !important;
+  }
+
+  .focus-space-mode.is-zen-space {
+    min-height: calc(100dvh - 24px) !important;
+  }
+
+  /* Flashcard Progress Info trên Mobile (Chế độ thường): 2 hàng riêng biệt */
+  .flashcard-progress-info {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+  }
+
+  /* Hàng 1: Nút Tập trung (hoặc số thứ tự) bên trái, số thứ tự (hoặc Thoát) bên phải */
+  .flashcard-progress-info .flashcard-top-controls {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .flashcard-progress-info .flashcard-top-controls .btn-focus {
+    margin: 0;
+    flex-shrink: 0;
+    height: 38px;
+    padding: 0 12px;
+    font-size: 0.82rem;
+    border-radius: 10px;
+  }
+
+  .flashcard-progress-info .flashcard-top-controls .btn-focus-exit {
+    margin: 0;
+    flex-shrink: 0;
+    min-height: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 14px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .flashcard-progress-info .flashcard-top-controls .btn-focus-settings {
+    margin: 0;
+    flex-shrink: 0;
+    min-height: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 12px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+
+  .flashcard-progress-info .flashcard-top-controls .focus-header-actions {
+    display: inline-flex;
+    align-items: center;
     gap: 8px;
-    width: 100%;
+    margin-left: auto;
+  }
+
+  .flashcard-progress-info .flashcard-top-controls .jump-word-container {
+    flex-shrink: 0;
+  }
+
+  /* Hàng 2: Seek Bar chiếm trọn 100% chiều rộng container */
+  .flashcard-progress-info .flashcard-seekbar-row {
+    display: flex !important;
+    width: 100% !important;
+  }
+
+  .flashcard-progress-info .flashcard-seekbar-row .interactive-seek-bar {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+    height: 42px !important; /* Hitbox chạm thân thiện 42px */
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+
+  .flashcard-progress-info .flashcard-seekbar-row .seek-track {
+    height: 6px;
+    border-radius: 999px;
+  }
+
+  .flashcard-progress-info .flashcard-seekbar-row .seek-thumb {
+    width: 14px;
+    height: 14px;
+    border-width: 2.5px;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.9), 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Nhãn nút điều hướng responsive */
+  .btn-label-desktop {
+    display: none !important;
+  }
+
+  .btn-label-mobile {
+    display: inline !important;
+  }
+
+  /* Flashcard Controls trên Mobile: Bố cục 2 hàng x 2 cột đều nhau */
+  .flashcard-controls {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 580px;
+    margin: 0 auto 10px auto !important;
   }
 
   .flashcard-controls .btn {
-    padding: 10px 8px;
-    font-size: 0.84rem;
-    justify-content: center;
+    min-height: 46px !important;
+    height: 46px !important;
+    padding: 0 10px !important;
+    font-size: 0.9rem !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  /* Hàng 1: [ ← Trước ]  [ Tiếp theo → ] */
+  .flashcard-controls .btn-flashcard-prev {
+    order: 1 !important;
+  }
+
+  .flashcard-controls .btn-flashcard-next {
+    order: 2 !important;
+  }
+
+  /* Hàng 2: [ ⇄ Xáo trộn ]  [ ↻ Lật nghĩa ] */
+  .flashcard-controls .btn-flashcard-shuffle {
+    order: 3 !important;
+  }
+
+  .flashcard-controls .btn-flashcard-flip {
+    order: 4 !important;
+  }
+
+  /* Hàng 3: [ Chưa nhớ ]  [ Đã nhớ ] */
+  .flashcard-evaluation-section {
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto 14px auto;
+  }
+
+  .flashcard-evaluation-group {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .btn-eval {
+    min-height: 46px !important;
+    height: 46px !important;
+    border-radius: 12px !important;
+    font-size: 0.9rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    box-sizing: border-box;
+  }
+
+  /* Modal hướng dẫn phím tắt cố định chính giữa màn hình điện thoại */
+  .shortcut-modal-backdrop {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.65) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    z-index: 1050 !important;
+    touch-action: none !important;
+  }
+
+  .shortcut-popover {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    width: calc(100vw - 28px) !important;
+    max-width: 360px !important;
+    max-height: 84dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    z-index: 1060 !important;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 24px rgba(139, 92, 246, 0.3) !important;
+    border-radius: 16px !important;
+    padding: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .shortcut-popover-header {
+    flex-shrink: 0;
+  }
+
+  .shortcut-close-btn {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    border-radius: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .shortcut-popover-body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex: 1 !important;
+    padding-right: 4px;
+    margin-top: 10px !important;
+  }
+
+  .shortcut-popover-footer {
+    flex-shrink: 0;
+    margin-top: 10px !important;
   }
 
   /* 5. QUIZ MODE */
@@ -4834,6 +5987,34 @@
   background: rgba(139, 92, 246, 0.25);
   border-color: #8b5cf6;
   color: #ffffff;
+}
+
+/* Nút Toggle Shuffle khi đang bật */
+.btn-flashcard-shuffle.is-active {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: #8b5cf6;
+  color: #c4b5fd;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+/* Helper nhãn nút responsive (Desktop vs Mobile) */
+.btn-label-desktop {
+  display: inline;
+}
+
+.btn-label-mobile {
+  display: none;
+}
+
+/* Desktop layout cho Flashcard Header: giữ nguyên bố cục phẳng một hàng */
+.flashcard-progress-info .flashcard-top-controls,
+.flashcard-progress-info .flashcard-seekbar-row {
+  display: contents;
+}
+
+/* Backdrop modal phím tắt (chỉ hiển thị trên Mobile) */
+.shortcut-modal-backdrop {
+  display: none;
 }
 
 /* Popover bảng phím tắt */
